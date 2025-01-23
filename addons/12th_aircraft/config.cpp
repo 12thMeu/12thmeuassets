@@ -1,24 +1,45 @@
 #include "config_macros.hpp"
 
+/*
+  ==============================================================================
+  config.cpp
+
+  This file defines all the 12th MEU aircraft classes. It references base
+  classes from OPTRE, the Splits Pelican mod, and vanilla Arma. The macros
+  in config_macros.hpp apply additional textures, set up hiddenSelections,
+  and define spawn info (AIR_SP_INFO) used by your vehicle spawner script.
+
+  Key Points:
+    - CfgPatches: Registers these classes so Arma recognizes them.
+    - CfgVehicles: Actual aircraft classes with references to new textures,
+      macros for additional texture sets, and custom factions (twelfth_MEU).
+    - Macros for each aircraft type handle texture sources, hidden selections,
+      and spawner info definitions.
+
+  Expand or comment out sections as needed for future updates or newly added
+  aircraft.
+  ==============================================================================
+*/
+
 class CfgPatches {
-  class 12th_aircraft {
+  class twelfth_aircraft {
     units[] = {
-      "12th_d77_tc_pelican",
-      "12th_hornet",
-      "12th_falcon_unarmed",
-      "12th_falcon_armed",
-      "12th_falcon_s_unarmed",
-      "12th_falcon_s_armed",
-      "12th_sparrowhawk_m",
-      "12th_sparrowhawk_l",
-      "12th_sparrowhawk_ml",
-      "12th_sparrowhawk",
-      "12th_wyvern_inf",
-      "12th_wyvern_veh",
-      "12th_prime",
-      "12th_blackfish_inf",
-      "12th_blackfish_veh",
-      "12th_blackfish_armed"
+      "twelfth_d77_tc_pelican",
+      "twelfth_hornet",
+      "twelfth_falcon_unarmed",
+      "twelfth_falcon_armed",
+      "twelfth_falcon_s_unarmed",
+      "twelfth_falcon_s_armed",
+      "twelfth_sparrowhawk_m",
+      "twelfth_sparrowhawk_l",
+      "twelfth_sparrowhawk_ml",
+      "twelfth_sparrowhawk",
+      "twelfth_wyvern_inf",
+      "twelfth_wyvern_veh",
+      "twelfth_prime",
+      "twelfth_blackfish_inf",
+      "twelfth_blackfish_veh",
+      "twelfth_blackfish_armed"
     };
     weapons[] = {};
     requiredVersion = 0.1;
@@ -33,8 +54,17 @@ class CfgPatches {
   };
 };
 
-class CfgVehicles {
+/*
+  ==============================================================================
+  CfgVehicles
+  ==============================================================================
+  Each custom aircraft class inherits from a base class (e.g., Splits_Pelican_base),
+  modifies textures, sets faction, and includes macros for more complex logic
+  like extended spawn info or texture sets.
+*/
 
+class CfgVehicles {
+  // -------------------------- Base Classes --------------------------
   class Splits_Pelican_base;
 
   class OPTRE_UNSC_hornet;
@@ -64,130 +94,128 @@ class CfgVehicles {
 
   // Nandao
   class MEU_F29_Nandao_VTOL;
-
-  class 12th_d77_tc_pelican: Splits_Pelican_base {
+  // ---------------------------------------------------------------------------
+  //  Pelican (D77-TC)
+  // ---------------------------------------------------------------------------
+  class twelfth_d77_tc_pelican: Splits_Pelican_base {
     scope = 2;
     scopeCurator = 2;
     side = 1;
     vehicleClass = "Air";
-    author = "SplitJaw & DemonicOnPC & Kelp & Gepard";
-    faction = "12th_MEU";
-    editorCategory="12th_MEU";
+    author = "Weber";
+    faction = "twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     OPTRE_canThrust = 1;
     OPTRE_minVelocity = 1.4;
     OPTRE_maxVelocity = 167;
     OPTRE_velocityMult = 1;
-    editorSubcategory="12th_MEU_Rotary";
-    crew = "OPTRE_UNSC_Marine_Soldier_Rifleman_AR";
+    crew = "OPTRE_UNSC_Marine_Soldier_Rifleman_AR"; // When we make our own faction be sure to change this
     displayName = "[12th] D77-TC Pelican";
     PELICAN_TEXTURESETS
     AIR_SP_INFO(Pelican,0,Troop Transport)
   };
-
-  class 12th_hornet: OPTRE_UNSC_hornet {
+  // ---------------------------------------------------------------------------
+  //  AV-14 Hornet
+  // ---------------------------------------------------------------------------
+  class twelfth_hornet: OPTRE_UNSC_hornet {
     scope = 2;
     scopeCurator = 2;
     side = 1;
     vehicleClass = "Air";
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] AV-14 Hornet";
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     hiddenSelections[]={"camo1"};
     hiddenSelectionsTextures[]={
-      "\x\12thMEUAssets\addons\12th_aircraft\hornet\default\hull_co.paa"
+      "\x\12thMEU\addons\12th_aircraft\hornet\default\hull_co.paa"
     };
     class textureSources {
-      class 12th_hornet_tex_def {
+      class twelfth_hornet_tex_default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
-          "\x\12thMEUAssets\addons\12th_aircraft\hornet\default\hull_co.paa"
+          "\x\12thMEU\addons\12th_aircraft\hornet\default\hull_co.paa"
         };
       };
-      class 12th_hornet_tex_winter {
-        displayName="Winter";
-        author="Gepard";
+      class twelfth_hornet_tex_asg {
+        displayName="Air Superiority Grey";
+        author="Wolfe";
         textures[]= {
-          "\x\12thMEUAssets\addons\12th_aircraft\hornet\winter\hull_co.paa"
-        };
-      };
-      class 12th_hornet_tex_cstm_gepard {
-        displayName="Custom (Gepard)";
-        author="Gepard";
-        textures[]= {
-          "\x\12thMEUAssets\addons\12th_aircraft\hornet\gepard\hull_co.paa"
+          "\x\12thMEU\addons\12th_aircraft\hornet\asg\hull_co.paa"
         };
       };
     };
     AIR_SP_INFO(Hornet,0,Base)
   };
-
-  class 12th_falcon_unarmed: OPTRE_UNSC_falcon {
+  // ---------------------------------------------------------------------------
+  //  UH-144 Falcon Variants
+  // ---------------------------------------------------------------------------
+  // Unarmed
+  class twelfth_falcon_unarmed: OPTRE_UNSC_falcon {
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144 Falcon Unarmed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3", "attach_gun"};
     AIR_SP_INFO(Falcon,0,Unarmed)
     FALCON_TEXTURESETS
   };
-
-  class 12th_falcon_armed: OPTRE_UNSC_falcon_armed {
+  // Armed
+  class twelfth_falcon_armed: OPTRE_UNSC_falcon_armed {
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144 Falcon Armed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3"};
     AIR_SP_INFO(Falcon,1,20mm Cannon)
     FALCON_TEXTURESETS
   };
-
-  class 12th_falcon_s_unarmed: OPTRE_UNSC_falcon_S {
+  // S variant (Side Gun) unarmed
+  class twelfth_falcon_s_unarmed: OPTRE_UNSC_falcon_S {
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144S Falcon Unarmed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3", "attach_gun"};
     AIR_SP_INFO(Falcon,2,Unarmed w/ Side Gun)
     FALCON_TEXTURESETS
   };
-
-  class 12th_falcon_s_armed: OPTRE_UNSC_falcon_armed_S {
+  // S variant armed
+  class twelfth_falcon_s_armed: OPTRE_UNSC_falcon_armed_S {
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144S Falcon Armed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3"};
     AIR_SP_INFO(Falcon,3,20mm w/ Side Gun)
     FALCON_TEXTURESETS
   };
-
-  class 12th_sparrowhawk_m: OPTRE_AV22_Sparrowhawk {
-    author="Kelp";
+  // ---------------------------------------------------------------------------
+  //  AV-22 Sparrowhawk Variants
+  // ---------------------------------------------------------------------------
+  class twelfth_sparrowhawk_m: OPTRE_AV22_Sparrowhawk {
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] AV-22M Sparrowhawk";
     hiddenSelections[] = {
@@ -207,14 +235,14 @@ class CfgVehicles {
     SPARROWHAWK_TEXTURESETS
   };
 
-  class 12th_sparrowhawk_l: OPTRE_AV22A_Sparrowhawk {
-    author="Kelp";
+  class twelfth_sparrowhawk_l: OPTRE_AV22A_Sparrowhawk {
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] AV-22L Sparrowhawk";
     hiddenSelections[] = {
@@ -234,14 +262,14 @@ class CfgVehicles {
     SPARROWHAWK_TEXTURESETS
   };
 
-  class 12th_sparrowhawk_ml: OPTRE_AV22B_Sparrowhawk {
-    author="Kelp";
+  class twelfth_sparrowhawk_ml: OPTRE_AV22B_Sparrowhawk {
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] AV-22ML Sparrowhawk";
     hiddenSelections[] = {
@@ -261,14 +289,14 @@ class CfgVehicles {
     SPARROWHAWK_TEXTURESETS
   };
 
-  class 12th_sparrowhawk: OPTRE_AV22C_Sparrowhawk {
-    author="Kelp";
+  class twelfth_sparrowhawk: OPTRE_AV22C_Sparrowhawk {
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] AV-22 Sparrowhawk";
     hiddenSelections[] = {
@@ -287,15 +315,18 @@ class CfgVehicles {
     AIR_SP_INFO(Sparrowhawk,3,30mm Fixed | Cannon)
     SPARROWHAWK_TEXTURESETS
   };
-
-  class 12th_wyvern_inf: O_T_VTOL_02_infantry_dynamicLoadout_F {
-    author="Kelp";
+  // ---------------------------------------------------------------------------
+  //  Wyvern (Based on Tigris/VTOL)
+  // ---------------------------------------------------------------------------
+  // Infantry version
+  class twelfth_wyvern_inf: O_T_VTOL_02_infantry_dynamicLoadout_F {
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] AVD-99IT Wyvern";
     hiddenSelections[]={
@@ -306,36 +337,47 @@ class CfgVehicles {
       "camo_5"
     };
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\signs_co.paa"
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
     };
     class TextureSources {
-      class 12th_wyvern_tex_default {
+      class twelfth_wyvern_tex_default {
         displayName="Default";
-        author="Gepard";
+        author="Wolfe";
         textures[]= {
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\signs_co.paa"
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
+        };
+      };
+      class twelfth_wyvern_asg_default {
+        displayName="Air Superiority Grey";
+        author="Wolfe";
+        textures[]= {
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_01_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_02_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_r_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_l_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
         };
       };
     };
     AIR_SP_INFO(Wyvern,0,Infantry)
   };
-
-  class 12th_wyvern_veh: O_T_VTOL_02_vehicle_dynamicLoadout_F {
-    author="Kelp";
+  // Vehicle version
+  class twelfth_wyvern_veh: O_T_VTOL_02_vehicle_dynamicLoadout_F {
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] AVD-99VT Wyvern";
     hiddenSelections[]={
@@ -346,37 +388,48 @@ class CfgVehicles {
       "camo_5"
     };
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-      "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\signs_co.paa"
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
     };
     class TextureSources {
-      class 12th_wyvern_tex_default {
+      class twelfth_wyvern_tex_default {
         displayName="Default";
-        author="Gepard";
+        author="Wolfe";
         textures[]= {
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-          "\x\12thMEUAssets\addons\12th_aircraft\wyvern\default\signs_co.paa"
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
+        };
+      };
+      class twelfth_wyvern_tex_asg {
+        displayName="Air Superiority Grey";
+        author="Wolfe";
+        textures[]= {
+          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_01_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_02_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_03_l_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_03_r_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
         };
       };
     };
     AIR_SP_INFO(Wyvern,1,Vehicle)
   };
 
-  class 12th_prime: B_UAV_06_F {
+  /*class twelfth_prime: B_UAV_06_F {
     side=1;
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] AL-6 Prime";
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Drones";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Drones";
     crew="B_UAV_AI_F";
     typicalCargo[]={"B_UAV_AI_F"};
     class TransportItems {};
@@ -388,10 +441,10 @@ class CfgVehicles {
       QP(prime\medical\main_co.paa)
     };
     class TextureSources {
-      class 12th_prime_tex_default {
+      class twelfth_prime_tex_default {
         displayname="Default";
-        author="Gepard";
-        factions[] = {"12th_MEU"};
+        author="Waylen";
+        factions[] = {"twelfth_MEU"};
         textures[]={
           QP(prime\medical\main_co.paa),
           QP(prime\medical\main_co.paa)
@@ -400,54 +453,56 @@ class CfgVehicles {
     };
     Camouflage=0;
     AIR_SP_INFO(Prime UAV,0,Base)
-  };
+  };*/
 
 
-
-  class 12th_blackfish_inf: B_T_VTOL_01_infantry_F {
+  // ---------------------------------------------------------------------------
+  //  Blackfish Variants
+  // ---------------------------------------------------------------------------
+  class twelfth_blackfish_inf: B_T_VTOL_01_infantry_F {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Blackfish (Infantry)";
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     BLACKFISH_TEXTURESETS
     AIR_SP_INFO(Blackfish,0,Troop Transport)
   };
 
-  class 12th_blackfish_veh: B_T_VTOL_01_vehicle_F {
+  class twelfth_blackfish_veh: B_T_VTOL_01_vehicle_F {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Blackfish (Vehicle)";
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     BLACKFISH_TEXTURESETS
     AIR_SP_INFO(Blackfish,1,Vehicle Transport)
   };
 
-  class 12th_blackfish_armed: B_T_VTOL_01_armed_F {
+  class twelfth_blackfish_armed: B_T_VTOL_01_armed_F {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Blackfish (Armed)";
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_Rotary";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_Rotary";
     BLACKFISH_TEXTURESETS
     AIR_SP_INFO(Blackfish,2,Gunship)
   };
 
-  class 12th_nandao: MEU_F29_Nandao_VTOL {
-    scope=2;
-    scopeCurator=2;
-    author="Weber";
-    displayName="[12th] F-29 Nandao";
-    faction="12th_MEU";
-    editorCategory="12th_MEU";
-    editorSubcategory="12th_MEU_FixedWing";
-    AIR_SP_INFO(Nandao,0,Base)
-  };
+  //class twelfth_nandao: MEU_F29_Nandao_VTOL {
+  //  scope=2;
+  //  scopeCurator=2;
+  //  author="Weber";
+  //  displayName="[12th] F-29 Nandao";
+  //  faction="twelfth_MEU";
+  //  editorCategory="twelfth_MEU";
+  //  editorSubcategory="twelfth_MEU_FixedWing";
+  //  AIR_SP_INFO(Nandao,0,Base)
+  //};
 };
