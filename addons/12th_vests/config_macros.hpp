@@ -1,35 +1,10 @@
-/*
-  ==============================================================================
-  config_macros.hpp
-
-  This file contains all macros used in our 12th_vests config. Macros reduce
-  duplication and make it easier to manage changes across multiple vests. 
-
-  Notable macros here:
-    - P() and Q() to handle path building and string quoting.
-    - VEST_MASS: standard ACE mass for these vests.
-    - VEST_MAXLOAD: total carrying capacity for the vest container.
-    - VEST_HITPOINT_INFO: sets up armor (hit) values for various body parts.
-    - UNSCF_VEST_ITEM_INFO and INVIS_VEST_ITEM_INFO: define vest parameters like
-      mass, containerClass, and the hitpoint info.
-    - UNSCF_VEST_ALL_VARIANTS: expands into multiple definitions for each vest
-      selection set (Rifleman, Breacher, Grenadier, etc.) with each
-      combination of pouches.
-  ==============================================================================
-*/
-// Basic path macros
-#define P(PATH) \x\12thMEU\addons\12th_vests\##PATH
-  // P(something) => "\x\12thMEU\addons\12th_vests\something"
+#define P(PATH) \x\12thMEUAssets\addons\12th_vests\##PATH
 #define Q(INPUT) #INPUT
-  // Q(INPUT) => "INPUT"
 #define GLUE(A,B) A##B
-  // GLUE(A,B) => AB (concatenates tokens)
 
-// Standard vest attributes
-#define VEST_MASS 80      // The vest’s "mass" for ACE/Arma calculations
-#define VEST_MAXLOAD 200  // The vest’s carrying capacity (in “inventory units”)
+#define VEST_MASS 80
+#define VEST_MAXLOAD 200
 
-// Macro for the hitpoint data applied to vests
 #define VEST_HITPOINT_INFO       \
 class HitpointsProtectionInfo {  \
   class Neck {                   \
@@ -69,25 +44,79 @@ class HitpointsProtectionInfo {  \
   };                             \
 };
 
-// Macro for the invisible vest’s item info
+#define KIPCHAK_TEXPATH(CAMO,FILE) \x\12thMEUAssets\addons\12th_vests\data\kipchak\##CAMO\##FILE
+#define CARRIER_TEXPATH(CAMO,FILE) \x\12thMEUAssets\addons\12th_vests\data\carrier_rig\##CAMO\##FILE
+
 #define INVIS_VEST_ITEM_INFO \
 class ItemInfo: VestItem { \
   vestType="Rebreather"; \
   uniformModel = "\halo_marine\null.p3d"; \
-  containerClass="twelfth_vest_supply"; \
+  containerClass="12th_vest_supply"; \
   mass=VEST_MASS; \
   VEST_HITPOINT_INFO \
 };
 
-// Macro that resolves the path to a specific texture, e.g., std\misc_co.paa
+#define KIPCHAK_ITEM_INFO(CAMO) \
+class ItemInfo: VestItem { \
+  vestType="Rebreather"; \
+  uniformModel="\A3\Characters_F_Enoch\Vests\V_SmershVest_01_F.p3d"; \
+  containerClass="12th_vest_supply"; \
+  mass=VEST_MASS; \
+  VEST_HITPOINT_INFO \
+  hiddenSelections[] = { \
+    "Camo", \
+    "Camo2", \
+    "Radio1_hide" \
+  }; \
+  hiddenSelectionsTextures[] = { \
+    #KIPCHAK_TEXPATH(CAMO,main_co.paa), \
+    #KIPCHAK_TEXPATH(CAMO,misc_co.paa) \
+  }; \
+};
+
+#define KIPCHAK_VEST(CAMO, DISPLAY) \
+class 12th_kipchak_##CAMO : 12th_kipchak_base { \
+  scope = 2; \
+  scopeArsenal = 2; \
+  displayName = DISPLAY; \
+  hiddenSelectionsTextures[] = { \
+    #KIPCHAK_TEXPATH(CAMO,main_co.paa), \
+    #KIPCHAK_TEXPATH(CAMO,misc_co.paa) \
+  }; \
+  KIPCHAK_ITEM_INFO(CAMO) \
+};
+
+#define CARRIER_RIG_ITEM_INFO(CAMO) \
+class ItemInfo: VestItem { \
+  vestType="Rebreather"; \
+  uniformModel="\A3\Characters_F\BLUFOR\equip_b_vest01.p3d"; \
+  containerClass="12th_vest_supply"; \
+  mass=VEST_MASS; \
+  VEST_HITPOINT_INFO \
+  hiddenSelections[] = { "camo" }; \
+  hiddenSelectionsTextures[] = { \
+    #CARRIER_TEXPATH(CAMO,main_co.paa) \
+  }; \
+};
+
+#define CARRIER_VEST(CAMO, DISPLAY) \
+class 12th_carrier_rig_##CAMO : 12th_carrier_base { \
+  scope = 2; \
+  scopeArsenal = 2; \
+  displayName = DISPLAY; \
+  hiddenSelectionsTextures[] = { \
+    #CARRIER_TEXPATH(CAMO,main_co.paa) \
+  }; \
+  CARRIER_RIG_ITEM_INFO(CAMO) \
+};
+
 #define UNSCF_TEXPATH(CAMO,FILE) P(data\unscf_vest\##CAMO\##FILE)
 
-// Macro for standard UNSC Foundries vest item info
 #define UNSCF_VEST_ITEM_INFO(SEL_SET,CAMO)                          \
 class ItemInfo: VestItem {                                          \
   vestType="Rebreather";                                            \
   uniformModel="\19th_H2A_armor\19th_H2A_marines_vests.p3d";        \
-  containerClass="twelfth_vest_supply";                                \
+  containerClass="12th_vest_supply";                                \
   mass=VEST_MASS;                                                   \
   hiddenSelections[] = { SEL_SET };                                 \
   hiddenSelectionsTextures[] = {Q(UNSCF_TEXPATH(CAMO,misc_co.paa))};\
@@ -95,14 +124,17 @@ class ItemInfo: VestItem {                                          \
 };
 
 /*
-  UNSCF_VEST Macro:
-    - CNAME: class name for the new vest (must be unique).
-    - CAMO: folder name for the textures (e.g. "std" or "winter").
-    - SEL_SET: the hiddenSelections the vest uses (defined in unscf_vest_sel.hpp).
-    - DISPLAY: text that shows up in Arsenal.
+A macro for a single UNSC Foundries vest.
+Input:
+  * CNAME - class name. Can be anything as long as it's unique.
+  * CAMO - Camo type. Supposed to point to a single folder
+           from a set of folders that all contain equally
+           named texture files within.
+  * DISPLAY - Display value. This gets displayed to the end-user
+              in the Arsenal, be it ACE or vanilla.
 */
 #define UNSCF_VEST(CNAME,CAMO,SEL_SET,DISPLAY)                     \
-class CNAME : twelfth_unscf_vest_base {                               \
+class CNAME : 12th_unscf_vest_base {                               \
   scope=2;                                                         \
   scopeArsenal=2;                                                  \
   displayName=DISPLAY;                                             \
@@ -117,14 +149,16 @@ class CNAME : twelfth_unscf_vest_base {                               \
 #include "unscf_vest_sel.hpp"
 
 /*
-  The big macro that generates every variant (rifleman, breacher, grenadier,
-  with different pouches) for a given camo. 
-  - BC: A prefix for all vest classes (e.g., twelfth_unscf_vest_std).
-  - CAMO: the subfolder for textures (e.g., "std", "winter").
-  - BD: a bracketed label appended to the displayName: e.g., [12th][S].
-
-  Each line expands into one fully-defined vest class with a unique set
-  of hiddenSelections.
+A macro that contains all possible variants forthe UNSC Foundries
+vest/pouch item.
+Input:
+  * BC - Base class. Add in your mod tag or something here.
+         All variant class names will start with this value.
+  * CAMO - Camo type. Supposed to point to a single folder
+           from a set of folders that all contain equally
+           named texture files within.
+  * BD - Base Display value. Is attached to the value that gets shown
+         in the arsenal. Usually a unit tag.
 */
 #define UNSCF_VEST_ALL_VARIANTS(BC,CAMO,BD)                                                                                           \
 UNSCF_VEST(GLUE(BC,_rf)      ,CAMO,RIFLEMAN_BASE_SEL,              Q(GLUE(BD, Rifleman Vest)))                                        \

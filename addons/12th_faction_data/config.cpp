@@ -1,138 +1,91 @@
-/*
-  ==============================================================================
-  config.cpp
 
-  This file establishes the 12th MEU factions, editor categories, and subcategories
-  for use in the Eden Editor. It defines three factions: 12th MEU (BLUFOR),
-  Insurrection (OPFOR), and CMA (INDEPENDENT), each with its own sets of subcategories
-  (cars, turrets, supplies, etc.).
-
-  Key Points:
-    - CfgPatches: Basic mod info (units, weapons, requiredAddons).
-    - CfgFactionClasses: Creates the 12th MEU factions. You can add a faction icon
-      later for each, if desired.
-    - CfgEditorCategories: Top-level categories used in Eden (like "12th Marine
-      Expeditionary Unit").
-    - CfgEditorSubcategories: More specific groupings for vehicles, turrets, supplies,
-      etc., under the top-level category.
-
-  NOTE: For these factions/categories to appear in Eden, ensure you reference them
-  in your vehicles or units (e.g., `faction = "twelfth_MEU"; editorCategory = "twelfth_MEU";`).
-  ==============================================================================
-*/
-
-// Basic mod info and dependencies
 class CfgPatches {
-  class twelfth_faction_data {
-    units[] = {};  // No units defined yet.
-    weapons[] = {};  // No weapons defined yet.
-    requiredVersion = 0.1;  // Minimum required game version.
-    requiredAddons[] = {"A3_Characters_F_BLUFOR"};  // Dependencies.
+  class 12th_faction_data {
+    units[] = {};
+    weapons[] = {};
+    requiredVersion = 0.1;
+    requiredAddons[] = {"A3_Characters_F_BLUFOR"};
   };
 };
 
-/*
-  ==============================================================================
-  CfgFactionClasses
-  ==============================================================================
-  Creates the actual factions: 12th MEU, 12th Insurrection, 12th CMA. 
-  - displayName: How it shows up in lists.
-  - icon: Path to a faction icon (paa or png). Example: "x\12thMEU\path\icon.paa".
-  - side: 1 = BLUFOR, 2 = OPFOR, 3 = Independent, 4 = Civilian.
+// For now, this is but the bare bones required to define
+// a faction.
 
-  priority: The engine uses this to decide sort order. Higher = displayed first.
-*/
+// In the future, we could add all of our loadouts here
+// maybe..
+
 class CfgFactionClasses {
-  class twelfth_MEU {
+  class 12th_MEU {
     displayName = "12th Marine Expeditionary Unit";
-    icon="";  // TODO: Add faction icon.
-    author="Weber";
-    priority=99;  // High priority to ensure it appears at the top of the list.
-    side=1;  // Blufor (friendly) side.
+    // TODO: add icon
+    icon="";
+    author="12th MEU S-4 Team";
+    priority=99;
+    side=1;
   };
-  class twelfth_MEU_Ins {
+  class 12th_MEU_Ins {
     displayName="12th Insurrection Assets";
-    icon="";  // TODO: Add faction icon.
-    author="Weber";
+    icon="";
+    author="12th MEU S-4 Team";
     priority=99;
-    side=2;  // Opfor (enemy) side.
+    side=2;
   };
-  class twelfth_MEU_CMA {
+  class 12th_MEU_CMA {
     displayName="12th CMA Assets";
-    icon="";  // TODO: Add faction icon.
-    author="Weber";
+    icon="";
+    author="12th MEU S-4 Team";
     priority=99;
-    side=3;  // Independent side.
+    side=3;
   };
 };
 
-/*
-  ==============================================================================
-  CfgEditorCategories
-  ==============================================================================
-  These are the "top-level" folders in the Eden Editor for objects belonging
-  to our 12th MEU faction. For instance, "twelfth_MEU" will appear as a main
-  category with subcategories (like "twelfth_MEU_Cars").
-*/
 class CfgEditorCategories {
-  class twelfth_MEU {
+  class 12th_MEU {
     displayName="12th Marine Expeditionary Unit";
-    priority=99;  // High priority for easy access.
-    side=1;  // Blufor (friendly) side.
+    priority=99;
+    side=1;
   };
-  class twelfth_MEU_Ins {
+  class 12th_MEU_Ins {
     displayName="12th Insurrection Assets";
     priority=99;
-    side=2;  // Opfor (enemy) side.
+    side=2;
   };
-  class twelfth_MEU_CMA {
+  class 12th_MEU_CMA {
     displayName="12th CMA Assets";
     priority=99;
-    side=3;  // Independent side.
+    side=3;
   };
 };
 
-/*
-  ==============================================================================
-  CfgEditorSubcategories
-  ==============================================================================
-  Subcategories under each main category. For example, "twelfth_MEU_Cars" can
-  appear under "twelfth_MEU" if a vehicle is declared with 
-    faction = "twelfth_MEU";
-    editorCategory = "twelfth_MEU";
-    editorSubcategory = "twelfth_MEU_Cars";
-*/
 class CfgEditorSubcategories {
-  // 12th MEU Marine Assets
-  class twelfth_MEU_Rotary {
-    displayName="Rotary Aircraft";  // Rotary-wing aircraft (helicopters).
+  // Start 12th MEU Marine Assets
+  class 12th_MEU_Rotary {
+    displayName="Rotary";
   };
-  class twelfth_MEU_Cars {
-    displayName="Cars";  // Ground vehicles (cars, trucks).
+  class 12th_MEU_Cars {
+    displayName="Cars";
   };
-  class twelfth_MEU_Armor {
-    displayName="Armor";  // Armored vehicles (tanks, APCs).
+  class 12th_MEU_Armor {
+    displayName="Armor";
   };
-  class twelfth_MEU_Drones {
-    displayName="Drones";  // Unmanned aerial vehicles (UAVs).
+  class 12th_MEU_Drones {
+    displayName="Drones";
   };
-  class twelfth_MEU_Supplies {
-    displayName="Supplies";  // Supply and logistics assets.
+  class 12th_MEU_Supplies {
+    displayName="Supplies";
   };
-  class twelfth_MEU_FixedWing {
-    displayName="Fixed Wing Aircraft";  // Fixed-wing aircraft (jets, planes).
+  class 12th_MEU_FixedWing {
+    displayName="Fixed Wing";
   };
-  class twelfth_MEU_Turrets {
-    displayName="Turrets";  // Static defensive turrets.
+  class 12th_MEU_Turrets {
+    displayName="Turrets";
   };
-
-  // 12th Insurrection Assets
-  class twelfth_MEU_INS_Turrets {
-    displayName="Turrets";  // Static defensive turrets.
+  // Start 12th Insurrection Assets
+  class 12th_MEU_INS_Turrets {
+    displayName="Turrets";
   };
-
-  // 12th CMA Assets
-  class twelfth_MEU_CMA_Turrets {
-    displayName="Turrets";  // Static defensive turrets.
+  // Start 12th CMA Assets
+  class 12th_MEU_CMA_Turrets {
+    displayName="Turrets";
   };
 };
