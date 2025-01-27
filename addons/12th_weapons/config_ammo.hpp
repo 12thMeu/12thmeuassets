@@ -27,6 +27,7 @@ class CfgAmmo
   class OPTRE_B_5x23_Caseless; // Base class for 5x23mm Caseless ammo
   class M319_HEAT;             // Base class for 40mm HEAT grenades
   class R_PG32V_F;
+  class SmokeShell;
 
   // Training (non-lethal) bullet
   class twelfth_20g_bb : BulletBase
@@ -83,4 +84,9 @@ class CfgAmmo
     model = "DMNS\Weapons\Launchers\M96_rocket.p3d";
     hit = 300; // Adjust for desired armor penetration; depends on your game balance.
   };
+   //Modify standard 40mm grenade ammo to remove bounce
+  	class G_40mm_Smoke: SmokeShell {
+		simulation = "shotSmoke";
+		deflectionSlowDown = 0;
+	};
 };

@@ -50,6 +50,16 @@ class CfgPatches
         add them here so the game loads them before ours.
       */
   };
+  
+  //Smoke bouncing fix, I don't know why but this needs to be here in order for the change in config_ammo.hpp line 87 to work
+  class ABI_SmokeFix
+	{
+		units[] = {};
+		weapons[] = {};
+		author = "Abbi";
+		requiredVersion = 0.1;
+		requiredAddons[] = { "A3_Weapons_F" };
+	};
 };
 
 // CBA-Disposable launchers must define two states: the 'ready' version and the 'used' version
