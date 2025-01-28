@@ -41,7 +41,7 @@ class CfgPatches
     ammo[] = {"twelfth_20g_bb", "twelfth_95x40_UW", "twelfth_5x23mm_UW", "twelfth_40mmG_HEAT"}; // Please add your new ammo types to this list
     magazines[] = {"twelfth_20g_mag", "twelfth_95x40_100rnd", "twelfth_762x51_200rnd",
                    "twelfth_762x51_200rnd_T", "twelfth_br_36Rnd_UW", "twelfth_m7_60rnd_UW",
-                   "twelfth_m7_48rnd_UW", "twelfth_40mm_heat"}; // Add new magazines here.
+                   "twelfth_m7_48rnd_UW", "twelfth_40mm_heat","twelfth_100Rnd_95x40_Box_T"}; // Add new magazines here.
     requiredVersion = 0.1;
     requiredAddons[] = {"Dmns_Weapons", "OPTRE_Weapons", "Dmns_Weapons_F_MachineGuns",
                         "A3_Weapons_F", "A3_Weapons_F_Exp", "19_UNSC_Weapons", "ace_common"}; 

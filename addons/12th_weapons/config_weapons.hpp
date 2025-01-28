@@ -516,7 +516,7 @@ class CfgWeapons
     canShootInWater = 1;
     displayName = "[12th] MA5B";
     baseWeapon = "twelfth_MA5B";
-    magazines[] = {"OPTRE_60Rnd_762x51_Mag"};
+    magazines[] = {"OPTRE_60Rnd_762x51_Mag","twelfth_60Rnd_762x51_Mag_T"};
   };
   /*
     =============================================================================

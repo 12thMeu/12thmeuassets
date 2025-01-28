@@ -32,6 +32,7 @@ class CfgMagazines
   class M319_HEAT_Grenade_Shell;        // Base class for 40mm HEAT shell
   class CA_LauncherMagazine;
   class RPG32_HE_F;
+  class OPTRE_60Rnd_762x51_Mag; 		//Base class for MA5B 60round mag
 
   // Training Magazine for BB
   class twelfth_20g_mag : OPTRE_32Rnd_762x51_Mag
@@ -192,6 +193,15 @@ class CfgMagazines
     mass = 45; // 4.5 lbs
     lastRoundsTracer = 100; 
     ACE_isBelt = 1; 
+  };
+  
+  //60 round 7.62x51 Tracer magazine
+  class twelfth_60Rnd_762x51_Mag_T: OPTRE_60Rnd_762x51_Mag
+  {
+	scope = 2;
+	author = "Sammy";
+	displayName = "60Rnd 7.62x51mm Tracer";
+	tracersEvery=1;
   };
 
 };
