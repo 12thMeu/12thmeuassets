@@ -71,6 +71,7 @@ class CfgPatches {
       "twelfth_ch_Sammy",
       "twelfth_ch_Simmons",
       "twelfth_ch_Styx",
+	  "twelfth_ch_Thomson",
       "twelfth_ch_Waylen",
       "twelfth_ch_Wilson",
       "twelfth_ch_Wolffe",
@@ -108,6 +109,7 @@ class CfgPatches {
       "twelfth_ch_Sammy_nv",
       "twelfth_ch_Simmons_nv",
       "twelfth_ch_Styx_nv",
+	  "twelfth_ch_Thomson_nv",
       "twelfth_ch_Waylen_nv",
       "twelfth_ch_Wilson_nv",
       "twelfth_ch_Wolffe_nv",
@@ -207,6 +209,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Simmons)
   CUSTOM_HELM_S_AV(Spector)
   CUSTOM_HELM_S_AV(Styx)
+  CUSTOM_HELM_S_AV(Thomson)
   CUSTOM_HELM_S_AV(Waylen)
   CUSTOM_HELM_S_AV(Wilson)
   CUSTOM_HELM_S_AV(Wolffe)
@@ -300,6 +303,7 @@ class XtdGearModels {
           "Simmons",
           "Spector",
           "Styx",
+		  "Thomson",
           "Waylen",
           "Wilson",
           "Wolffe",
@@ -351,6 +355,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Simmons)
     CH_HELM_S_GI(Spector)
     CH_HELM_S_GI(Styx)
+	CH_HELM_S_GI(Thomson)
     CH_HELM_S_GI(Waylen)
     CH_HELM_S_GI(Wilson)
     CH_HELM_S_GI(Wolffe)
