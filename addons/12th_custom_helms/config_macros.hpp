@@ -124,14 +124,14 @@ class twelfth_ch_std_##SUFFIX##_nv: twelfth_custom_helm_base { \
   `visor` to "Yes" or "No", and uses `member = SFX`.
 */
 #define CH_HELM_AV_GI(SFX,CAMO)       \
-class twelfth_ch_##CAMO##_##SFX {        \
-  model="twelfth_custom_helms";          \
+class twelfth_ch_##CAMO##_##SFX {     \
+  model="twelfth_custom_helms";       \
   camo=#CAMO;                         \
   visor="Yes";                        \
   member=#SFX;                        \
 };                                    \
-class twelfth_ch_##CAMO##_##SFX##_nv {   \
-  model="twelfth_custom_helms";          \
+class twelfth_ch_##CAMO##_##SFX##_nv {\
+  model="twelfth_custom_helms";       \
   camo=#CAMO;                         \
   visor="No";                         \
   member=#SFX;                        \
