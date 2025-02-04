@@ -55,6 +55,7 @@ class CfgPatches {
       "twelfth_ch_Galvin",
       "twelfth_ch_Geoff",
       "twelfth_ch_Gaunt",
+      "twelfth_ch_Jenkins",
       "twelfth_ch_Kasper",
       "twelfth_ch_Kiens",
       "twelfth_ch_LeDoux",
@@ -71,10 +72,11 @@ class CfgPatches {
       "twelfth_ch_Sammy",
       "twelfth_ch_Simmons",
       "twelfth_ch_Styx",
-	  "twelfth_ch_Thomson",
+	    "twelfth_ch_Thomson",
       "twelfth_ch_Waylen",
       "twelfth_ch_Wilson",
       "twelfth_ch_Wolffe",
+      "twelfth_ch_Whirley",
       "twelfth_ch_Wulf",
       "twelfth_ch_Aurora_nv",
       "twelfth_ch_Bateman_nv",
@@ -93,6 +95,7 @@ class CfgPatches {
       "twelfth_ch_Galvin_nv",
       "twelfth_ch_Geoff_nv",
       "twelfth_ch_Gaunt_nv",
+      "twelfth_ch_Jenkins_nv",
       "twelfth_ch_Kasper_nv",
       "twelfth_ch_Kiens_nv",
       "twelfth_ch_LeDoux_nv",
@@ -109,10 +112,11 @@ class CfgPatches {
       "twelfth_ch_Sammy_nv",
       "twelfth_ch_Simmons_nv",
       "twelfth_ch_Styx_nv",
-	  "twelfth_ch_Thomson_nv",
+	    "twelfth_ch_Thomson_nv",
       "twelfth_ch_Waylen_nv",
       "twelfth_ch_Wilson_nv",
       "twelfth_ch_Wolffe_nv",
+      "twelfth_ch_Whirley_nv",
       "twelfth_ch_Wulf_nv",
       "twelfth_pilot_ch_base",
       "twelfth_pilot_ch_penquite",
@@ -192,6 +196,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Galvin)
   CUSTOM_HELM_S_AV(Geoff)
   CUSTOM_HELM_S_AV(Gaunt)
+  CUSTOM_HELM_S_AV(Jenkins)
   CUSTOM_HELM_S_AV(Kasper)
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(LeDoux)
@@ -213,6 +218,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Waylen)
   CUSTOM_HELM_S_AV(Wilson)
   CUSTOM_HELM_S_AV(Wolffe)
+  CUSTOM_HELM_S_AV(Whirley)
   CUSTOM_HELM_S_AV(Wulf)
 
   // -- Pilot Helmets --
@@ -286,6 +292,7 @@ class XtdGearModels {
           "Galvin",
           "Geoff",
           "Gaunt",
+          "Jenkins",
           "Kasper",
           "Kiens",
           "LeDoux",
@@ -307,6 +314,7 @@ class XtdGearModels {
           "Waylen",
           "Wilson",
           "Wolffe",
+          "Whirley",
           "Wulf",
         };
       };
@@ -338,6 +346,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)
     CH_HELM_S_GI(Gaunt)
+    CH_HELM_S_GI(Jenkins)
     CH_HELM_S_GI(Kasper)
     CH_HELM_S_GI(Kiens)
     CH_HELM_S_GI(LeDoux)
@@ -355,10 +364,11 @@ class XtdGearInfos {
     CH_HELM_S_GI(Simmons)
     CH_HELM_S_GI(Spector)
     CH_HELM_S_GI(Styx)
-	CH_HELM_S_GI(Thomson)
+	  CH_HELM_S_GI(Thomson)
     CH_HELM_S_GI(Waylen)
     CH_HELM_S_GI(Wilson)
     CH_HELM_S_GI(Wolffe)
+    CH_HELM_S_GI(Whirley)
     CH_HELM_S_GI(Wulf)
 
   };
