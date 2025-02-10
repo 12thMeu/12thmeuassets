@@ -57,6 +57,7 @@ class CfgWeapons
   class 19_UNSC_br55_HB;  
   class 19_UNSC_br55_HB_gl; 
   class 19_UNSC_M392; 
+  class launch_MRAWS_base_F;
   class InventoryUnderItem_Base_F;  
   class dzn_MG_Tripod_Universal;  
   class dzn_MG_Tripod_Universal_Carry;  
@@ -275,6 +276,71 @@ class CfgWeapons
             mass = 80; // launcher mass (100)
         };
     };
+  /*
+    =============================================================================
+    MAAWS Config
+    =============================================================================
+  */
+
+    // ACE buddy loading compat
+    
+	  class Weapon_launch_MRAWS_green_F
+	  {
+	  	ace_reloadlaunchers_enabled=1;
+	  };
+	  class Weapon_launch_MRAWS_olive_F
+	  {
+	  	ace_reloadlaunchers_enabled=1;
+	  };
+	  class Weapon_launch_MRAWS_sand_F
+	  {
+	  	ace_reloadlaunchers_enabled=1;
+	  };
+
+    // class definitions
+
+    class twelfth_MAAWS_base: launch_MRAWS_base_F
+    {
+	    author = "Waylen";
+	    displayName = "[12th] MAAWS (Green)";
+	    baseWeapon = "twelfth_MAAWS_base";
+	    scope = 2;
+	    hiddenSelectionsTextures[] = 
+      {
+        "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_darkgreen_01_F_co",
+        "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"
+      };
+
+      class WeaponSlotsInfo: WeaponSlotsInfo
+      {
+        mass = 65;
+      };
+    };
+
+    class twelfth_MAAWS_olive: twelfth_MAAWS_base {
+	    author = "Waylen";
+	    displayName = "[12th] MAAWS (Olive)";
+	    baseWeapon = "twelfth_MAAWS_olive";
+	    scope = 2;
+	    hiddenSelectionsTextures[] = 
+      {
+			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_olive_01_F_co",
+			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"
+      };
+    };
+
+    class twelfth_MAAWS_sand: twelfth_MAAWS_base {
+	    author = "Waylen";
+	    displayName = "[12th] MAAWS (Sand)";
+	    baseWeapon = "twelfth_MAAWS_sand";
+	    scope = 2;
+	    hiddenSelectionsTextures[] = 
+      {
+			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_sand_01_F_co",
+			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"
+      };
+    };
+
   /*
     =============================================================================
     Sidearms, SMGs, Shotguns, and other small arms
