@@ -45,7 +45,8 @@ class CfgPatches
     requiredVersion = 0.1;
     requiredAddons[] = {"Dmns_Weapons", "OPTRE_Weapons", "Dmns_Weapons_F_MachineGuns",
                         "A3_Weapons_F", "A3_Weapons_F_Exp", "19_UNSC_Weapons", 
-                        "ace_common", "a3_weapons_f_tank", "ace_reloadlaunchers"}; 
+                        "ace_common", "a3_weapons_f_tank", "ace_reloadlaunchers",
+                        }; 
         /*
         IMPORTANT: If you rely on additional external mods,
         add them here so the game loads them before ours.

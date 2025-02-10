@@ -28,6 +28,7 @@ class CfgAmmo
   class M319_HEAT;             // Base class for 40mm HEAT grenades
   class R_PG32V_F;
   class SmokeShell;
+  class R_MRAAWS_HEAT_F;
 
   // Training (non-lethal) bullet
   class twelfth_20g_bb : BulletBase
@@ -89,4 +90,11 @@ class CfgAmmo
 		simulation = "shotSmoke";
 		deflectionSlowDown = 0;
 	};
+
+  class twelfth_MAAWS_HEAT: R_MRAAWS_HEAT_F{
+    hit = 380;
+    fuseDistance = 30;
+  };
+
+
 };

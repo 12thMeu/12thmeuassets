@@ -283,7 +283,7 @@ class CfgWeapons
   */
 
     // ACE buddy loading compat
-    
+
 	  class Weapon_launch_MRAWS_green_F
 	  {
 	  	ace_reloadlaunchers_enabled=1;

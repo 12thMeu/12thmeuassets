@@ -19,6 +19,18 @@
   Keep consistent naming so players/devs can easily find the correct magazine!
   ==============================================================================
 */
+class CfgMagazineWells
+{
+  class CBA_Carl_Gustaf
+  {
+    twelfth_MAAWS_ammo[] =
+    {
+      "twelfth_HEAT_95"
+    };
+  };
+};
+
+
 class CfgMagazines
 {
   // Forward declarations (inheritance targets)
@@ -33,6 +45,7 @@ class CfgMagazines
   class CA_LauncherMagazine;
   class RPG32_HE_F;
   class OPTRE_60Rnd_762x51_Mag; 		//Base class for MA5B 60round mag
+  class MRAWS_HEAT_F;
 
   // Training Magazine for BB
   class twelfth_20g_mag : OPTRE_32Rnd_762x51_Mag
@@ -198,10 +211,19 @@ class CfgMagazines
   //60 round 7.62x51 Tracer magazine
   class twelfth_60Rnd_762x51_Mag_T: OPTRE_60Rnd_762x51_Mag
   {
-	scope = 2;
-	author = "Sammy";
-	displayName = "60Rnd 7.62x51mm Tracer";
-	tracersEvery=1;
+	  scope = 2;
+	  author = "Sammy";
+	  displayName = "60Rnd 7.62x51mm Tracer";
+	  tracersEvery=1;
+  };
+
+  class twelfth_HEAT_95: MRAWS_HEAT_F
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "MAAWS HEAT 95 Round";
+    mass = 50;
+    ammo = "twelfth_MAAWS_HEAT";  
   };
 
 };
