@@ -34,6 +34,9 @@ class CfgPatches {
     - 19th_Bag_Base: Another modded base class for an alternative RTO backpack.
   */
   class twelfth_backpacks {
+    requiredAddons[] = {
+      "M3_Backpacks"
+    };
     units[] = {  // List of all custom backpack units.
       "twelfth_backpack_standard",
       "twelfth_backpack_standard_light",
@@ -45,7 +48,8 @@ class CfgPatches {
       "twelfth_backpack_forest_heavy",
       "twelfth_backpack_forest_rto",
       "twelfth_backpack_forest_medic",
-      "twelfth_backpack_alt_rto"  // Alternative RTO backpack.
+      "twelfth_backpack_alt_rto",
+      "twelfth_M3_MAAWS_backpack"  // Alternative RTO backpack.
     };
     weapons[] = {};  // No weapons defined.
     requiredVersion = 0.1;  // Minimum required game version.
@@ -55,6 +59,30 @@ class CfgPatches {
 class CfgVehicles {
   class B_AssaultPack_Base;  // Base class for standard backpacks.
   class 19th_Bag_Base;  // Base class for alternative backpacks.
+  class M3_Backpack_Mcm_B;
+
+  class twelfth_M3_MAAWS_backpack: M3_Backpack_Mcm_B {
+  author = "Waylen / Sammy";
+  scope = 2;
+  scopeArsenal = 2;
+  picture = "";
+  displayName = "[12th] MAAWS Backpack";
+  hiddenSelections [] = 
+    {
+      "Container",
+      "Shoulder_straps",
+      "Lid_back",
+      "Lid_front"
+    };
+  hiddenSelectionsTextures [] = 
+    {
+      QP(backpack\maaws\container_co.paa),
+      QP(backpack\maaws\straps_co.paa),
+      QP(backpack\maaws\lid_back.paa),
+      QP(backpack\maaws\lid_front.paa)
+    };
+  };
+
 
   // ---------------------------------------------------------------------------
   //  twelfth_backpack_base
