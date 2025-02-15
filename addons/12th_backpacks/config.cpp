@@ -78,8 +78,8 @@ class CfgVehicles {
     {
       QP(backpack\maaws\container_co.paa),
       QP(backpack\maaws\straps_co.paa),
-      QP(backpack\maaws\lid_back.paa),
-      QP(backpack\maaws\lid_front.paa)
+      QP(backpack\maaws\lid_back_co.paa),
+      QP(backpack\maaws\lid_front_co.paa)
     };
   };
 
@@ -187,8 +187,8 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label = "Camoflauge";
         values[] = {"standard", "forest"};
-        class standard {label = "Standard"; image = XTP(std);};
-        class forest {label = "Forest"; image = XTP(forest);};
+        class forest {label = "Standard"; image = XTP(forest);};
+        class standard {label = "MARPAT"; image = XTP(std);};
       };
       class type {
         alwaysSelectable = 1;

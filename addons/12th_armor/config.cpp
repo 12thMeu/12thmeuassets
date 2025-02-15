@@ -860,7 +860,7 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"std", "forest", "forest90", "urban", "drk"};
+        values[]={"forest", "std", "forest90", "urban", "drk"};
         class forest {label="Standard";     image=XTP(forest);};
         class std {label="MARPAT"; image=XTP(std);};
         class forest90 {label="Forest90";     image=XTP(forest90);};
