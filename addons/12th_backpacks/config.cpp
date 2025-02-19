@@ -61,29 +61,6 @@ class CfgVehicles {
   class 19th_Bag_Base;  // Base class for alternative backpacks.
   class M3_Backpack_Mcm_B;
 
-  class twelfth_M3_MAAWS_backpack: M3_Backpack_Mcm_B {
-  author = "Waylen / Sammy";
-  scope = 2;
-  scopeArsenal = 2;
-  picture = "";
-  displayName = "[12th] MAAWS Backpack";
-  hiddenSelections [] = 
-    {
-      "Container",
-      "Shoulder_straps",
-      "Lid_back",
-      "Lid_front"
-    };
-  hiddenSelectionsTextures [] = 
-    {
-      QP(backpack\maaws\container_co.paa),
-      QP(backpack\maaws\straps_co.paa),
-      QP(backpack\maaws\lid_back_co.paa),
-      QP(backpack\maaws\lid_front_co.paa)
-    };
-  };
-
-
   // ---------------------------------------------------------------------------
   //  twelfth_backpack_base
   // ---------------------------------------------------------------------------
@@ -149,6 +126,31 @@ class CfgVehicles {
     };
     hiddenSelectionsTextures[] = {"", ""};  // No textures by default.
   };
+
+  class twelfth_M3_MAAWS_backpack: M3_Backpack_Mcm_B {
+    author = "Waylen / Sammy";
+    scope = 2;
+    scopeArsenal = 2;
+    picture = "";
+    displayName = "[12th] MAAWS Backpack";
+    hiddenSelections [] = 
+      {
+        "Container",
+        "Shoulder_straps",
+        "Lid_back",
+        "Lid_front"
+      };
+    hiddenSelectionsTextures [] = 
+      {
+        QP(backpack\maaws\container_co.paa),
+        QP(backpack\maaws\straps_co.paa),
+        QP(backpack\maaws\lid_back_co.paa),
+        QP(backpack\maaws\lid_front_co.paa)
+      };
+  
+      maximumLoad = BP_MAXLOAD;  // Load capacity macro.
+      mass = BP_MASS;  // Backpack mass macro.
+    };
 
   /*
     The big macro: BACKPACK_ALLTYPES(CAMOTYPE, DISPLAY_TYPE)
