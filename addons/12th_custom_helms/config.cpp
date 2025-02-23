@@ -51,6 +51,7 @@ class CfgPatches {
       "twelfth_ch_Don",
 //      "twelfth_ch_Dras",
       "twelfth_ch_Dixie",
+	  "twelfth_ch_Ford",
       "twelfth_ch_Gallegos",
       "twelfth_ch_Galvin",
       "twelfth_ch_Geoff",
@@ -72,7 +73,7 @@ class CfgPatches {
       "twelfth_ch_Sammy",
       "twelfth_ch_Simmons",
       "twelfth_ch_Styx",
-	    "twelfth_ch_Thomson",
+	  "twelfth_ch_Thomson",
       "twelfth_ch_Waylen",
       "twelfth_ch_Wilson",
       "twelfth_ch_Wolffe",
@@ -91,6 +92,7 @@ class CfgPatches {
       "twelfth_ch_Don_nv",
 //      "twelfth_ch_Dras_nv",
       "twelfth_ch_Dixie_nv",
+	  "twelfth_ch_Dixie_nv",
       "twelfth_ch_Gallegos_nv",
       "twelfth_ch_Galvin_nv",
       "twelfth_ch_Geoff_nv",
@@ -192,6 +194,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Don)
 //  CUSTOM_HELM_S_AV(Dras)
   CUSTOM_HELM_S_AV(Dixie)
+  CUSTOM_HELM_S_AV(Ford)
   CUSTOM_HELM_S_AV(Gallegos)
   CUSTOM_HELM_S_AV(Galvin)
   CUSTOM_HELM_S_AV(Geoff)
@@ -288,6 +291,7 @@ class XtdGearModels {
           "Don",
 //          "Dras",
           "Dixie",
+		  "Ford",
           "Gallegos",
           "Galvin",
           "Geoff",
@@ -342,6 +346,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Don)
 //    CH_HELM_S_GI(Dras)
     CH_HELM_S_GI(Dixie)
+	CH_HELM_S_GI(Ford)
     CH_HELM_S_GI(Gallegos)
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)
