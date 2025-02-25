@@ -47,6 +47,7 @@ class CfgPatches {
       "twelfth_ch_Bunge",
       "twelfth_ch_Coady",
       "twelfth_ch_Dennis",
+	  "twelfth_ch_Deluge",
       "twelfth_ch_Dom",
       "twelfth_ch_Don",
 //      "twelfth_ch_Dras",
@@ -88,6 +89,7 @@ class CfgPatches {
       "twelfth_ch_Burns_nv",
       "twelfth_ch_Coady_nv",
       "twelfth_ch_Dennis_nv",
+	  "twelfth_ch_Deluge_nv",
       "twelfth_ch_Dom_nv",
       "twelfth_ch_Don_nv",
 //      "twelfth_ch_Dras_nv",
@@ -190,6 +192,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Burns)
   CUSTOM_HELM_S_AV(Coady)
   CUSTOM_HELM_S_AV(Dennis)
+  CUSTOM_HELM_S_AV(Deluge)
   CUSTOM_HELM_S_AV(Dom)
   CUSTOM_HELM_S_AV(Don)
 //  CUSTOM_HELM_S_AV(Dras)
@@ -287,6 +290,7 @@ class XtdGearModels {
           "Bunge",
           "Coady",
           "Dennis",
+		  "Deluge",
           "Dom",
           "Don",
 //          "Dras",
@@ -342,6 +346,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Bunge)
     CH_HELM_S_GI(Coady)
     CH_HELM_S_GI(Dennis)
+	CH_HELM_S_GI(Deluge)
     CH_HELM_S_GI(Dom)
     CH_HELM_S_GI(Don)
 //    CH_HELM_S_GI(Dras)
