@@ -212,7 +212,6 @@ class CfgWeapons {
 //  CUSTOM_HELM_S_AV(Obi)
   CUSTOM_HELM_S_AV(Oliver)
   CUSTOM_HELM_S_AV(Quebec)
-  CUSTOM_HELM_S_AV(Romanov)
   CUSTOM_HELM_S_AV(Schultz)
 //  CUSTOM_HELM_S_AV(Shen)
   CUSTOM_HELM_S_AV(Sand)
@@ -310,7 +309,6 @@ class XtdGearModels {
 //          "Obi",
           "Oliver",
           "Quebec",
-          "Romanov",
           "Schultz",
 //          "Shen",
           "Sand",
@@ -366,7 +364,6 @@ class XtdGearInfos {
 //    CH_HELM_S_GI(Obi)
     CH_HELM_S_GI(Oliver)
     CH_HELM_S_GI(Quebec)
-    CH_HELM_S_GI(Romanov)
     CH_HELM_S_GI(Schultz)
 //    CH_HELM_S_GI(Shen)
     CH_HELM_S_GI(Sand)
