@@ -50,7 +50,7 @@ class CfgPatches {
 	  "twelfth_ch_Deluge",
       "twelfth_ch_Dom",
       "twelfth_ch_Don",
-//      "twelfth_ch_Dras",
+      "twelfth_ch_Dras",
       "twelfth_ch_Dixie",
 	  "twelfth_ch_Ford",
       "twelfth_ch_Gallegos",
@@ -92,7 +92,7 @@ class CfgPatches {
 	  "twelfth_ch_Deluge_nv",
       "twelfth_ch_Dom_nv",
       "twelfth_ch_Don_nv",
-//      "twelfth_ch_Dras_nv",
+      "twelfth_ch_Dras_nv",
       "twelfth_ch_Dixie_nv",
 	  "twelfth_ch_Dixie_nv",
       "twelfth_ch_Gallegos_nv",
@@ -195,7 +195,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Deluge)
   CUSTOM_HELM_S_AV(Dom)
   CUSTOM_HELM_S_AV(Don)
-//  CUSTOM_HELM_S_AV(Dras)
+  CUSTOM_HELM_S_AV(Dras)
   CUSTOM_HELM_S_AV(Dixie)
   CUSTOM_HELM_S_AV(Ford)
   CUSTOM_HELM_S_AV(Gallegos)
@@ -292,7 +292,7 @@ class XtdGearModels {
 		  "Deluge",
           "Dom",
           "Don",
-//          "Dras",
+          "Dras",
           "Dixie",
 		  "Ford",
           "Gallegos",
@@ -347,7 +347,7 @@ class XtdGearInfos {
 	CH_HELM_S_GI(Deluge)
     CH_HELM_S_GI(Dom)
     CH_HELM_S_GI(Don)
-//    CH_HELM_S_GI(Dras)
+    CH_HELM_S_GI(Dras)
     CH_HELM_S_GI(Dixie)
 	CH_HELM_S_GI(Ford)
     CH_HELM_S_GI(Gallegos)
