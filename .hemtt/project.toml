@@ -8,8 +8,7 @@ include = [
     "logo.paa",
     "README.md",
     "LICENSE",
-    "*.pbo",
-    "*.p3d"
+    "*.pbo"
 ]
 
 [version]
