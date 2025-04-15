@@ -2,7 +2,8 @@ class CfgPatches {
   class 12th_items {
     units[] = {
       "12th_Biofoam_C",       // Corpsman-specific Biofoam item
-      "12th_Medigel_C"        // Corpsman-specific Medigel item
+      "12th_Medigel_C",       // Corpsman-specific Medigel item'
+	  "Dons_Radio"		//Radio for mission building
     };
     weapons[] = {};           // No specific weapons defined in this config
     ammo[] = {};              // No specific ammo defined in this config
@@ -43,3 +44,41 @@ class ACE_Medical_Treatment_Actions {
     displayName = "Apply Corpsman Medigel";  // Custom display name for the Medigel
   };
 };
+
+class CfgVehicles
+{ 
+	class Land_Basketball_01_F;
+	class Dons_Radio: Land_Basketball_01_F
+		{
+			scope = 2;
+			scopeCurator = 2;
+			editorCategory ="12th_Assets";
+			editorSubcategory="Misc_Props";
+			destrType="DestructNo";
+			displayname = "Radio";
+			editorPreview="12th_items\icon.paa";
+			model = "12th_items\Dons_Radio.p3d";
+			description = "Radio Greble";
+			ace_dragging_canCarry = 1;
+			ace_dragging_carryPosition[] = {0, 1.5, 0};
+			ace_dragging_carryDirection = 0;
+		};
+};
+/// editor/curator category creation!
+class CfgEditorCategories
+{
+	class 12th_Assets // Category class, you point to it in editorCategory property
+	{
+		displayName = "12th MEU Props"; // Name visible in the list
+	};
+};
+    class CfgEditorSubcategories ///sub category creation.
+{
+	class Misc_Props
+	{
+		displayName="Misc Props";
+	};
+	
+
+};
+
