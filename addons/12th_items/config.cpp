@@ -1,8 +1,10 @@
+
 class CfgPatches {
   class 12th_items {
     units[] = {
       "12th_Biofoam_C",       // Corpsman-specific Biofoam item
-      "12th_Medigel_C"        // Corpsman-specific Medigel item
+      "12th_Medigel_C",	  // Corpsman-specific Medigel item
+	  "Dons_Radio"
     };
     weapons[] = {};           // No specific weapons defined in this config
     ammo[] = {};              // No specific ammo defined in this config
@@ -18,6 +20,24 @@ class CfgPatches {
     };
   };
 };
+
+class CfgEditorCategories
+{
+	class 12th_Assets // Category class, you point to it in editorCategory property
+	{
+		displayName = "12th MEU Props"; // Name visible in the list
+	};
+};
+    class CfgEditorSubcategories ///sub category creation.
+{
+	class Misc_Props
+	{
+		displayName="Misc Props";
+	};
+	
+
+};
+
 
 class CfgFunctions {
   class OPTRE {
@@ -43,3 +63,6 @@ class ACE_Medical_Treatment_Actions {
     displayName = "Apply Corpsman Medigel";  // Custom display name for the Medigel
   };
 };
+
+
+#include "CfgVehicles.hpp"
