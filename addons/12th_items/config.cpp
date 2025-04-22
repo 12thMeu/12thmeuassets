@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+//Fixed with the help of Crowdedlight
 
 class CfgPatches {
   class 12th_items {

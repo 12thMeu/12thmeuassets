@@ -499,7 +499,7 @@ class CfgWeapons {
     picture="";
     displayName="[12th][CH252AA] Helmet";
     ace_hearing_protection=1;
-    ace_hearing_lowerVolume=0.30000001;
+    ace_hearing_lowerVolume=0;
     model="\OPTRE_UNSC_Units\Army\aa_helmet.p3d";
     optreHUDStyle = "ODST_1";
     class ItemInfo: HeadgearItem{
