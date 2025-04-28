@@ -9,8 +9,8 @@ class CfgVehicles
 			editorSubcategory="Misc_Props";
 			destrType="DestructNo";
 			displayname = "Radio";
-			editorPreview = QPATHTOF(icon.paa);
-			model = QPATHTOF(Dons_Radio.p3d);
+			editorPreview = "x\12thMEU\addons\12th_items\dons_radio\icon.paa";
+			model = "x\12thMEU\addons\12th_items\dons_radio\Dons_Radio.p3d";
 			description = "Radio Greble";
 			ace_dragging_canCarry = 1;
 			ace_dragging_carryPosition[] = {0, 1.5, 0};
