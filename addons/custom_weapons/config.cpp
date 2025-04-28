@@ -36,11 +36,6 @@ class UnderBarrelSlot;
 
 class CfgWeapons
 {
-	class optic_Aco;
-	class ItemCore;
-	class InventoryMuzzleItem_Base_F;
-	class InventoryItem_Base_F;
-	class InventoryOpticsItem_Base_F;
 	class Rifle;
 	class Rifle_Base_F: Rifle
 	{
@@ -49,7 +44,12 @@ class CfgWeapons
 	};
 	class PrototypeLaser_01_Base_F: Rifle_Base_F
 	{
+		mass=40;
+		/////////////////////ACE STUFF//////////////////////////////
 		ace_overheating_barrelMass = 20;
+		ACE_barrelLength = 800;
+        ACE_twistDirection = 0;
+		/////////////////////ACE STUFF//////////////////////////////
 		magazines[] = {"3Rnd_test_mag"};
 		reloadAction = "GestureReloadMX";
 		magazineReloadSwitchPhase = 0.4;

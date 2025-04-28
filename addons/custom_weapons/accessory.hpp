@@ -1,3 +1,8 @@
+class optic_Aco;
+class ItemCore;
+class InventoryMuzzleItem_Base_F;
+class InventoryItem_Base_F;
+class InventoryOpticsItem_Base_F;
 class PrototypeBarrel: ItemCore
 	{
 		scope = 2;
@@ -11,15 +16,11 @@ class PrototypeBarrel: ItemCore
 
 			class AmmoCoef
 			{
-				hit = 10;
-				visibleFire = 1.0;
-				audibleFire = 1.0;
-				visibleFireTime = 1.0;
-				audibleFireTime = 1.0;
-				cost = 1.0;
-				typicalSpeed = -1;
-				airFriction = 0;
-			};
+				// bullet ballistic modifiers
+				hit				= 10;
+				typicalSpeed	= 1;
+				airFriction		= 1;
+			}; 
 			muzzleEnd = "zaslehPoint";
 			alternativeFire = "Zasleh2";
 			class MuzzleCoef
@@ -74,7 +75,6 @@ class PrototypeOptics: optic_Aco
 				memoryPointCamera = "opticView";
 				visionMode[] = {"Normal","NVG","Ti"};
 				thermalMode[]={1,0};
-				
 				
 				opticsFlare = 1;
 				opticsDisablePeripherialVision = 1;
