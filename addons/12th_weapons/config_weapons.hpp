@@ -395,57 +395,86 @@ class CfgWeapons
     Assault Rifles
     =============================================================================
   */
-   class twelfth_MA5C: OPTRE_MA5C {
-     author = "Waylen";
-     scope = 2;
-     scopeArsenal = 2;
-     displayName = "[12th] MA5C Assault Rifle";
-     baseWeapon = "twelfth_MA5C";
-     canShootInWater = 1;
-     magazines[] = COMMON_MA5C_MAGAZINES;
+	
+	class twelfth_MA5C: OPTRE_MA5C {
+	author = "Waylen";
+	scope = 2;
+	scopeArsenal = 2;
+	displayName = "[12th] MA5C Assault Rifle";
+	baseWeapon = "twelfth_MA5C";
+	canShootInWater = 1;
+	magazines[] = COMMON_MA5C_MAGAZINES;
 
-     class WeaponSlotsInfo: WeaponSlotsInfo {
-       class MuzzleSlot: MuzzleSlot {
-           compatibleitems[] = { "OPTRE_MA5Suppressor" };
-       };
-       class CowsSlot: CowsSlot {};
-       class PointerSlot: PointerSlot {
-           compatibleitems[] = COMMON_SIGHTS;
-       };
-       class UnderBarrelSlot: UnderBarrelSlot {
-           compatibleitems[] = {};
-       };
-     };
-   };
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {};
+			class PointerSlot: PointerSlot {
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				compatibleitems[] = {};
+			};
+		};
+	};
+	class twelfth_MA6: twelfth_MA5C {
+		model="x\12thMEU\addons\12th_weapons\data\MA6\MA6.p3d";
+		author = "Waylen";
+		scope = 2;
+		scopeArsenal = 2;
+		displayName = "[12th] MA6 Assault Rifle";
+		baseWeapon = "twelfth_MA6";
+		canShootInWater = 1;
+		magazines[] = COMMON_MA5C_MAGAZINES;
 
-  class twelfth_MA5CGL: OPTRE_MA5CGL {
-    author = "Waylen";
-    scope = 2;
-    scopeArsenal = 2;
-    canShootInWater = 1;
-    displayName = "[12th] MA5CGL Assault Rifle";
-    muzzles[] = { "this", "twelfth_M301UGL" };
-    class twelfth_M301UGL: OPTRE_M301UGL {
-        displayName = "M301 Grenade Launcher";
-        descriptionShort = "M301 GL";
-        magazines[] = COMMON_GL_MAGS;
-    };
-    baseWeapon = "twelfth_MA5CGL";
-    magazines[] = COMMON_MA5C_MAGAZINES;        
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_LIGHT_BIPOD;
+			};
+		};
+	};
+	class twelfth_MA5CGL: OPTRE_MA5CGL {
+		author = "Waylen";
+		scope = 2;
+		scopeArsenal = 2;
+		canShootInWater = 1;
+		displayName = "[12th] MA5CGL Assault Rifle";
+		muzzles[] = { "this", "twelfth_M301UGL" };
+		class twelfth_M301UGL: OPTRE_M301UGL {
+			displayName = "M301 Grenade Launcher";
+			descriptionShort = "M301 GL";
+			magazines[] = COMMON_GL_MAGS;
+		};
+		baseWeapon = "twelfth_MA5CGL";
+		magazines[] = COMMON_MA5C_MAGAZINES;        
 
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: MuzzleSlot {
-          compatibleitems[] = { "OPTRE_MA5Suppressor" };
-      };
-      class CowsSlot: CowsSlot {};
-      class PointerSlot: PointerSlot {
-          compatibleitems[] = COMMON_SIGHTS;
-      };
-      class UnderBarrelSlot: UnderBarrelSlot {
-          compatibleitems[] = {};
-      };
-    };
-  };
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+			compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {};
+			class PointerSlot: PointerSlot {
+			compatibleitems[] = COMMON_SIGHTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+			compatibleitems[] = {};
+			};
+		};
+	};
 
   class twelfth_MA37K: OPTRE_MA37K {
     author = "Waylen";
