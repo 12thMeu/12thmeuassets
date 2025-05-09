@@ -64,6 +64,7 @@ class CfgPatches {
       "twelfth_ch_Link",
       "twelfth_ch_Luerssen",
       "twelfth_ch_Moss",
+	  "twelfth_ch_Mcintyre",
 //      "twelfth_ch_Obi",
       "twelfth_ch_Oliver",
 	  "twelfth_ch_Origami",
@@ -108,7 +109,8 @@ class CfgPatches {
       "twelfth_ch_Link_nv",
       "twelfth_ch_Luerssen_nv",
       "twelfth_ch_Moss_nv",
-//      "twelfth_ch_Obi_nv",
+	  "twelfth_ch_Mcintyre_nv",
+	  //      "twelfth_ch_Obi_nv",
       "twelfth_ch_Oliver_nv",
 	  "twelfth_ch_Origami_nv",
       "twelfth_ch_Quebec_nv",
@@ -213,6 +215,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Link)
   CUSTOM_HELM_S_AV(Luerssen)
   CUSTOM_HELM_S_AV(Moss)
+  CUSTOM_HELM_S_AV(Mcintyre)
 //  CUSTOM_HELM_S_AV(Obi)
   CUSTOM_HELM_S_AV(Oliver)
   CUSTOM_HELM_S_AV(Origami)
@@ -312,6 +315,7 @@ class XtdGearModels {
           "Link",
           "Luerssen",
           "Moss",
+		  "Mcintyre",
 //          "Obi",
           "Oliver",
 		  "Origami",
@@ -369,6 +373,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Link)
     CH_HELM_S_GI(Luerssen)
     CH_HELM_S_GI(Moss)
+	CH_HELM_S_GI(Mcintyre)
 //    CH_HELM_S_GI(Obi)
     CH_HELM_S_GI(Oliver)
 	CH_HELM_S_GI(Origami)

@@ -420,14 +420,14 @@ class CfgWeapons
 	};
 	class twelfth_MA6: twelfth_MA5C {
 		model="x\12thMEU\addons\12th_weapons\data\MA6\MA6.p3d";
-		author = "Waylen";
+		author = "Sammy";
 		scope = 2;
 		scopeArsenal = 2;
 		displayName = "[12th] MA6 Assault Rifle";
 		baseWeapon = "twelfth_MA6";
 		canShootInWater = 1;
 		magazines[] = COMMON_MA5C_MAGAZINES;
-
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\MA6.rtm"};
 		class WeaponSlotsInfo: WeaponSlotsInfo {
 			class MuzzleSlot: MuzzleSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
