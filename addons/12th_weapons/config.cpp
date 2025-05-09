@@ -68,3 +68,22 @@ class CfgPatches
 class CBA_DisposableLaunchers {
     twelfth_m96_READY[] = {"twelfth_m96", "twelfth_m96_USED"};
 };
+
+class CfgMovesBasic {
+	class default;
+};
+class CfgMovesMaleSdr: CfgMovesBasic {
+	skeletonName = "OFP2_ManSkeleton";
+	gestures = "CfgGesturesMale";
+	class StandBase;
+	class States {
+		class myTestAnimation: StandBase {
+			file="x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm";
+			looped=1;
+			speed=1;
+			mask = "bodyFullReal";
+			rightHandIKCurve[] = {0};
+			leftHandIKCurve[] = {0};
+		};
+	};
+};

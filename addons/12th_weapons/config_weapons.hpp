@@ -427,7 +427,7 @@ class CfgWeapons
 		baseWeapon = "twelfth_MA6";
 		canShootInWater = 1;
 		magazines[] = COMMON_MA5C_MAGAZINES;
-		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\MA6.rtm"};
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
 		class WeaponSlotsInfo: WeaponSlotsInfo {
 			class MuzzleSlot: MuzzleSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
