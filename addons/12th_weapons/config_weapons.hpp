@@ -418,35 +418,7 @@ class CfgWeapons
 			};
 		};
 	};
-	class twelfth_MA6: twelfth_MA5C {
-		model="x\12thMEU\addons\12th_weapons\data\MA6\MA6.p3d";
-		author = "Sammy";
-		scope = 2;
-		scopeArsenal = 2;
-		displayName = "[12th] MA6 Assault Rifle";
-		baseWeapon = "twelfth_MA6";
-		canShootInWater = 1;
-		magazines[] = COMMON_MA5C_MAGAZINES;
-		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
-		class WeaponSlotsInfo: WeaponSlotsInfo {
-			class MuzzleSlot: MuzzleSlot {
-				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleitems[] = { "OPTRE_MA5Suppressor" };
-			};
-			class CowsSlot: CowsSlot {
-				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
-				compatibleitems[] = COMMON_SIGHTS;
-			};
-			class PointerSlot: PointerSlot {
-				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
-			};
-			class UnderBarrelSlot: UnderBarrelSlot {
-				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
-				compatibleitems[] = COMMON_LIGHT_BIPOD;
-			};
-		};
-	};
+
 	class twelfth_MA5CGL: OPTRE_MA5CGL {
 		author = "Waylen";
 		scope = 2;
@@ -1535,4 +1507,64 @@ class CfgWeapons
       baseWeapon = "twelfth_M319N";
       magazines[] = COMMON_GL_MAGS;
     };
+	
+	class twelfth_MA6: twelfth_MA5C {
+		model="x\12thMEU\addons\12th_weapons\data\MA6\MA6.p3d";
+		author = "Sammy";
+		scope = 2;
+		scopeArsenal = 2;
+		displayName = "[12th] MA6 Assault Rifle";
+		baseWeapon = "twelfth_MA6";
+		canShootInWater = 1;
+		magazines[] = COMMON_MA5C_MAGAZINES;
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_LIGHT_BIPOD;
+			};
+		};
+	};
+	class twelfth_MA6_K: twelfth_MA37K {
+		model="x\12thMEU\addons\12th_weapons\data\MA6_K\MA6_K.p3d";
+		author = "Sammy";
+		scope = 2;
+		scopeArsenal = 2;
+		displayName = "[12th] MA6-K Assault Rifle";
+		baseWeapon = "twelfth_MA6_K";
+		canShootInWater = 1;
+		magazines[] = COMMON_MA5C_MAGAZINES;
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6_K\animations\MA6_K.rtm"};
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_LIGHT_BIPOD;
+			};
+		};
+	};
+	
   };

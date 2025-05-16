@@ -41,6 +41,7 @@ class CfgPatches {
       "twelfth_ch_Aurora",
       "twelfth_ch_Bateman",
       "twelfth_ch_Bert",
+	  "twelfth_ch_Bob",
       "twelfth_ch_Bretek",
       "twelfth_ch_Broad",
       "twelfth_ch_Burns",
@@ -86,6 +87,7 @@ class CfgPatches {
       "twelfth_ch_Aurora_nv",
       "twelfth_ch_Bateman_nv",
       "twelfth_ch_Bert_nv",
+	  "twelfth_ch_Bob_nv",
       "twelfth_ch_Bretek_nv",
       "twelfth_ch_Broad_nv",
       "twelfth_ch_Bunge_nv",
@@ -191,6 +193,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Aurora)
   CUSTOM_HELM_S_AV(Bateman)
   CUSTOM_HELM_S_AV(Bert)
+  CUSTOM_HELM_S_AV(Bob)
   CUSTOM_HELM_S_AV(Bobby)
   CUSTOM_HELM_S_AV(Bretek)
   CUSTOM_HELM_S_AV(Broad)
@@ -291,6 +294,7 @@ class XtdGearModels {
           "Aurora",
           "Bateman",
           "Bert",
+		  "Bob",
           "Bobby",
           "Bretek",
           "Broad",
@@ -349,6 +353,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Aurora)
     CH_HELM_S_GI(Bateman)
     CH_HELM_S_GI(Bert)
+	CH_HELM_S_GI(Bob)
     CH_HELM_S_GI(Bobby)
     CH_HELM_S_GI(Bretek)
     CH_HELM_S_GI(Broad)

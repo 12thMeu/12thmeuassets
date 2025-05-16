@@ -44,6 +44,8 @@ class CfgWeapons
 	};
 	class PrototypeLaser_01_Base_F: Rifle_Base_F
 	{
+		editorCategory ="12th_Assets";
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\custom_weapons\data\animations\llr.rtm"};
 		mass=40;
 		/////////////////////ACE STUFF//////////////////////////////
 		ace_overheating_barrelMass = 20;
@@ -84,7 +86,7 @@ class CfgWeapons
 			{
 				displayName = "$STR_A3_CowsSlot0";
 				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
-				compatibleItems[] = {"PrototypeOptics","optic_Aco"};
+				compatibleItems[] = {"PrototypeOptics"};
 				iconPosition[] = {0.5,0.35};
 				iconScale = 0.2;
 			};
@@ -164,7 +166,7 @@ class CfgWeapons
 	class PrototypeLaser_01_F: PrototypeLaser_01_Base_F
 	{
 		scope = 2;
-		displayName = "Prototype LLR";
+		displayName = "[12th] Prototype LLR";
 		descriptionShort = "A high powered, slow firerate weapon meant for cracking medium targets.";
 		model = "x\12thMEU\addons\Custom_Weapons\data\PrototypeLaser.p3d";
 		UiPicture = "\A3\Weapons_F\Data\UI\icon_gl_CA.paa";
@@ -179,4 +181,22 @@ class CfgWeapons
 	/// include accessory from separate file to not clutter this one
 	#include "accessory.hpp"
 	
+};
+class CfgMovesBasic {
+	class default;
+};
+class CfgMovesMaleSdr: CfgMovesBasic {
+	skeletonName = "OFP2_ManSkeleton";
+	gestures = "CfgGesturesMale";
+	class StandBase;
+	class States {
+		class LLRGunHoldAnim: StandBase {
+			file="x\12thMEU\addons\custom_weapons\data\animations\llr.rtm";
+			looped=1;
+			speed=1;
+			mask = "bodyFullReal";
+			rightHandIKCurve[] = {0};
+			leftHandIKCurve[] = {0};
+		};
+	};
 };

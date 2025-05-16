@@ -81,6 +81,19 @@ class Stage7 {
 		pos[] = { 0, 0, 0 };
 	};
 };
+class Stage8
+{
+	texture = "x\12thMEU\addons\12th_weapons\data\MA6\MA6_CA.paa";
+	texGen = 0;
+	uvSource = "tex";
+	class uvTransform
+	{
+		aside[] = {1,0,0};
+		up[] = {0,1,0};
+		dir[] = {0,0,1};
+		pos[] = {0,0,0};
+	};
+};
 class StageTI {
 	texture = "a3\data_f\default_vehicle_ti_ca.paa";
 };
