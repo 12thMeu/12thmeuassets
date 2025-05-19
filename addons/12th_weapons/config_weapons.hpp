@@ -61,7 +61,9 @@ class CfgWeapons
   class InventoryUnderItem_Base_F;  
   class dzn_MG_Tripod_Universal;  
   class dzn_MG_Tripod_Universal_Carry;  
-
+  class ACE_SPIR;
+  class OPTRE_M393_Scope;
+  
   /*
     =============================================================================
     MG Tripod Definitions
@@ -1507,7 +1509,11 @@ class CfgWeapons
       baseWeapon = "twelfth_M319N";
       magazines[] = COMMON_GL_MAGS;
     };
-	
+  /*
+    =============================================================================
+    MA6 Variants
+    =============================================================================
+  */
 	class twelfth_MA6: twelfth_MA5C {
 		model="x\12thMEU\addons\12th_weapons\data\MA6\MA6.p3d";
 		author = "Sammy";
@@ -1542,7 +1548,7 @@ class CfgWeapons
 		author = "Sammy";
 		scope = 2;
 		scopeArsenal = 2;
-		displayName = "[12th] MA6-K Assault Rifle";
+		displayName = "[12th] MA6-K Carbine";
 		baseWeapon = "twelfth_MA6_K";
 		canShootInWater = 1;
 		magazines[] = COMMON_MA5C_MAGAZINES;
@@ -1566,5 +1572,51 @@ class CfgWeapons
 			};
 		};
 	};
-	
+	class twelfth_MA6_D: twelfth_M392 {
+		model="x\12thMEU\addons\12th_weapons\data\MA6_D\MA6_D.p3d";
+		author = "Sammy";
+		scope = 2;
+		scopeArsenal = 2;
+		displayName = "[12th] MA6-D Marksman Rifle";
+		baseWeapon = "twelfth_MA6_D";
+		canShootInWater = 1;
+		magazines[] = COMMON_MA5C_MAGAZINES;
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_LIGHT_BIPOD;
+			};
+		};
+	};
+  /*
+    =============================================================================
+    Custom Attachments
+    =============================================================================
+  */
+	class MA6_K_SmartLink: OPTRE_M393_Scope{
+		author = "Sammy";
+		displayName = "[12th] MA6-K Smartlink";
+		descriptionShort = "MA6-K Smartlink";
+		model = "x\12thMEU\addons\12th_weapons\data\MA6_Smartlink\MA6_K_SmartLink.p3d";
+	};
+/* 	class MA6_Flashlight: ACE_SPIR{
+		author = "Sammy";
+		class ItemInfo: InventoryUnderItem_Base_F
+		{
+			allowedSlots[]={};
+		};
+	}; */
   };
