@@ -62,7 +62,8 @@ class CfgWeapons
   class dzn_MG_Tripod_Universal;  
   class dzn_MG_Tripod_Universal_Carry;  
   class ACE_SPIR;
-  class OPTRE_M393_Scope;
+  class ACE_optic_Hamr_2D;
+  class optic_DMS;
   
   /*
     =============================================================================
@@ -1514,6 +1515,7 @@ class CfgWeapons
     MA6 Variants
     =============================================================================
   */
+	//Base MA6
 	class twelfth_MA6: twelfth_MA5C {
 		model="x\12thMEU\addons\12th_weapons\data\MA6\MA6.p3d";
 		author = "Sammy";
@@ -1543,6 +1545,8 @@ class CfgWeapons
 			};
 		};
 	};
+	
+	//Carbine
 	class twelfth_MA6_K: twelfth_MA37K {
 		model="x\12thMEU\addons\12th_weapons\data\MA6_K\MA6_K.p3d";
 		author = "Sammy";
@@ -1572,6 +1576,8 @@ class CfgWeapons
 			};
 		};
 	};
+	
+	//DM Rifle
 	class twelfth_MA6_D: twelfth_M392 {
 		model="x\12thMEU\addons\12th_weapons\data\MA6_D\MA6_D.p3d";
 		author = "Sammy";
@@ -1601,16 +1607,72 @@ class CfgWeapons
 			};
 		};
 	};
+	
+	// AR Rifle
+	class twelfth_MA6_A_BOX: twelfth_MMG33_T{
+		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_BOX.p3d";
+		author = "Sammy";
+		displayName = "[12th] MA6-A Box";
+		baseWeapon = "twelfth_MA6_A_BOX";
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_LIGHT_BIPOD;
+			};
+		};
+	};
+		class twelfth_MA6_A_DRUM: twelfth_MMG33_T{
+		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_DRUM.p3d";
+		author = "Sammy";
+		displayName = "[12th] MA6-A Drum";
+		baseWeapon = "twelfth_MA6_A_DRUM";
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_LIGHT_BIPOD;
+			};
+		};
+	};
   /*
     =============================================================================
     Custom Attachments
     =============================================================================
   */
-	class MA6_K_SmartLink: OPTRE_M393_Scope{
+	class MA6_K_SmartLink: ACE_optic_Hamr_2D{
 		author = "Sammy";
 		displayName = "[12th] MA6-K Smartlink";
 		descriptionShort = "MA6-K Smartlink";
 		model = "x\12thMEU\addons\12th_weapons\data\MA6_Smartlink\MA6_K_SmartLink.p3d";
+	};
+	class MA6_SmartLink: optic_DMS{
+		author = "Sammy";
+		displayName = "[12th] MA6 Smartlink";
+		descriptionShort = "MA6 Smartlink";
+		model = "x\12thMEU\addons\12th_weapons\data\MA6_Smartlink\MA6_SmartLink.p3d";
 	};
 /* 	class MA6_Flashlight: ACE_SPIR{
 		author = "Sammy";
