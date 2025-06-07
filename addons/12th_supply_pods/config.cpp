@@ -66,8 +66,9 @@ class CfgVehicles {
     editorSubcategory = "twelfth_MEU_Supplies"; // Editor subfolder
 
     // The maximum items/magazines/weapons this supply pod can hold
-    transportMaxWeapons = 25;
-    transportMaxMagazines = 100;
+    transportMaxWeapons = 50;
+    transportMaxMagazines = 200;
+	maximumLoad = 7500;
 
     // HiddenSelections for retexturing
     hiddenSelections[] = {"camo"};
@@ -175,12 +176,15 @@ class CfgVehicles {
     class TransportMagazines {
       class _xx_OPTRE_M41_Twin_HEAT_SACLOS { magazine = "OPTRE_M41_Twin_HEAT_SACLOS"; count = 4; };
       class _xx_OPTRE_M41_Twin_HEAT_SALH { magazine = "OPTRE_M41_Twin_HEAT_SALH"; count = 4; };
-      class _xx_OPTRE_M41_Twin_HEAT_Thermal { magazine = "OPTRE_M41_Twin_HEAT_Thermal"; count = 4; };
+      //class _xx_OPTRE_M41_Twin_HEAT_Thermal { magazine = "OPTRE_M41_Twin_HEAT_Thermal"; count = 4; };
       class _xx_TCF_2Rnd_50x137_SALH { magazine = "TCF_2Rnd_50x137_SALH"; count = 4; };
       class _xx_TCF_2Rnd_50x137_AA { magazine = "TCF_2Rnd_50x137_AA"; count = 4; };
       class _xx_TCF_2Rnd_50x137_PEN { magazine = "TCF_2Rnd_50x137_PEN"; count = 4; };
       class _xx_TCF_2Rnd_50x137_THERMO { magazine = "TCF_2Rnd_50x137_THERMO"; count = 4; };
       class _xx_TCF_2Rnd_50x137_SACLOS { magazine = "TCF_2Rnd_50x137_SACLOS"; count = 4; };
+	  class _xx_MRAWS_HE_F { magazine = "MRAWS_HE_F"; count = 4; };
+	  class _xx_twelfth_HEAT_95 { magazine = "twelfth_HEAT_95"; count = 4; };
+	  class _xx_MRAWS_HEAT_F { magazine = "MRAWS_HEAT_F"; count = 4; };
     };
     class TransportWeapons {
       class _xx_twelfth_m96 { weapon = "twelfth_m96"; count = 10; };

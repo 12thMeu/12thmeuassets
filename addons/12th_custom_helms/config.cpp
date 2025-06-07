@@ -66,6 +66,7 @@ class CfgPatches {
       "twelfth_ch_Luerssen",
       "twelfth_ch_Moss",
 	  "twelfth_ch_Mcintyre",
+	  "twelfth_ch_McMillian",
 //      "twelfth_ch_Obi",
       "twelfth_ch_Oliver",
 	  "twelfth_ch_Origami",
@@ -112,6 +113,7 @@ class CfgPatches {
       "twelfth_ch_Luerssen_nv",
       "twelfth_ch_Moss_nv",
 	  "twelfth_ch_Mcintyre_nv",
+	  "twelfth_ch_McMillian_nv",
 	  //      "twelfth_ch_Obi_nv",
       "twelfth_ch_Oliver_nv",
 	  "twelfth_ch_Origami_nv",
@@ -132,7 +134,8 @@ class CfgPatches {
       "twelfth_ch_Wulf_nv",
       "twelfth_pilot_ch_base",
       "twelfth_pilot_ch_penquite",
-      "twelfth_pilot_ch_waylen"
+      "twelfth_pilot_ch_waylen",
+	  "twelfth_pilot_ch_moss"
     };
     requiredAddons[]= {
       "A3_Armor_F_Beta",
@@ -219,6 +222,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Luerssen)
   CUSTOM_HELM_S_AV(Moss)
   CUSTOM_HELM_S_AV(Mcintyre)
+  CUSTOM_HELM_S_AV(McMillian)
 //  CUSTOM_HELM_S_AV(Obi)
   CUSTOM_HELM_S_AV(Oliver)
   CUSTOM_HELM_S_AV(Origami)
@@ -260,6 +264,7 @@ class CfgWeapons {
 
   CUSTOM_PILOT_HELM(penquite, "[12th][Pilot][Customs] Penquite",default,penquite,default,default,default)
   CUSTOM_PILOT_HELM(waylen, "[12th][Pilot][Customs] Waylen",waylen,waylen,default,default,default)
+  CUSTOM_PILOT_HELM(Moss, "[12th][Pilot][Customs] Moss",moss,moss,default,default,default)
 
 };
 
@@ -320,6 +325,7 @@ class XtdGearModels {
           "Luerssen",
           "Moss",
 		  "Mcintyre",
+		  "McMillian",
 //          "Obi",
           "Oliver",
 		  "Origami",
@@ -379,6 +385,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Luerssen)
     CH_HELM_S_GI(Moss)
 	CH_HELM_S_GI(Mcintyre)
+	CH_HELM_S_GI(McMillian)
 //    CH_HELM_S_GI(Obi)
     CH_HELM_S_GI(Oliver)
 	CH_HELM_S_GI(Origami)
