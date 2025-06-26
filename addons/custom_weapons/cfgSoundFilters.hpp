@@ -2,7 +2,7 @@
 
 class cfgDistanceFilters
 {
-	class Test_Weapon_01_ShotDistanceFreqAttenuationFilter
+	class weaponShotDistanceFreqAttenuationFilter
 	{
 		type = "lowPassFilter"; // type of filter
 		minCutoffFrequency = 300; // cutoff frequency is constantly falling with the distance to minCutoffFrequency value
@@ -12,7 +12,7 @@ class cfgDistanceFilters
 		powerFactor = 32; // parameter of function which describes relationship between distance and cutoff frequency, higher value means sooner attenuation of higher frequencies
 	};
 
-	class Test_Weapon_01_ShotTailDistanceFreqAttenuationFilter
+/* 	class PrototypeLaser_01_Base_F_ShotTailDistanceFreqAttenuationFilter
 	{
 		type = "lowPassFilter";
 		minCutoffFrequency = 300;
@@ -20,5 +20,5 @@ class cfgDistanceFilters
 		innerRange = 10;
 		range = 1500;
 		powerFactor = 32;
-	};
+	}; */
 };

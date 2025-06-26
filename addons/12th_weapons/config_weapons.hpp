@@ -37,6 +37,8 @@ class CfgWeapons
   class OPTRE_BR45;
   class OPTRE_Commando;
   class OPTRE_M247;
+  class OPTRE_M247A1;
+  class OPTRE_M247A1_Stripped;
   class OPTRE_M319;
   class OPTRE_M319N;
   class OPTRE_M301UGL; // Base class for our UGLs
@@ -45,26 +47,26 @@ class CfgWeapons
   class GL_3GL_F;                   // Base class for grenade launchers
   class UGL_F;
   class InventoryOpticsItem_Base_F; // Base class for optics
-  class 19_UNSC_M6C; 
-  class 19_UNSC_M7; 
-  class 19_UNSC_M7_Side;  
-  class 19_UNSC_M90;  
-  class 19_UNSC_MA5A;   
-  class 19_UNSC_MA5A_gl;  
-  class 19_UNSC_MA5B; 
-  class 19_UNSC_br55; 
-  class 19_UNSC_br55_gl;  
-  class 19_UNSC_br55_HB;  
-  class 19_UNSC_br55_HB_gl; 
-  class 19_UNSC_M392; 
+  class 19_UNSC_M6C;
+  class 19_UNSC_M7;
+  class 19_UNSC_M7_Side;
+  class 19_UNSC_M90;
+  class 19_UNSC_MA5A;
+  class 19_UNSC_MA5A_gl;
+  class 19_UNSC_MA5B;
+  class 19_UNSC_br55;
+  class 19_UNSC_br55_gl;
+  class 19_UNSC_br55_HB;
+  class 19_UNSC_br55_HB_gl;
+  class 19_UNSC_M392;
   class launch_MRAWS_base_F;
-  class InventoryUnderItem_Base_F;  
-  class dzn_MG_Tripod_Universal;  
-  class dzn_MG_Tripod_Universal_Carry;  
+  class InventoryUnderItem_Base_F;
+  class dzn_MG_Tripod_Universal;
+  class dzn_MG_Tripod_Universal_Carry;
   class ACE_SPIR;
   class ACE_optic_Hamr_2D;
   class optic_DMS;
-  
+  class TCF_Saw_Gamma_Stealth;
   /*
     =============================================================================
     MG Tripod Definitions
@@ -142,11 +144,11 @@ class CfgWeapons
 
     class twelfth_m96: Launcher_Base_F { // launcher when on back
       author = "DemonicOnPC; Waylen";
-      scope = 2; 
+      scope = 2;
       scopeArsenal = 2;
       baseWeapon = "twelfth_m96";
       displayName = "[12th] M96 LAW - Mk VI"; // usual displayName
-      //displayName = "[12th] M96 LAW - Mk VI (B)"; // debug displayname 
+      //displayName = "[12th] M96 LAW - Mk VI (B)"; // debug displayname
 
       magazines[] = { "CBA_FakeLauncherMagazine" }; // When stowed/backpacked, it does not carry a real rocket.
 
@@ -269,7 +271,7 @@ class CfgWeapons
         scope = 1;
         scopeArsenal = 1;
         baseWeapon = "twelfth_m96_USED";
-        
+
         magazines[] = { "CBA_FakeLauncherMagazine" };
         weaponPoolAvailable = 0;
 
@@ -308,7 +310,7 @@ class CfgWeapons
 	    displayName = "[12th] MAAWS (Green)";
 	    baseWeapon = "twelfth_MAAWS_base";
 	    scope = 2;
-	    hiddenSelectionsTextures[] = 
+	    hiddenSelectionsTextures[] =
       {
         "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_darkgreen_01_F_co",
         "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"
@@ -325,7 +327,7 @@ class CfgWeapons
 	    displayName = "[12th] MAAWS (Olive)";
 	    baseWeapon = "twelfth_MAAWS_olive";
 	    scope = 2;
-	    hiddenSelectionsTextures[] = 
+	    hiddenSelectionsTextures[] =
       {
 			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_olive_01_F_co",
 			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"
@@ -337,7 +339,7 @@ class CfgWeapons
 	    displayName = "[12th] MAAWS (Sand)";
 	    baseWeapon = "twelfth_MAAWS_sand";
 	    scope = 2;
-	    hiddenSelectionsTextures[] = 
+	    hiddenSelectionsTextures[] =
       {
 			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_sand_01_F_co",
 			  "\A3\Weapons_F_Tank\Launchers\MRAWS\Data\launch_MRAWS_02_F_co"
@@ -398,7 +400,7 @@ class CfgWeapons
     Assault Rifles
     =============================================================================
   */
-	
+
 	class twelfth_MA5C: OPTRE_MA5C {
 	author = "Waylen";
 	scope = 2;
@@ -435,7 +437,7 @@ class CfgWeapons
 			magazines[] = COMMON_GL_MAGS;
 		};
 		baseWeapon = "twelfth_MA5CGL";
-		magazines[] = COMMON_MA5C_MAGAZINES;        
+		magazines[] = COMMON_MA5C_MAGAZINES;
 
 		class WeaponSlotsInfo: WeaponSlotsInfo {
 			class MuzzleSlot: MuzzleSlot {
@@ -1226,6 +1228,35 @@ class CfgWeapons
       };
     };
 
+	class twelfth_M739B: TCF_Saw_Gamma_Stealth
+	{
+	  author = "Sammy";
+      scope = 2;
+      scopeArsenal = 2;
+      displayName = "[12th] M739B LMG";
+      baseWeapon = "twelfth_M739B";
+	  magazines[] = COMMON_LMG_MAGAZINES;
+	  class WeaponSlotsInfo : WeaponSlotsInfo
+      {
+        class MuzzleSlot : MuzzleSlot
+        {
+          compatibleitems[] = {"OPTRE_M7_silencer"};
+        };
+        class CowsSlot : CowsSlot
+        {
+          compatibleItems[] = COMMON_SIGHTS;
+        };
+        class PointerSlot : PointerSlot
+        {
+          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+        };
+        class UnderBarrelSlot : UnderBarrelSlot
+        {
+          compatibleitems[] = COMMON_LIGHT_BIPOD;
+        };
+      };
+	};
+
     // VK78 Commando configuration
 
     class twelfth_Commando : OPTRE_Commando
@@ -1266,12 +1297,7 @@ class CfgWeapons
         author = "Jack, Waylen";
         displayName = "[12th] M33-T";
         baseWeapon = "twelfth_M33_T";
-        magazines[] = {
-          "twelfth_100Rnd_762x51_Box", "twelfth_100Rnd_762x51_Box_T",
-          "twelfth_200Rnd_762x51_Box", "twelfth_200Rnd_762x51_Box_T",
-          "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer",
-          "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow"
-          };
+        magazines[] = COMMON_LMG_MAGAZINES;
         modes[] = { "FullAuto", "FullAutoFast" };
 	      distanceZoomMin=100;
 	      distanceZoomMax=700;
@@ -1287,7 +1313,7 @@ class CfgWeapons
         ace_overheating_dispersion = 0.25;
         ace_overheating_jamTypesAllowed[] = {"Feed", "Fire", "Eject", "Extract"};
         ace_overheating_closedbolt = 1;
-        ace_overheating_barrelMass = 3.5;        
+        ace_overheating_barrelMass = 3.5;
 
         class FullAuto: FullAuto {
             dispersion = 0.00116;
@@ -1343,7 +1369,7 @@ class CfgWeapons
           };
         };
     };
-        
+
     class twelfth_MMG33_T : Dmns_M33_T
     {
       author = "Jack"; // Thank you!
@@ -1440,13 +1466,7 @@ class CfgWeapons
       baseWeapon = "twelfth_M247";
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
-      magazines[] = {
-          "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer",
-          "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", 
-          "twelfth_100Rnd_762x51_Box", "twelfth_100Rnd_762x51_Box_T",
-          "twelfth_200Rnd_762x51_Box", "twelfth_200Rnd_762x51_Box_T",
-          "twelfth_400Rnd_762x51_Box", "twelfth_400Rnd_762x51_Box_T"
-          };
+      magazines[] = COMMON_LMG_MAGAZINES;
       modes[] = {"FullAuto", "FullAutoFast"};
       class FullAuto : FullAuto
       {
@@ -1485,6 +1505,103 @@ class CfgWeapons
         };
       };
     };
+	class twelfth_M247A1 : OPTRE_M247A1
+    {
+      author = "Weber";
+      scope = 2;
+      scopeArsenal = 2;
+      displayName = "[12th] M247A1 GPMG";
+      baseWeapon = "twelfth_M247A1";
+      DEPLOYED_GESTURE_GPMG;
+      RELOAD_EH;
+      magazines[] = COMMON_LMG_MAGAZINES;
+      modes[] = {"FullAuto", "FullAutoFast"};
+      class FullAuto : FullAuto
+      {
+        dispersion = 0.00116;
+        minRange = 0;
+        minRangeProbab = 0.9;
+        midRange = 15;
+        midRangeProbab = 0.7;
+        maxRange = 30;
+        maxRangeProbab = 0.1;
+        aiRateOfFire = 1e-06;
+        reloadTime = 0.09;
+      };
+      class FullAutoFast : FullAuto
+      {
+        reloadTime = 0.07;
+        textureType = "fastAuto";
+      };
+      class WeaponSlotsInfo : WeaponSlotsInfo
+      {
+        class MuzzleSlot : MuzzleSlot
+        {
+          compatibleitems[] = {"OPTRE_MA5Suppressor"};
+        };
+        class CowsSlot : CowsSlot
+        {
+          compatibleItems[] = COMMON_SIGHTS;
+        };
+        class PointerSlot : PointerSlot
+        {
+          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+        };
+        class UnderBarrelSlot : UnderBarrelSlot
+        {
+          compatibleitems[] = COMMON_HEAVY_BIPOD;
+        };
+      };
+    };
+	class twelfth_M247A1_Stripped : OPTRE_M247A1_Stripped
+    {
+      author = "Sammy";
+      scope = 2;
+      scopeArsenal = 2;
+      displayName = "[12th] M247A1 GPMG Stripped";
+      baseWeapon = "twelfth_M247A1_Stripped";
+      DEPLOYED_GESTURE_GPMG;
+      RELOAD_EH;
+      magazines[] = COMMON_LMG_MAGAZINES;
+      modes[] = {"FullAuto", "FullAutoFast"};
+      class FullAuto : FullAuto
+      {
+        dispersion = 0.00116;
+        minRange = 0;
+        minRangeProbab = 0.9;
+        midRange = 15;
+        midRangeProbab = 0.7;
+        maxRange = 30;
+        maxRangeProbab = 0.1;
+        aiRateOfFire = 1e-06;
+        reloadTime = 0.09;
+      };
+      class FullAutoFast : FullAuto
+      {
+        reloadTime = 0.07;
+        textureType = "fastAuto";
+      };
+      class WeaponSlotsInfo : WeaponSlotsInfo
+      {
+        class MuzzleSlot : MuzzleSlot
+        {
+          compatibleitems[] = {"OPTRE_MA5Suppressor"};
+        };
+        class CowsSlot : CowsSlot
+        {
+          compatibleItems[] = COMMON_SIGHTS;
+        };
+        class PointerSlot : PointerSlot
+        {
+          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+        };
+        class UnderBarrelSlot : UnderBarrelSlot
+        {
+          compatibleitems[] = COMMON_HEAVY_BIPOD;
+        };
+      };
+    };
+
   /*
     =============================================================================
     Grenade Launchers
@@ -1545,7 +1662,7 @@ class CfgWeapons
 			};
 		};
 	};
-	
+
 	//Carbine
 	class twelfth_MA6_K: twelfth_MA37K {
 		model="x\12thMEU\addons\12th_weapons\data\MA6_K\MA6_K.p3d";
@@ -1576,7 +1693,7 @@ class CfgWeapons
 			};
 		};
 	};
-	
+
 	//DM Rifle
 	class twelfth_MA6_D: twelfth_M392 {
 		model="x\12thMEU\addons\12th_weapons\data\MA6_D\MA6_D.p3d";
@@ -1607,7 +1724,7 @@ class CfgWeapons
 			};
 		};
 	};
-	
+
 	// AR Rifle
 	class twelfth_MA6_A_BOX: twelfth_MMG33_T{
 		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_BOX.p3d";
@@ -1633,7 +1750,7 @@ class CfgWeapons
 			};
 		};
 	};
-		class twelfth_MA6_A_DRUM: twelfth_MMG33_T{
+	class twelfth_MA6_A_DRUM: twelfth_MMG33_T{
 		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_DRUM.p3d";
 		author = "Sammy";
 		displayName = "[12th] MA6-A Drum";
@@ -1681,4 +1798,4 @@ class CfgWeapons
 			allowedSlots[]={};
 		};
 	}; */
-  };
+	};

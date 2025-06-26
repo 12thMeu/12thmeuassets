@@ -12,7 +12,6 @@ class PrototypeBarrel: ItemCore
 		class ItemInfo: InventoryMuzzleItem_Base_F
 		{
 			mass=10;
-			soundTypeIndex = 1;
 
 			class AmmoCoef
 			{

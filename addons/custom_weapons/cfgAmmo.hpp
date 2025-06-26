@@ -3,8 +3,7 @@ class CfgAmmo
 	class BulletBase;
 	class StandardLiquidLaserAmmo: BulletBase
 	{
-		
-		hit = 400;indirectHit = 0;indirectHitRange = 0; 
+		hit = 300;indirectHit = 0;indirectHitRange = 0; 
 		cartridge = "FxCartridge_65_caseless"; /// seems like standard 6.5mm round
 		visibleFire = 5; /// how big does the shooter seem to be for AI to take notice after he shoots
 		audibleFire = 8; /// how big does the shooter seem to be for AI to take notice after he shoots

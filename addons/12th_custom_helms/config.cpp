@@ -38,6 +38,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {
       "twelfth_custom_helm_base",
+	  "twelfth_ch_Abrams",
       "twelfth_ch_Aurora",
       "twelfth_ch_Bateman",
       "twelfth_ch_Bert",
@@ -71,12 +72,15 @@ class CfgPatches {
       "twelfth_ch_Oliver",
 	  "twelfth_ch_Origami",
       "twelfth_ch_Quebec",
+	  "twelfth_ch_Quinn",
+	  "twelfth_ch_Rex",
       "twelfth_ch_Romanov",
       "twelfth_ch_Schultz",
 //      "twelfth_ch_Shen",
       "twelfth_ch_Sand",
       "twelfth_ch_Sammy",
       "twelfth_ch_Simmons",
+	  "twelfth_ch_Sullivan",
       "twelfth_ch_Styx",
 	  "twelfth_ch_Thomson",
 	  "twelfth_ch_Vickers",
@@ -85,6 +89,7 @@ class CfgPatches {
       "twelfth_ch_Wolffe",
       "twelfth_ch_Whirley",
       "twelfth_ch_Wulf",
+	  "twelfth_ch_Abrams_nv",
       "twelfth_ch_Aurora_nv",
       "twelfth_ch_Bateman_nv",
       "twelfth_ch_Bert_nv",
@@ -118,12 +123,15 @@ class CfgPatches {
       "twelfth_ch_Oliver_nv",
 	  "twelfth_ch_Origami_nv",
       "twelfth_ch_Quebec_nv",
+	  "twelfth_ch_Quinn_nv",
+	  "twelfth_ch_Rex_nv",
       "twelfth_ch_Romanov_nv",
       "twelfth_ch_Schultz_nv",
 //      "twelfth_ch_Shen_nv",
       "twelfth_ch_Sand_nv",
       "twelfth_ch_Sammy_nv",
       "twelfth_ch_Simmons_nv",
+	  "twelfth_ch_Sullivan_nv",
       "twelfth_ch_Styx_nv",
 	  "twelfth_ch_Thomson_nv",
 	  "twelfth_ch_Vickers_nv",
@@ -193,6 +201,7 @@ class CfgWeapons {
   */
 
   // -- Standard Helmets --
+  CUSTOM_HELM_S_AV(Abrams)
   CUSTOM_HELM_S_AV(Aurora)
   CUSTOM_HELM_S_AV(Bateman)
   CUSTOM_HELM_S_AV(Bert)
@@ -227,11 +236,15 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Oliver)
   CUSTOM_HELM_S_AV(Origami)
   CUSTOM_HELM_S_AV(Quebec)
+  CUSTOM_HELM_S_AV(Quinn)
+  CUSTOM_HELM_S_AV(Rex)
+  CUSTOM_HELM_S_AV(Romanov)
   CUSTOM_HELM_S_AV(Schultz)
 //  CUSTOM_HELM_S_AV(Shen)
   CUSTOM_HELM_S_AV(Sand)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Simmons)
+  CUSTOM_HELM_S_AV(Sullivan)
   CUSTOM_HELM_S_AV(Spector)
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Thomson)
@@ -296,6 +309,7 @@ class XtdGearModels {
         alwaysSelectable=1;
         label="Member";
         values[]={
+			"Abrams",
           "Aurora",
           "Bateman",
           "Bert",
@@ -318,7 +332,7 @@ class XtdGearModels {
           "Geoff",
           "Gaunt",
           "Jenkins",
-          "Kasper",
+//          "Kasper",
           "Kiens",
           "LeDoux",
           "Link",
@@ -356,6 +370,7 @@ class XtdGearInfos {
       (visor = "Yes") and NV (visor = "No") for each name in "member".
     */
   class CfgWeapons {
+    CH_HELM_S_GI(Abrams)
     CH_HELM_S_GI(Aurora)
     CH_HELM_S_GI(Bateman)
     CH_HELM_S_GI(Bert)

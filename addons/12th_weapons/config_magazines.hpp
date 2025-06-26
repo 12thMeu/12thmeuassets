@@ -46,6 +46,7 @@ class CfgMagazines
   class RPG32_HE_F;
   class OPTRE_60Rnd_762x51_Mag; 		//Base class for MA5B 60round mag
   class MRAWS_HEAT_F;
+  class TCF_Gamma_762_mag_Tracer;
 
   // Training Magazine for BB
   class twelfth_20g_mag : OPTRE_32Rnd_762x51_Mag
@@ -225,5 +226,11 @@ class CfgMagazines
     mass = 50;
     ammo = "twelfth_MAAWS_HEAT";  
   };
-
+  //200 Round SAW mag
+  class twelfth_200Rnd_762x51_Drum: TCF_Gamma_762_mag_Tracer{
+	  scope = 2;
+	  author = "Sammy";
+	  count=200;
+	  displayName = "200Rnd 7.62x51mm Tracer";
+  };
 };

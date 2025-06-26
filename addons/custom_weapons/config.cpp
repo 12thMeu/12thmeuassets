@@ -24,15 +24,13 @@ class MuzzleSlot;
 class CowsSlot;
 class PointerSlot;
 class UnderBarrelSlot;
+class BaseSoundModeType;
 
 #include "cfgRecoils.hpp" /// specific recoil patterns for this rifle
 #include "cfgMagazines.hpp" /// specific magazines for this rifle
 #include "cfgAmmo.hpp" /// specific ammo for this rifle
-#include "cfgSoundCurves.hpp" // attenuation curves
 #include "cfgSoundShaders.hpp" // SoundShaders
 #include "cfgSoundSets.hpp" // SoundSets
-#include "cfgSound3DProcessors.hpp" // 3D processors configuration
-#include "cfgSoundFilters.hpp" // DSP filters configuration
 
 class CfgWeapons
 {
@@ -108,9 +106,9 @@ class CfgWeapons
 			class Single: Mode_SemiAuto /// Pew
 			{
 				
-				sounds[] = {"StandardSound"};
-				
-				class StandardSound
+				sounds[] = {"StandardSound","SilencedSound"};
+				class BaseSoundModType {};
+				class StandardSound : BaseSoundModType
 				{
 					// array of sounds (SoundSet names) to be played at the game event (shot)
 					// number of SoundSets in array is not limited
@@ -118,7 +116,18 @@ class CfgWeapons
 					// closure (bolt action) sound definition should be part of SoundSet
 					soundSetShot[] =
 					{
-						"Test_Weapon_01_Shot_SoundSet"
+						"PrototypeLaser_01_Base_F_Shot_SoundSet"
+					};
+				};
+				class SilencedSound : BaseSoundModType
+				{
+					// array of sounds (SoundSet names) to be played at the game event (shot)
+					// number of SoundSets in array is not limited
+					// consider that several ms lag could appear between each SoundSet is played
+					// closure (bolt action) sound definition should be part of SoundSet
+					soundSetShot[] =
+					{
+						"PrototypeLaser_01_Base_F_Shot_SoundSet"
 					};
 				};
 				showtoplayer=1;
@@ -137,7 +146,7 @@ class CfgWeapons
 
 		class single_medium_optics1: Single /// Pew for AI with collimator sights
 			{
-				requiredOpticType = 1;
+				requiredOpticType = 0;
 				showToPlayer = 0;
 
 				minRange = 2; minRangeProbab = 0.2;
@@ -150,7 +159,7 @@ class CfgWeapons
 
 		class single_far_optics2: single_medium_optics1	/// Pew for AI with better sights
 		{
-			requiredOpticType = 2;
+			requiredOpticType = 1;
 			showToPlayer = 0;
 
 			minRange = 100; minRangeProbab = 0.1;

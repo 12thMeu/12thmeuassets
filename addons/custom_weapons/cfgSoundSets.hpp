@@ -1,20 +1,26 @@
 class CfgSoundSets
 {
-	class Test_Weapon_01_Shot_SoundSet
+	class PrototypeLaser_01_Base_F_Shot_SoundSet
 	{
-		// array of SoundShaders to be played together with 100% synchronization
-		// note that not all SoundShaders will necessarily play, it depends on their specific configuration and also on soundShadersLimit parameter
-		soundShaders[] =
-		{
-			"Test_Weapon_01_closeShot_SoundShader"
-		};
-
-		volumeFactor = 1.6; // volume multiplicator factor
-		volumeCurve = "Test_Weapon_01_InverseSquareCurve"; // amplitude attenuation curve, can be class name or array of points (CfgSoundCurves)
-		sound3DProcessingType = "Test_Weapon_01_Shot3DProcessingType"; // sound processing type class name (CfgSound3DProcessors)
-		distanceFilter = "Test_Weapon_01_ShotDistanceFreqAttenuationFilter"; // class name of custom distance frequency attenuation filter (CfgDistanceFilters)
-		spatial = true; // is sound considered as positional
-		doppler = false; // doppler effect simulation
+		soundShaders[] = { "PrototypeLaser_01_Base_F_closeShot_SoundShader" };
+		volumeFactor = 1.6;
+		sound3DProcessingType = "Emitter";
+		distanceFilter = "none";
+		spatial = true;
+		doppler = false;
 		loop = false;
 	};
-};
+/* 	class PrototypeLaser_01_Base_F_Tail_SoundSet
+	{
+		soundShaders[] = { "PrototypeLaser_01_Base_F_tailTrees_SoundShader", "PrototypeLaser_01_Base_F_tailForest_SoundShader", "PrototypeLaser_01_Base_F_tailMeadows_SoundShader", "PrototypeLaser_01_Base_F_tailHouses_SoundShader" };
+		volumeFactor = 1;
+		volumeCurve = "InverseSquare2Curve";
+		frequencyRandomizer = 1;
+		sound3DProcessingType = "WeaponMediumShotTail3DProcessingType";
+		distanceFilter = "weaponShotTailDistanceFreqAttenuationFilter";
+		spatial = 1;
+		doppler = 0;
+		loop = 0;
+		soundShadersLimit = 2;
+	};*/
+}; 
