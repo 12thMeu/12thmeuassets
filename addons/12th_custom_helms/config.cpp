@@ -60,7 +60,7 @@ class CfgPatches {
       "twelfth_ch_Geoff",
       "twelfth_ch_Gaunt",
       "twelfth_ch_Jenkins",
-      "twelfth_ch_Kasper",
+//      "twelfth_ch_Kasper",
       "twelfth_ch_Kiens",
       "twelfth_ch_LeDoux",
       "twelfth_ch_Link",
@@ -80,11 +80,11 @@ class CfgPatches {
       "twelfth_ch_Sand",
       "twelfth_ch_Sammy",
       "twelfth_ch_Simmons",
-	  "twelfth_ch_Sullivan",
+//	  "twelfth_ch_Sullivan",
       "twelfth_ch_Styx",
 	  "twelfth_ch_Thomson",
 	  "twelfth_ch_Vickers",
-      "twelfth_ch_Waylen",
+//      "twelfth_ch_Waylen",
       "twelfth_ch_Wilson",
       "twelfth_ch_Wolffe",
       "twelfth_ch_Whirley",
@@ -111,7 +111,7 @@ class CfgPatches {
       "twelfth_ch_Geoff_nv",
       "twelfth_ch_Gaunt_nv",
       "twelfth_ch_Jenkins_nv",
-      "twelfth_ch_Kasper_nv",
+//      "twelfth_ch_Kasper_nv",
       "twelfth_ch_Kiens_nv",
       "twelfth_ch_LeDoux_nv",
       "twelfth_ch_Link_nv",
@@ -119,23 +119,23 @@ class CfgPatches {
       "twelfth_ch_Moss_nv",
 	  "twelfth_ch_Mcintyre_nv",
 	  "twelfth_ch_McMillian_nv",
-	  //      "twelfth_ch_Obi_nv",
+//      "twelfth_ch_Obi_nv",
       "twelfth_ch_Oliver_nv",
 	  "twelfth_ch_Origami_nv",
       "twelfth_ch_Quebec_nv",
 	  "twelfth_ch_Quinn_nv",
 	  "twelfth_ch_Rex_nv",
-      "twelfth_ch_Romanov_nv",
+//      "twelfth_ch_Romanov_nv",
       "twelfth_ch_Schultz_nv",
 //      "twelfth_ch_Shen_nv",
       "twelfth_ch_Sand_nv",
       "twelfth_ch_Sammy_nv",
       "twelfth_ch_Simmons_nv",
-	  "twelfth_ch_Sullivan_nv",
+//	  "twelfth_ch_Sullivan_nv",
       "twelfth_ch_Styx_nv",
 	  "twelfth_ch_Thomson_nv",
 	  "twelfth_ch_Vickers_nv",
-      "twelfth_ch_Waylen_nv",
+//      "twelfth_ch_Waylen_nv",
       "twelfth_ch_Wilson_nv",
       "twelfth_ch_Wolffe_nv",
       "twelfth_ch_Whirley_nv",
@@ -224,7 +224,6 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Geoff)
   CUSTOM_HELM_S_AV(Gaunt)
   CUSTOM_HELM_S_AV(Jenkins)
-  CUSTOM_HELM_S_AV(Kasper)
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(LeDoux)
   CUSTOM_HELM_S_AV(Link)
@@ -244,12 +243,12 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Sand)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Simmons)
-  CUSTOM_HELM_S_AV(Sullivan)
+//  CUSTOM_HELM_S_AV(Sullivan)
   CUSTOM_HELM_S_AV(Spector)
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Thomson)
   CUSTOM_HELM_S_AV(Vickers)
-  CUSTOM_HELM_S_AV(Waylen)
+//  CUSTOM_HELM_S_AV(Waylen)
   CUSTOM_HELM_S_AV(Wilson)
   CUSTOM_HELM_S_AV(Wolffe)
   CUSTOM_HELM_S_AV(Whirley)
@@ -309,7 +308,7 @@ class XtdGearModels {
         alwaysSelectable=1;
         label="Member";
         values[]={
-			"Abrams",
+		  "Abrams",
           "Aurora",
           "Bateman",
           "Bert",
@@ -332,7 +331,6 @@ class XtdGearModels {
           "Geoff",
           "Gaunt",
           "Jenkins",
-//          "Kasper",
           "Kiens",
           "LeDoux",
           "Link",
@@ -344,16 +342,20 @@ class XtdGearModels {
           "Oliver",
 		  "Origami",
           "Quebec",
+		  "Quinn",
+		  "Rex",
+//		  "Romanov",
           "Schultz",
 //          "Shen",
           "Sand",
           "Sammy",
           "Simmons",
+//		  "Sullivan",
           "Spector",
           "Styx",
 		  "Thomson",
 		  "Vickers",
-          "Waylen",
+//          "Waylen",
           "Wilson",
           "Wolffe",
           "Whirley",
@@ -393,7 +395,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Geoff)
     CH_HELM_S_GI(Gaunt)
     CH_HELM_S_GI(Jenkins)
-    CH_HELM_S_GI(Kasper)
+//    CH_HELM_S_GI(Kasper)
     CH_HELM_S_GI(Kiens)
     CH_HELM_S_GI(LeDoux)
     CH_HELM_S_GI(Link)
@@ -405,16 +407,20 @@ class XtdGearInfos {
     CH_HELM_S_GI(Oliver)
 	CH_HELM_S_GI(Origami)
     CH_HELM_S_GI(Quebec)
+	CH_HELM_S_GI(Quinn)
+	CH_HELM_S_GI(Rex)
+//	CH_HELM_S_GI(Romanov)
     CH_HELM_S_GI(Schultz)
 //    CH_HELM_S_GI(Shen)
     CH_HELM_S_GI(Sand)
     CH_HELM_S_GI(Sammy)
     CH_HELM_S_GI(Simmons)
+//	CH_HELM_S_GI(Sullivan)
     CH_HELM_S_GI(Spector)
     CH_HELM_S_GI(Styx)
 	CH_HELM_S_GI(Thomson)
 	CH_HELM_S_GI(Vickers)
-    CH_HELM_S_GI(Waylen)
+//    CH_HELM_S_GI(Waylen)
     CH_HELM_S_GI(Wilson)
     CH_HELM_S_GI(Wolffe)
     CH_HELM_S_GI(Whirley)
