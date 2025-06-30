@@ -1720,7 +1720,7 @@ class CfgWeapons
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
-				compatibleitems[] = COMMON_LIGHT_BIPOD;
+				compatibleitems[] = COMMON_MEDIUM_BIPOD;
 			};
 		};
 	};
