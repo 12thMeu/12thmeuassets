@@ -142,6 +142,32 @@ class textureSources {                            \
     };                                            \
     factions[] = {"twelfth_MEU"};                    \
   };                                              \
+    class twelfth_d77tc_tex_oceanic {                   \
+    displayName = "Oceanic";                       \
+    author = "Sammy";                            \
+    textures[] = {                                \
+      QP(pelican\oceanic\body_co.paa),             \
+      QP(pelican\oceanic\wings_and_gear_co.paa),   \
+      QP(pelican\oceanic\weaponry_co.paa),         \
+      QP(pelican\default\troop_bay_co.paa),        \
+      QP(pelican\default\doors_co.paa),            \
+      QP(pelican\default\hall_and_cockpit_co.paa)  \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  }; 												\
+  class twelfth_d77tc_tex_oceanic_t {                   \
+    displayName = "Oceanic Thomson";                       \
+    author = "Sammy";                            \
+    textures[] = {                                \
+      QP(pelican\oceanic_t\body_co.paa),             \
+      QP(pelican\oceanic_t\wings_and_gear_co.paa),   \
+      QP(pelican\oceanic_t\weaponry_co.paa),         \
+      QP(pelican\default\troop_bay_co.paa),        \
+      QP(pelican\default\doors_co.paa),            \
+      QP(pelican\default\hall_and_cockpit_co.paa)  \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  }; 												\
   class twelfth_d77tc_tex_jotun {                  \
     displayName = "Jotun";                      \
     author = "Weber";                            \
