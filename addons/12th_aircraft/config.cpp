@@ -495,14 +495,14 @@ class CfgVehicles {
     AIR_SP_INFO(Blackfish,2,Gunship)
   };
 
-  //class twelfth_nandao: MEU_F29_Nandao_VTOL {
-  //  scope=2;
-  //  scopeCurator=2;
-  //  author="Weber";
-  //  displayName="[12th] F-29 Nandao";
-  //  faction="twelfth_MEU";
-  //  editorCategory="twelfth_MEU";
-  //  editorSubcategory="twelfth_MEU_FixedWing";
-  //  AIR_SP_INFO(Nandao,0,Base)
-  //};
+  class twelfth_nandao: MEU_F29_Nandao_VTOL {
+    scope=2;
+    scopeCurator=2;
+    author="Weber";
+    displayName="[12th] F-29 Nandao";
+    faction="twelfth_MEU";
+    editorCategory="twelfth_MEU";
+    editorSubcategory="twelfth_MEU_FixedWing";
+    AIR_SP_INFO(Nandao,0,Base)
+  };
 };

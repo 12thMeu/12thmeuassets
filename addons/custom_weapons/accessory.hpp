@@ -12,7 +12,12 @@ class PrototypeBarrel: ItemCore
 		class ItemInfo: InventoryMuzzleItem_Base_F
 		{
 			mass=10;
-
+			
+			class MagazineCoef
+			{
+				initSpeed 		= 1.2;
+			};
+			
 			class AmmoCoef
 			{
 				// bullet ballistic modifiers
@@ -20,6 +25,7 @@ class PrototypeBarrel: ItemCore
 				typicalSpeed	= 1;
 				airFriction		= 1;
 			}; 
+			soundTypeIndex		= 1; /// defines the position in sound[] array in the rifle
 			muzzleEnd = "zaslehPoint";
 			alternativeFire = "Zasleh2";
 			class MuzzleCoef

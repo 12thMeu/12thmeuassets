@@ -48,8 +48,14 @@ class CfgPatches {
       "twelfth_backpack_forest_heavy",
       "twelfth_backpack_forest_rto",
       "twelfth_backpack_forest_medic",
+	  "twelfth_backpack_desert",
+	  "twelfth_backpack_desert_light",
+      "twelfth_backpack_desert_heavy",
+      "twelfth_backpack_desert_rto",
+      "twelfth_backpack_desert_medic",
       "twelfth_backpack_alt_rto",
-      "twelfth_M3_MAAWS_backpack"  // Alternative RTO backpack.
+      "twelfth_M3_MAAWS_backpack"
+	  // Alternative RTO backpack.
     };
     weapons[] = {};  // No weapons defined.
     requiredVersion = 0.1;  // Minimum required game version.
@@ -164,6 +170,7 @@ class CfgVehicles {
   */
   BACKPACK_ALLTYPES(standard,Standard)
   BACKPACK_ALLTYPES(forest,Forest)
+  BACKPACK_ALLTYPES(desert,Desert)
 };
 
 // -----------------------------------------------------------------------------
@@ -188,9 +195,10 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"standard", "forest"};
+        values[] = {"standard", "forest", "desert"};
         class forest {label = "Standard"; image = XTP(forest);};
         class standard {label = "MARPAT"; image = XTP(std);};
+		class desert {label = "Desert"; image = XTP(desert);};
       };
       class type {
         alwaysSelectable = 1;
@@ -210,5 +218,6 @@ class XtdGearInfos {
   class CfgVehicles {
     ALL_GI(standard)
     ALL_GI(forest)
+	ALL_GI(desert)
   };
 };

@@ -64,6 +64,7 @@ class CfgPatches {
       "twelfth_ch_LeDoux",
       "twelfth_ch_Link",
       "twelfth_ch_Luerssen",
+	  "twelfth_ch_Nightingale",
       "twelfth_ch_Moss",
 	  "twelfth_ch_Mcintyre",
 	  "twelfth_ch_McMillian",
@@ -114,6 +115,7 @@ class CfgPatches {
       "twelfth_ch_LeDoux_nv",
       "twelfth_ch_Link_nv",
       "twelfth_ch_Luerssen_nv",
+	  "twelfth_ch_Nightingale_nv",
       "twelfth_ch_Moss_nv",
 	  "twelfth_ch_Mcintyre_nv",
 	  "twelfth_ch_McMillian_nv",
@@ -225,6 +227,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(LeDoux)
   CUSTOM_HELM_S_AV(Link)
   CUSTOM_HELM_S_AV(Luerssen)
+  CUSTOM_HELM_S_AV(Nightingale)
   CUSTOM_HELM_S_AV(Moss)
   CUSTOM_HELM_S_AV(Mcintyre)
   CUSTOM_HELM_S_AV(McMillian)
@@ -331,6 +334,7 @@ class XtdGearModels {
           "LeDoux",
           "Link",
           "Luerssen",
+		  "Nightingale",
           "Moss",
 		  "Mcintyre",
 		  "McMillian",
@@ -395,6 +399,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(LeDoux)
     CH_HELM_S_GI(Link)
     CH_HELM_S_GI(Luerssen)
+	CH_HELM_S_GI(Nightingale)
     CH_HELM_S_GI(Moss)
 	CH_HELM_S_GI(Mcintyre)
 	CH_HELM_S_GI(McMillian)

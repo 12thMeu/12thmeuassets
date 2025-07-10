@@ -66,7 +66,9 @@ class CfgWeapons
   class ACE_SPIR;
   class ACE_optic_Hamr_2D;
   class optic_DMS;
-  class TCF_Saw_Gamma_Stealth;
+  class OPTRE_M739_SAW_Foregrip_Black_F;
+  class OPTRE_M247a1_Flashhider;
+  
   /*
     =============================================================================
     MG Tripod Definitions
@@ -1228,12 +1230,12 @@ class CfgWeapons
       };
     };
 
-	class twelfth_M739B: TCF_Saw_Gamma_Stealth
+	class twelfth_M739B: OPTRE_M739_SAW_Foregrip_Black_F
 	{
 	  author = "Sammy";
       scope = 2;
       scopeArsenal = 2;
-      displayName = "[12th] M739B LMG";
+      displayName = "[12th] M739B SAW";
       baseWeapon = "twelfth_M739B";
 	  magazines[] = COMMON_LMG_MAGAZINES;
 	  class WeaponSlotsInfo : WeaponSlotsInfo
@@ -1252,7 +1254,7 @@ class CfgWeapons
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
-          compatibleitems[] = COMMON_LIGHT_BIPOD;
+          compatibleitems[] = COMMON_MEDIUM_BIPOD;
         };
       };
 	};
@@ -1507,7 +1509,7 @@ class CfgWeapons
     };
 	class twelfth_M247A1 : OPTRE_M247A1
     {
-      author = "Weber";
+      author = "Sammy";
       scope = 2;
       scopeArsenal = 2;
       displayName = "[12th] M247A1 GPMG";
@@ -1537,7 +1539,7 @@ class CfgWeapons
       {
         class MuzzleSlot : MuzzleSlot
         {
-          compatibleitems[] = {"OPTRE_MA5Suppressor"};
+          compatibleitems[] = {"OPTRE_MA5Suppressor", "OPTRE_M247a1_Flashhider"};
         };
         class CowsSlot : CowsSlot
         {
@@ -1585,7 +1587,7 @@ class CfgWeapons
       {
         class MuzzleSlot : MuzzleSlot
         {
-          compatibleitems[] = {"OPTRE_MA5Suppressor"};
+          compatibleitems[] = {"OPTRE_MA5Suppressor", "OPTRE_M247a1_Flashhider"};
         };
         class CowsSlot : CowsSlot
         {
@@ -1746,7 +1748,7 @@ class CfgWeapons
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
-				compatibleitems[] = COMMON_LIGHT_BIPOD;
+				compatibleitems[] = COMMON_MEDIUM_BIPOD;
 			};
 		};
 	};
@@ -1770,7 +1772,7 @@ class CfgWeapons
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
-				compatibleitems[] = COMMON_LIGHT_BIPOD;
+				compatibleitems[] = COMMON_MEDIUM_BIPOD;
 			};
 		};
 	};

@@ -395,6 +395,7 @@ class CfgVehicles {
   ALL_UNI_VEH(drk,drk)
   ALL_UNI_VEH(forest,std)
   ALL_UNI_VEH(urban,std)
+  ALL_UNI_VEH(desert,std)
 
 };
 
@@ -774,6 +775,7 @@ class CfgWeapons {
   ALL_UNI_WEP(forest)
   ALL_UNI_WEP(drk)
   ALL_UNI_WEP(urban)
+  ALL_UNI_WEP(desert)
 
   //-HELMETS----------------------------------------------------------
   ALL_HELM(std)
@@ -860,12 +862,13 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"forest", "std", "forest90", "urban", "drk"};
+        values[]={"forest", "std", "forest90", "urban", "drk", "desert"};
         class forest {label="Standard";     image=XTP(forest);};
         class std {label="MARPAT"; image=XTP(std);};
         class forest90 {label="Forest90";     image=XTP(forest90);};
         class urban {label="Urban";     image=XTP(urban);}; //maybe winter?? will need to look into new armor pieces
         class drk {label="VBSS";     image=XTP(vbss);};
+		class desert {label="Desert";     image=XTP(desert);};
       };
       class element {
         alwaysSelectable = 1;
@@ -897,6 +900,7 @@ class XtdGearInfos {
     ALL_UNI_GI(drk)
     ALL_UNI_GI(forest)
     ALL_UNI_GI(urban)
+	ALL_UNI_GI(desert)
 
     // Boonies
 
