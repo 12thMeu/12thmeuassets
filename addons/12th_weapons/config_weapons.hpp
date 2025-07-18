@@ -1237,7 +1237,7 @@ class CfgWeapons
       scopeArsenal = 2;
       displayName = "[12th] M739B SAW";
       baseWeapon = "twelfth_M739B";
-	  magazines[] = COMMON_LMG_MAGAZINES;
+	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "Twelft_M739_SAW_200rnd_Drum"};
 	  class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -1516,7 +1516,6 @@ class CfgWeapons
       baseWeapon = "twelfth_M247A1";
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
-      magazines[] = COMMON_LMG_MAGAZINES;
       modes[] = {"FullAuto", "FullAutoFast"};
       class FullAuto : FullAuto
       {
@@ -1564,7 +1563,6 @@ class CfgWeapons
       baseWeapon = "twelfth_M247A1_Stripped";
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
-      magazines[] = COMMON_LMG_MAGAZINES;
       modes[] = {"FullAuto", "FullAutoFast"};
       class FullAuto : FullAuto
       {
