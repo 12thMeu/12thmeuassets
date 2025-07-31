@@ -83,11 +83,18 @@ class CfgVehicles {
           QP(stomper\default\ext_co.paa),
           QP(stomper\default\int_co.paa),
           QP(stomper\default\turret_co.paa)
-        };
-      };
-      camouflage = 0;  
-        // If you have more camos, increment them here. 
-    };
+			};
+		};
+      class twelfth_stomper_tex_vivi {
+        displayName = "Vi-Vi";
+        author = "Rex";
+        textures[] = {
+          QP(stomper\default\ViVi\ext_co.paa),
+          QP(stomper\default\int_co.paa),
+          QP(stomper\default\turret_co.paa)
+			};
+		};
+	};
 
     STOMPER_SP_INFO(0,Empty)
     WPNSINV
@@ -137,8 +144,16 @@ class CfgVehicles {
           QP(stomper\default\int_co.paa),
           QP(stomper\default\turret_co.paa)
         };
+	  };
+      class twelfth_stomper_tex_vivi {
+        displayName = "Vi-Vi";
+        author = "Rex";
+        textures[] = {
+          QP(stomper\default\ViVi\ext_co.paa),
+          QP(stomper\default\int_co.paa),
+          QP(stomper\default\turret_co.paa)
+        };
       };
-      camouflage = 0;
     };
 
     STOMPER_SP_INFO(0,RCWS)
