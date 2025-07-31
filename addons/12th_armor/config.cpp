@@ -188,6 +188,7 @@ class CfgPatches {
       "twelfth_cap_pale_horse",
       "twelfth_cap_pale_horse_2",
       "twelfth_boonie_std",
+	  "twelfth_boonie_desert",
       "twelfth_boonie_forest",
       "twelfth_clothes_std_wep",
       "twelfth_clothes_std_rolled_wep",
@@ -674,9 +675,11 @@ class CfgWeapons {
   */
   BOONIE_WEP(std)
   BOONIE_WEP(forest)
+  BOONIE_WEP(desert)
 
   PATROLCAP_WEP(std)
   PATROLCAP_WEP(forest)
+  PATROLCAP_WEP(desert)
 
 
   //-HELMETS----------------------------------------------------------
@@ -800,9 +803,10 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"std", "forest"};
+        values[] = {"std", "forest","desert"};
         class forest {label="Standard"; image=XTP(forest);};
         class std {label = "MARPAT"; image=XTP(std);};
+		class desert {label = "Desert"; image=XTP(desert);};
       };
     };
 
@@ -812,9 +816,10 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"std", "forest"};
+        values[] = {"std", "forest","desert"};
         class forest {label="Standard"; image=XTP(forest);};
         class std {label = "MARPAT"; image=XTP(std);};
+		class desert {label = "Desert"; image=XTP(desert);};
       };
     };
 
@@ -905,13 +910,14 @@ class XtdGearInfos {
     // Boonies
 
     BOONIE_GI(std)
-    BOONIE_GI(forest)    
+    BOONIE_GI(forest)
+	BOONIE_GI(desert)      
 
     // Patrol caps
 
     PATROLCAP_GI(std)
     PATROLCAP_GI(forest)
-
+	PATROLCAP_GI(desert)
     //-------------------------------------- Helmets 
 
     ALL_HELM_GI(std)

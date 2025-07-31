@@ -74,12 +74,12 @@ class TransportItems{   \
 
 #define WPNSINV                                                                                                               \
 class TransportMagazines {                                                                                                    \
-    class _xx_twelfth_400Rnd_762x51_Box_T { magazine = "twelfth_400Rnd_762x51_Box_T"; count = 10; };                          \
+    class _xx_OPTRE_400Rnd_762x51_M118_M247A1_BOX { magazine = "OPTRE_400Rnd_762x51_M118_M247A1_BOX"; count = 10; };                          \
     class _xx_avm224_M_6Rnd_60mm_HE_0_csw { magazine = "avm224_M_6Rnd_60mm_HE_0_csw"; count = 5; };                           \
     class _xx_avm224_M_6Rnd_60mm_HE_csw { magazine = "avm224_M_6Rnd_60mm_HE_csw"; count = 20; };                              \
-    class _xx_OPTRE_M41_Twin_HEAT_Thermal { magazine = "OPTRE_M41_Twin_HEAT_Thermal"; count = 4; };                           \
+    class _xx_OPTRE_M41_Twin_HEAT_G_AA { magazine = "OPTRE_M41_Twin_HEAT_G_AA"; count = 4; };                           \
     class _xx_OPTRE_M41_Twin_HEAT_G { magazine = "OPTRE_M41_Twin_HEAT_G"; count = 4; };                                       \
-    class _xx_OPTRE_M41_Twin_HE_Thermal_ProximityFuse { magazine = "OPTRE_M41_Twin_HE_Thermal_ProximityFuse"; count = 2; };   \
+    class _xx_OPTRE_M41_Twin_HE { magazine = "OPTRE_M41_Twin_HE"; count = 2; };   \
 };                                                                                                                            \
 class TransportItems{                                                                                                         \
     class _xx_ACE_SpareBarrel { name = "ACE_SpareBarrel"; count = 3; };                                                       \
@@ -87,7 +87,7 @@ class TransportItems{                                                           
     class _xx_optic_DMS { name = "optic_DMS"; count = 1; };                                                                   \
 };                                                                                                                            \
 class TransportWeapons {                                                                                                      \
-    class _xx_twelfth_M247 { weapon = "twelfth_M247"; count = 1; };                                                           \
+    class _xx_twelfth_M247A1 { weapon = "twelfth_M247A1"; count = 1; };                                                           \
     class _xx_12th_MG_Tripod_Carry { weapon = "12th_MG_Tripod_Carry"; count = 1; };                                           \
     class _xx_avm224_W_M224_mortar_carry { weapon = "avm224_W_M224_mortar_carry"; count = 1; };                               \
     class _xx_OPTRE_M41_SSR { weapon = "OPTRE_M41_SSR"; count = 1; };                                                         \
