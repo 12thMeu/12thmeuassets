@@ -59,6 +59,7 @@ class CfgPatches {
       "twelfth_ch_Galvin",
       "twelfth_ch_Geoff",
       "twelfth_ch_Gaunt",
+	  "twelfth_ch_Hathaway",
 //      "twelfth_ch_Kasper",
       "twelfth_ch_Kiens",
       "twelfth_ch_LeDoux",
@@ -112,6 +113,7 @@ class CfgPatches {
       "twelfth_ch_Galvin_nv",
       "twelfth_ch_Geoff_nv",
       "twelfth_ch_Gaunt_nv",
+	  "twelfth_ch_Hathaway_nv",
 //      "twelfth_ch_Kasper_nv",
       "twelfth_ch_Kiens_nv",
       "twelfth_ch_LeDoux_nv",
@@ -227,6 +229,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Galvin)
   CUSTOM_HELM_S_AV(Geoff)
   CUSTOM_HELM_S_AV(Gaunt)
+  CUSTOM_HELM_S_AV(Hathaway)
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(LeDoux)
   CUSTOM_HELM_S_AV(Link)
@@ -336,6 +339,7 @@ class XtdGearModels {
           "Galvin",
           "Geoff",
           "Gaunt",
+		  "Hathaway",
           "Kiens",
           "LeDoux",
           "Link",
@@ -402,6 +406,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)
     CH_HELM_S_GI(Gaunt)
+	CH_HELM_S_GI(Hathaway)
 //    CH_HELM_S_GI(Kasper)
     CH_HELM_S_GI(Kiens)
     CH_HELM_S_GI(LeDoux)
