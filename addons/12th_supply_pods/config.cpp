@@ -246,9 +246,9 @@ class CfgVehicles {
     class TransportMagazines {
       class _xx_twelfth_100Rnd_95x40_Box { magazine = "twelfth_100Rnd_95x40_Box"; count = 10; };
       class _xx_twelfth_100Rnd_95x40_Box_T { magazine = "twelfth_100Rnd_95x40_Box_T"; count = 10; };
-      class _xx_twelfth_200Rnd_762x51_Box { magazine = "twelfth_200Rnd_762x51_Box"; count = 10; };
-      class _xx_twelfth_200Rnd_762x51_Box_T { magazine = "twelfth_200Rnd_762x51_Box_T"; count = 10; };
-      class _xx_twelfth_762x51_400rnd_T { magazine = "OPTRE_400Rnd_762x51_Box_Tracer"; count = 5; };
+      class _xx_Twelft_M739_SAW_200Rnd_Drum { magazine = "Twelft_M739_SAW_200Rnd_Drum"; count = 10; };
+      class _xx_OPTRE_200Rnd_762x51_M118_M247A1_Box { magazine = "OPTRE_200Rnd_762x51_M118_M247A1_Box"; count = 10; };
+      class _xx_OPTRE_400Rnd_762x51_M118_M247A1_Box { magazine = "OPTRE_400Rnd_762x51_M118_M247A1_Box"; count = 5; };
       class _xx_ACE_SpareBarrel { magazine = "ACE_SpareBarrel"; count = 5; };
     };
     class TransportWeapons {};
