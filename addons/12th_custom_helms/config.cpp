@@ -82,6 +82,7 @@ class CfgPatches {
 //      "twelfth_ch_Shen",
       "twelfth_ch_Sand",
       "twelfth_ch_Sammy",
+	  "twelfth_ch_Shepard",
       "twelfth_ch_Simmons",
 	  "twelfth_ch_Sullivan",
       "twelfth_ch_Styx",
@@ -136,6 +137,7 @@ class CfgPatches {
 //      "twelfth_ch_Shen_nv",
       "twelfth_ch_Sand_nv",
       "twelfth_ch_Sammy_nv",
+	  "twelfth_ch_Shepard_nv",
       "twelfth_ch_Simmons_nv",
 	  "twelfth_ch_Sullivan_nv",
       "twelfth_ch_Styx_nv",
@@ -251,6 +253,7 @@ class CfgWeapons {
 //  CUSTOM_HELM_S_AV(Shen)
   CUSTOM_HELM_S_AV(Sand)
   CUSTOM_HELM_S_AV(Sammy)
+  CUSTOM_HELM_S_AV(Shepard)
   CUSTOM_HELM_S_AV(Simmons)
   CUSTOM_HELM_S_AV(Sullivan)
   CUSTOM_HELM_S_AV(Spector)
@@ -361,6 +364,7 @@ class XtdGearModels {
 //          "Shen",
           "Sand",
           "Sammy",
+		  "Shepard",
           "Simmons",
 		  "Sullivan",
           "Spector",
@@ -429,6 +433,7 @@ class XtdGearInfos {
 //    CH_HELM_S_GI(Shen)
     CH_HELM_S_GI(Sand)
     CH_HELM_S_GI(Sammy)
+	CH_HELM_S_GI(Shepard)
     CH_HELM_S_GI(Simmons)
 	CH_HELM_S_GI(Sullivan)
     CH_HELM_S_GI(Spector)
