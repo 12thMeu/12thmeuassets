@@ -220,8 +220,6 @@ class CfgVehicles {
   class OPTRE_UNSC_Army_Soldier_R_WDL;
   class OPTRE_UNSC_Army_Soldier_S_WDL;
   class OPTRE_UNSC_Army_Soldier_DressGray;
-  class OPTRE_UNSC_CH252A_Helmet_Base;
-  class OPTRE_UNSC_CH252A_Helmet_dp;
   class 19th_ODST;
   
   // ---------------------------------------------------------------------------
@@ -418,6 +416,8 @@ class CfgWeapons {
   class OPTRE_UNSC_Army_Uniform_S_WDL;
   class OPTRE_UNSC_Dress_Uniform_gray;
   class U_B_CombatUniform_mcam_tshirt;
+  class OPTRE_UNSC_CH252A_Helmet_Base;
+  class OPTRE_UNSC_CH252A_Helmet_dp;
   // Base uniform item for new-gen armor
   class twelfth_uni_ng_base_wep: Uniform_Base {
     author="Waylen";

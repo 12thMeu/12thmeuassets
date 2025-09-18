@@ -68,6 +68,7 @@ class CfgWeapons
   class optic_DMS;
   class OPTRE_M739_SAW_Foregrip_Black_F;
   class OPTRE_M247a1_Flashhider;
+  class EventHandlers;
   
   /*
     =============================================================================
@@ -1237,7 +1238,7 @@ class CfgWeapons
       scopeArsenal = 2;
       displayName = "[12th] M739B SAW";
       baseWeapon = "twelfth_M739B";
-	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "Twelft_M739_SAW_200rnd_Drum"};
+	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "twelfth_M739_SAW_200rnd_Drum"};
 	  class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot

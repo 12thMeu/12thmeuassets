@@ -228,7 +228,7 @@ class CfgMagazines
     ammo = "twelfth_MAAWS_HEAT";  
   };
   //200 Round SAW mag
-  class Twelft_M739_SAW_200rnd_Drum: OPTRE_M739_SAW_128rnd_Drum{
+  class twelfth_M739_SAW_200rnd_Drum: OPTRE_M739_SAW_128rnd_Drum{
 	  scope = 2;
 	  author = "Sammy";
 	  count=200;

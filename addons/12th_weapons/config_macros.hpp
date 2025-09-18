@@ -19,7 +19,7 @@
 // Start Magazine Macros
 // Start Rifle Macros
 #define COMMON_MA5C_MAGAZINES {"OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW" }
-#define COMMON_LMG_MAGAZINES {"twelfth_100Rnd_762x51_Box", "twelfth_100Rnd_762x51_Box_T", "twelfth_200Rnd_762x51_Box", "twelfth_200Rnd_762x51_Box_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW", "twelfth_M739_SAW_200rnd_Box", "Twelft_M739_SAW_200rnd_Drum"}
+#define COMMON_LMG_MAGAZINES {"twelfth_100Rnd_762x51_Box", "twelfth_100Rnd_762x51_Box_T", "twelfth_200Rnd_762x51_Box", "twelfth_200Rnd_762x51_Box_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW", "twelfth_M739_SAW_200rnd_Box", "twelfth_M739_SAW_200rnd_Drum"}
 #define COMMON_BR_MAGAZINES {"OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer", "twelfth_br_36Rnd_UW"}
 #define COMMON_SMG_MAGAZINES {"twelfth_m7_60rnd_UW", "twelfth_m7_48rnd_UW", "OPTRE_60Rnd_5x23mm_Mag", "OPTRE_60Rnd_5x23mm_Mag_tracer", "OPTRE_48Rnd_5x23mm_Mag", "OPTRE_48Rnd_5x23mm_Mag_tracer"}
 // Start Secondary Macros
