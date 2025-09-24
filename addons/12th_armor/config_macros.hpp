@@ -1623,3 +1623,28 @@ a local copy of the base textures from UNSCF around here.
     model = "twelfth_patrolcaps"; \
     camo = #CAMO; \
   }; \
+
+  #define UTILITYCOVER_WEP(CAMO) \
+  class twelfth_util_cap_##CAMO##: TCP_H_UtilityCover_Base {  \
+    author="Rex"; \
+     scope=2;\
+    scopeArsenal=2;                              \
+    picture="";                                       \
+    displayName="[12th][Caps] Utility Cover";            \
+    hiddenSelections[] = { "camo"};    \
+    hiddenSelectionsTextures[] = {                    \
+      QP(helmets\utility_cover\##CAMO\util_cap_co.paa)       \
+    };                                                \
+    class ItemInfo: ItemInfo {                        \
+      hiddenSelections[] = { "camo"};  \
+      hiddenSelectionsTextures[] = {                  \
+        QP(helmets\utility_cover\##CAMO\util_cap_co.paa)     \
+      };                                              \
+    };                                                \
+  };                                                  \
+  
+#define UTILITYCOVER_GI(CAMO) \
+  class twelfth_util_cap_##CAMO { \
+    model = "twelfth_utilcap"; \
+    camo = #CAMO; \
+  }; \

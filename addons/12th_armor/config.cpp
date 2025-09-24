@@ -318,6 +318,7 @@ class CfgWeapons {
   class OPTRE_UNSC_Army_Uniform_S_WDL;
   class OPTRE_UNSC_Dress_Uniform_gray;
   class U_B_CombatUniform_mcam_tshirt;
+  class TCP_H_UtilityCover_Base;
   class TCP_H_Helmet_CH43A_Base;
   class TCP_V_M43A_BaseSec_1_Base;
   class OPTRE_UNSC_CH252A_Helmet_Base;
@@ -442,6 +443,8 @@ class CfgWeapons {
   PATROLCAP_WEP(std)
   PATROLCAP_WEP(forest)
   PATROLCAP_WEP(desert)
+
+  UTILITYCOVER_WEP(std)
   //-HELMETS----------------------------------------------------------
 
   class twelfth_odst_helm: H_HelmetB {
@@ -633,6 +636,17 @@ class XtdGearModels {
         class forest {label="Standard"; image=XTP(forest);};
         class std {label = "MARPAT"; image=XTP(std);};
 		    class desert {label = "Desert"; image=XTP(desert);};
+      };
+    };
+
+    class twelfth_utilcap {
+      label = "12th Utility Cover";
+      options[] = {"camo"};
+      class camo {
+        alwaysSelectable = 1;
+        label = "Camoflauge";
+        values[] = {"std"};
+        class std {label="Standard"; image=XTP(forest);};
       };
     };
 
@@ -882,6 +896,9 @@ class XtdGearInfos {
     //-------------------------------------- New uniforms
     NEW_UNIFROM_GI(std)
 
+    // Utility cover
+
+    UTILITYCOVER_GI(std)
 
 
     
