@@ -35,7 +35,6 @@ class CfgPatches {
   */
   class twelfth_backpacks {
     requiredAddons[] = {
-      "M3_Backpacks"
     };
     units[] = {  // List of all custom backpack units.
       "twelfth_backpack_standard",

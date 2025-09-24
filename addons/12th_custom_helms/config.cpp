@@ -327,11 +327,11 @@ class XtdGearModels {
         alwaysSelectable=1;
         label="Member";
         values[]={
-		  "Abrams",
+          "Abrams",
           "Aurora",
           "Bateman",
           "Bert",
-		  "Bob",
+          "Bob",
           "Bobby",
           "Bretek",
           "Broad",
@@ -339,46 +339,42 @@ class XtdGearModels {
           "Bunge",
           "Coady",
           "Dennis",
-		  "Deluge",
+          "Deluge",
           "Dom",
           "Don",
           "Dras",
           "Dixie",
-		  "Ford",
+          "Ford",
           "Gallegos",
           "Galvin",
           "Geoff",
           "Gaunt",
-		  "Hathaway",
+          "Hathaway",
           "Kiens",
           "LeDoux",
           "Link",
           "Luerssen",
-		  "Luke",
-		  "Nightingale",
-		  "Mackle",
+          "Luke",
+          "Nightingale",
+          "Mackle",
           "Moss",
-		  "Mcintyre",
-		  "McMillian",
-//          "Obi",
+          "Mcintyre",
+          "McMillian",
           "Oliver",
-		  "Origami",
+          "Origami",
           "Quebec",
-		  "Quinn",
-		  "Rex",
-//		  "Romanov",
+          "Quinn",
+          "Rex",
           "Schultz",
-//          "Shen",
           "Sand",
           "Sammy",
-		  "Shepard",
+          "Shepard",
           "Simmons",
-		  "Sullivan",
+          "Sullivan",
           "Spector",
           "Styx",
-		  "Thomson",
-		  "Vickers",
-//          "Waylen",
+          "Thomson",
+          "Vickers",
           "Wilson",
           "Wolffe",
           "Whirley",
@@ -399,7 +395,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Aurora)
     CH_HELM_S_GI(Bateman)
     CH_HELM_S_GI(Bert)
-	CH_HELM_S_GI(Bob)
+    CH_HELM_S_GI(Bob)
     CH_HELM_S_GI(Bobby)
     CH_HELM_S_GI(Bretek)
     CH_HELM_S_GI(Broad)
@@ -407,47 +403,42 @@ class XtdGearInfos {
     CH_HELM_S_GI(Bunge)
     CH_HELM_S_GI(Coady)
     CH_HELM_S_GI(Dennis)
-	CH_HELM_S_GI(Deluge)
+    CH_HELM_S_GI(Deluge)
     CH_HELM_S_GI(Dom)
     CH_HELM_S_GI(Don)
     CH_HELM_S_GI(Dras)
     CH_HELM_S_GI(Dixie)
-	CH_HELM_S_GI(Ford)
+    CH_HELM_S_GI(Ford)
     CH_HELM_S_GI(Gallegos)
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)
     CH_HELM_S_GI(Gaunt)
-	CH_HELM_S_GI(Hathaway)
-//    CH_HELM_S_GI(Kasper)
+    CH_HELM_S_GI(Hathaway)
     CH_HELM_S_GI(Kiens)
     CH_HELM_S_GI(LeDoux)
     CH_HELM_S_GI(Link)
     CH_HELM_S_GI(Luerssen)
-	CH_HELM_S_GI(Luke)
-	CH_HELM_S_GI(Nightingale)
-	CH_HELM_S_GI(Mackle)
+    CH_HELM_S_GI(Luke)
+    CH_HELM_S_GI(Nightingale)
+    CH_HELM_S_GI(Mackle)
     CH_HELM_S_GI(Moss)
-	CH_HELM_S_GI(Mcintyre)
-	CH_HELM_S_GI(McMillian)
-//    CH_HELM_S_GI(Obi)
+    CH_HELM_S_GI(Mcintyre)
+    CH_HELM_S_GI(McMillian)
     CH_HELM_S_GI(Oliver)
-	CH_HELM_S_GI(Origami)
+  	CH_HELM_S_GI(Origami)
     CH_HELM_S_GI(Quebec)
-	CH_HELM_S_GI(Quinn)
-	CH_HELM_S_GI(Rex)
-//	  CH_HELM_S_GI(Romanov)
+	  CH_HELM_S_GI(Quinn)
+  	CH_HELM_S_GI(Rex)
     CH_HELM_S_GI(Schultz)
-//    CH_HELM_S_GI(Shen)
     CH_HELM_S_GI(Sand)
     CH_HELM_S_GI(Sammy)
-	CH_HELM_S_GI(Shepard)
+	  CH_HELM_S_GI(Shepard) 
     CH_HELM_S_GI(Simmons)
-	CH_HELM_S_GI(Sullivan)
+    CH_HELM_S_GI(Sullivan)
     CH_HELM_S_GI(Spector)
     CH_HELM_S_GI(Styx)
-	CH_HELM_S_GI(Thomson)
-	CH_HELM_S_GI(Vickers)
-//    CH_HELM_S_GI(Waylen)
+    CH_HELM_S_GI(Thomson)
+    CH_HELM_S_GI(Vickers)
     CH_HELM_S_GI(Wilson)
     CH_HELM_S_GI(Wolffe)
     CH_HELM_S_GI(Whirley)
