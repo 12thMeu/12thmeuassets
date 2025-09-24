@@ -170,6 +170,9 @@ class CfgWeapons {
   class H_HelmetB;
   class ItemInfo;
   class HeadgearItem;
+  class twelfth_helmCH43A_base;
+  class twelfth_helmECH43A_base;
+  class TCP_uniformDecals;
   // ---------------------------------------------------------------------------
   //  Base Class for 12th Custom Helmets
   // ---------------------------------------------------------------------------
@@ -179,7 +182,7 @@ class CfgWeapons {
     author="Waylen";
     displayName="[12th] Custom Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
-    ace_hearing_lowerVolume=0.30000001;
+    ace_hearing_lowerVolume=0;
     model="\halo_marine\halo_helm_01";
     picture="";
     class ItemInfo: HeadgearItem {
@@ -209,6 +212,9 @@ class CfgWeapons {
   */
 
   // -- Standard Helmets --
+  CUSTOM_HELM_S_AV(Sammy)
+
+  /*
   CUSTOM_HELM_S_AV(Abrams)
   CUSTOM_HELM_S_AV(Aurora)
   CUSTOM_HELM_S_AV(Bateman)
@@ -264,7 +270,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Wilson)
   CUSTOM_HELM_S_AV(Wolffe)
   CUSTOM_HELM_S_AV(Whirley)
-  CUSTOM_HELM_S_AV(Wulf)
+  CUSTOM_HELM_S_AV(Wulf) */
 
   // -- Pilot Helmets --
   /*
@@ -305,16 +311,16 @@ class XtdGearModels {
   class CfgWeapons {
     class twelfth_custom_helms {
       label="12th Custom Infantry Helmets";
-      options[]= {"visor","camo","member"};
+      options[]= {"closed","camo","member"};
       class camo {
         alwaysSelectable=1;
         label="Camouflage";
         values[]={"std"};
         class std {label="Standard";};
       };
-      class visor {
+      class closed {
         alwaysSelectable=1;
-        label="Visor";
+        label="Closed";
         values[]={"Yes", "No"};
       };
       class member {

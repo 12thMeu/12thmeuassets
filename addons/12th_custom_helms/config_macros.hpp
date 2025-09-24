@@ -32,6 +32,10 @@
 #define S_PREFIX [12th][Inf][S][Cstm]
 #define W_PREFIX [12th][Inf][W][Cstm]
 
+
+//Macro for the TCP decals
+#define HELM_DEC_PATH tcp\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\White\vest_M43_DecalSheet_CA.paa
+
 /*
   ==============================================================================
   CUSTOM_HELM_S_AV(SUFFIX)
@@ -45,63 +49,77 @@
   an additional selection for "camo2" that is set to empty ( "" ).
 */
 #define CUSTOM_HELM_S_AV(SUFFIX)                       \
-class twelfth_ch_std_##SUFFIX##: twelfth_custom_helm_base {  \
+class twelfth_helmCH43A_std_##SUFFIX##: twelfth_helmCH43A_base {  \
     scope=2;                                           \
     author="Waylen";                                     \
     picture="";                                        \
     scopeArsenal=2;                                    \
     displayName=#GLUE3(S_PREFIX,[SV] ,SUFFIX);         \
-    hiddenSelections[] = {"camo"};                     \
-    hiddenSelectionsTextures[] = {                     \
-      #HELMTEXPATH(SUFFIX),                            \
-    };                                                 \
-    class ItemInfo: HeadgearItem {                     \
-      uniformModel="\halo_marine\halo_helm_01";        \
-      mass=40;                                         \
-      modelSides[]={6};                                \
-      passThrough=0.1;                                 \
-      class HitpointsProtectionInfo {                  \
-        class Head {                                   \
-          hitpointName="HitHead";                      \
-          armor=20;                                    \
-          passThrough=0.1;                             \
-        };                                             \
-      };                                               \
-      hiddenSelections[]= {"camo"};                    \
-      hiddenSelectionsTextures[]= {                    \
-        #HELMTEXPATH(SUFFIX),                          \
-      };                                               \
-    };                                                 \
+  hiddenSelections[] = { "camo","decals" };              \
+  hiddenSelectionsTextures[] = {                \
+    #HELMTEXPATH(SUFFIX),				\
+	  #HELM_DEC_PATH								\
+  }; 											\
+	class TCP_uniformDecals: TCP_uniformDecals		\
+	{												\
+		decalColor = "white";						\
+	};  											\
+  class ItemInfo: HeadgearItem {                \
+    uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\h_helmet_CH43A.p3d";   \
+    picture="";                                 \
+    mass=40;                                    \
+    modelSides[]={6};                           \
+    passThrough=0.1;                            \
+    class HitpointsProtectionInfo {             \
+      class Head {                              \
+        hitpointName="HitHead";                 \
+        armor=20;                               \
+        passThrough=0.1;                        \
+      };                                        \
+    };                                          \
+    hiddenSelections[]= {"camo","decals"};      \
+    hiddenSelectionsTextures[]= {               \
+      #HELMTEXPATH(SUFFIX),				\
+	    #HELM_DEC_PATH	  						\
+    };                                          \
+  };   \
 };                                                     \
-class twelfth_ch_std_##SUFFIX##_nv: twelfth_custom_helm_base { \
-    scope=2;                                           \
-    author="Waylen";                                     \
-    picture="";                                        \
-    scopeArsenal=2;                                    \
-    displayName=#GLUE3(S_PREFIX,[NV] ,SUFFIX);         \
-    hiddenSelections[] = { "camo", "camo2" };          \
-    hiddenSelectionsTextures[] = {                     \
-      #HELMTEXPATH(SUFFIX),                            \
-      ""                                               \
-    };                                                 \
-    class ItemInfo: HeadgearItem {                     \
-      uniformModel="\halo_marine\halo_helm_01";        \
-      mass=40;                                         \
-      modelSides[]={6};                                \
-      passThrough=0.1;                                 \
-      class HitpointsProtectionInfo {                  \
-        class Head {                                   \
-          hitpointName="HitHead";                      \
-          armor=20;                                    \
-          passThrough=0.1;                             \
-        };                                             \
-      };                                               \
-      hiddenSelections[]= { "camo", "camo2" };         \
-      hiddenSelectionsTextures[]= {                    \
-        #HELMTEXPATH(SUFFIX),                          \
-        ""                                             \
-      };                                               \
-    };                                                 \
+class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
+  scope=2;                                           \
+  author="Waylen";                                     \
+  picture="";                                        \
+  scopeArsenal=2;                                    \
+  displayName=#GLUE3(S_PREFIX,[CLSD] ,SUFFIX);         \
+  hiddenSelections[]= {"camo","camo1","decals"};             \
+  hiddenSelectionsTextures[] = {                \
+    #HELMTEXPATH(SUFFIX),				\
+    "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\default\helmet_ECH43A_Visor_CO.paa",\
+    #HELM_DEC_PATH								\
+  }; 											\
+  class TCP_uniformDecals: TCP_uniformDecals		\
+  {												\
+    decalColor = "white";						\
+  };  											\
+  class ItemInfo: HeadgearItem {                \
+    uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_DP.p3d";   \
+    picture="";                                 \
+    mass=40;                                    \
+    modelSides[]={6};                           \
+    passThrough=0.1;                            \
+    class HitpointsProtectionInfo {             \
+      class Head {                              \
+        hitpointName="HitHead";                 \
+        armor=20;                               \
+        passThrough=0.1;                        \
+      };                                        \
+    };                                          \
+    hiddenSelections[]= {"camo","camo1","decals"};      \
+    hiddenSelectionsTextures[]= {               \
+      #HELMTEXPATH(SUFFIX),				\
+      "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\default\helmet_ECH43A_Visor_CO.paa",\
+      #HELM_DEC_PATH	  						\
+    };                                          \
+  };                                            \
 };
 
 /*
@@ -124,16 +142,16 @@ class twelfth_ch_std_##SUFFIX##_nv: twelfth_custom_helm_base { \
   `visor` to "Yes" or "No", and uses `member = SFX`.
 */
 #define CH_HELM_AV_GI(SFX,CAMO)       \
-class twelfth_ch_##CAMO##_##SFX {     \
+class twelfth_helmCH43A_##CAMO##_##SFX {     \
   model="twelfth_custom_helms";       \
   camo=#CAMO;                         \
-  visor="Yes";                        \
+  closed="No";                        \
   member=#SFX;                        \
 };                                    \
-class twelfth_ch_##CAMO##_##SFX##_nv {\
+class twelfth_helmECH43A_##CAMO##_##SFX##_clsd {\
   model="twelfth_custom_helms";       \
   camo=#CAMO;                         \
-  visor="No";                         \
+  closed="Yes";                         \
   member=#SFX;                        \
 };
 
