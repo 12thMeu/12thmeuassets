@@ -213,6 +213,7 @@ class CfgWeapons {
 
   // -- Standard Helmets --
   CUSTOM_HELM_S_AV(Sammy)
+  CUSTOM_HELM_S_AV(Rex)
 
   /*
   CUSTOM_HELM_S_AV(Abrams)
@@ -253,7 +254,6 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Origami)
   CUSTOM_HELM_S_AV(Quebec)
   CUSTOM_HELM_S_AV(Quinn)
-  CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Romanov)
   CUSTOM_HELM_S_AV(Schultz)
 //  CUSTOM_HELM_S_AV(Shen)
