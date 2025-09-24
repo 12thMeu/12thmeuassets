@@ -1,4 +1,7 @@
+// This directive suppresses specific Hemtt warnings related to padded arguments in the configuration file.
 #pragma hemtt suppress pw3_padded_arg config
+
+
 #include "config_macros.hpp"
 
 /*
@@ -220,7 +223,11 @@ class CfgVehicles {
   class OPTRE_UNSC_Army_Soldier_R_WDL;
   class OPTRE_UNSC_Army_Soldier_S_WDL;
   class OPTRE_UNSC_Army_Soldier_DressGray;
+  class OPTRE_UNSC_CH252A_Helmet_Base;
+  class OPTRE_UNSC_CH252A_Helmet_dp;
   class 19th_ODST;
+  //TCP UNIFORM vehicle definitions
+
   
   // ---------------------------------------------------------------------------
   //  twelfth_uni_ng_base_veh
@@ -251,30 +258,15 @@ class CfgVehicles {
     };
   };
 
-  /*class twelfth_dress_navy_veh: OPTRE_UNSC_Army_Soldier_DressGray {
-    dlc="OPTRE";
-    author="Waylen";
-    uniformClass="twelfth_dress_navy_wep";
-    hiddenSelections[] = {"camo1", "insignia", "clan", "ODST"};
-    hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_armor\uniforms\dress\dress_uni_navy_co.paa"
-    };
-  };*/
+/*
+---------------------------New uniform setup---------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+*/
+  TCP_VEH_CLASS_DEF
+  VEH_UNI_CLASS(std)
 
-  //class twelfth_instructor_uniform_veh: B_CTRG_Soldier_2_F
-  //{
-  //	author = "Sammy";
-  //	displayName = "";
-  //	uniformClass = "twelfth_instructor_uniform_wep";
-  //
-  //	model = "\A3\characters_F\BLUFOR\b_soldier_02.p3d";
-  //
-  //	hiddenSelectionsTextures[]=
-  //	{
-  //		QP(uniforms\extra\instructor_pants.paa),
-  //		QP(uniforms\extra\basic.paa)
-  //	};
-  //};
 
   // ---------------------------------------------------------------------------
   //  twelfth_odst_uniform_veh
@@ -296,98 +288,6 @@ class CfgVehicles {
     };
   };
 
-  /*class twelfth_clothes_std_veh: OPTRE_UNSC_Army_Soldier_WDL {
-    uniformClass="twelfth_clothes_std_wep";
-    hiddenSelectionsTextures[]= {
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa"
-    };
-    hiddenSelections[]= {
-      "camo",
-      "camo2",
-      "insignia",
-      "clan",
-      "A_BaseLeg"
-    };
-  };
-
-  class twelfth_clothes_std_short_veh: OPTRE_UNSC_Army_Soldier_S_WDL {
-    uniformClass="twelfth_clothes_std_short_wep";
-    hiddenSelectionsTextures[]= {
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_2_co.paa"
-    };
-    hiddenSelections[]= {
-      "camo",
-      "camo2",
-      "insignia",
-      "clan",
-      "A_BaseLeg"
-    };
-  };
-
-  class twelfth_clothes_std_rolled_veh: OPTRE_UNSC_Army_Soldier_R_WDL {
-    uniformClass="twelfth_clothes_std_rolled_wep";
-    hiddenSelectionsTextures[]= {
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_2_co.paa"
-    };
-    hiddenSelections[]= {
-      "camo",
-      "camo2",
-      "insignia",
-      "clan",
-      "A_BaseLeg"
-    };
-  };
-
-  class twelfth_clothes_desert_veh: OPTRE_UNSC_Army_Soldier_WDL {
-    author="Waylen";
-    uniformClass="twelfth_clothes_desert_wep";
-    hiddenSelectionsTextures[]= {
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa"
-    };
-    hiddenSelections[]= {
-      "camo",
-      "camo2",
-      "insignia",
-      "clan",
-      "A_BaseLeg"
-    };
-  };
-
-  class twelfth_clothes_desert_short_veh: OPTRE_UNSC_Army_Soldier_S_WDL {
-    author="Waylen";
-    uniformClass="twelfth_clothes_desert_short_wep";
-    hiddenSelectionsTextures[]= {
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_2_co.paa"
-    };
-    hiddenSelections[]= {
-      "camo",
-      "camo2",
-      "insignia",
-      "clan",
-      "A_BaseLeg"
-    };
-  };
-
-  class twelfth_clothes_desert_rolled_veh: OPTRE_UNSC_Army_Soldier_R_WDL {
-    author="Waylen";
-    uniformClass="twelfth_clothes_desert_rolled_wep";
-    hiddenSelectionsTextures[]= {
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
-      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_2_co.paa"
-    };
-    hiddenSelections[]= {
-      "camo",
-      "camo2",
-      "insignia",
-      "clan",
-      "A_BaseLeg"
-    };
-  };*/ //Waiting textures
 
 // Macro expansions for the new-gen armor sets, e.g. standard, drk, forest, urban
   ALL_UNI_VEH(std,std)
@@ -395,6 +295,8 @@ class CfgVehicles {
   ALL_UNI_VEH(forest,std)
   ALL_UNI_VEH(urban,std)
   ALL_UNI_VEH(desert,std)
+
+  
 
 };
 
@@ -416,9 +318,11 @@ class CfgWeapons {
   class OPTRE_UNSC_Army_Uniform_S_WDL;
   class OPTRE_UNSC_Dress_Uniform_gray;
   class U_B_CombatUniform_mcam_tshirt;
+  class TCP_H_Helmet_CH43A_Base;
+  class TCP_V_M43A_BaseSec_1_Base;
   class OPTRE_UNSC_CH252A_Helmet_Base;
-  class OPTRE_UNSC_CH252A_Helmet_dp;
-  // Base uniform item for new-gen armor
+  class OPTRE_UNSC_CH252A_Helmet_dp;  // Base uniform item for new-gen armor
+  class TCP_H_Helmet_ECH43A_Base;
   class twelfth_uni_ng_base_wep: Uniform_Base {
     author="Waylen";
     scope=0;
@@ -437,42 +341,11 @@ class CfgWeapons {
     };
   };
 
+  //TCP UNIFORM Weapon definitions
+  TCP_WEP_CLASS_DEF
+  WEP_UNI_CLASS(std)
 
-  /*class twelfth_dress_navy_wep: OPTRE_UNSC_Dress_Uniform_gray {
-    dlc="OPTRE";
-    author="Waylen";
-    displayName="[12th] Dress Uniform (Navy)";
-    picture="";
-    class ItemInfo: ItemInfo {
-      uniformClass="twelfth_dress_navy_veh";
-    };
-  };*/ //Awaiting textures
 
-  //class twelfth_instructor_uniform_wep: U_B_CombatUniform_mcam_tshirt {
-  //  author = "Sammy";
-  //  displayName = "[12th] AIC Instructor Uniform";
-  //  picture = "";
-  //  scope = 2;
-  //  scopeArsenal = 2;
-  //  model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
- 	//	hiddenSelections[]=
- 	//	{
- 	//		"camo"
- 	//	};
- 	//	hiddenSelectionsTextures[]=
- 	//	{
- 	//		QP(uniforms\extra\basic.paa)
- 	//	};
-  //  class ItemInfo: ItemInfo {
-  //    uniformModel = "-";
-  //    uniformClass = "twelfth_instructor_uniform_veh";
-  //    containerClass = "Supply100";
-  //    mass = 1;
-  //    uniformType = "Neopren";
-  //    allowedSlots[] = {"701","801","901"};
-  //    armor=20;
-  //  };
-  //};
 
   // Example ODST uniform item referencing twelfth_odst_uniform_veh
   class twelfth_odst_uniform_wep: Uniform_Base {
@@ -561,118 +434,7 @@ class CfgWeapons {
     };
   };
 
-  // TODO: CLEAN THIS (the clothes section) UP
 
-  /*class twelfth_clothes_std_wep: OPTRE_UNSC_Army_Uniform_WDL {
-    author="Waylen";
-    displayName="[12th][Clothes] Uniform";
-    picture="";
-    class ItemInfo: ItemInfo {
-      containerClass="Supply100";
-      mass=40;
-      uniformClass="twelfth_clothes_std_veh";
-    };
-  };
-
-  class twelfth_clothes_std_short_wep: OPTRE_UNSC_Army_Uniform_S_WDL {
-    author="Waylen";
-    displayName="[12th][Clothes] Uniform Short";
-    picture="";
-    class ItemInfo: ItemInfo {
-      containerClass="Supply100";
-      mass=40;
-      uniformClass="twelfth_clothes_std_short_veh";
-    };
-  };
-
-  class twelfth_clothes_std_rolled_wep: OPTRE_UNSC_Army_Uniform_R_WDL {
-    author="Waylen";
-    displayName="[12th][Clothes] Uniform Rolled";
-    picture="";
-    class ItemInfo: ItemInfo {
-      containerClass="Supply100";
-      mass=40;
-      uniformClass="twelfth_clothes_std_rolled_veh";
-    };
-  };
-
-  class twelfth_clothes_desert_wep: OPTRE_UNSC_Army_Uniform_WDL {
-    author="Waylen";
-    displayName="[12th][Clothes][Desert] Uniform";
-    picture="";
-    class ItemInfo: ItemInfo {
-      containerClass="Supply100";
-      mass=40;
-      uniformClass="twelfth_clothes_desert_veh";
-    };
-  };
-
-  class twelfth_clothes_desert_short_wep: OPTRE_UNSC_Army_Uniform_S_WDL {
-    author="Waylen";
-    displayName="[12th][Clothes][Desert] Uniform Short";
-    picture="";
-    class ItemInfo: ItemInfo {
-      containerClass="Supply100";
-      mass=40;
-      uniformClass="twelfth_clothes_desert_short_veh";
-    };
-  };
-
-  class twelfth_clothes_desert_rolled_wep: OPTRE_UNSC_Army_Uniform_R_WDL {
-    author="Waylen";
-    displayName="[12th][Clothes][Desert] Uniform Rolled";
-    picture="";
-    class ItemInfo: ItemInfo {
-      containerClass="Supply100";
-      mass=40;
-      uniformClass="twelfth_clothes_desert_rolled_veh";
-    };
-  };
-
-  //-CAPS-------------------------------------------------------------
-
-  class twelfth_cap_std: OPTRE_UNSC_PatrolCap_Army {
-    author="Waylen";
-    picture="";
-    displayName="[12th][Caps] Patrol Cap";
-    hiddenSelections[] = { "camo1", "hide_army" };
-    hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_armor\helmets\cap\cap_standard_co.paa"
-    };
-    class ItemInfo: ItemInfo {
-      hiddenSelections[] = { "camo1", "hide_army" };
-      hiddenSelectionsTextures[] = {
-        "\x\12thMEU\addons\12th_armor\helmets\cap\cap_standard_co.paa"
-      };
-    };
-  };
-
-  class twelfth_cap_desert: OPTRE_UNSC_PatrolCap_Marines {
-    author="Waylen";
-    picture="";
-    displayName="[12th][Caps][Desert] Patrol Cap";
-    hiddenSelections[] = { "camo1", "hide_army" };
-    hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_armor\helmets\cap\cap_desert_co.paa"
-    };
-    class ItemInfo: ItemInfo {
-      hiddenSelections[] = { "camo1", "hide_army" };
-      hiddenSelectionsTextures[] = {
-        "\x\12thMEU\addons\12th_armor\helmets\cap\cap_desert_co.paa"
-      };
-    };
-  };
-*/
-
-  /*
-    Boonie Hat macro expansions. 
-    BOONIE_WEP(std)
-    BOONIE_WEP(forest)
-
-    Patrol Cap expansions.
-    PATROLCAP_WEP(std)
-    PATROLCAP_WEP(forest)
-  */
   BOONIE_WEP(std)
   BOONIE_WEP(forest)
   BOONIE_WEP(desert)
@@ -680,8 +442,6 @@ class CfgWeapons {
   PATROLCAP_WEP(std)
   PATROLCAP_WEP(forest)
   PATROLCAP_WEP(desert)
-
-
   //-HELMETS----------------------------------------------------------
 
   class twelfth_odst_helm: H_HelmetB {
@@ -722,7 +482,7 @@ class CfgWeapons {
     scopeArsenal=0;
     displayName="[12th] Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
-    ace_hearing_lowerVolume=0.30000001;
+    ace_hearing_lowerVolume=0;
     model="\halo_marine\halo_helm_01";
     picture="";
     class ItemInfo: HeadgearItem {
@@ -739,14 +499,67 @@ class CfgWeapons {
       };
     };
   };
+  // Helmet_CH43A
+  class twelfth_helmCH43A_base: TCP_H_Helmet_CH43A_Base {
+    scope=0;
+    author="Sammy";
+    scopeArsenal=0;
+    displayName="[12th] Helmet Base (DON'T USE)";
+    ace_hearing_protection=1;
+    ace_hearing_lowerVolume=0;
+    class TCP_uniformDecals
+    {
+      selectionName = "nameCH43A";
+    };
+	  model = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\h_helmet_CH43A.p3d";
+    class ItemInfo: HeadgearItem {
+	  uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\h_helmet_CH43A.p3d";
+      mass=40;
+      modelSides[]={6};
+      passThrough=0.1;
+      class HitpointsProtectionInfo {
+        class Head {
+          hitpointName="HitHead";
+          armor=20;
+          passThrough=0.1;
+        };
+      };
+    };
+  };
 
+  class twelfth_helmECH43A_base: TCP_H_Helmet_ECH43A_Base {
+    scope=0;
+    author="Sammy";
+    scopeArsenal=0;
+    displayName="[12th] Helmet Closed Base (DON'T USE)";
+    ace_hearing_protection=1;
+    ace_hearing_lowerVolume=0;
+    class TCP_uniformDecals
+    {
+      selectionName = "nameCH43A";
+    };
+	  model = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_DP.p3d";
+    class ItemInfo: HeadgearItem {
+	  uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_DP.p3d";
+      mass=40;
+      modelSides[]={6};
+      passThrough=0.1;
+      class HitpointsProtectionInfo {
+        class Head {
+          hitpointName="HitHead";
+          armor=20;
+          passThrough=0.1;
+        };
+      };
+    };
+  };
   class twelfth_pilot_helm_base: H_HelmetB {
     scope=0;
     author="Waylen";
     scopeArsenal=0;
     displayName="[12th] Pilot Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
-    ace_hearing_lowerVolume=0.30000001;
+    ace_hearing_lowerVolume=0;
     model="A3\Characters_F\Common\headgear_helmet_heli";
     picture="";
     class ItemInfo: HeadgearItem {
@@ -806,7 +619,7 @@ class XtdGearModels {
         values[] = {"std", "forest","desert"};
         class forest {label="Standard"; image=XTP(forest);};
         class std {label = "MARPAT"; image=XTP(std);};
-		class desert {label = "Desert"; image=XTP(desert);};
+		    class desert {label = "Desert"; image=XTP(desert);};
       };
     };
 
@@ -819,7 +632,46 @@ class XtdGearModels {
         values[] = {"std", "forest","desert"};
         class forest {label="Standard"; image=XTP(forest);};
         class std {label = "MARPAT"; image=XTP(std);};
-		class desert {label = "Desert"; image=XTP(desert);};
+		    class desert {label = "Desert"; image=XTP(desert);};
+      };
+    };
+
+    class twelfth_base_ch43a {
+      label="12th Infantry Helmets";
+      options[] = {"camo","closed","element","role"};
+      class camo {
+        alwaysSelectable = 1;
+        label="Camouflage";
+        values[]={"std"};
+        class std {label="Standard";};
+      };
+      class closed {
+        alwaysSelectable = 1;
+        label="Face";
+        values[]={"yes","no"};
+        class no  {label="Open";};
+        class yes  {label="Closed";};
+      };
+      class element {
+        alwaysSelectable = 1;
+        label="Element";
+        values[]={"na","hq","1pl","2pl","lpl"};
+        class na  {label="None";};
+        class hq  {label="HQ";  image=XTP(athena);};
+        class 1pl {label="1PLT";image=XTP(1pl);};
+        class 2pl {label="2PLT";image=XTP(2pl);};
+        class lpl {label="LOGI";image=XTP(chaos);};
+      };
+      class role {
+        alwaysSelectable = 1;
+        label="MOS";
+        values[]={"na","med","ftl","sl","pl","psg"};
+        class na  {label="None";     image=XTP(role);};
+        class pl  {label="PLT LDR";  image=XTP(role_pl);};
+        class psg {label="PLT SGT";  image=XTP(role_psg);};
+        class ftl {label="FTL";      image=XTP(role_ftl);};
+        class sl  {label="SQD LDR";  image=XTP(role_sl);};
+        class med {label="Corpsman"; image=XTP(med);};
       };
     };
 
@@ -861,6 +713,60 @@ class XtdGearModels {
     };
 
     // Uniforms
+    class twelfth_new_uniforms {
+      label="12th New Infantry Uniforms";
+      options[] = {"camo", "sleeve","glove","shirt","blouse","zip"};
+      class camo {
+        alwaysSelectable = 1;
+        label="Camouflage";
+        values[]={"std"};
+        class std {label="Standard";     image=XTP(forest);};
+
+
+      };
+      class sleeve {
+        alwaysSelectable = 1;
+        label="Sleeve Type";
+        values[]={"Tucked","Full","QuarterRoll","HalfRoll","SlimSleeve","Untucked"};
+        class Tucked  {label="Tucked";};
+        class Full  {label="Full";};
+        class QuarterRoll {label="Quarter Roll";};
+        class HalfRoll {label="Half Roll";};
+        class SlimSleeve {label="Slim Sleeve";};
+        class Untucked  {label="Untucked";};
+      };
+      class glove {
+        alwaysSelectable = 1;
+        label="Gloves";
+        values[]={"yes","no"};
+        class yes  {label="With Gloves";};
+        class no {label="No Gloves";};
+      };
+      class shirt {
+        alwaysSelectable = 1;
+        label="Shirt Type";
+        values[]={"TShirt","TacShirt","FieldTop"};
+        class TShirt  {label="T-shirt";};
+        class TacShirt {label="Tac-Shirt";};
+        class FieldTop {label="Field Top";};
+      };
+      class blouse {
+        alwaysSelectable=1;
+        label="Blouse Type";
+        values[]={"blouse","noblouse"};
+        class blouse {label="Blouse";};
+        class noblouse {label="No Blouse";};
+      };
+      class zip {
+        alwaysSelectable=1;
+        label="Zipper Type";
+        values[]={"zipped","unzipped"};
+        class zipped {label="Zipped Up";};
+        class unzipped {label="Unzipped";};
+      };
+
+
+    };
     class twelfth_base_uniforms {
       label="12th Infantry Uniforms";
       options[] = {"camo", "element","role"};
@@ -873,7 +779,55 @@ class XtdGearModels {
         class forest90 {label="Forest90";     image=XTP(forest90);};
         class urban {label="Urban";     image=XTP(urban);}; //maybe winter?? will need to look into new armor pieces
         class drk {label="VBSS";     image=XTP(vbss);};
-		class desert {label="Desert";     image=XTP(desert);};
+	    	class desert {label="Desert";     image=XTP(desert);};
+      };
+      class element {
+        alwaysSelectable = 1;
+        label="Element";
+        values[]={"na","hq","1pl","2pl","lpl"};
+        class na  {label="None";};
+        class hq  {label="HQ";  image=XTP(athena);};
+        class 1pl {label="1PLT"; image=XTP(1pl);};
+        class 2pl {label="2PLT";   image=XTP(2pl);};
+        class lpl {label="LOGI";   image=XTP(chaos);};
+      };
+      class role {
+        alwaysSelectable = 1;
+        label="MOS";
+        values[]={"na","med"};
+        class na  {label="None";};
+        class med {label="Corpsman"; image=XTP(med);};
+      };
+    };
+
+    class twelfth_base_vests {
+      label="12th Infantry Vests";
+      options[] = {"type","camo", "element","role"};
+      class type{
+        alwaysSelectable = 1;
+        label="Armour Type";
+        values[]={"Light","BaseSec1","BaseSec2","BaseSec3","GungnirS_1","GungnirS_2","GungnirS_3","GungnirL_1","GungnirL_2","GungnirL_3"};
+        class Light  {label="Light";};
+        class BaseSec1  {label="Security";};
+        class BaseSec2 {label="Sec. Thighs";};
+        class BaseSec3 {label="Sec. Full";};
+        class GungnirS_1  {label="Gugnir";};
+        class GungnirS_2 {label="G. Thighs";};
+        class GungnirS_3 {label="G. Full";};
+        class GungnirL_1  {label="G. L";};
+        class GungnirL_2 {label="G. L Thighs";};
+        class GungnirL_3 {label="G. L Full";};
+      };
+      class camo {
+        alwaysSelectable = 1;
+        label="Camouflage";
+        values[]={"forest", "std", "forest90", "urban", "drk", "desert"};
+        class forest {label="Standard";};
+        class std {label="MARPAT";};
+        class forest90 {label="Forest90";};
+        class urban {label="Urban";}; //maybe winter?? will need to look into new armor pieces
+        class drk {label="VBSS";};
+	    	class desert {label="Desert";};
       };
       class element {
         alwaysSelectable = 1;
@@ -905,23 +859,31 @@ class XtdGearInfos {
     ALL_UNI_GI(drk)
     ALL_UNI_GI(forest)
     ALL_UNI_GI(urban)
-	ALL_UNI_GI(desert)
+	  ALL_UNI_GI(desert)
 
     // Boonies
 
     BOONIE_GI(std)
     BOONIE_GI(forest)
-	BOONIE_GI(desert)      
+  	BOONIE_GI(desert)      
 
     // Patrol caps
 
     PATROLCAP_GI(std)
     PATROLCAP_GI(forest)
-	PATROLCAP_GI(desert)
+	  PATROLCAP_GI(desert)
     //-------------------------------------- Helmets 
 
     ALL_HELM_GI(std)
+	  CH43A_HELM_GI(std)
     //ALL_HELM_GI(drk)
 
+
+    //-------------------------------------- New uniforms
+    NEW_UNIFROM_GI(std)
+
+
+
+    
   };
 };

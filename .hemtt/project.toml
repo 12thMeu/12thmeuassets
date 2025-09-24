@@ -1,6 +1,6 @@
-name = "12th MEU Assets"
+name = "12th MEU TCP Edition"
 prefix = "12thMEU"
-author = "Kelp"
+author = "Sammy"
 mainprefix = "x"
 
 [files]
@@ -13,8 +13,8 @@ include = [
 ]
 
 [version]
-major = 6
-minor = 2
-patch = 1
-build = 1
+major = 7
+minor = 0
+patch = 0
+build = 0
 git_hash = 0

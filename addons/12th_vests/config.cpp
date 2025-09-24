@@ -30,7 +30,7 @@ class CfgPatches {
   class twelfth_vests {
     units[]= {}; // We’re not defining placeable units in this PBO.
     weapons[]= { 
-      "twelfth_invis_vest"
+      "twelfth_invis_vest","twelfth_M43A_Light_base"
         /*
           If you create more vests that are stand-alone (not just variants),
           add them here so the engine recognizes them as part of this mod.
@@ -62,14 +62,15 @@ class CfgVehicles {
 // -----------------------------------------------------------------------------
 //  CfgWeapons (Primary location for vest definitions)
 // -----------------------------------------------------------------------------
-class CfgWeapons {
-  /*
-    Pre-declare any base classes we are going to inherit from. 
-    For example, "ItemCore" is the standard base class for all vests in Arma.
-  */
+class CfgWeapons
+{
   class ItemCore;
   class VestItem;
   class OPTRE_UNSC_M52A_Armor2_MAR;
+
+
+
+
     /*
       This is an OPTRE (Operation: Trebuchet) base class used
       purely as an inheritance reference for the invisible vest. 
@@ -96,7 +97,7 @@ class CfgWeapons {
     // Use the vest macro to set container capacity, mass, and hitpoint info.
     UNSCF_VEST_ITEM_INFO("",default)
   };
-
+  
   // ---------------------------------------------------------------------------
   //  Invisible Vest
   // ---------------------------------------------------------------------------
@@ -141,6 +142,14 @@ class CfgWeapons {
     NOTE: [12th][S] or [12th][W] is appended to each vest's displayName. 
     For example, "Rifleman Vest (Heavy & Chest Pouches)" becomes:
     "[12th][S] Rifleman Vest (Heavy & Chest Pouches)" for the standard variant, etc.
+	
+	
+	
   */
-};
+  
+  //-New Armour-----------------------------------------------------
+  NEW_VEST_SETUP
+  ALL_VESTS(std)
 
+  // Base uniform item for new-gen armor
+};
