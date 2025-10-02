@@ -63,7 +63,6 @@ class CfgPatches {
 
 class CfgVehicles {
   class B_AssaultPack_Base;  // Base class for standard backpacks.
-  class 19th_Bag_Base;  // Base class for alternative backpacks.
   class M3_Backpack_Mcm_B;
 
   // ---------------------------------------------------------------------------
@@ -79,7 +78,7 @@ class CfgVehicles {
     scopeArsenal = 0;  // Not visible in the arsenal.
     picture = "";  // No picture defined.
     displayName = "[12th] Backpack Base (DON'T USE)";
-    model = "\19th_H2A_armor\19th_H2A_marines_backpacks";
+    model = "Foundries\19th_H2A_Armor\19th_H2A_marines_backpacks";
     hiddenSelections[] = {  // Available texture selections.
       "main",
       "pouches",
@@ -109,28 +108,6 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"", "", "", ""};  // No textures.
   };
 
-  // ---------------------------------------------------------------------------
-  //  twelfth_backpack_alt_rto
-  // ---------------------------------------------------------------------------
-  /*
-    A separate RTO backpack that inherits from 19th_Bag_Base instead of
-    twelfth_backpack_base. This is a special variant for those who prefer
-    a different model/appearance for radio operators.
-  */
-  class twelfth_backpack_alt_rto : 19th_Bag_Base {
-    scope = 2;
-    author = "19th";
-    scopeArsenal = 2;
-    displayName = "[12th][Alt] Backpack RTO";
-    maximumLoad = BP_MAXLOAD;  // Load capacity macro.
-    mass = BP_MASS;  // Backpack mass macro.
-    picture = "";  // No picture defined.
-    hiddenSelections[] = {  // Available texture selections.
-      "Bag",
-      "PouchFront"
-    };
-    hiddenSelectionsTextures[] = {"", ""};  // No textures by default.
-  };
 
   class twelfth_M3_MAAWS_backpack: M3_Backpack_Mcm_B {
     author = "Waylen / Sammy";
@@ -217,6 +194,6 @@ class XtdGearInfos {
   class CfgVehicles {
     ALL_GI(standard)
     ALL_GI(forest)
-	ALL_GI(desert)
+	  ALL_GI(desert)
   };
 };

@@ -212,8 +212,9 @@ class CfgWeapons {
   */
 
   // -- Standard Helmets --
-  CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Rex)
+  CUSTOM_HELM_S_AV(Sammy)
+  CUSTOM_HELM_S_AV(Sullivan)
 
   /*
   CUSTOM_HELM_S_AV(Abrams)
@@ -261,7 +262,6 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Shepard)
   CUSTOM_HELM_S_AV(Simmons)
-  CUSTOM_HELM_S_AV(Sullivan)
   CUSTOM_HELM_S_AV(Spector)
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Thomson)

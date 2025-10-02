@@ -5,7 +5,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         units[] = {};
         weapons[] = {};
-        requiredVersion = REQUIRED_VERSION;
+        requiredVersion = 2.12;
         requiredAddons[] = {};
         authors[] = {"Turner605"};
         author = "95th Aux Team";

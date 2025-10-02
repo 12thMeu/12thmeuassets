@@ -20,8 +20,7 @@
 
 // Includes the macros used below (e.g., VEST_MAXLOAD, etc.)
 #include "config_macros.hpp"
-// Includes the vest selection sets and macros for UNSC Foundries vests
-#include "unscf_vest_sel.hpp"
+
 
 // -----------------------------------------------------------------------------
 //  CfgPatches
@@ -51,7 +50,7 @@ class CfgVehicles {
   */
   class ContainerSupply; // Pre-declaration: inherits from a base ArmA class.
   class twelfth_vest_supply : ContainerSupply {
-    maximumLoad=VEST_MAXLOAD;
+    maximumLoad=200;
     /*
       The VEST_MAXLOAD macro is defined in config_macros.hpp. 
       This sets how many "units" of gear can fit inside the vest container.
@@ -77,26 +76,6 @@ class CfgWeapons
       Make sure your requiredAddons[] includes the mod that defines this.
     */
 
-
-  // ---------------------------------------------------------------------------
-  //  Base class for our UNSC Foundries vests (Weber’s custom vest logic)
-  // ---------------------------------------------------------------------------
-  class twelfth_unscf_vest_base : ItemCore {
-    scope=0;  // Hidden from the editor; used only as a parent.
-    scopeArsenal=0;  // Hidden from the virtual arsenal.
-    author="Weber";
-    picture="";  // No picture is set. I'll make one eventually probably
-    model="\19th_H2A_armor\19th_H2A_marines_vests.p3d";
-    allowedSlots[]={ 701 };
-      /*
-        701 = Vest slot. This means you can only put this item
-        into the vest inventory slot (not backpack, not uniform).
-      */
-    hiddenSelections[]={};
-    hiddenSelectionsTextures[]={};
-    // Use the vest macro to set container capacity, mass, and hitpoint info.
-    UNSCF_VEST_ITEM_INFO("",default)
-  };
   
   // ---------------------------------------------------------------------------
   //  Invisible Vest
@@ -120,32 +99,6 @@ class CfgWeapons
     INVIS_VEST_ITEM_INFO
   };
 
-  // ---------------------------------------------------------------------------
-  //  UNSC Foundries Standard (std) Camo Vest Variants
-  // ---------------------------------------------------------------------------
-  /*
-    This macro expands into multiple vest classes based on the selection sets
-    defined in unscf_vest_sel.hpp. Each is a different arrangement of pouches
-    (light, heavy, chest, leg, etc.) for the "std" (standard) camo texture.
-  */
-  UNSCF_VEST_ALL_VARIANTS(twelfth_unscf_vest_std,std,[12th][S])
-
-  // ---------------------------------------------------------------------------
-  //  UNSC Foundries Winter (winter) Camo Vest Variants
-  // ---------------------------------------------------------------------------
-  /*
-    Same as above, but using the "winter" camo folder. The selection sets are the
-    same; only the texture path (winter) changes. 
-  */
-  UNSCF_VEST_ALL_VARIANTS(twelfth_unscf_vest_win,winter,[12th][W])
-  /*
-    NOTE: [12th][S] or [12th][W] is appended to each vest's displayName. 
-    For example, "Rifleman Vest (Heavy & Chest Pouches)" becomes:
-    "[12th][S] Rifleman Vest (Heavy & Chest Pouches)" for the standard variant, etc.
-	
-	
-	
-  */
   
   //-New Armour-----------------------------------------------------
   NEW_VEST_SETUP
