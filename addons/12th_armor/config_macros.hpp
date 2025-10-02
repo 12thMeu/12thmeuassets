@@ -1575,43 +1575,84 @@ a local copy of the base textures from UNSCF around here.
   };                                                                      \
 };
 
-#define BOONIE_WEP(CAMO)                                    \
-  class twelfth_boonie_##CAMO: H_HelmetB {                  \
-    scope=2;                                                \
-    scopeArsenal=2;                                         \
-    author="Sammy, Waylen";                                 \
-    picture="";                                             \
-    displayName="[12th][Caps] Boonie Hat";                  \
-    model = "\a3\characters_f\Common\booniehat";            \
-    hiddenSelections[] = {"camo"};                          \
-    hiddenSelectionsTextures[] = {                          \
-      QP(helmets\boonie_hat\##CAMO\boonie_co.paa)           \
-    };                                                      \
-    class ItemInfo: HeadgearItem {                          \
-        mass = 5;                                           \
-        uniformModel = "\a3\characters_f\Common\booniehat"; \
-        modelSides[] = {6};                                 \
-        hiddenSelections[] = {"camo"};                      \
-    };                                                      \
-  };                                                        \
-
-#define BOONIE_GI(CAMO)\
-  class twelfth_boonie_##CAMO## {\
+// New Boonie
+#define FOLD_BOONIE_GI(CAMO, FOLD)\
+  class twelfth_boonieHat_##FOLD##_##CAMO {\
     model = "twelfth_boonies";\
     camo = #CAMO;\
+    fold = #FOLD;\
+  };\
+                                                      
+#define NAFOLD_BOONIE_GI(CAMO)\
+  class twelfth_boonieHat_##CAMO {\
+    model = "twelfth_boonies";\
+    camo = #CAMO;\
+    fold = "na";\
   };\
 
+  #define BOONIE_GI(CAMO)\
+  NAFOLD_BOONIE_GI(CAMO)\
+  FOLD_BOONIE_GI(CAMO,Folded)\
+  FOLD_BOONIE_GI(CAMO,Folded_Left)\
+  FOLD_BOONIE_GI(CAMO,Folded_Right)\
+
+#define BOONIE_CAMO(CAMO)\
+  class twelfth_boonieHat_##CAMO##: TCP_H_boonieHat_Base {  \
+    author="Rex"; \
+     scope=2;\
+    scopeArsenal=2;                              \
+    picture="";                                       \
+    displayName="[12th][Caps] Boonie";            \
+    hiddenSelections[] = { "camo"};    \
+    hiddenSelectionsTextures[] = {                    \
+      QP(helmets\boonie_hat\##CAMO\boonie_co.paa)       \
+    };                                                \
+    class ItemInfo: ItemInfo {                        \
+      hiddenSelections[] = { "camo"};  \
+      hiddenSelectionsTextures[] = {                  \
+        QP(helmets\boonie_hat\##CAMO\boonie_co.paa)     \
+      };                                              \
+    };                                                \
+  };                                                  \
+
+#define BOONIE_FOLD(CAMO, FOLD)\
+  class twelfth_boonieHat_##FOLD##_##CAMO##: TCP_H_boonieHat_##FOLD##_Base {  \
+    author="Rex"; \
+     scope=2;\
+    scopeArsenal=2;                              \
+    picture="";                                       \
+    displayName="[12th][Caps] Boonie";            \
+    hiddenSelections[] = { "camo"};    \
+    hiddenSelectionsTextures[] = {                    \
+      QP(helmets\boonie_hat\##CAMO\boonie_co.paa)       \
+    };                                                \
+    class ItemInfo: ItemInfo {                        \
+      hiddenSelections[] = { "camo"};  \
+      hiddenSelectionsTextures[] = {                  \
+        QP(helmets\boonie_hat\##CAMO\boonie_co.paa)     \
+      };                                              \
+    };                                                \
+  };                                    
+
+#define BOONIE(CAMO)\
+BOONIE_CAMO(CAMO)\
+BOONIE_FOLD(CAMO,Folded)\
+BOONIE_FOLD(CAMO,Folded_Left)\
+BOONIE_FOLD(CAMO,Folded_Right)\
+
 #define PATROLCAP_WEP(CAMO) \
-  class twelfth_cap_##CAMO: OPTRE_UNSC_PatrolCap_Marines {  \
-    author="Waylen";                                  \
+  class twelfth_patrol_cap_##CAMO##: TCP_H_PatrolCap_Base {  \
+    author="Rex"; \
+     scope=2;\
+    scopeArsenal=2;                              \
     picture="";                                       \
     displayName="[12th][Caps] Patrol Cap";            \
-    hiddenSelections[] = { "camo1", "hide_army" };    \
+    hiddenSelections[] = { "camo"};    \
     hiddenSelectionsTextures[] = {                    \
       QP(helmets\patrol_caps\##CAMO\cap_co.paa)       \
     };                                                \
     class ItemInfo: ItemInfo {                        \
-      hiddenSelections[] = { "camo1", "hide_army" };  \
+      hiddenSelections[] = { "camo"};  \
       hiddenSelectionsTextures[] = {                  \
         QP(helmets\patrol_caps\##CAMO\cap_co.paa)     \
       };                                              \
@@ -1619,8 +1660,8 @@ a local copy of the base textures from UNSCF around here.
   };                                                  \
   
 #define PATROLCAP_GI(CAMO) \
-  class twelfth_cap_##CAMO { \
-    model = "twelfth_patrolcaps"; \
+  class twelfth_patrol_cap_##CAMO { \
+    model = "twelfth_patrolcap"; \
     camo = #CAMO; \
   }; \
 
