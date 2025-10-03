@@ -6,6 +6,7 @@ keys/*
 .hemttout/*
 /a3/
 /x/
+logs/
 
 # ignore all 'compiled files' [hemtt]
 *.pbo
