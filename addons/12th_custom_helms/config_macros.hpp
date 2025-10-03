@@ -271,7 +271,7 @@ class 12th_pilot_ch_##SUFFIX : H_HelmetB {                                \
   optreHUDStyle = "ODST_1";                                               \
   displayName=DISPLAY;                                                    \
   hiddenSelections[] = {"camo1", "camo2", "camo3", "camo4", "camo5"};     \
-  model="\DMNS\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01";          \
+  model="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01";          \
   hiddenSelectionsTextures[]={                                            \
       #CH_PILOT_TEX(C1,Addons_co.paa),                                    \
       #CH_PILOT_TEX(C2,EXT_co.paa),                                       \
@@ -282,7 +282,7 @@ class 12th_pilot_ch_##SUFFIX : H_HelmetB {                                \
   class ItemInfo : HeadgearItem {                                         \
     mass = 25;                                                            \
     modelSides[]={6};                                                     \
-    uniformModel="\DMNS\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01"; \
+    uniformModel="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01"; \
     hiddenSelections[]={"camo1", "camo2", "camo3", "camo4", "camo5"};     \
     hiddenSelectionsTextures[]={                                          \
       #CH_PILOT_TEX(C1,Addons_co.paa),                                    \

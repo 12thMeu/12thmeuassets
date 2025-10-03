@@ -236,28 +236,6 @@ class CfgVehicles {
     A base class for your new-gen (ng) armor sets (chest, arms, legs, etc.).
     Other macros or classes inherit from this to create specific camos/roles.
   */
-  class twelfth_uni_ng_base_veh: B_Soldier_base_F {
-    scope=0;
-    scopeArsenal=0;
-    author="Waylen";
-    displayName="[12th] Armor Base (DON'T USE)";
-    model="\19th_H2A_armor\19th_H2A_marines.p3d";
-    hiddenSelections[] = {
-      "camo",
-      "camo1",
-      "camo2",
-      "camo3",
-      "camo4"
-    };
-    hiddenSelectionsTextures[] = {
-      QP(uniforms\armor\std\chest_co.paa),
-      QP(uniforms\armor\std\arms_co.paa),
-      QP(uniforms\armor\std\legs_co.paa),
-      QP(uniforms\armor\std\bdu_co.paa),
-      QP(uniforms\armor\std\misc_co.paa)
-    };
-  };
-
 /*
 ---------------------------New uniform setup---------------------------
 -----------------------------------------------------------------------
@@ -281,22 +259,13 @@ class CfgVehicles {
     scope=1;
     scopeArsenal=0;
     author="Waylen";
-    model="ODST\ODST_Uniform_F.p3d";
+    model="Foundries\ODST\ODST_Uniform_F.p3d";
     hiddenSelections[]={"camo1", "camo2"};
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_armor\uniforms\odst\odst_top.paa",
       "\x\12thMEU\addons\12th_armor\uniforms\odst\odst_pants.paa"
     };
   };
-
-
-// Macro expansions for the new-gen armor sets, e.g. standard, drk, forest, urban
-  ALL_UNI_VEH(std,std)
-  ALL_UNI_VEH(drk,drk)
-  ALL_UNI_VEH(forest,std)
-  ALL_UNI_VEH(urban,std)
-  ALL_UNI_VEH(desert,std)
-
   
 
 };
@@ -454,7 +423,7 @@ class CfgWeapons {
     displayName="[12th][ODST] Helmet";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0.30000001;
-    model="\ODST\ODST_helm_F.p3d";
+    model="Foundries\ODST\ODST_helm_F.p3d";
     hiddenSelections[]= { "camo" };
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_armor\helmets\odst\odst_helm.paa"
@@ -470,7 +439,7 @@ class CfgWeapons {
           passThrough=0.1;
         };
       };
-      uniformModel="\ODST\ODST_helm_F.p3d";
+      uniformModel="Foundries\ODST\ODST_helm_F.p3d";
       hiddenSelections[]={"camo"};
       hiddenSelectionsTextures[]= {
         "\x\12thMEU\addons\12th_armor\helmets\odst\odst_helm.paa"
@@ -485,10 +454,10 @@ class CfgWeapons {
     displayName="[12th] Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0;
-    model="\halo_marine\halo_helm_01";
+    model="Foundries\halo_marine\halo_helm_01";
     picture="";
     class ItemInfo: HeadgearItem {
-      uniformModel="\halo_marine\halo_helm_01";
+      uniformModel="Foundries\halo_marine\halo_helm_01";
       mass=40;
       modelSides[]={6};
       passThrough=0.1;
@@ -589,11 +558,6 @@ class CfgWeapons {
   CAP_B(pale_horse_2, "[12th][Caps] Cap (Pale Horse 2)")*/
 
   //-UNIFORM-WEPS-----------------------------------------------------
-  ALL_UNI_WEP(std)
-  ALL_UNI_WEP(forest)
-  ALL_UNI_WEP(drk)
-  ALL_UNI_WEP(urban)
-  ALL_UNI_WEP(desert)
 
   //-HELMETS----------------------------------------------------------
   ALL_HELM(std)
@@ -873,11 +837,6 @@ class XtdGearInfos {
     //-------------------------------------- Uniforms
     
     ALL_UNI_GI(std)
-    ALL_UNI_GI(drk)
-    ALL_UNI_GI(forest)
-    ALL_UNI_GI(urban)
-	  ALL_UNI_GI(desert)
-
     // Boonies
 
     BOONIE_GI(std)
@@ -889,9 +848,7 @@ class XtdGearInfos {
     
     //-------------------------------------- Helmets 
 
-    ALL_HELM_GI(std)
 	  CH43A_HELM_GI(std)
-    //ALL_HELM_GI(drk)
 
 
     //-------------------------------------- New uniforms

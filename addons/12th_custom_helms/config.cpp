@@ -176,29 +176,7 @@ class CfgWeapons {
   // ---------------------------------------------------------------------------
   //  Base Class for 12th Custom Helmets
   // ---------------------------------------------------------------------------
-  class twelfth_custom_helm_base : H_HelmetB {
-    scope=0;
-    scopeArsenal=0;
-    author="Waylen";
-    displayName="[12th] Custom Helmet Base (DON'T USE)";
-    ace_hearing_protection=1;
-    ace_hearing_lowerVolume=0;
-    model="\halo_marine\halo_helm_01";
-    picture="";
-    class ItemInfo: HeadgearItem {
-      uniformModel="\halo_marine\halo_helm_01";
-      mass=40;
-      modelSides[]={6};
-      passThrough=0.1;
-      class HitpointsProtectionInfo {
-        class Head {
-          hitpointName="HitHead";
-          armor=20;
-          passThrough=0.1;
-        };
-      };
-    };
-  };
+
   // ---------------------------------------------------------------------------
   //  Macros: CUSTOM_HELM_S_AV(NAME)
   // ---------------------------------------------------------------------------
