@@ -190,6 +190,7 @@ class CfgWeapons {
   */
 
   // -- Standard Helmets --
+  CUSTOM_HELM_S_AV(Bateman)
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Sullivan)
