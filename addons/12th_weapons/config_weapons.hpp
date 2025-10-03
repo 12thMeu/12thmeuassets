@@ -155,17 +155,17 @@ class CfgWeapons
 
       magazines[] = { "CBA_FakeLauncherMagazine" }; // When stowed/backpacked, it does not carry a real rocket.
 
-      model = "\DMNS\Weapons\Launchers\DMNS_M96_LAW_loaded.p3d";
-      picture = "\DMNS\Weapons\Launchers\Data\Law_Icon.paa";
-      UiPicture = "\DMNS\Weapons\Launchers\Data\Law_Icon.paa";
+      model = "Foundries\Weapons\Launchers\DMNS_M96_LAW_loaded.p3d";
+      picture = "Foundries\Weapons\Launchers\Data\Law_Icon.paa";
+      UiPicture = "Foundries\Weapons\Launchers\Data\Law_Icon.paa";
       handAnim[] = {
           "OFP2_ManSkeleton",
           "\A3\Weapons_F_Exp\Launchers\RPG7\Data\Anim\RPG7V.rtm"
       };
       hiddenSelections[] = { "camo1", "camo2" };
       hiddenSelectionsTextures[] = {
-          "\DMNS\Weapons\Launchers\Data\M96_Tube_co.paa",
-          "\DMNS\Weapons\Launchers\Data\M96_body_co.paa"
+          "Foundries\Weapons\Launchers\Data\M96_Tube_co.paa",
+          "Foundries\Weapons\Launchers\Data\M96_body_co.paa"
       };
 
       reloadAction = "GestureReloadRPG7";
@@ -278,7 +278,7 @@ class CfgWeapons
         magazines[] = { "CBA_FakeLauncherMagazine" };
         weaponPoolAvailable = 0;
 
-        model = "DMNS\Weapons\Launchers\DMNS_M96_LAW_Used.p3d";
+        model = "Foundries\Weapons\Launchers\DMNS_M96_LAW_Used.p3d";
 
         class WeaponSlotsInfo: WeaponSlotsInfo{
             mass = 80; // launcher mass (100)
