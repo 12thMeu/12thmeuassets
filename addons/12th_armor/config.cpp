@@ -225,9 +225,9 @@ class CfgVehicles {
   class OPTRE_UNSC_Army_Soldier_DressGray;
   class OPTRE_UNSC_CH252A_Helmet_Base;
   class OPTRE_UNSC_CH252A_Helmet_dp;
+ 
   class 19th_ODST;
   //TCP UNIFORM vehicle definitions
-
   
   // ---------------------------------------------------------------------------
   //  twelfth_uni_ng_base_veh
@@ -266,6 +266,7 @@ class CfgVehicles {
 */
   TCP_VEH_CLASS_DEF
   VEH_UNI_CLASS(std)
+  
 
 
   // ---------------------------------------------------------------------------
@@ -305,14 +306,11 @@ class CfgVehicles {
 // -----------------------------------------------------------------------------
 class CfgWeapons {
   class H_Cap_oli;
-  class H_Booniehat_oli;
   class UniformItem;
   class ItemInfo;
   class Uniform_Base;
   class H_HelmetB;
   class HeadgearItem;
-  class OPTRE_UNSC_PatrolCap_Army;
-  class OPTRE_UNSC_PatrolCap_Marines;
   class OPTRE_UNSC_Army_Uniform_WDL;
   class OPTRE_UNSC_Army_Uniform_R_WDL;
   class OPTRE_UNSC_Army_Uniform_S_WDL;
@@ -324,6 +322,11 @@ class CfgWeapons {
   class OPTRE_UNSC_CH252A_Helmet_Base;
   class OPTRE_UNSC_CH252A_Helmet_dp;  // Base uniform item for new-gen armor
   class TCP_H_Helmet_ECH43A_Base;
+  class TCP_H_boonieHat_Base;
+  class TCP_H_boonieHat_Folded_Base;
+  class TCP_H_boonieHat_Folded_Left_Base;
+  class TCP_H_boonieHat_Folded_Right_Base;
+  class TCP_H_PatrolCap_Base;
   class twelfth_uni_ng_base_wep: Uniform_Base {
     author="Waylen";
     scope=0;
@@ -345,7 +348,7 @@ class CfgWeapons {
   //TCP UNIFORM Weapon definitions
   TCP_WEP_CLASS_DEF
   WEP_UNI_CLASS(std)
-
+  BOONIE(std)
 
 
   // Example ODST uniform item referencing twelfth_odst_uniform_veh
@@ -436,13 +439,9 @@ class CfgWeapons {
   };
 
 
-  BOONIE_WEP(std)
-  BOONIE_WEP(forest)
-  BOONIE_WEP(desert)
+
 
   PATROLCAP_WEP(std)
-  PATROLCAP_WEP(forest)
-  PATROLCAP_WEP(desert)
 
   UTILITYCOVER_WEP(std)
   //-HELMETS----------------------------------------------------------
@@ -613,29 +612,14 @@ class CfgWeapons {
 class XtdGearModels {
   class CfgWeapons {
     // Helmets
-    class twelfth_patrolcaps {
+    class twelfth_patrolcap {
       label = "12th Patrol Caps";
       options[] = {"camo"};
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"std", "forest","desert"};
-        class forest {label="Standard"; image=XTP(forest);};
-        class std {label = "MARPAT"; image=XTP(std);};
-		    class desert {label = "Desert"; image=XTP(desert);};
-      };
-    };
-
-    class twelfth_boonies {
-      label = "12th Boonie Hats";
-      options[] = {"camo"};
-      class camo {
-        alwaysSelectable = 1;
-        label = "Camoflauge";
-        values[] = {"std", "forest","desert"};
-        class forest {label="Standard"; image=XTP(forest);};
-        class std {label = "MARPAT"; image=XTP(std);};
-		    class desert {label = "Desert"; image=XTP(desert);};
+        values[] = {"std"};
+        class std {label = "Forest";};
       };
     };
 
@@ -646,7 +630,7 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label = "Camoflauge";
         values[] = {"std"};
-        class std {label="Standard"; image=XTP(forest);};
+        class std {label="Forest";};
       };
     };
 
@@ -861,6 +845,25 @@ class XtdGearModels {
         class med {label="Corpsman"; image=XTP(med);};
       };
     };
+
+    class twelfth_boonies {
+      label="12th Boonies";
+      options[] = {"camo", "fold"};
+      class camo {
+        alwaysSelectable = 1;
+        label="Camouflage";
+        values[]={"std"};
+        class std {label="Forest";}; 
+      };
+      class fold {
+        alwaysSelectable = 1;
+        values[]={"na", "Folded_Left", "Folded_Right", "Folded"};
+        class na {label="No fold";};
+        class Folded_Left {label="Left";};
+        class Folded_Right {label="Right";};
+        class Folded {label="Both";};
+      };
+    };
   };
 };
 
@@ -878,14 +881,12 @@ class XtdGearInfos {
     // Boonies
 
     BOONIE_GI(std)
-    BOONIE_GI(forest)
-  	BOONIE_GI(desert)      
+    
 
     // Patrol caps
 
     PATROLCAP_GI(std)
-    PATROLCAP_GI(forest)
-	  PATROLCAP_GI(desert)
+    
     //-------------------------------------- Helmets 
 
     ALL_HELM_GI(std)
