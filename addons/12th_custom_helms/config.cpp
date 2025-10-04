@@ -191,65 +191,11 @@ class CfgWeapons {
 
   // -- Standard Helmets --
   CUSTOM_HELM_S_AV(Bateman)
+  CUSTOM_HELM_S_AV(Duckworth)
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Sullivan)
 
-  /*
-  CUSTOM_HELM_S_AV(Abrams)
-  CUSTOM_HELM_S_AV(Aurora)
-  CUSTOM_HELM_S_AV(Bateman)
-  CUSTOM_HELM_S_AV(Bert)
-  CUSTOM_HELM_S_AV(Bob)
-  CUSTOM_HELM_S_AV(Bobby)
-  CUSTOM_HELM_S_AV(Bretek)
-  CUSTOM_HELM_S_AV(Broad)
-  CUSTOM_HELM_S_AV(Bunge)
-  CUSTOM_HELM_S_AV(Burns)
-  CUSTOM_HELM_S_AV(Coady)
-  CUSTOM_HELM_S_AV(Dennis)
-  CUSTOM_HELM_S_AV(Deluge)
-  CUSTOM_HELM_S_AV(Dom)
-  CUSTOM_HELM_S_AV(Don)
-  CUSTOM_HELM_S_AV(Dras)
-  CUSTOM_HELM_S_AV(Dixie)
-  CUSTOM_HELM_S_AV(Ford)
-  CUSTOM_HELM_S_AV(Gallegos)
-  CUSTOM_HELM_S_AV(Galvin)
-  CUSTOM_HELM_S_AV(Geoff)
-  CUSTOM_HELM_S_AV(Gaunt)
-  CUSTOM_HELM_S_AV(Hathaway)
-  CUSTOM_HELM_S_AV(Kiens)
-  CUSTOM_HELM_S_AV(LeDoux)
-  CUSTOM_HELM_S_AV(Link)
-  CUSTOM_HELM_S_AV(Luerssen)
-  CUSTOM_HELM_S_AV(Luke)
-  CUSTOM_HELM_S_AV(Nightingale)
-  CUSTOM_HELM_S_AV(Mackle)
-  CUSTOM_HELM_S_AV(Moss)
-  CUSTOM_HELM_S_AV(Mcintyre)
-  CUSTOM_HELM_S_AV(McMillian)
-//  CUSTOM_HELM_S_AV(Obi)
-  CUSTOM_HELM_S_AV(Oliver)
-  CUSTOM_HELM_S_AV(Origami)
-  CUSTOM_HELM_S_AV(Quebec)
-  CUSTOM_HELM_S_AV(Quinn)
-  CUSTOM_HELM_S_AV(Romanov)
-  CUSTOM_HELM_S_AV(Schultz)
-//  CUSTOM_HELM_S_AV(Shen)
-  CUSTOM_HELM_S_AV(Sand)
-  CUSTOM_HELM_S_AV(Sammy)
-  CUSTOM_HELM_S_AV(Shepard)
-  CUSTOM_HELM_S_AV(Simmons)
-  CUSTOM_HELM_S_AV(Spector)
-  CUSTOM_HELM_S_AV(Styx)
-  CUSTOM_HELM_S_AV(Thomson)
-  CUSTOM_HELM_S_AV(Vickers)
-//  CUSTOM_HELM_S_AV(Waylen)
-  CUSTOM_HELM_S_AV(Wilson)
-  CUSTOM_HELM_S_AV(Wolffe)
-  CUSTOM_HELM_S_AV(Whirley)
-  CUSTOM_HELM_S_AV(Wulf) */
 
   // -- Pilot Helmets --
   /*
@@ -308,6 +254,7 @@ class XtdGearModels {
         values[]={
           "Abrams",
           "Aurora",
+          "Duckworth",
           "Bateman",
           "Bert",
           "Bob",
@@ -323,11 +270,9 @@ class XtdGearModels {
           "Don",
           "Dras",
           "Dixie",
-          "Ford",
           "Gallegos",
           "Galvin",
           "Geoff",
-          "Gaunt",
           "Hathaway",
           "Kiens",
           "LeDoux",
@@ -370,9 +315,11 @@ class XtdGearInfos {
       (visor = "Yes") and NV (visor = "No") for each name in "member".
     */
   class CfgWeapons {
+    
+    CH_HELM_S_GI(Duckworth)
+    CH_HELM_S_GI(Bateman)
     CH_HELM_S_GI(Abrams)
     CH_HELM_S_GI(Aurora)
-    CH_HELM_S_GI(Bateman)
     CH_HELM_S_GI(Bert)
     CH_HELM_S_GI(Bob)
     CH_HELM_S_GI(Bobby)
@@ -387,11 +334,9 @@ class XtdGearInfos {
     CH_HELM_S_GI(Don)
     CH_HELM_S_GI(Dras)
     CH_HELM_S_GI(Dixie)
-    CH_HELM_S_GI(Ford)
     CH_HELM_S_GI(Gallegos)
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)
-    CH_HELM_S_GI(Gaunt)
     CH_HELM_S_GI(Hathaway)
     CH_HELM_S_GI(Kiens)
     CH_HELM_S_GI(LeDoux)
@@ -422,6 +367,5 @@ class XtdGearInfos {
     CH_HELM_S_GI(Wolffe)
     CH_HELM_S_GI(Whirley)
     CH_HELM_S_GI(Wulf)
-
   };
 };
