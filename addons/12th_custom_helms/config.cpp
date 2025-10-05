@@ -194,6 +194,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Duckworth)
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
+  CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Sullivan)
 
 
