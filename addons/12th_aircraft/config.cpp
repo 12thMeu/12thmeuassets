@@ -503,6 +503,25 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_FixedWing";
+    hiddenSelections[] = {"camo_body","camo_canopy","MapUVObject"};
+    hiddenSelectionsTextures[] = {"PN_F29_Nandao\F29_Nandao\data\Body_co.paa","PN_F29_Nandao\F29_Nandao\data\camos\Canopy_Black_ca.paa"};
+    class TextureSources
+    {
+      class MEU_FactoryGrey{
+        displayName = "Factory Grey";
+        author = "1st MEU Venom";
+        textures[] = {"PN_F29_Nandao\F29_Nandao\data\Body_co.paa","PN_F29_Nandao\F29_Nandao\data\camos\Canopy_Black_ca.paa"};
+        factions[] = {"twelfth_MEU"};
+      };
+      class Apache{
+        displayName = "Apache";
+        author = "Apache/Sammy";
+        textures[] = {"\x\12thMEU\addons\12th_aircraft\nandao\apache\Body_co.paa","PN_F29_Nandao\F29_Nandao\data\Canopy_ca.paa"};
+        factions[] = {"twelfth_MEU"};
+      };
+    };
+    textureList[] = {"MEU_FactoryGrey",1,"Apache",1};
+    
     AIR_SP_INFO(Nandao,0,Base)
   };
 };
