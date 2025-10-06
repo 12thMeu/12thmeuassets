@@ -238,13 +238,12 @@ class CfgVehicles {
   */
 /*
 ---------------------------New uniform setup---------------------------
------------------------------------------------------------------------
------------------------------------------------------------------------
+---------------This is where you put new uniform textures macro-------------
 -----------------------------------------------------------------------
 */
   TCP_VEH_CLASS_DEF
   VEH_UNI_CLASS(std)
-  
+  VEH_UNI_CLASS(winter)
 
 
   // ---------------------------------------------------------------------------
@@ -317,6 +316,7 @@ class CfgWeapons {
   //TCP UNIFORM Weapon definitions
   TCP_WEP_CLASS_DEF
   WEP_UNI_CLASS(std)
+  WEP_UNI_CLASS(winter)
   BOONIE(std)
 
 
@@ -681,8 +681,9 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"std"};
+        values[]={"std","winter"};
         class std {label="Standard";     image=XTP(forest);};
+        class winter {label="Winter"; image=XTP(winter);};
 
 
       };
@@ -853,7 +854,7 @@ class XtdGearInfos {
 
     //-------------------------------------- New uniforms
     NEW_UNIFROM_GI(std)
-
+    NEW_UNIFROM_GI(winter)
     // Utility cover
 
     UTILITYCOVER_GI(std)
