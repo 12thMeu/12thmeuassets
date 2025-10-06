@@ -244,6 +244,7 @@ class CfgVehicles {
   TCP_VEH_CLASS_DEF
   VEH_UNI_CLASS(std)
   VEH_UNI_CLASS(winter)
+  VEH_UNI_CLASS(opfor)
 
 
   // ---------------------------------------------------------------------------
@@ -317,9 +318,11 @@ class CfgWeapons {
   TCP_WEP_CLASS_DEF
   WEP_UNI_CLASS(std)
   WEP_UNI_CLASS(winter)
+  WEP_UNI_CLASS(opfor)
   BOONIE(std)
   BOONIE(desert)
   BOONIE(snow)
+  BOONIE(opfor)
 
 
   // Example ODST uniform item referencing twelfth_odst_uniform_veh
@@ -415,10 +418,12 @@ class CfgWeapons {
   PATROLCAP_WEP(std)
   PATROLCAP_WEP(desert)
   PATROLCAP_WEP(snow)
+  PATROLCAP_WEP(opfor)
 
   UTILITYCOVER_WEP(std)
   UTILITYCOVER_WEP(desert)
   UTILITYCOVER_WEP(snow)
+  UTILITYCOVER_WEP(opfor)
   //-HELMETS----------------------------------------------------------
 
   class twelfth_odst_helm: H_HelmetB {
@@ -588,10 +593,11 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"std", "desert", "snow"};
+        values[] = {"std", "desert", "snow", "opfor"};
         class std {label = "Forest";};
         class desert {label = "Desert";};
         class snow {label = "Winter";};
+        class opfor {label = "OPFOR";};
       };
     };
 
@@ -601,10 +607,11 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"std", "desert", "snow"};
+        values[] = {"std", "desert", "snow", "opfor"};
         class std {label="Forest";};
         class desert {label="Desert";};
         class snow {label="Winter";};
+        class opfor {label="OPFOR";};
       };
     };
 
@@ -691,9 +698,10 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"std","winter"};
+        values[]={"std","winter","opfor"};
         class std {label="Standard";     image=XTP(forest);};
         class winter {label="Winter"; image=XTP(winter);};
+        class opfor {label="OPFOR";};
 
 
       };
@@ -827,10 +835,11 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"std", "desert", "snow"};
+        values[]={"std", "desert", "snow", "opfor"};
         class std {label="Forest";}; 
         class desert {label="Desert";};
         class snow {label="Winter";};
+        class opfor {label="OPFOR";};
       };
       class fold {
         alwaysSelectable = 1;
@@ -855,6 +864,7 @@ class XtdGearInfos {
     BOONIE_GI(std)
     BOONIE_GI(desert)
     BOONIE_GI(snow)
+    BOONIE_GI(opfor)
     
 
     // Patrol caps
@@ -862,6 +872,7 @@ class XtdGearInfos {
     PATROLCAP_GI(std)
     PATROLCAP_GI(desert)
     PATROLCAP_GI(snow)
+    PATROLCAP_GI(opfor)
     
     //-------------------------------------- Helmets 
 
@@ -871,11 +882,13 @@ class XtdGearInfos {
     //-------------------------------------- New uniforms
     NEW_UNIFROM_GI(std)
     NEW_UNIFROM_GI(winter)
+    NEW_UNIFROM_GI(opfor)
     // Utility cover
 
     UTILITYCOVER_GI(std)
     UTILITYCOVER_GI(desert)
     UTILITYCOVER_GI(snow)
+    UTILITYCOVER_GI(opfor)
 
 
     
