@@ -191,7 +191,7 @@ class CfgPatches {
       "twelfth_cap_pale_horse",
       "twelfth_cap_pale_horse_2",
       "twelfth_boonie_std",
-	  "twelfth_boonie_desert",
+	    "twelfth_boonie_desert",
       "twelfth_boonie_forest",
       "twelfth_clothes_std_wep",
       "twelfth_clothes_std_rolled_wep",
@@ -318,6 +318,7 @@ class CfgWeapons {
   WEP_UNI_CLASS(std)
   WEP_UNI_CLASS(winter)
   BOONIE(std)
+  BOONIE(desert)
 
 
   // Example ODST uniform item referencing twelfth_odst_uniform_veh
@@ -411,8 +412,10 @@ class CfgWeapons {
 
 
   PATROLCAP_WEP(std)
+  PATROLCAP_WEP(desert)
 
   UTILITYCOVER_WEP(std)
+  UTILITYCOVER_WEP(desert)
   //-HELMETS----------------------------------------------------------
 
   class twelfth_odst_helm: H_HelmetB {
@@ -582,8 +585,9 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"std"};
+        values[] = {"std", "desert"};
         class std {label = "Forest";};
+        class desert {label = "Desert";};
       };
     };
 
@@ -593,8 +597,9 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label = "Camoflauge";
-        values[] = {"std"};
+        values[] = {"std", "desert"};
         class std {label="Forest";};
+        class desert {label="Desert";};
       };
     };
 
@@ -817,8 +822,9 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"std"};
+        values[]={"std", "desert"};
         class std {label="Forest";}; 
+        class desert {label="Desert";};
       };
       class fold {
         alwaysSelectable = 1;
@@ -841,11 +847,13 @@ class XtdGearInfos {
     // Boonies
 
     BOONIE_GI(std)
+    BOONIE_GI(desert)
     
 
     // Patrol caps
 
     PATROLCAP_GI(std)
+    PATROLCAP_GI(desert)
     
     //-------------------------------------- Helmets 
 
@@ -858,6 +866,7 @@ class XtdGearInfos {
     // Utility cover
 
     UTILITYCOVER_GI(std)
+    UTILITYCOVER_GI(desert)
 
 
     
