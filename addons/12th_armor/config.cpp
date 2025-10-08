@@ -244,6 +244,7 @@ class CfgVehicles {
   TCP_VEH_CLASS_DEF
   VEH_UNI_CLASS(std)
   VEH_UNI_CLASS(winter)
+  VEH_UNI_CLASS(desert)
 
 
   // ---------------------------------------------------------------------------
@@ -317,6 +318,7 @@ class CfgWeapons {
   TCP_WEP_CLASS_DEF
   WEP_UNI_CLASS(std)
   WEP_UNI_CLASS(winter)
+  WEP_UNI_CLASS(desert)
   BOONIE(std)
 
 
@@ -681,9 +683,10 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"std","winter"};
+        values[]={"std","winter","desert"};
         class std {label="Standard";     image=XTP(forest);};
         class winter {label="Winter"; image=XTP(winter);};
+        class desert {label="Desert"; image=XTP(desert);};
 
 
       };
@@ -729,38 +732,6 @@ class XtdGearModels {
       };
 
 
-    };
-    class twelfth_base_uniforms {
-      label="12th Infantry Uniforms";
-      options[] = {"camo", "element","role"};
-      class camo {
-        alwaysSelectable = 1;
-        label="Camouflage";
-        values[]={"forest", "std", "forest90", "urban", "drk", "desert"};
-        class forest {label="Standard";     image=XTP(forest);};
-        class std {label="MARPAT"; image=XTP(std);};
-        class forest90 {label="Forest90";     image=XTP(forest90);};
-        class urban {label="Urban";     image=XTP(urban);}; //maybe winter?? will need to look into new armor pieces
-        class drk {label="VBSS";     image=XTP(vbss);};
-	    	class desert {label="Desert";     image=XTP(desert);};
-      };
-      class element {
-        alwaysSelectable = 1;
-        label="Element";
-        values[]={"na","hq","1pl","2pl","lpl"};
-        class na  {label="None";};
-        class hq  {label="HQ";  image=XTP(athena);};
-        class 1pl {label="1PLT"; image=XTP(1pl);};
-        class 2pl {label="2PLT";   image=XTP(2pl);};
-        class lpl {label="LOGI";   image=XTP(chaos);};
-      };
-      class role {
-        alwaysSelectable = 1;
-        label="MOS";
-        values[]={"na","med"};
-        class na  {label="None";};
-        class med {label="Corpsman"; image=XTP(med);};
-      };
     };
 
     class twelfth_base_vests {
@@ -855,6 +826,7 @@ class XtdGearInfos {
     //-------------------------------------- New uniforms
     NEW_UNIFROM_GI(std)
     NEW_UNIFROM_GI(winter)
+    NEW_UNIFROM_GI(desert)
     // Utility cover
 
     UTILITYCOVER_GI(std)
