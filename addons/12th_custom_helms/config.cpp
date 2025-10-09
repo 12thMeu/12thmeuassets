@@ -191,11 +191,13 @@ class CfgWeapons {
 
   // -- Standard Helmets --
   CUSTOM_HELM_S_AV(Bateman)
+  CUSTOM_HELM_S_AV(Bert)
   CUSTOM_HELM_S_AV(Duckworth)
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Sullivan)
+  CUSTOM_HELM_S_AV(Felix)
 
 
   // -- Pilot Helmets --
@@ -255,7 +257,6 @@ class XtdGearModels {
         values[]={
           "Abrams",
           "Aurora",
-          "Duckworth",
           "Bateman",
           "Bert",
           "Bob",
@@ -270,7 +271,9 @@ class XtdGearModels {
           "Dom",
           "Don",
           "Dras",
+          "Duckworth",
           "Dixie",
+          "Felix",
           "Gallegos",
           "Galvin",
           "Geoff",
@@ -316,11 +319,9 @@ class XtdGearInfos {
       (visor = "Yes") and NV (visor = "No") for each name in "member".
     */
   class CfgWeapons {
-    
-    CH_HELM_S_GI(Duckworth)
-    CH_HELM_S_GI(Bateman)
     CH_HELM_S_GI(Abrams)
     CH_HELM_S_GI(Aurora)
+    CH_HELM_S_GI(Bateman)
     CH_HELM_S_GI(Bert)
     CH_HELM_S_GI(Bob)
     CH_HELM_S_GI(Bobby)
@@ -334,7 +335,9 @@ class XtdGearInfos {
     CH_HELM_S_GI(Dom)
     CH_HELM_S_GI(Don)
     CH_HELM_S_GI(Dras)
+    CH_HELM_S_GI(Duckworth)
     CH_HELM_S_GI(Dixie)
+    CH_HELM_S_GI(Felix)
     CH_HELM_S_GI(Gallegos)
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)
