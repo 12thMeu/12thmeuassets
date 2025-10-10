@@ -198,6 +198,8 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Sullivan)
   CUSTOM_HELM_S_AV(Felix)
+  CUSTOM_HELM_S_AV(Kiens)
+  CUSTOM_HELM_S_AV(Bob)
 
 
   // -- Pilot Helmets --
