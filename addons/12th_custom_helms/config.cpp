@@ -200,6 +200,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Felix)
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(Bob)
+  CUSTOM_HELM_S_AV(Geoff)
 
 
   // -- Pilot Helmets --
