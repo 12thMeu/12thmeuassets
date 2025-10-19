@@ -203,6 +203,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(Bob)
   CUSTOM_HELM_S_AV(Geoff)
+  CUSTOM_HELM_S_AV(Mercer)
 
 
   // -- Pilot Helmets --
@@ -290,6 +291,7 @@ class XtdGearModels {
           "Luke",
           "Nightingale",
           "Mackle",
+          "Mercer",
           "Moss",
           "Mcintyre",
           "McMillian",
@@ -354,6 +356,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Luke)
     CH_HELM_S_GI(Nightingale)
     CH_HELM_S_GI(Mackle)
+    CH_HELM_S_GI(Mercer)
     CH_HELM_S_GI(Moss)
     CH_HELM_S_GI(Mcintyre)
     CH_HELM_S_GI(McMillian)
