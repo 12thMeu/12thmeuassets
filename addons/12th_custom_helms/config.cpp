@@ -192,20 +192,21 @@ class CfgWeapons {
   // -- Standard Helmets --
   CUSTOM_HELM_S_AV(Bateman)
   CUSTOM_HELM_S_AV(Bert)
+  CUSTOM_HELM_S_AV(Bob)
+  CUSTOM_HELM_S_AV(Dixie)
   CUSTOM_HELM_S_AV(Duckworth)
+  CUSTOM_HELM_S_AV(Felix)
+  CUSTOM_HELM_S_AV(Geoff)
+  CUSTOM_HELM_S_AV(Kiens)
+  CUSTOM_HELM_S_AV(LeDoux)
+  CUSTOM_HELM_S_AV(Mercer)
+  CUSTOM_HELM_S_AV(Perry)
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Simmons)
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Sullivan)
-  CUSTOM_HELM_S_AV(Felix)
-  CUSTOM_HELM_S_AV(Kiens)
-  CUSTOM_HELM_S_AV(Bob)
-  CUSTOM_HELM_S_AV(Geoff)
-  CUSTOM_HELM_S_AV(Mercer)
-  CUSTOM_HELM_S_AV(Dixie)
-
 
   // -- Pilot Helmets --
   /*
@@ -270,16 +271,16 @@ class XtdGearModels {
           "Bobby",
           "Bretek",
           "Broad",
-          "Burns",
           "Bunge",
+          "Burns",
           "Coady",
-          "Dennis",
           "Deluge",
+          "Dennis",
+          "Dixie",
           "Dom",
           "Don",
           "Dras",
           "Duckworth",
-          "Dixie",
           "Felix",
           "Gallegos",
           "Galvin",
@@ -290,31 +291,32 @@ class XtdGearModels {
           "Link",
           "Luerssen",
           "Luke",
-          "Nightingale",
           "Mackle",
+          "McMillian",
+          "Mcintyre",
           "Mercer",
           "Moss",
-          "Mcintyre",
-          "McMillian",
+          "Nightingale",
           "Oliver",
           "Origami",
+          "Perry",
           "Quebec",
           "Quinn",
           "Rex",
-          "Schultz",
-          "Sand",
           "Sammy",
+          "Sand",
+          "Schultz",
           "Shepard",
           "Simmons",
-          "Sullivan",
           "Spector",
           "Styx",
+          "Sullivan",
           "Thomson",
           "Vickers",
+          "Whirley",
           "Wilson",
           "Wolffe",
-          "Whirley",
-          "Wulf",
+          "Wulf"
         };
       };
     };
