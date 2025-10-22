@@ -51,8 +51,8 @@
 #define CUSTOM_HELM_S_AV(SUFFIX)                       \
 class twelfth_helmCH43A_std_##SUFFIX##: twelfth_helmCH43A_base {  \
     scope=2;                                           \
-    author="Waylen";                                     \
-    picture="";                                        \
+    author="Sammy";                                     \
+    picture="\x\12thMEU\logo.paa";                                        \
     scopeArsenal=2;                                    \
     displayName=#GLUE3(S_PREFIX,[SV] ,SUFFIX);         \
   hiddenSelections[] = { "camo","decals" };              \
@@ -66,7 +66,7 @@ class twelfth_helmCH43A_std_##SUFFIX##: twelfth_helmCH43A_base {  \
 	};  											\
   class ItemInfo: HeadgearItem {                \
     uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\h_helmet_CH43A.p3d";   \
-    picture="";                                 \
+    picture="\x\12thMEU\logo.paa";                                 \
     mass=40;                                    \
     modelSides[]={6};                           \
     passThrough=0.1;                            \
@@ -86,8 +86,8 @@ class twelfth_helmCH43A_std_##SUFFIX##: twelfth_helmCH43A_base {  \
 };                                                     \
 class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
   scope=2;                                           \
-  author="Waylen";                                     \
-  picture="";                                        \
+  author="Sammy";                                     \
+  picture="\x\12thMEU\logo.paa";                                        \
   scopeArsenal=2;                                    \
   displayName=#GLUE3(S_PREFIX,[CLSD] ,SUFFIX);         \
   hiddenSelections[]= {"camo","camo1","decals"};             \
@@ -102,7 +102,7 @@ class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
   };  											\
   class ItemInfo: HeadgearItem {                \
     uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_DP.p3d";   \
-    picture="";                                 \
+    picture="\x\12thMEU\logo.paa";                                 \
     mass=40;                                    \
     modelSides[]={6};                           \
     passThrough=0.1;                            \
@@ -264,7 +264,7 @@ class 12th_pilot_ch_##SUFFIX : H_HelmetB {                                \
   author="Waylen";                                                          \
   scope=2;                                                                \
   scopeArsenal=2;                                                         \
-  picture="";                                                             \
+  picture="\x\12thMEU\logo.paa";                                                             \
   ace_hearing_protection=1;                                               \
   ace_hearing_lowerVolume=0.30000001;                                     \
   optreVarietys[] = {"", "", "_broken"};                                  \

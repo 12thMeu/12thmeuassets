@@ -331,7 +331,7 @@ class CfgWeapons {
     scope=2;
     scopeArsenal=2;
     author="Waylen";
-    picture="";
+    picture="\x\12thMEU\logo.paa";
     model="\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
     displayName="[12th][ODST] Armor";
     ACE_GForceCoef = 0.4;
@@ -431,7 +431,7 @@ class CfgWeapons {
     scope=2;
     scopeArsenal=2;
     author="Waylen";
-    picture="";
+    picture="\x\12thMEU\logo.paa";
     displayName="[12th][ODST] Helmet";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0.30000001;
@@ -487,6 +487,7 @@ class CfgWeapons {
     scope=0;
     author="Sammy";
     scopeArsenal=0;
+    picture="\x\12thMEU\logo.paa";
     displayName="[12th] Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0;
@@ -517,6 +518,7 @@ class CfgWeapons {
     displayName="[12th] Helmet Closed Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0;
+    picture="\x\12thMEU\logo.paa";
     class TCP_uniformDecals
     {
       selectionName = "nameCH43A";
@@ -544,7 +546,7 @@ class CfgWeapons {
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0;
     model="A3\Characters_F\Common\headgear_helmet_heli";
-    picture="";
+    picture="\x\12thMEU\logo.paa";
     class ItemInfo: HeadgearItem {
       uniformModel="A3\Characters_F\Common\headgear_helmet_heli";
       mass=30;
