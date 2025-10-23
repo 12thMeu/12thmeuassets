@@ -200,6 +200,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(LeDoux)
   CUSTOM_HELM_S_AV(Mercer)
+  CUSTOM_HELM_S_AV(Moss)
   CUSTOM_HELM_S_AV(Perry)
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
