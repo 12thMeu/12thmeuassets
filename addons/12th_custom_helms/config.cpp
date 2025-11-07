@@ -199,6 +199,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Geoff)
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(LeDoux)
+  CUSTOM_HELM_S_AV(Mcintyre)
   CUSTOM_HELM_S_AV(Mercer)
   CUSTOM_HELM_S_AV(Moss)
   CUSTOM_HELM_S_AV(Perry)
@@ -207,8 +208,9 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Simmons)
   CUSTOM_HELM_S_AV(Styx)
+  CUSTOM_HELM_S_AV(Origami)
   CUSTOM_HELM_S_AV(Sullivan)
-  CUSTOM_HELM_S_AV(Mcintyre)
+
 
   // -- Pilot Helmets --
   /*
@@ -367,6 +369,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(McMillian)
     CH_HELM_S_GI(Oliver)
   	CH_HELM_S_GI(Origami)
+    CH_HELM_S_GI(Perry)
     CH_HELM_S_GI(Quebec)
 	  CH_HELM_S_GI(Quinn)
   	CH_HELM_S_GI(Rex)

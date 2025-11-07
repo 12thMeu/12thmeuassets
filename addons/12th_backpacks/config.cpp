@@ -64,7 +64,8 @@ class CfgPatches {
 class CfgVehicles {
   class B_AssaultPack_Base;  // Base class for standard backpacks.
   class M3_Backpack_Mcm_B;
-
+  class mgsr_poncho_wet;
+  class mgsr_poncho_dry;
   // ---------------------------------------------------------------------------
   //  twelfth_backpack_base
   // ---------------------------------------------------------------------------
@@ -91,6 +92,25 @@ class CfgVehicles {
     class TransportItems {};  // No items by default.
   };
 
+  // Poncho backpack
+  class twelft_poncho_wet:mgsr_poncho_wet{
+    maximumLoad = BP_MAXLOAD;
+    mass = BP_MASS;
+    author = "Sammy";
+		scope = 2;
+		displayName = "[Twelfth] Poncho (Wet)";
+  };
+
+  class twelft_poncho_dry:mgsr_poncho_dry{
+    maximumLoad = BP_MAXLOAD;
+    mass = BP_MASS;
+    author = "Sammy";
+		scope = 2;
+		displayName = "[Twelfth] Poncho (Dry)";
+  };
+
+
+
 
   // ---------------------------------------------------------------------------
   //  twelfth_backpack_invis
@@ -107,7 +127,6 @@ class CfgVehicles {
     model = "\halo_marine\null.p3d";  // Invisible model.
     hiddenSelectionsTextures[] = {"", "", "", ""};  // No textures.
   };
-
 
   class twelfth_M3_MAAWS_backpack: M3_Backpack_Mcm_B {
     author = "Waylen / Sammy";

@@ -66,17 +66,115 @@ class CfgWeapons
   class ItemCore;
   class VestItem;
   class OPTRE_UNSC_M52A_Armor2_MAR;
+  class mgsr_poncho_wet_vest;
+  class mgsr_poncho_dry_vest;
 
+  // Ponchos
 
-
-
-    /*
-      This is an OPTRE (Operation: Trebuchet) base class used
-      purely as an inheritance reference for the invisible vest. 
-      Make sure your requiredAddons[] includes the mod that defines this.
-    */
-
+  class twelft_poncho_dry_vest:mgsr_poncho_dry_vest{
+    author = "Sammy";
+		scope = 2;
+		displayName = "[Twelfth] Poncho (Wet)";
+		class ItemInfo: VestItem
+		{
+      containerClass="twelfth_vest_supply";
+      mass = 80;
+      class HitpointsProtectionInfo {
+        class Neck {
+          hitpointName="HitNeck";
+          armor=20; 
+          passThrough=0.30000001;
+        };
+        class Arms {
+          hitpointName="HitArms";
+          armor=10; 
+          passThrough=0.60000002;
+        };
+        class Chest {
+          hitpointName="HitChest";
+          armor=20; 
+          passThrough=0.30000001;
+        };
+        class Diaphragm {        
+          hitpointName="HitDiaphragm";
+          armor=20; 
+          passThrough=0.30000001;
+        };
+        class Abdomen {
+          hitpointName="HitAbdomen";
+          armor=20; 
+          passThrough=0.30000001;
+        };
+        class Body {
+          hitpointName="HitBody";
+          passThrough=0.30000001;
+          armor=20; 
+        };
+        class Legs {
+          hitpointName="HitLegs";
+          armor=10;
+          passThrough=0.60000002;
+        };
+      };
+      setMaxLoad=200;
+		};
+  };
   
+  class twelft_poncho_wet_vest: mgsr_poncho_wet_vest{
+    author = "Sammy";
+		scope = 2;
+		displayName = "[Twelfth] Poncho (Wet)";
+		class ItemInfo: VestItem
+		{
+      containerClass="twelfth_vest_supply";
+      mass = 80;
+      class HitpointsProtectionInfo {
+        class Neck {
+          hitpointName="HitNeck";
+          armor=20; 
+          passThrough=0.30000001;
+          explosionShielding = 0.8;
+        };
+        class Arms {
+          hitpointName="HitArms";
+          armor=10; 
+          passThrough=0.60000002;
+          explosionShielding = 0.8;
+        };
+        class Chest {
+          hitpointName="HitChest";
+          armor=20; 
+          passThrough=0.30000001;
+          explosionShielding = 0.8;
+        };
+        class Diaphragm {        
+          hitpointName="HitDiaphragm";
+          armor=20; 
+          passThrough=0.30000001;
+          explosionShielding = 0.8;
+        };
+        class Abdomen {
+          hitpointName="HitAbdomen";
+          armor=20; 
+          passThrough=0.30000001;
+          explosionShielding = 0.8;
+        };
+        class Body {
+          hitpointName="HitBody";
+          passThrough=0.30000001;
+          armor=20;
+          explosionShielding = 0.8;
+        };
+        class Legs {
+          hitpointName="HitLegs";
+          armor=10;
+          passThrough=0.60000002;
+          explosionShielding = 0.8;
+        };
+      };
+      setMaxLoad=200;
+		};
+  };
   // ---------------------------------------------------------------------------
   //  Invisible Vest
   // ---------------------------------------------------------------------------
