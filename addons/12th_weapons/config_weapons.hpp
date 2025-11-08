@@ -1392,59 +1392,13 @@ class CfgWeapons
           "twelfth_100Rnd_95x40_Box", "twelfth_100Rnd_95x40_Box_T",
           "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer"
           };
-      modes[] = {"FullAuto", "FullAutoFast"};
 	    distanceZoomMin=100;
 	    distanceZoomMax=700;
       maxZeroing=700;
 
-      ace_overheating_mrbs = 5000;
-      ace_overheating_slowdownFactor = 1;
-      ace_overheating_allowSwapBarrel = 1;
-      ace_overheating_dispersion = 0.25;
-      ace_overheating_jamTypesAllowed[] = {"Feed", "Fire", "Eject", "Extract"};
-      ace_overheating_closedbolt = 1;
-      ace_overheating_barrelMass = 3.5;
 
 
-      // Tripod compat
-      DEPLOYED_GESTURE_GPMG;
-      RELOAD_EH;
 
-      class FullAuto : FullAuto
-      {
-        dispersion = 0.00116;
-        minRange = 0;
-        minRangeProbab = 0.9;
-        midRange = 15;
-        midRangeProbab = 0.7;
-        maxRange = 30;
-        maxRangeProbab = 0.1;
-        aiRateOfFire = 1e-06;
-        reloadTime = 0.15;
-        class BaseSoundModType
-        {
-        };
-        class standardsound : BaseSoundModType
-        {
-          soundsetshot[] = {
-              "MMG02_Shot_SoundSet", "MMG02_Tail_SoundSet",
-              "MMG02_InteriorTail_SoundSet"};
-        };
-      };
-      class FullAutoFast : FullAuto
-      {
-        reloadTime = 0.11;
-        textureType = "fastAuto";
-        class BaseSoundModType
-        {
-        };
-        class standardsound : BaseSoundModType
-        {
-          soundsetshot[] = {
-              "MMG02_Shot_SoundSet", "MMG02_Tail_SoundSet",
-              "MMG02_InteriorTail_SoundSet"};
-        };
-      };
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -1738,7 +1692,7 @@ class CfgWeapons
 	class twelfth_MA6_A_BOX: twelfth_M73H{
 		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_BOX.p3d";
 		author = "Sammy";
-    mass = 120;
+    mass = 160;
 		displayName = "[12th] MA6-A Box";
 		baseWeapon = "twelfth_MA6_A_BOX";
 		class WeaponSlotsInfo: WeaponSlotsInfo {
@@ -1763,7 +1717,7 @@ class CfgWeapons
 	class twelfth_MA6_A_DRUM: twelfth_M73H{
 		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_DRUM.p3d";
 		author = "Sammy";
-    mass = 120;
+    mass = 160;
 		displayName = "[12th] MA6-A Drum";
 		baseWeapon = "twelfth_MA6_A_DRUM";
 		class WeaponSlotsInfo: WeaponSlotsInfo {

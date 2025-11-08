@@ -210,6 +210,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Origami)
   CUSTOM_HELM_S_AV(Sullivan)
+  CUSTOM_HELM_S_AV(Luke)
 
 
   // -- Pilot Helmets --
