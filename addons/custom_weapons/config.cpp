@@ -44,7 +44,7 @@ class CfgWeapons
 	{
 		editorCategory ="12th_Assets";
 		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\custom_weapons\data\animations\llr.rtm"};
-		mass=40;
+		mass=90;
 		/////////////////////ACE STUFF//////////////////////////////
 		ace_overheating_barrelMass = 20;
 		ACE_barrelLength = 800;

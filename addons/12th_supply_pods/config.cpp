@@ -152,12 +152,12 @@ class CfgVehicles {
     class TransportWeapons {};
     class TransportItems {
       class _xx_ACE_IR_Strobe_Item { name = "ACE_IR_Strobe_Item"; count = 30; };
-      class _xx_OPTRE_M9_Frag { name = "OPTRE_M9_Frag"; count = 20; };
-      class _xx_OPTRE_M2_Smoke { name = "OPTRE_M2_Smoke"; count = 20; };
-      class _xx_OPTRE_M2_Smoke_Blue { name = "OPTRE_M2_Smoke_Blue"; count = 10; };
-      class _xx_OPTRE_M2_Smoke_Red { name = "OPTRE_M2_Smoke_Red"; count = 10; };
-      class _xx_OPTRE_M2_Smoke_Green { name = "OPTRE_M2_Smoke_Green"; count = 10; };
-      class _xx_OPTRE_M2_Smoke_Purple { name = "OPTRE_M2_Smoke_Purple"; count = 10; };
+      class _xx_TCP_M9I_Frag { name = "TCP_M9I_Frag"; count = 20; };
+      class _xx_TCP_M21_Smoke { name = "TCP_M21_Smoke"; count = 20; };
+      class _xx_TCP_M21_SmokeBlue { name = "TCP_M21_SmokeBlue"; count = 10; };
+      class _xx_TCP_M21_SmokeRed { name = "TCP_M21_SmokeRed"; count = 10; };
+      class _xx_TCP_M21_SmokeGreen { name = "TCP_M21_SmokeGreen"; count = 10; };
+      class _xx_TCP_M21_SmokePurple { name = "TCP_M21_SmokePurple"; count = 10; };
       class _xx_OPTRE_ELB47_Strobe { name = "OPTRE_ELB47_Strobe"; count = 5; };
       class _xx_ACE_M84 { name = "ACE_M84"; count = 10; };
       class _xx_ACRE_M26_Clacker { name = "ACRE_M26_Clacker"; count = 10; };
@@ -230,6 +230,7 @@ class CfgVehicles {
       class _xx_OPTRE_60Rnd_5x23mm_Mag { magazine = "OPTRE_60Rnd_5x23mm_Mag"; count = 25; };
       class _xx_12Rnd_8Gauge { magazine = "12Rnd_8Gauge"; count = 25; };
       class _xx_OPTRE_4Rnd_145x114_APFSDS_Mag { magazine = "OPTRE_4Rnd_145x114_APFSDS_Mag"; count = 10; };
+
     };
     class TransportWeapons {};
     class TransportItems {};
@@ -251,6 +252,9 @@ class CfgVehicles {
       class _xx_OPTRE_200Rnd_762x51_M118_M247A1_Box { magazine = "OPTRE_200Rnd_762x51_M118_M247A1_Box"; count = 10; };
       class _xx_OPTRE_400Rnd_762x51_M118_M247A1_Box { magazine = "OPTRE_400Rnd_762x51_M118_M247A1_Box"; count = 5; };
       class _xx_ACE_SpareBarrel { magazine = "ACE_SpareBarrel"; count = 5; };
+      class _xx_OPTRE_60Rnd_762x51_Mag { magazine = "OPTRE_60Rnd_762x51_Mag"; count = 25; };
+      class _xx_twelfth_60Rnd_762x51_Mag_T { magazine = "twelfth_60Rnd_762x51_Mag_T"; count = 25; };
+
     };
     class TransportWeapons {};
     class TransportItems {

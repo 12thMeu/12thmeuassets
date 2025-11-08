@@ -35,7 +35,7 @@ class CfgPatches
                  "twelfth_MA5A_BB", "twelfth_MA5A", "twelfth_MA5A_gl", "twelfth_MA5B",
                  "twelfth_br55", "twelfth_br55_gl", "twelfth_br55_HB", "twelfth_br55_HB_gl",
                  "twelfth_M392", "twelfth_MA37K", "twelfth_BR45", "twelfth_Commando",
-                 "twelfth_MMG33_T", "twelfth_M33_t", "twelfth_M247", "twelfth_M319",
+                 "twelfth_M73H", "twelfth_M33_t", "twelfth_M247", "twelfth_M319",
                  "twelfth_M319N", "twelfth_MA5C", "twelfth_MA5CGL", "twelfth_MA5K", 
                  "twelfth_MA5CBB","twelfth_MAAWS_base","twelfth_MAAWS_olive","twelfth_MAAWS_sand",
 				 "twelfth_MA6_K","twelfth_MA6","twelfth_MA6_D""twelfth_MA6_A_BOX","twelfth_MA6_A_DRUM"}; // Ensure any newly created weapon class is listed above.

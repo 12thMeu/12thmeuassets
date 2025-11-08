@@ -25,6 +25,7 @@
   class PointerSlot;     // Base class for pointer attachments
   class UnderBarrelSlot; // Base class for underbarrel attachments
   class FullAuto;        // Base class for full-auto fire mode
+  class Single;
 
 class CfgWeapons
 {
@@ -42,7 +43,7 @@ class CfgWeapons
   class OPTRE_M319;
   class OPTRE_M319N;
   class OPTRE_M301UGL; // Base class for our UGLs
-  class Dmns_M33_T;
+  class TCF_M73H;
   class DMNS_M96_LAW;
   class GL_3GL_F;                   // Base class for grenade launchers
   class UGL_F;
@@ -69,6 +70,7 @@ class CfgWeapons
   class OPTRE_M739_SAW_Foregrip_Black_F;
   class OPTRE_M247a1_Flashhider;
   class EventHandlers;
+  class Dmns_M33_T ;
   
   /*
     =============================================================================
@@ -591,7 +593,13 @@ class CfgWeapons
     canShootInWater = 1;
     displayName = "[12th] MA5B";
     baseWeapon = "twelfth_MA5B";
-    magazines[] = {"OPTRE_60Rnd_762x51_Mag","twelfth_60Rnd_762x51_Mag_T"};
+    magazines[] = {"OPTRE_60Rnd_762x51_Mag","twelfth_60Rnd_762x51_Mag_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer"};
+    modes[] = {"FullAuto", "Single"};
+    class manual: Single {
+      displayName = "Semi-Auto";
+      burst = 1;
+      
+    };
   };
   /*
     =============================================================================
@@ -1373,13 +1381,13 @@ class CfgWeapons
         };
     };
 
-    class twelfth_MMG33_T : Dmns_M33_T
+    class twelfth_M73H : TCF_M73H
     {
       author = "Jack"; // Thank you!
       scope = 2;
       scopeArsenal = 2;
-      displayName = "[12th] MMG33-T";
-      baseWeapon = "twelfth_MMG33_T";
+      displayName = "[12th] M73H";
+      baseWeapon = "twelfth_M73H";
       magazines[] = {
           "twelfth_100Rnd_95x40_Box", "twelfth_100Rnd_95x40_Box_T",
           "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer"
@@ -1727,9 +1735,10 @@ class CfgWeapons
 	};
 
 	// AR Rifle
-	class twelfth_MA6_A_BOX: twelfth_MMG33_T{
+	class twelfth_MA6_A_BOX: twelfth_M73H{
 		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_BOX.p3d";
 		author = "Sammy";
+    mass = 120;
 		displayName = "[12th] MA6-A Box";
 		baseWeapon = "twelfth_MA6_A_BOX";
 		class WeaponSlotsInfo: WeaponSlotsInfo {
@@ -1751,11 +1760,43 @@ class CfgWeapons
 			};
 		};
 	};
-	class twelfth_MA6_A_DRUM: twelfth_MMG33_T{
+	class twelfth_MA6_A_DRUM: twelfth_M73H{
 		model="x\12thMEU\addons\12th_weapons\data\MA6_A\MA6_A_DRUM.p3d";
 		author = "Sammy";
+    mass = 120;
 		displayName = "[12th] MA6-A Drum";
 		baseWeapon = "twelfth_MA6_A_DRUM";
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_MEDIUM_BIPOD;
+			};
+		};
+	};
+
+  // IAR Rifle
+  class twelfth_MA6_B: twelfth_MA5B {
+		model="x\12thMEU\addons\12th_weapons\data\MA6_D\MA6_D.p3d";
+		author = "Rex";
+		scope = 2;
+		scopeArsenal = 2;
+		displayName = "[12th] MA6-B IAR";
+		baseWeapon = "twelfth_MA6_B";
+		canShootInWater = 1;
+		magazines[] = {"OPTRE_60Rnd_762x51_Mag", "twelfth_60Rnd_762x51_Mag_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer" };
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
 		class WeaponSlotsInfo: WeaponSlotsInfo {
 			class MuzzleSlot: MuzzleSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";

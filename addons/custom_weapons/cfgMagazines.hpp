@@ -7,7 +7,7 @@ class CfgMagazines
 
 	class 3Rnd_test_mag: CA_Magazine 
 	{
-		mass=20;
+		mass=50;
 		ace_disableRepacking = 1;
 		scope = 2;
 		displayName = "Liquid Magazine";
