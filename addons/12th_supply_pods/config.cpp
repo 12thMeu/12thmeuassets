@@ -119,6 +119,7 @@ class CfgVehicles {
       class _xx_kat_EACA { name = "kat_EACA"; count = 25; };
       class _xx_kat_norepinephrine { name = "kat_norepinephrine"; count = 25; };
       class _xx_kat_nitroglycerin { name = "kat_nitroglycerin"; count = 25; };
+      class _xx_kat_phenylephrineAuto { name = "kat_phenylephrineAuto"; count = 25; };
     };
   };
 
@@ -165,6 +166,31 @@ class CfgVehicles {
   };
 
 
+
+  // ---------------------------------------------------------------------------
+  //  Mines Supply Pod
+  // ---------------------------------------------------------------------------
+  class twelfth_supply_pod_mines: twelfth_supply_pod_empty {
+    displayName = "[12th] Supply Pod (Mines)";
+    hiddenSelectionsTextures[] = {
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co_grenades.paa"
+    };
+    class TransportMagazines {};
+    class TransportWeapons {};
+    class TransportItems {
+      class _xx_UNSCMine_Range_Mag { name = "UNSCMine_Range_Mag"; count = 50; };
+      class _xx_ATMine_Range_Mag { name = "ATMine_Range_Mag"; count = 50; };
+      class _xx_APERSMineDispenser_Mag { name = "APERSMineDispenser_Mag"; count = 50; };
+      class _xx_ACE_APERSMine_ToePopper_mag { name = "ACE_APERSMine_ToePopper_mag"; count = 50; };
+      class _xx_TCP_T14_Remote_Mag { name = "TCP_T14_Remote_Mag"; count = 50; };
+      class _xx_ClaymoreDirectionalMine_Remote_Mag { name = "ClaymoreDirectionalMine_Remote_Mag"; count = 50; };
+      class _xx_TCP_M250_remote_Mag { name = "TCP_M250_remote_Mag"; count = 50; };
+      class _xx_APERSBoundingMine_Range_Mag { name = "APERSBoundingMine_Range_Mag"; count = 50; };
+      class _xx_SLAMDirectionalMine_Wire_Mag { name = "SLAMDirectionalMine_Wire_Mag"; count = 50; };
+      class _xx_TCP_M725_Remote_Mag { name = "TCP_M725_Remote_Mag"; count = 50; };
+    };
+  };
+
   // ---------------------------------------------------------------------------
   //  Launcher Supply Pod
   // ---------------------------------------------------------------------------
@@ -205,6 +231,7 @@ class CfgVehicles {
       class _xx_avm224_M_6Rnd_60mm_HE_csw { magazine = "avm224_M_6Rnd_60mm_HE_csw"; count = 600; };
       class _xx_avm224_M_6Rnd_60mm_ILLUM_IR_csw { magazine = "avm224_M_6Rnd_60mm_ILLUM_IR_csw"; count = 10; };
       class _xx_avm224_M_6Rnd_60mm_ILLUM_csw { magazine = "avm224_M_6Rnd_60mm_ILLUM_csw"; count = 50; };
+      class _xx_avm224_M_6Rnd_60mm_SMOKE_csw { magazine = "avm224_M_6Rnd_60mm_SMOKE_csw"; count = 200; };
     };
     class TransportWeapons {
       class _xx_avm224_W_M224_mortar_carry { weapon = "avm224_W_M224_mortar_carry"; count = 2; };

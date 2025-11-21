@@ -66,6 +66,7 @@ class CfgVehicles {
   class M3_Backpack_Mcm_B;
   class mgsr_poncho_wet;
   class mgsr_poncho_dry;
+  class DMNS_RUCKSACK_UNSC_ANPRC_521_F;
   // ---------------------------------------------------------------------------
   //  twelfth_backpack_base
   // ---------------------------------------------------------------------------
@@ -152,6 +153,17 @@ class CfgVehicles {
       maximumLoad = BP_MAXLOAD;  // Load capacity macro.
       mass = BP_MASS;  // Backpack mass macro.
     };
+
+
+  class twelfth_ANPRC: DMNS_RUCKSACK_UNSC_ANPRC_521_F {
+    author = "Sammy";
+    scope = 2;
+    scopeArsenal = 2;
+    displayName = "[12th] AN/PRC-521 Backpack";
+    maximumLoad = BP_MAXLOAD;  // Load capacity macro.
+    mass = BP_MASS;  // Backpack mass macro.
+    };
+
 
   /*
     The big macro: BACKPACK_ALLTYPES(CAMOTYPE, DISPLAY_TYPE)
