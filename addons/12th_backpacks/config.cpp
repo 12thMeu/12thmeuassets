@@ -125,7 +125,7 @@ class CfgVehicles {
     scope = 2;
     scopeArsenal = 2;
     displayName = "[12th] Invisible Backpack";
-    model = "\halo_marine\null.p3d";  // Invisible model.
+    model = "x\12thMEU\addons\12th_backpacks\backpack\null.p3d";  // Invisible model.
     hiddenSelectionsTextures[] = {"", "", "", ""};  // No textures.
   };
 

@@ -183,7 +183,7 @@ class CfgWeapons
     scope=2;  // Visible in-game.
     scopeArsenal=2;  // Available in the Arsenal.
     displayName = "[12th] Invisible Vest";
-    model="\halo_marine\null.p3d";
+    model="x\12thMEU\addons\12th_backpacks\backpack\null.p3d";
       /*
         This is a blank model referencing an invisible or “null” vest geometry.
       */
