@@ -82,7 +82,6 @@ class CfgAmmo
   };
   // Custom rocket for M96 LAW
   class twelfth_m96_rocket_heat: R_PG32V_F {
-    model = "DMNS\Weapons\Launchers\M96_rocket.p3d";
     hit = 300; // Adjust for desired armor penetration; depends on your game balance.
   };
    //Modify standard 40mm grenade ammo to remove bounce
