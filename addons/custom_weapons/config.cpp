@@ -7,7 +7,7 @@ class CfgPatches
 	class PrototypeLaser_F
 	{
 		units[] = {};
-		weapons[] = {"PrototypeLaser_01_F","PrototypeBarrel","PrototypeOptics"};
+		weapons[] = {"PrototypeLaser_01_F","PrototypeOptics"};
 		requiredVersion = 0.1;
 		requiredAddons[] = {"A3_Weapons_F"};
 		magazines[] = {"3Rnd_test_mag"};
@@ -71,16 +71,7 @@ class CfgWeapons
 		};
 		class WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-				displayName = "MuzzleSlot";
-				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[] = {"PrototypeBarrel"};
-				iconPosition[] = {0.0,0.45};
-				iconScale = 0.2;
-				iconPicture = "\A3\Weapons_F\Data\UI\attachment_muzzle.paa";
-				iconPinpoint = "Center";
-			};
+			class MuzzleSlot: MuzzleSlot{};
 			class CowsSlot: CowsSlot
 			{
 				displayName = "$STR_A3_CowsSlot0";

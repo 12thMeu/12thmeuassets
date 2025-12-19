@@ -3,47 +3,6 @@ class ItemCore;
 class InventoryMuzzleItem_Base_F;
 class InventoryItem_Base_F;
 class InventoryOpticsItem_Base_F;
-class PrototypeBarrel: ItemCore
-	{
-		scope = 2;
-		displayName = "Heavy barrel";
-		picture="x\12thMEU\addons\Custom_Weapons\data\BarrelPreview.paa";
-		model = "x\12thMEU\addons\Custom_Weapons\data\PrototypeBarrel.p3d";
-		class ItemInfo: InventoryMuzzleItem_Base_F
-		{
-			mass=10;
-			
-			class MagazineCoef
-			{
-				initSpeed 		= 1.2;
-			};
-			
-			class AmmoCoef
-			{
-				// bullet ballistic modifiers
-				hit				= 10;
-				typicalSpeed	= 1;
-				airFriction		= 1;
-			}; 
-			soundTypeIndex		= 1; /// defines the position in sound[] array in the rifle
-			muzzleEnd = "zaslehPoint";
-			alternativeFire = "Zasleh2";
-			class MuzzleCoef
-			{
-				dispersionCoef = "1.0f";
-				artilleryDispersionCoef = "1.0f";
-				fireLightCoef = "1f";
-				recoilCoef = "1.0f";
-				recoilProneCoef = "1.0f";
-				minRangeCoef = "1.0f";
-				minRangeProbabCoef = "1.0f";
-				midRangeCoef = "1.0f";
-				midRangeProbabCoef = "1.0f";
-				maxRangeCoef = "1.0f";
-				maxRangeProbabCoef = "1.0f";
-			};
-		};
-	};
 
 class PrototypeOptics: ACE_optic_LRPS_2D
 {
