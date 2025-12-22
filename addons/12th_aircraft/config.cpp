@@ -39,7 +39,9 @@ class CfgPatches {
       "twelfth_prime",
       "twelfth_blackfish_inf",
       "twelfth_blackfish_veh",
-      "twelfth_blackfish_armed"
+      "twelfth_blackfish_armed",
+      "twelfth_sabre_single",
+      "twelfth_sabre_single_vtol"
     };
     weapons[] = {};
     requiredVersion = 0.1;
@@ -545,10 +547,10 @@ class DefaultVehicleSystemsDisplayManagerLeft
 {
 	class components;
 };
-  class twelfth_sabre_single_fast : OPTRE_Sabre_Base{
+  class twelfth_sabre_single : OPTRE_Sabre_Base{
     scope = 2;
     scopeCurator = 2;
-    displayName = "[12th] YSS-1000-A-S Sabre Fast";
+    displayName = "[12th] YSS-1000-A-S Sabre";
     acceleration = 2000;
     altNoForce = 990000;
     altFullForce = 990000;
@@ -557,7 +559,7 @@ class DefaultVehicleSystemsDisplayManagerLeft
     elevatorCoef[] = {0.3,0.5,0.6,0.7,0.8,0.9,1,0.9,0.7,0.6,0.5,0.3,0.1};
     aileronCoef[] = {0.5,0.7,0.8,0.9,1,1.1,1.2,1.1,0.9,0.8,0.7,0.5,0.3};
     rudderCoef[] = {"0.7*5","0.8*5","0.9*5","1*5","1*5","0.9*5","0.8*5","0.7*5","0.6*5","0.5*5","0.4*5","0.3*5","0.2*5","0.1*5"};
-
+    radarRange = 150000;
 
     //Spawning stuff
     editorPreview = "\OPTRE_Vehicles_Air\Sabre\data\UI\OPTRE_YSS_1000_A.jpg";
@@ -568,174 +570,9 @@ class DefaultVehicleSystemsDisplayManagerLeft
     magazines[] = {"Laserbatteries","120Rnd_CMFlare_Chaff_Magazine","120Rnd_CMFlare_Chaff_Magazine","120Rnd_CMFlare_Chaff_Magazine","OPTRE_SpLaser_Battery","OPTRE_SpLaser_Battery","OPTRE_SpLaser_Battery","OPTRE_SpLaser_Battery","OPTRE_SpLaser_Battery","OPTRE_SpLaser_Battery"};
     //single seater
     class Turrets{};
-    AIR_SP_INFO(sabre_single,4,Base)
+    AIR_SP_INFO(Sabre,4,Fixed Wing)
     class Components: Components
 		{
-			class SensorsManagerComponent
-			{
-				class Components
-				{
-					class IRSensorComponent: SensorTemplateIR
-					{
-						class AirTarget
-						{
-							minRange = 500;
-							maxRange = 3000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = 1;
-						};
-						class GroundTarget
-						{
-							minRange = 500;
-							maxRange = 3000;
-							objectDistanceLimitCoef = 1;
-							viewDistanceLimitCoef = 1;
-						};
-						angleRangeHorizontal = 360;
-						angleRangeVertical = 90;
-						maxTrackableSpeed = 400;
-					};
-					class VisualSensorComponent: SensorTemplateVisual
-					{
-						class AirTarget
-						{
-							minRange = 500;
-							maxRange = 4000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = 1;
-						};
-						class GroundTarget
-						{
-							minRange = 500;
-							maxRange = 3000;
-							objectDistanceLimitCoef = 1;
-							viewDistanceLimitCoef = 1;
-						};
-						angleRangeHorizontal = 26;
-						angleRangeVertical = 20;
-						maxTrackableSpeed = 100;
-						aimDown = 1;
-						animDirection = "mainGun";
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar{};
-					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
-					{
-						class AirTarget
-						{
-							minRange = 15000;
-							maxRange = 15000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-						class GroundTarget
-						{
-							minRange = 8000;
-							maxRange = 8000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-						typeRecognitionDistance = 8000;
-						angleRangeHorizontal = 45;
-						angleRangeVertical = 45;
-						groundNoiseDistanceCoef = 0.2;
-					};
-					class AntiRadiationSensorComponent: SensorTemplateAntiRadiation
-					{
-						class AirTarget
-						{
-							minRange = 16000;
-							maxRange = 16000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-						class GroundTarget
-						{
-							minRange = 16000;
-							maxRange = 16000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-						maxTrackableATL = 100;
-						maxTrackableSpeed = 60;
-						angleRangeHorizontal = 60;
-						angleRangeVertical = 180;
-					};
-					class LaserSensorComponent: SensorTemplateLaser{};
-					class NVSensorComponent: SensorTemplateNV{};
-				};
-			};
-			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-			{
-				class Components
-				{
-					class EmptyDisplay
-					{
-						componentType = "EmptyDisplayComponent";
-					};
-					class MinimapDisplay
-					{
-						componentType = "MinimapDisplayComponent";
-						resource = "RscCustomInfoAirborneMiniMap";
-					};
-					class UAVDisplay
-					{
-						componentType = "UAVFeedDisplayComponent";
-					};
-					class VehicleDriverDisplay
-					{
-						componentType = "TransportFeedDisplayComponent";
-						source = "Driver";
-						resource = "RscTransportCameraComponentDriver";
-					};
-					class VehicleMissileDisplay
-					{
-						componentType = "TransportFeedDisplayComponent";
-						source = "Missile";
-					};
-					class SensorDisplay
-					{
-						componentType = "SensorsDisplayComponent";
-						range[] = {16000,8000,4000,2000};
-						resource = "RscCustomInfoSensors";
-					};
-				};
-			};
-			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-			{
-				defaultDisplay = "SensorDisplay";
-				class Components
-				{
-					class EmptyDisplay
-					{
-						componentType = "EmptyDisplayComponent";
-					};
-					class MinimapDisplay
-					{
-						componentType = "MinimapDisplayComponent";
-						resource = "RscCustomInfoAirborneMiniMap";
-					};
-					class UAVDisplay
-					{
-						componentType = "UAVFeedDisplayComponent";
-					};
-					class VehicleDriverDisplay
-					{
-						componentType = "TransportFeedDisplayComponent";
-						source = "Driver";
-					};
-					class VehicleMissileDisplay
-					{
-						componentType = "TransportFeedDisplayComponent";
-						source = "Missile";
-					};
-					class SensorDisplay
-					{
-						componentType = "SensorsDisplayComponent";
-						range[] = {16000,8000,4000,2000};
-						resource = "RscCustomInfoSensors";
-					};
-				};
-			};
 			class TransportPylonsComponent
 			{
 				UIPicture = "\A3\Air_F_Jets\Plane_Fighter_01\Data\UI\Fighter_01_3DEN_CA.paa";
@@ -747,7 +584,7 @@ class DefaultVehicleSystemsDisplayManagerLeft
 						attachment = "OPTRE_STMedusa_6Rnd_AA_Missile";
 						priority = 5;
 						maxweight = 10000;
-						UIposition[] = {0.34,0.08};
+						UIposition[] = {0.1,0.1};
 						bay = 1;
 					};
 					class Pylons_Missile_Bay_1
@@ -756,31 +593,27 @@ class DefaultVehicleSystemsDisplayManagerLeft
 						priority = 4;
 						attachment = "OPTRE_3Rnd_Jackknife_sabre_missile";
 						maxweight = 10000;
-						UIposition[] = {0.345,0.13};
+						UIposition[] = {0.5,0.1};
 						bay = 3;
 					};
 					class Pylons_MedusaPod_2: Pylons_MedusaPod_1
 					{
-						UIposition[] = {0.34,0.48};
-						mirroredMissilePos = 1;
-						bay = 2;
+						UIposition[] = {0.05,0.2};
+						bay = 1;
 					};
 					class Pylons_Missile_Bay_2: Pylons_Missile_Bay_1
 					{
-						UIposition[] = {0.33,0.43};
-						mirroredMissilePos = 2;
-						bay = 4;
+						UIposition[] = {0.55,0.2};
+						bay = 3;
 					};
           class Pylons_Missile_Bay_3: Pylons_Missile_Bay_1
 					{
-						UIposition[] = {0.1,0.9};
-						mirroredMissilePos = 2;
+						UIposition[] = {0.1,0.3};
 						bay = 5;
 					};
           class Pylons_Missile_Bay_4: Pylons_Missile_Bay_1
 					{
-						UIposition[] = {0.9,0.1};
-						mirroredMissilePos = 2;
+						UIposition[] = {0.5,0.3};
 						bay = 6;
 					};
 					class Pylons_30mmGun
@@ -789,41 +622,21 @@ class DefaultVehicleSystemsDisplayManagerLeft
 						priority = 2;
 						attachment = "OPTRE_M1024_2000Rnd_30mm";
 						maxweight = 10000;
-						UIposition[] = {0.24,0.28};
+						UIposition[] = {0,0};
 						hardpoints[] = {"OPTRE_Hardpoint_M1024_30mm"};
 					};
-				};
-				class Bays
-				{
-					class BayCenter1
-					{
-						bayOpenTime = 0.35;
-						openBayWhenWeaponSelected = 1;
-						autoCloseWhenEmptyDelay = 0;
-					};
-					class BayCenter2: BayCenter1{};
-					class BayRight1
-					{
-						bayOpenTime = 0.35;
-						openBayWhenWeaponSelected = 1;
-						autoCloseWhenEmptyDelay = 0;
-					};
-					class BayLeft1: BayRight1{};
 				};
 			};
 		};
   };
-  class twelfth_sabre_single_agile : twelfth_sabre_single_fast{
+  class twelfth_sabre_single_vtol : twelfth_sabre_single{
     scope = 2;
     scopeCurator = 2;
-    displayName = "[12th] YSS-1000-A-S Sabre Agile";
-    acceleration = 1000;
-    envelope[] = {0,0.1,0.8,3,4,4.4,4.5,4.5,4.4,4.1,3.5,2.5,2};
-    thrustCoef[] = {1.6,1.6,1.5,1.5,1.5,1.4,1.4,1.3,1.3,1.1,1.1,0.8,0.6};
-    elevatorCoef[] = {0.5,0.7,0.8,0.9,1,1.1,1.2,1.1,0.9,0.8,0.7,0.5,0.3};
-    aileronCoef[] = {0.5,0.7,0.8,0.9,1,1.1,1.2,1.1,0.9,0.8,0.7,0.5,0.3};
-    rudderCoef[] = {"0.7*5","0.8*5","0.9*5","1*5","1*5","0.9*5","0.8*5","0.7*5","0.6*5","0.5*5","0.4*5","0.3*5","0.2*5","0.1*5"};
-    //Spawning stuff
-    
+    displayName = "[12th] YSS-1000-A-S Sabre VTOL";
+		VTOL = 1;
+		VTOLYawInfluence = 1.0;
+		VTOLPitchInfluence = 1.0;
+		VTOLRollInfluence = 1.0;
+    AIR_SP_INFO(Sabre Vtol,6,Fixed Wing)
   };
 };
