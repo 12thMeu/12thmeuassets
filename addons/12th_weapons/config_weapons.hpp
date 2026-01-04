@@ -31,15 +31,17 @@ class CfgWeapons
 {
   // Base classes from external mods or vanilla A3
   class Launcher;        // Base class for launcher weapons
+  class OPTRE_MA37K;
   class OPTRE_MA5C;
   class OPTRE_MA5CGL;
-  class TCP_arifle_MA5K;
-  class TCP_srifle_VK78_Gray;
+  class OPTRE_MA5K;
+  class OPTRE_BR45;
+  class OPTRE_Commando;
   class OPTRE_M247;
   class OPTRE_M247A1;
   class OPTRE_M247A1_Stripped;
-  class TCP_launch_M319;
-  //class OPTRE_M319N;
+  class OPTRE_M319;
+  class OPTRE_M319N;
   class OPTRE_M301UGL; // Base class for our UGLs
   class TCF_M73H;
   class DMNS_M96_LAW;
@@ -47,17 +49,17 @@ class CfgWeapons
   class UGL_F;
   class InventoryOpticsItem_Base_F; // Base class for optics
   class 19_UNSC_M6C;
-  class TCP_SMG_M7;
+  class 19_UNSC_M7;
   class 19_UNSC_M7_Side;
-  class TCP_sgun_M45;
-  class TCP_arifle_MA40;
-  class TCP_arifle_MA40_GL;
-  class TCP_arifle_MA5B;
+  class 19_UNSC_M90;
+  class 19_UNSC_MA5A;
+  class 19_UNSC_MA5A_gl;
+  class 19_UNSC_MA5B;
   class 19_UNSC_br55;
   class 19_UNSC_br55_gl;
-  class TCP_srifle_XBR55;
-  //class 19_UNSC_br55_HB_gl;
-  class TCP_srifle_M392;
+  class 19_UNSC_br55_HB;
+  class 19_UNSC_br55_HB_gl;
+  class 19_UNSC_M392;
   class launch_MRAWS_base_F;
   class InventoryUnderItem_Base_F;
   class dzn_MG_Tripod_Universal;
@@ -366,7 +368,7 @@ class CfgWeapons
     magazines[] = COMMON_M6_MAGAZINES;
   };
 
-  class twelfth_M7_Test : TCP_SMG_M7
+  class twelfth_M7_Test : 19_UNSC_M7
   {
     author = "Weber";
     scope = 2;
@@ -386,13 +388,13 @@ class CfgWeapons
     magazines[] = COMMON_SMG_MAGAZINES;
   };
 
-  class twelfth_M45 : TCP_sgun_M45
+  class twelfth_M90 : 19_UNSC_M90
   {
     author = "Weber";
     scope = 2;
     scopeArsenal = 2;
-    displayName = "[12th] M45";
-    baseWeapon = "twelfth_M45";
+    displayName = "[12th] M90";
+    baseWeapon = "twelfth_M90";
     magazines[] = {
       "12Rnd_8Gauge", "12Rnd_8Gauge_slug",
       "12Rnd_8Gauge_slug_tracer", "TCF_12Rnd_8Gauge_Beanbag"
@@ -414,9 +416,9 @@ class CfgWeapons
 	magazines[] = COMMON_MA5C_MAGAZINES;
 
 		class WeaponSlotsInfo: WeaponSlotsInfo {
-/* 			class MuzzleSlot: MuzzleSlot {
+			class MuzzleSlot: MuzzleSlot {
 				compatibleitems[] = { "OPTRE_MA5Suppressor" };
-			}; */
+			};
 			class CowsSlot: CowsSlot {};
 			class PointerSlot: PointerSlot {
 				compatibleitems[] = COMMON_SIGHTS;
@@ -443,9 +445,9 @@ class CfgWeapons
 		magazines[] = COMMON_MA5C_MAGAZINES;
 
 		class WeaponSlotsInfo: WeaponSlotsInfo {
-/* 			class MuzzleSlot: MuzzleSlot {
+			class MuzzleSlot: MuzzleSlot {
 			compatibleitems[] = { "OPTRE_MA5Suppressor" };
-			}; */
+			};
 			class CowsSlot: CowsSlot {};
 			class PointerSlot: PointerSlot {
 			compatibleitems[] = COMMON_SIGHTS;
@@ -456,7 +458,7 @@ class CfgWeapons
 		};
 	};
 
-  class twelfth_MA37K: TCP_arifle_MA5K {
+  class twelfth_MA37K: OPTRE_MA37K {
     author = "Waylen";
     scope = 2;
     scopeArsenal = 2;
@@ -467,9 +469,9 @@ class CfgWeapons
     magazines[] = COMMON_MA5C_MAGAZINES;
     class WeaponSlotsInfo: WeaponSlotsInfo {
       mass = 30;
-/*       class MuzzleSlot: MuzzleSlot {
+      class MuzzleSlot: MuzzleSlot {
           compatibleitems[] = { "OPTRE_MA37KSuppressor" };
-      }; */
+      };
       class CowsSlot: CowsSlot {};
       class PointerSlot: PointerSlot {
           compatibleitems[] = COMMON_SIGHTS;
@@ -480,7 +482,7 @@ class CfgWeapons
     };
   };
 
-    class twelfth_MA5K: TCP_arifle_MA5K {
+    class twelfth_MA5K: OPTRE_MA5K {
     author = "Waylen";
     scope = 2;
     scopeArsenal = 2;
@@ -491,9 +493,9 @@ class CfgWeapons
     magazines[] = COMMON_MA5C_MAGAZINES;
     class WeaponSlotsInfo: WeaponSlotsInfo {
       mass = 30;
-/*       class MuzzleSlot: MuzzleSlot {
+      class MuzzleSlot: MuzzleSlot {
           compatibleitems[] = { "OPTRE_MA5Suppressor" };
-      }; */
+      };
       class CowsSlot: CowsSlot {};
       class PointerSlot: PointerSlot {
           compatibleitems[] = COMMON_SIGHTS;
@@ -506,7 +508,7 @@ class CfgWeapons
 
  // Training MA5A configuration
 
-  class twelfth_MA5A_BB : TCP_arifle_MA40_GL
+  class twelfth_MA5A_BB : 19_UNSC_MA5A
   {
     author = "Weber";
     scope = 2;
@@ -528,7 +530,7 @@ class CfgWeapons
     magazines[] = {"twelfth_20g_mag"}; // Training ammunition magazine
   };
 
-   class twelfth_MA5A : TCP_arifle_MA40
+   class twelfth_MA5A : 19_UNSC_MA5A
    {
      author = "Weber";
      scope = 2;
@@ -539,7 +541,7 @@ class CfgWeapons
      magazines[] = COMMON_MA5C_MAGAZINES;
    };
 
-   class twelfth_MA5A_gl : TCP_arifle_MA40_GL
+   class twelfth_MA5A_gl : 19_UNSC_MA5A_gl
    {
      author = "Weber";
      scope = 2;
@@ -583,7 +585,7 @@ class CfgWeapons
      magazines[] = COMMON_MA5C_MAGAZINES;
    };
 
-  class twelfth_MA5B : TCP_arifle_MA5B
+  class twelfth_MA5B : 19_UNSC_MA5B
   {
     author = "Weber";
     scope = 2;
@@ -616,9 +618,9 @@ class CfgWeapons
       magazines[] = COMMON_BR_MAGAZINES;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleitems[] = COMMON_BR_SIGHTS;
@@ -652,9 +654,9 @@ class CfgWeapons
       magazines[] = COMMON_BR_MAGAZINES;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleitems[] = COMMON_BR_SIGHTS;
@@ -668,20 +670,20 @@ class CfgWeapons
       };
     };
 
-    class twelfth_XBR55 : TCP_srifle_XBR55
+    class twelfth_BR55_HB : 19_UNSC_br55_HB
     {
       author = "Weber";
       scope = 2;
       scopeArsenal = 2;
       canShootInWater = 1;
-      displayName = "[12th] XBR55";
-      baseWeapon = "twelfth_XBR55";
+      displayName = "[12th] BR55HB";
+      baseWeapon = "twelfth_BR55_HB";
       magazines[] = COMMON_BR_MAGAZINES;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleitems[] = COMMON_BR_SIGHTS;
@@ -1204,7 +1206,7 @@ class CfgWeapons
     Machine Guns
     =============================================================================
   */
-    class twelfth_M392 : TCP_srifle_M392
+    class twelfth_M392 : 19_UNSC_M392
     {
       author = "Weber";
       scope = 2;
@@ -1216,12 +1218,12 @@ class CfgWeapons
       magazines[] = COMMON_MA5C_MAGAZINES;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {
               "optre_MA5Suppressor", "19_UNSC_BR55_Suppressor",
               "19_UNSC_BR55L_Suppressor"};
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleItems[] = COMMON_SIGHTS;
@@ -1247,10 +1249,10 @@ class CfgWeapons
 	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "twelfth_M739_SAW_200rnd_Drum"};
 	  class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_M7_silencer"};
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleItems[] = COMMON_SIGHTS;
@@ -1267,8 +1269,8 @@ class CfgWeapons
 	};
 
     // VK78 Commando configuration
-
-    class twelfth_Commando : TCP_srifle_VK78_Gray
+    
+    class twelfth_Commando : OPTRE_Commando
     {
       author = "Weber";
       scope = 2;
@@ -1281,10 +1283,10 @@ class CfgWeapons
           "\x\12thMEU\addons\12th_weapons\data\Commando\Commando2_co.paa"};*/ // Commented out until texture is made.
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_M7_silencer"};
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleItems[] = COMMON_SIGHTS;
@@ -1360,10 +1362,10 @@ class CfgWeapons
       };
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
-/*           class MuzzleSlot : MuzzleSlot
+          class MuzzleSlot : MuzzleSlot
           {
             compatibleitems[] = {"OPTRE_MA5Suppressor"};
-          }; */
+          };
           class CowsSlot : CowsSlot
           {
             compatibleItems[] = COMMON_SIGHTS;
@@ -1399,10 +1401,10 @@ class CfgWeapons
 
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_MA5Suppressor"};
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleItems[] = COMMON_SIGHTS;
@@ -1450,10 +1452,10 @@ class CfgWeapons
       };
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_MA5Suppressor"};
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleItems[] = COMMON_SIGHTS;
@@ -1497,10 +1499,10 @@ class CfgWeapons
       };
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_MA5Suppressor", "OPTRE_M247a1_Flashhider"};
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleItems[] = COMMON_SIGHTS;
@@ -1544,10 +1546,10 @@ class CfgWeapons
       };
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
-/*         class MuzzleSlot : MuzzleSlot
+        class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_MA5Suppressor", "OPTRE_M247a1_Flashhider"};
-        }; */
+        };
         class CowsSlot : CowsSlot
         {
           compatibleItems[] = COMMON_SIGHTS;
@@ -1569,7 +1571,7 @@ class CfgWeapons
     =============================================================================
   */
 
-    class twelfth_M319 : TCP_launch_M319
+    class twelfth_M319 : OPTRE_M319
     {
       author = "Weber";
       scope = 2;
@@ -1579,7 +1581,7 @@ class CfgWeapons
       magazines[] = COMMON_GL_MAGS;
     };
 
-/*     class twelfth_M319N : OPTRE_M319N
+    class twelfth_M319N : OPTRE_M319N
     {
       author = "Weber";
       scope = 2;
@@ -1587,7 +1589,7 @@ class CfgWeapons
       displayName = "[12th] M319N Individual Grenade Launcher";
       baseWeapon = "twelfth_M319N";
       magazines[] = COMMON_GL_MAGS;
-    }; */
+    };
   /*
     =============================================================================
     MA6 Variants

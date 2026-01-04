@@ -199,6 +199,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Duckworth)
   CUSTOM_HELM_S_AV(Felix)
   CUSTOM_HELM_S_AV(Geoff)
+  CUSTOM_HELM_S_AV(Germain)
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(LeDoux)
   CUSTOM_HELM_S_AV(Mcintyre)
@@ -208,6 +209,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Schultz)
+  CUSTOM_HELM_S_AV(Shepard)
   CUSTOM_HELM_S_AV(Simmons)
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Origami)
@@ -292,6 +294,7 @@ class XtdGearModels {
           "Gallegos",
           "Galvin",
           "Geoff",
+          "Germain",
           "Hathaway",
           "Kiens",
           "LeDoux",
@@ -358,6 +361,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Gallegos)
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)
+    CH_HELM_S_GI(Germain)
     CH_HELM_S_GI(Hathaway)
     CH_HELM_S_GI(Kiens)
     CH_HELM_S_GI(LeDoux)

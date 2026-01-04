@@ -121,7 +121,6 @@ class CfgVehicles {
     faction = "twelfth_MEU";
     editorCategory = "twelfth_MEU";
     editorSubcategory = "twelfth_MEU_Drones";
-
     crew = "B_UAV_AI";
     typicalCargo[] = {""};
 
