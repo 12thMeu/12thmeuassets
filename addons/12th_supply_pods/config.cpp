@@ -104,8 +104,8 @@ class CfgVehicles {
       class _xx_kat_IO_FAST { name = "kat_IO_FAST"; count = 25; };
       class _xx_kat_phenylephrine_inject { name = "kat_phenylephrine_inject"; count = 25; };
       class _xx_kat_TXA { name = "kat_TXA"; count = 25; };
-      class _xx_ACE_elasticBandage { name = "ACE_elasticBandage"; count = 100; };
-      class _xx_DMNS_Biofoam { name = "DMNS_Biofoam"; count = 100; };
+      class _xx_UNSCI_MediGel_Canister { name = "UNSCI_MediGel_Canister"; count = 100; };
+      class _xx_UNSCI_Biofoam { name = "UNSCI_Biofoam"; count = 100; };
       class _xx_ACE_tourniquet { name = "ACE_tourniquet"; count = 30; };
       class _xx_ACE_splint { name = "ACE_splint"; count = 30; };
       class _xx_ACE_morphine { name = "ACE_morphine"; count = 25; };
@@ -120,6 +120,9 @@ class CfgVehicles {
       class _xx_kat_norepinephrine { name = "kat_norepinephrine"; count = 25; };
       class _xx_kat_nitroglycerin { name = "kat_nitroglycerin"; count = 25; };
       class _xx_kat_phenylephrineAuto { name = "kat_phenylephrineAuto"; count = 25; };
+      class _xx_UNSCI_Injector_Stimulant { name = "UNSCI_Injector_Stimulant"; count = 25; };
+      class _xx_ACE_suture { name = "ACE_suture"; count = 25; };
+      class _xx_UNSCI_MediGel_40ml { name = "UNSCI_MediGel_40ml"; count = 25; };
     };
   };
 
