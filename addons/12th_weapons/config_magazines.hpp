@@ -194,7 +194,7 @@ class CfgMagazines
     author = "Waylen";
     displayName = "100rnd 9.5x40mm Box";
     count = 100;
-    mass = 45; // 4.5 lbs
+    mass = 50; // 4.5 lbs
     lastRoundsTracer = 100; 
     ACE_isBelt = 1; 
   };
@@ -205,7 +205,7 @@ class CfgMagazines
     author = "Waylen";
     displayName = "100rnd 9.5x40mm Box (T)";
     count = 100;
-    mass = 45; // 4.5 lbs
+    mass = 50; // 4.5 lbs
     lastRoundsTracer = 100; 
     ACE_isBelt = 1; 
   };

@@ -43,7 +43,7 @@ class CfgWeapons
   class OPTRE_M319;
   class OPTRE_M319N;
   class OPTRE_M301UGL; // Base class for our UGLs
-  class TCF_M73H;
+  class OPTRE_M73;
   class DMNS_M96_LAW;
   class GL_3GL_F;                   // Base class for grenade launchers
   class UGL_F;
@@ -70,8 +70,13 @@ class CfgWeapons
   class OPTRE_M739_SAW_Foregrip_Black_F;
   class OPTRE_M247a1_Flashhider;
   class EventHandlers;
-  class Dmns_M33_T ;
-  
+  class Dmns_M33_T;
+
+  //TCP Class definitions
+  //Pistols
+  class TCP_hgun_Pistol_M6C2;
+  class TCP_hgun_Pistol_M6G;
+  class TCP_hgun_Pistol_M6G2;
   /*
     =============================================================================
     MG Tripod Definitions
@@ -358,6 +363,34 @@ class CfgWeapons
   */
   // **ANY COMMON_MACRO_NAME CAN BE FOUND IN macros.hpp**
 
+
+    class twelfth_M6C2 : TCP_hgun_Pistol_M6C2
+  {
+    scope = 2;
+    scopeArsenal = 2;
+    author = "Sammy";
+    displayName = "[12th] M6C2";
+    baseWeapon = "twelfth_M6C2";
+    //magazines[] = COMMON_M6_MAGAZINES;
+  };  
+  class twelfth_M6G : TCP_hgun_Pistol_M6G
+  {
+    scope = 2;
+    scopeArsenal = 2;
+    author = "Sammy";
+    displayName = "[12th] M6G";
+    baseWeapon = "twelfth_M6G";
+    //magazines[] = COMMON_M6_MAGAZINES;
+  };
+  class twelfth_M6G2 : TCP_hgun_Pistol_M6G2
+  {
+    scope = 2;
+    scopeArsenal = 2;
+    author = "Sammy";
+    displayName = "[12th] M6G2";
+    baseWeapon = "twelfth_M6G2";
+    //magazines[] = COMMON_M6_MAGAZINES;
+  };
   class twelfth_M6C : 19_UNSC_M6C
   {
     scope = 2;
@@ -1381,7 +1414,7 @@ class CfgWeapons
         };
     };
 
-    class twelfth_M73H : TCF_M73H
+    class twelfth_M73H : OPTRE_M73
     {
       author = "Jack"; // Thank you!
       scope = 2;
