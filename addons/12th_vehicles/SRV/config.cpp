@@ -2,7 +2,7 @@
 #include "spawn_info.hpp"
 
 class CfgPatches {
-  class twelfth_vehicles_warthogs {
+  class twelfth_vehicles_SRV {
     units[] = {
       "twelfth_SRV"
     };
