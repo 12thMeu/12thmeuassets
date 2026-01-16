@@ -1,10 +1,12 @@
 #include "script_component.hpp"
 //Fixed with the help of Crowdedlight
 
+
+class DefaultEventhandlers;
 class CfgPatches {
   class vehicle_Dingo {
     units[] = {
-	  "Dingo"
+	  "DingoCargo"
     };
     weapons[] = {};           // No specific weapons defined in this config
     ammo[] = {};              // No specific ammo defined in this config
@@ -16,22 +18,10 @@ class CfgPatches {
   };
 };
 
-class CfgEditorCategories
-{
-	class 12th_Assets // Category class, you point to it in editorCategory property
-	{
-		displayName = "12th MEU Props"; // Name visible in the list
-	};
-};
-    class CfgEditorSubcategories ///sub category creation.
-{
-	class Misc_Props
-	{
-		displayName="Misc Props";
-	};
-	
-
-};
+class WeaponFireGun;
+class WeaponCloudsGun;
+class WeaponFireMGun;
+class WeaponCloudsMGun;
 
 
 #include "CfgVehicles.hpp"
