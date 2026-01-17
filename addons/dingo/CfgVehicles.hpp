@@ -175,8 +175,8 @@ class CfgVehicles
 		{
 			class Exhaust1 /// the car has two exhausts - each on one side
 			{
-				position 	= "exhaust";  		/// name of initial memory point
-				direction 	= "exhaust_dir";	/// name of memory point for exhaust direction
+				position 	= "exhaust1_pos";  		/// name of initial memory point
+				direction 	= "exhaust1_dir";	/// name of memory point for exhaust direction
 				effect 		= "ExhaustsEffect";	/// what particle effect is it going to use
 			};
 
