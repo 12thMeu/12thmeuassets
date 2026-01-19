@@ -22,7 +22,7 @@
 #include "config_ammo.hpp"
 #include "config_magazines.hpp"
 #include "config_weapons.hpp"
-
+#include "model.cfg"
 class CfgPatches
 {
   class twelfth_weapons

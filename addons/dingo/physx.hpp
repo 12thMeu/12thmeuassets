@@ -4,21 +4,20 @@
 		thrustDelay            	= 0.2; 		/// initial delay to cause lesser slip when on 1st gear - thrust goes from zero to full in this time
 		brakeIdleSpeed         	= 1.78; 	/// under what speed (in m/s) does the brake apply for a vehicle without thrust
 		maxSpeed               	= 150; 		/// vehicle can go a bit over, but dramatically decreases thrust
-		fuelCapacity           	= 45;
-		wheelCircumference     	= 2.277; 	/// diameter of 725
+		fuelCapacity           	= 80;
+		wheelCircumference     	= 4.52; 	/// diameter of 1440
 
-		antiRollbarForceCoef	= 0.5; 	/// how strong is the anti-roll bar of vehicle preventing it to lose grip in turns (not any magical stuff, real ARB)
-		antiRollbarForceLimit	= 0.5; 	/// highest possible force of ARB
-		antiRollbarSpeedMin 	= 20; 	/// the roll bar force gets from zero to full in range of min and max speed
-		antiRollbarSpeedMax		= 80;  	/// this simulates losing grip at high speed turns
+		antiRollbarForceCoef = 24;
+		antiRollbarForceLimit = 30;
+		antiRollbarSpeedMin = 0;
+		antiRollbarSpeedMax = 112.5; 	/// this simulates losing grip at high speed turns
 
 		/// Gearbox and transmission  via PhysX
 		idleRpm = 900; // RPM at which the engine idles.
-		redRpm = 6900; // RPM at which the engine redlines.
-
+		redRpm = 10000; // RPM at which the engine redlines.
 		class complexGearbox
 		{
-			GearboxRatios[]    = {"R1",-3.231,"N",0,"D1",2.462,"D2",1.870,"D3",1.241,"D4",0.970,"D5",0.711};
+			GearboxRatios[] = {"R1",-6,"N",0,"D1",6.1,"D2",3.1,"D3",1.45,"D4",1,"D5",0.7};
 			TransmissionRatios[] = {"High",4.111}; // Optional: defines transmission ratios (for example, High and Low range as commonly found in offroad vehicles)
 			gearBoxMode        = "auto"; //gearbox can be of type: full-auto (only requires 'W' or 'S'), auto (requires shift between drive and reverse), semi-auto, manual
 			moveOffGear        = 1; // defines what gear an automatic or semi-automatic gearbox will move off from stationary in. 1 by default.
@@ -50,14 +49,14 @@
 		// with open differential, front-wheel drive with limited slip, rear-wheel drive with open differential, rear-wheel drive with limited slip.
 		// <Type>: string; acceptable values: "all_open", "all_limited", "front_open", "front_limited", "rear_open", "rear_limited"
 		// <Default>: "all_limited"
-		differentialType = "front_limited";
+		differentialType = "rear_limited";
 
 		// <Description>: Ratio of engine power that goes to front wheels out of total power for 4-wheel drive differentials.
 		// Choosing a value greater than 0.5 delivers more torque to the front wheels, while choosing a value less than 0.5
 		// delivers more torque to the rear wheels. This value is ignored for front-wheel drive and rear-wheel drive differentials.
 		// <Type>: float
 		// <Default>: 0.5
-		frontRearSplit = 0.5;
+		frontRearSplit = 0.3;
 
 		// <Description>: This is the largest possible relative difference between speed of front wheels. It helps to have outside wheels a bit faster
 		// during the turns, but it prevents the faster wheel to take all the power while sliding. The power is shifted to slower wheel once the value is reached.
@@ -73,7 +72,7 @@
 		// A good starting value is around 1.3.
 		// <Type>: float
 		// <Default>: 1.3
-		rearBias = 1.3;
+		rearBias = 1.5;
 
 		// <Description>: This value is similar to the frontBias and rearBias, except that it refers to the sum of the front wheel rotation speeds and the sum
 		// of the rear wheel rotation speeds.
@@ -87,7 +86,7 @@
 		// slip a little while changing gears while weaker values are better for comfortable seamless ride.
 		// <Type>: float
 		// <Default>: 10.0
-		clutchStrength = 15.0;
+		clutchStrength = 40.0;
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// Engine parameters
@@ -95,20 +94,21 @@
 		// <Description>: Power of the engine in kW.
 		// <Type>: float
 		// <Default>: (required)
-		enginePower = 100;
-
+		enginePower = 700;
+		// <Description>: This is the maximum torque that is ever available from the engine. This is expressed in Newton metres.
+		// <Type>: float
+		// <Default>: value calculated from enginePower according to http://en.wikipedia.org/wiki/Horsepower#Relationship_with_torque
+		peakTorque = 1500;
 
 		// <Description>: This is the maximum rotational speed of the engine expressed in radians per second. It could be calculated from maximum
 		// engine RPM like this:
 		// maxOmega = (maxRpm*2*Pi)/60.
 		// <Type>: float
 		// <Default>: 600 which is cca 6000 rounds per minute.
-		maxOmega = 720;
+		maxOmega = __EVAL((10000 * 2 * PI) / 60);
+		minOmega = __EVAL((900 * 2 * PI) / 60);
+		engineMOI = 1;
 
-		// <Description>: This is the maximum torque that is ever available from the engine. This is expressed in Newton metres.
-		// <Type>: float
-		// <Default>: value calculated from enginePower according to http://en.wikipedia.org/wiki/Horsepower#Relationship_with_torque
-		peakTorque = 350;
 
 		// <Description>: These three values describe internal damping of the engine. Bigger values mean greater damping. Clutch disengaged value
 		// is used while shifting gears, engine interpolates between clutch engaged and full throttle values according to throttle input.
@@ -116,7 +116,7 @@
 		// Typical values in range (0.25,3). The simulation can become unstable with damping rates of 0.
 		// <Type>: float, float, float
 		// <Default>: 0.08, 2.0, 0.35
-		dampingRateFullThrottle = 0.08;
+		dampingRateFullThrottle = 0.1;
 		dampingRateZeroThrottleClutchEngaged = 0.35;
 		dampingRateZeroThrottleClutchDisengaged = 0.35;
 
@@ -125,7 +125,16 @@
 		// multiplier in range (0,1) that is used to scale the peak torque. It is good to keep the values in mind while setting changeGearMinEffectivity.
 		// <Type>: Array[i][2] where i = number of samples, maximum 8;
 		// <Default>: {{0.0, 0.8}, {0.33, 1.0}, {1.0, 0.8}}
-		torqueCurve[] = {{0.000, 0.000}, {0.178, 0.800}, {0.250, 1.0}, {0.461, 0.900}, {0.900, 0.800}, {1.000, 0.300}};
+		torqueCurve[] = {
+			{0.347826,0.735294},
+			{0.434783,0.911765},
+			{0.521739,1},
+			{0.608696,1},
+			{0.695652,0.985294},
+			{0.782609,0.926471},
+			{0.869565,0.823529},
+			{1,0.676471}
+		};
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// Gearbox parameters
@@ -134,28 +143,30 @@
 		// <Range>: (0,1)
 		// <Type>: Array[i] where i = number of gears
 		// <Default>: 0.95 for every value (Neutral = 0.15 Not sure how important this is but we want to kick out of neutral very quickly)
-		changeGearMinEffectivity[]   = {0.95, 0.15, 0.95, 0.95, 0.95, 0.95, 0.95};
+		changeGearOmegaRatios[] = {1,0.521739,0.347826,0.478261,0.978261,0.478261,0.956522,0.608696,0.913043,0.652174,1,0.652174};
+		changeGearMinEffectivity[] = {0.5,0.15,0.97,0.97,0.97,0.97,0.97,0.985};
 
 		// <Description>: The switch time describes how long it takes (in seconds) for a gear change to be completed. This needs to be set to aggresive shifting
 		// or it would cause issues while trying to run aggressively (mainly during evading the enemies).
 		// <Type>: float
 		// <Default>: 0.01
-		switchTime = 0.31;
+		switchTime = 0.11;
 
 		// <Description>: Set the latency time of the gearbox, specified in s.
 		// This is used to prevent instant shifting after changing gears - there is some power loss during gear change and it could seem that
 		// previous gear is better for a brief time after shifting.
 		// <Type>: float
 		// <Default>: 2.0
-		latency = 1.0;
+		latency = 0.5;
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// Wheels parameters
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		class Wheels
 		{
-			class LF
+			class RF
 			{
+				
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				// General parameters
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -172,7 +183,7 @@
 				// <Description>: Defines if wheel is on the right or left side of the vehicle
 				// <Type>: string
 				// <Default>: "right"
-				side = "left";
+				side = "right";
 
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				// Wheel PX parameters
@@ -190,7 +201,7 @@
 				// <Description>: This is the weight in kg of wheel including both rim and tyre.
 				// <Type>: float
 				// <Default>: 10.0
-				mass = 20;
+				mass = 100;
 
 				// <Description>: This is the wheel's moment of inertia about the rolling axis. Smaller values result in more slips in aggresive driving
 				// while larger hamper the gain of speed. Good base to start with is this formula:
@@ -198,21 +209,22 @@
 				// Some tweaking is needed after the computation, but it is still better than nothing.
 				// <Type>: float
 				// <Default>: 0.5 * WheelMass * WheelRadius * WheelRadius
-				MOI = 3.3;
+				MOI = 60;
 
 				// <Description>:The damping rate describes the rate at which a freely spinning wheel loses rotational speed.
 				// Values in range (0.25, 2) seem like sensible values. Experimentation is always a good idea, even outside this range.
 				// <Type>: float
 				// <Default>: 0.1
-				dampingRate = 0.5;
-
+				dampingRate = 0.4;
+				dampingRateDamaged = 1.0;
+				dampingRateDestroyed = 1000.0;
 				// <Description>: This is the value of the torque applied to the wheel when the brakes are maximally applied. Higher torques will lock the wheel
 				// quicker when braking, while lower torques will take longer to lock the wheel.
 				// A value of around 1500 is a good starting point for a vanilla wheel but a google search will reveal typical braking torques. One difficulty is
 				// that these are often expressed by manufacturers as braking horsepower or in "pounds inches". The values required here are in "Newton metres".
 				// <Type>: float
 				// <Default>: 2500
-				maxBrakeTorque = 2000;
+				maxBrakeTorque = 15000;
 
 				// <Description>: This is the same as the max brake torque except for the handbrake rather than the brake. Typically, for a 4-wheeled car,
 				// the handbrake is stronger than the brake and is only applied to the rear wheels. A value of 4000 for the rear wheels is a good starting point,
@@ -253,13 +265,13 @@
 				// <Description>: This is the mass in kg that is supported by the suspension spring.
 				// <Type>: float
 				// <Default>: vehicleMass/numberOfWheels
-				sprungMass = 350.0;
+				sprungMass = 3850;
 
 				// <Description>: This is the strength of the suspension spring in Newtons per metre.
 				//   springStrength = naturalFrequency * naturalFrequency * sprungMass
 				// <Type>: float
 				// <Default>: sprungMass*5,0*5,0
-				springStrength = 22600;
+				springStrength = 96250;
 
 				// <Description>: This describes the rate at which the spring dissipates the energy stored in the spring.
 				// Basic equiation for this is
@@ -267,7 +279,7 @@
 				// where dampingRatio = 1 mean critical damping (critically damped pendulum should get back to start point in every swing)
 				// <Type>: float
 				// <Default>: 0,4*2*sqrt(springStrength*sprungMass)
-				springDamperRate = 8680;
+				springDamperRate = 19250;
 
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				// Tire parameters
@@ -283,7 +295,7 @@
 				// <Type>: float, float
 				// <Default>: 25, 180
 				latStiffX = 25;
-				latStiffY = 18000;
+				latStiffY = 180;
 
 				// <Description>: These six values describe a graph of friction as a function of longitudinal slip.
 				// A good starting point for this is a flat graph of friction vs slip with these values:
@@ -297,7 +309,7 @@
 				// <Default>: {{0, 1}, {0.5, 1}, {1,1}}
 				frictionVsSlipGraph[] = {{0, 1}, {0.5, 1}, {1,1}};
 			};
-			class LR: LF
+			class RR: RF
 			{
 				boneName = "wheel_1_2_damper";
 				steering = 0;
@@ -305,13 +317,14 @@
 				boundary = "wheel_1_2_bound";
 				suspForceAppPointOffset = "wheel_1_2_axis";
 				tireForceAppPointOffset = "wheel_1_2_axis";
-				maxHandBrakeTorque = 3000;
+				maxHandBrakeTorque = 30000;
 				latStiffY = 180;
-				sprungMass = 190.0;
-				springStrength = 4750;
-				springDamperRate = 1760;
+				sprungMass = 3850.0;
+				springStrength = 99000;
+				springDamperRate = 20000;
+				maxDroop = 0.10;
 			};
-			class RF: LF
+			class LF: RF
 			{
 				boneName = "wheel_2_1_damper";
 				center   = "wheel_2_1_axis";
@@ -319,9 +332,9 @@
 				suspForceAppPointOffset = "wheel_2_1_axis";
 				tireForceAppPointOffset = "wheel_2_1_axis";
 				steering = 1;
-				side = "right";
+				side = "left";
 			};
-			class RR: RF
+			class LR: RR
 			{
 				boneName = "wheel_2_2_damper";
 				steering = 0;
@@ -329,10 +342,10 @@
 				boundary = "wheel_2_2_bound";
 				suspForceAppPointOffset = "wheel_2_2_axis";
 				tireForceAppPointOffset = "wheel_2_2_axis";
-				maxHandBrakeTorque = 3000;
+				maxHandBrakeTorque = 30000;
 				latStiffY = 180;
-				sprungMass = 190.0;
-				springStrength = 4750;
-				springDamperRate = 1760;
+				sprungMass = 3850.0;
+				springStrength = 99000;
+				springDamperRate = 2000;
 			};
 		};

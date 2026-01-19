@@ -3,7 +3,6 @@
 
 class CfgVehicles
 { 
-	class SRV_UKWD;
 	class Car;
 	class Car_f: Car
 	{
@@ -59,10 +58,10 @@ class CfgVehicles
 	};
 
 
-	class DingoHull: Dingo_Base_F
+	class SMT_DingoHull: Dingo_Base_F
 	{
 		author="SamanthaNix";
-		model = "x\12thMEU\addons\Dingo\Data\Dingo.p3d";
+		model = "x\12thMEU\addons\Dingo\Dingo.p3d";
 		picture	= "x\12thMEU\addons\Dingo\Data\preview.paa"; /// just some icon in command bar
 
 		//Editor stuff
@@ -71,26 +70,89 @@ class CfgVehicles
 
 		displayName = "Dingo Hull"; /// displayed in Editor
 
+		//Ace stuff
+		ace_repair_spareWheels = 1;
+		ace_cargo_space = 6;  // Cargo space your vehicle has
+        ace_cargo_hasCargo = 1;
+
+		//ACRE stuff
+
+		class AcreIntercoms
+		{
+			class Intercom_1 
+			{                            
+                displayName = "Crew intercom";
+                shortName = "Crew";
+                allowedPositions[] = {"crew"};
+                disabledPositions[] = {{"Turret", {0,0}}};
+                limitedPositions[] = {{"cargo", "all"}};
+                numLimitedPositions = 1;
+                masterPositions[] = {"commander"};
+                connectedByDefault = 1;
+			};
+			class Intercom_2: Intercom_1 
+			{
+                displayName = "Pax intercom";
+                shortName = "Pax";
+                allowedPositions[] = {"crew", {"cargo", "all"}};
+                limitedPositions[] = {};
+                numLimitedPositions = 0;
+                connectedByDefault = 0;
+			};
+		};
+		acre_hasInfantryPhone = 1; // 1 - enabled, 0 - disabled (default: 0)
+        acre_infantryPhoneDisableRinging = 0;   // If set to 1, the ringing funtionality will not be available (default: 0)
+        acre_infantryPhoneCustomRinging[] = {}; // An array used in order to override the default sound for the ringing functionality (default: {})
+        // List of intercom names (intercom_1, intercom_2) or "all" in order to specify which intercom networks the phone can connect to
+        acre_infantryPhoneIntercom[] = {"all"};
+        acre_infantryPhoneControlActions[] = {"intercom_1"}; // Only those units in "intercom_1" can have access to ringing functionality
+        // Here a custom function can be defined that is called when the infantry phone is picked up, put back, given to another unit or the intercom network is switched
+        acre_eventInfantryPhone = QFUNC(noApiFunction);
+		class AcreRacks 
+		{
+           class Rack_1 
+		   {
+               displayName = "Dash"; 
+               shortName = "Dash";
+               componentName = "ACRE_VRC103";
+               allowedPositions[] = {"driver", "commander"};
+               disabledPositions[] = {};
+               defaultComponents[] = {};
+               mountedRadio = "ACRE_PRC117F";               
+               isRadioRemovable = 0;
+               intercom[] = {"intercom_1"};                   
+           };
+		};
 
 
+
+
+		//hand anims
+		driverLeftHandAnimName 	= "drivewheel"; /// according to what bone in model of car does hand move
+		driverRightHandAnimName = "drivewheel";
+
+
+
+
+		class TransportMagazines {};
+		class TransportWeapons {};
 
 		//Handeling
-		terrainCoef 	= 0.25; 	/// different surface affects this car more, stick to tarmac
-		turnCoef 		= 3; 	/// should match the wheel turn radius
-		precision 		= 10; 	/// how much freedom has the AI for its internal waypoints - lower number means more precise but slower approach to way
-		brakeDistance 	= 3.0; 	/// how many internal waypoints should the AI plan braking in advance
-		acceleration 	= 15; 	/// how fast acceleration does the AI think the car has
-
-		fireResistance 	= 20; 	/// lesser protection against fire than tanks
-		armor 			= 700; 	/// just some protection against missiles, collisions and explosions
-		cost			= 50000; /// how likely is the enemy going to target this vehicle
+		terrainCoef = 0;
+		turnCoef = 5;
+		precision = 10;
+		brakeDistance = 3.0;
+		acceleration = 15;
+		fireResistance = 5;
+		armor = 200;
+		cost = 50000; /// how likely is the enemy going to target this vehicle
 
 		transportMaxBackpacks 	= 4; /// just some backpacks fit the trunk by default
 		transportSoldier 		= 4; /// number of cargo except driver
 		
 
-		wheelDamageRadiusCoef 	= 0.9; 			/// for precision tweaking of damaged wheel size
-		wheelDestroyRadiusCoef 	= 0.4;			/// for tweaking of rims size to fit ground
+		wheelDamageRadiusCoef = 0.75;
+		wheelDestroyRadiusCoef = 0.6127954;			/// for tweaking of rims size to fit ground
 		maxFordingDepth 		= 0.5;			/// how high water would damage the engine of the car
 		waterResistance 		= 1;			/// if the depth of water is bigger than maxFordingDepth it starts to damage the engine after this time
 		crewCrashProtection		= 0.1;			/// multiplier of damage to crew of the vehicle => low number means better protection
@@ -235,25 +297,23 @@ class CfgVehicles
 			};
 		};
 
-		aggregateReflectors[] = {{"LightCarHeadL01", "LightCarHeadL02"}, {"LightCarHeadR01", "LightCarHeadR02"}}; /// aggregating reflectors helps the engine a lot
-		/// it might be even good to aggregate all lights into one source as it is done for most of the cars
+		aggregateReflectors[] = {{"LightCarHeadL01", "LightCarHeadL02"}, {"LightCarHeadR01", "LightCarHeadR02"}}; 
+
+		hiddenSelections[] = {"Camo1","Camo7"}; ///we want to allow changing the color of this selection
+		hiddenSelectionsTextures[]={"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa","x\12thMEU\addons\dingo\data\textures\standard\Modules_co.paa"};	 /// we could use any texture to cover the car
 
 
-		// Must be kept as fail-safe in case of issue with the function
-		hiddenSelections[] = {"Camo1"}; ///we want to allow changing the color of this selection
-		hiddenSelectionsTextures[]={"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa"};	 /// we could use any texture to cover the car
-
-		// Definition of texture sources (skins), used for the VhC (Vehicle customization)
-		// Also, because the Garage uses the VhC, it will make them available from the garage
 		class textureSources
 		{
 			class Dingo_Camo_standard // Source class
 			{
-				displayName="Red"; // name displayed, among other, from the garage
+				displayName="Default"; // name displayed, among other, from the garage
 				author="SamanthaNix"; // Author of the skin
+				hiddenSelections[] = {"Camo1","Camo7"};
 				textures[]=// List of textures, in the same order as the hiddenSelections definition
 				{
-					"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa" // This is procedural texture, can be useful to set placeholder
+					"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa",
+					"x\12thMEU\addons\dingo\data\textures\standard\Modules_co.paa"
 				};
 
 			};
@@ -263,7 +323,8 @@ class CfgVehicles
 				author="SamanthaNix";
 				textures[]=
 				{
-					"#(rgb,8,8,3)color(1,1,1,1)"
+					"x\12thMEU\addons\dingo\data\textures\winter\Chassis_co.paa",
+					"x\12thMEU\addons\dingo\data\textures\winter\Modules_co.paa"
 				};
 
 			};
@@ -273,43 +334,80 @@ class CfgVehicles
 				author="SamanthaNix";
 				textures[]=
 				{
-					"#(rgb,8,8,3)color(0,1,0,1)"
+					"x\12thMEU\addons\dingo\data\textures\forest\Chassis_co.paa",
+					"x\12thMEU\addons\dingo\data\textures\winter\Modules_co.paa"
+				};
+
+			};
+			class Dingo_Camo_TCP
+			{
+				displayName="TCP";
+				author="SamanthaNix";
+				textures[]=
+				{
+					"x\12thMEU\addons\dingo\data\textures\TCP\Chassis_co.paa",
+					"x\12thMEU\addons\dingo\data\textures\TCP\Modules_co.paa"
+				};
+
+			};
+			class Dingo_Camo_OPTRE
+			{
+				displayName="OPTRE";
+				author="SamanthaNix";
+				textures[]=
+				{
+					"x\12thMEU\addons\dingo\data\textures\OPTRE\Chassis_co.paa",
+					"x\12thMEU\addons\dingo\data\textures\OPTRE\Modules_co.paa"
 				};
 
 			};
 		};
-		// [_textureSourceClass1, _probability1, _textureSourceClass2, _probability2, ...]
-		// Default behavior of the VhC is to select one of these sources, with a weighted random
+
 
 	};
-	class DingoCargo: DingoHull
+	class SMT_DingoCargo: SMT_DingoHull
 	{
+
+    	editorCategory="ED_SMT_Faction";
+    	editorSubcategory="EDS_SMT_faction_Vehicles";
+		side	= 1; 			/// civilian car should be on civilian side
+		faction	= "BLU_F";		/// and with civilian faction
 		forceInGarage=1;
-		displayName="Dingo C";
 		scope	= 2; 			/// makes the car visible in editor
 		scopeCurator=2;			// scope 2 means it's available in Zeus mode (0 means hidden)
+		displayName="[SMT] Dingo Cargo";
 		crew 	= "C_man_1"; 	/// we need someone to fit into the car
-		side	= 3; 			/// civilian car should be on civilian side
-		faction	= "CIV_F";		/// and with civilian faction
+		textureList[]=
+		{
+			"Dingo_Camo_standard", 0.2,
+			"Dingo_Camo_winter",0.2,
+			"Dingo_Camo_forest",0.2,
+			"Dingo_Camo_TCP",0.2,
+			"Dingo_Camo_OPTRE",0.2
+		};
+		
+	};
+	class SMT_DingoTroop: SMT_DingoHull
+	{
+    	editorCategory="ED_SMT_Faction";
+    	editorSubcategory="EDS_SMT_faction_Vehicles";
+		side	= 1; 			/// civilian car should be on civilian side
+		faction	= "BLU_F";		/// and with civilian faction
+		forceInGarage=1;
+		scope	= 2; 			/// makes the car visible in editor
+		scopeCurator=2;	
+		displayName="[SMT] Dingo Troop";
+		model = "x\12thMEU\addons\Dingo\DingoTroop.p3d";
+		transportMaxBackpacks 	= 10; /// just some backpacks fit the trunk by default
+		transportSoldier 		= 10; /// number of cargo except driver
 				textureList[]=
 		{
-			"Dingo_Camo_standard", 1,
-			"Dingo_Camo_winter",1,
-			"Dingo_Camo_forest",1
+			"Dingo_Camo_standard", 0.2,
+			"Dingo_Camo_winter",0.2,
+			"Dingo_Camo_forest",0.2,
+			"Dingo_Camo_TCP",0.2,
+			"Dingo_Camo_OPTRE",0.2
 		};
-	};
 
-	class Land_Basketball_01_F;
-	class Dingo_Prop: Land_Basketball_01_F
-	{
-		scope = 2;
-		scopeCurator = 2;
-		editorCategory ="12th_Assets";
-		editorSubcategory="Misc_Props";
-		destrType="DestructNo";
-		displayname = "Dingo";
-		model = "x\12thMEU\addons\Dingo\Data\Dingo.p3d";
-		description = "Test";
-		editorPreview = "x\12thMEU\addons\Dingo\Data\preview.paa";
 	};
 };

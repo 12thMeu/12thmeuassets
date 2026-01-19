@@ -36,7 +36,6 @@ class CfgPatches {
       "twelfth_sparrowhawk",
       "twelfth_wyvern_inf",
       "twelfth_wyvern_veh",
-      "twelfth_prime",
       "twelfth_blackfish_inf",
       "twelfth_blackfish_veh",
       "twelfth_blackfish_armed",

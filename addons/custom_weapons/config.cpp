@@ -31,7 +31,7 @@ class BaseSoundModeType;
 #include "cfgAmmo.hpp" /// specific ammo for this rifle
 #include "cfgSoundShaders.hpp" // SoundShaders
 #include "cfgSoundSets.hpp" // SoundSets
-
+#include "model.cfg"
 class CfgWeapons
 {
 	class Rifle;
