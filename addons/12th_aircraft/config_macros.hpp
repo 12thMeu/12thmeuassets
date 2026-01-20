@@ -188,9 +188,9 @@ class textureSources {                            \
       QP(pelican\winter\body_co.paa),             \
       QP(pelican\winter\wings_and_gear_co.paa),   \
       QP(pelican\winter\weaponry_co.paa),         \
-      QP(pelican\winter\troop_bay_co.paa),        \
-      QP(pelican\winter\doors_co.paa),            \
-      QP(pelican\winter\hall_and_cockpit_co.paa)  \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
     };                                            \
     factions[] = {"twelfth_MEU"};                    \
   };                                              \
@@ -275,7 +275,7 @@ class textureSources { \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_02_co.paa", \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_03_co.paa", \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_04_co.paa", \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_05_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_05_co.paa", \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\autocannon_co.paa", \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\feed_autocannon_co.paa", \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa", \

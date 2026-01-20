@@ -37,23 +37,27 @@ class CfgPatches {
     requiredAddons[] = {
     };
     units[] = {  // List of all custom backpack units.
-      "twelfth_backpack_standard",
-      "twelfth_backpack_standard_light",
-      "twelfth_backpack_standard_heavy",
-      "twelfth_backpack_standard_rto",
-      "twelfth_backpack_standard_medic",
-      "twelfth_backpack_forest",
-      "twelfth_backpack_forest_light",
-      "twelfth_backpack_forest_heavy",
-      "twelfth_backpack_forest_rto",
-      "twelfth_backpack_forest_medic",
-	  "twelfth_backpack_desert",
-	  "twelfth_backpack_desert_light",
-      "twelfth_backpack_desert_heavy",
-      "twelfth_backpack_desert_rto",
-      "twelfth_backpack_desert_medic",
-      "twelfth_backpack_alt_rto",
-      "twelfth_M3_MAAWS_backpack"
+      "twelfth_backpack_na_standard",
+      "twelfth_backpack_light_standard",
+      "twelfth_backpack_heavy_standard",
+      "twelfth_backpack_rto_standard",
+      "twelfth_backpack_medic_standard",
+      "twelfth_backpack_na_forest",
+      "twelfth_backpack_light_forest",
+      "twelfth_backpack_heavy_forest",
+      "twelfth_backpack_rto_forest",
+      "twelfth_backpack_medic_forest",
+	    "twelfth_backpack_na_desert",
+	    "twelfth_backpack_light_desert",
+      "twelfth_backpack_heavy_desert",
+      "twelfth_backpack_rto_desert",
+      "twelfth_backpack_medic_desert",
+      "twelfth_backpack_rto_desert",
+      "twelfth_M3_MAAWS_backpack",
+      "twelft_poncho_wet",
+      "twelft_poncho_dry",
+      "twelfth_ANPRC"
+
 	  // Alternative RTO backpack.
     };
     weapons[] = {};  // No weapons defined.
@@ -80,7 +84,7 @@ class CfgVehicles {
     scopeArsenal = 0;  // Not visible in the arsenal.
     picture = "";  // No picture defined.
     displayName = "[12th] Backpack Base (DON'T USE)";
-    model = "Foundries\19th_H2A_Armor\19th_H2A_marines_backpacks";
+    model = "Foundries\19th_H2A_Armor\19th_H2A_marines_backpacks.p3d";
     hiddenSelections[] = {  // Available texture selections.
       "main",
       "pouches",

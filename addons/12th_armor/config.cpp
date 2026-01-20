@@ -34,171 +34,13 @@ class CfgPatches {
     */
     units[]= {
       "twelfth_odst_uniform_veh",
-      "twelfth_uni_ng_base_veh",
-      "twelfth_uni_ng_std_veh",
-      "twelfth_uni_ng_std_med_veh",
-      "twelfth_uni_ng_std_1pl_veh",
-      "twelfth_uni_ng_std_1pl_med_veh",
-      "twelfth_uni_ng_std_2pl_veh",
-      "twelfth_uni_ng_std_2pl_med_veh",
-      "twelfth_uni_ng_std_lpl_veh",
-      "twelfth_uni_ng_std_lpl_med_veh",
-      "twelfth_uni_ng_std_hq_veh",
-      "twelfth_uni_ng_std_hq_med_veh",
-      "twelfth_uni_ng_win_veh",
-      "twelfth_uni_ng_win_med_veh",
-      "twelfth_uni_ng_win_1pl_veh",
-      "twelfth_uni_ng_win_1pl_med_veh",
-      "twelfth_uni_ng_win_2pl_veh",
-      "twelfth_uni_ng_win_2pl_med_veh",
-      "twelfth_uni_ng_win_lpl_veh",
-      "twelfth_uni_ng_win_lpl_med_veh",
-      "twelfth_uni_ng_win_hq_veh",
-      "twelfth_uni_ng_win_hq_med_veh",
-      "twelfth_uni_ng_drk_veh",
-			"twelfth_uni_ng_drk_med_veh",
-			"twelfth_uni_ng_drk_1pl_veh",
-			"twelfth_uni_ng_drk_1pl_med_veh",
-			"twelfth_uni_ng_drk_2pl_veh",
-			"twelfth_uni_ng_drk_2pl_med_veh",
-			"twelfth_uni_ng_drk_lpl_veh",
-			"twelfth_uni_ng_drk_lpl_med_veh",
-			"twelfth_uni_ng_drk_hq_veh",
-			"twelfth_uni_ng_drk_hq_med_veh",
-      "twelfth_clothes_std_veh",
-      "twelfth_clothes_std_rolled_veh",
-      "twelfth_clothes_desert_veh",
-      "twelfth_clothes_desert_rolled_veh",
-      "twelfth_instructor_uniform_veh",
-      "twelfth_dress_navy_veh"
+
     };
     weapons[]= {
       "twelfth_odst_uniform_wep",
       "twelfth_uni_ng_base_wep",
-      "twelfth_uni_ng_std_wep",
-      "twelfth_uni_ng_std_med_wep",
-      "twelfth_uni_ng_std_1pl_wep",
-      "twelfth_uni_ng_std_1pl_medweph",
-      "twelfth_uni_ng_std_2pl_wep",
-      "twelfth_uni_ng_std_2pl_medweph",
-      "twelfth_uni_ng_std_lpl_wep",
-      "twelfth_uni_ng_std_lpl_medweph",
-      "twelfth_uni_ng_std_hq_wep",
-      "twelfth_uni_ng_std_hq_med_wep",
-      "twelfth_uni_ng_win_wep",
-      "twelfth_uni_ng_win_med_wep",
-      "twelfth_uni_ng_win_1pl_wep",
-      "twelfth_uni_ng_win_1pl_medweph",
-      "twelfth_uni_ng_win_2pl_wep",
-      "twelfth_uni_ng_win_2pl_medweph",
-      "twelfth_uni_ng_win_lpl_wep",
-      "twelfth_uni_ng_win_lpl_medweph",
-      "twelfth_uni_ng_win_hq_wep",
-      "twelfth_uni_ng_win_hq_med_wep",
-      "twelfth_uni_ng_drk_wep",
-      "twelfth_uni_ng_drk_med_wep",
-      "twelfth_uni_ng_drk_1pl_wep",
-      "twelfth_uni_ng_drk_1pl_medweph",
-      "twelfth_uni_ng_drk_2pl_wep",
-      "twelfth_uni_ng_drk_2pl_medweph",
-      "twelfth_uni_ng_drk_lpl_wep",
-      "twelfth_uni_ng_drk_lpl_medweph",
-      "twelfth_uni_ng_drk_hq_wep",
-			"twelfth_uni_ng_win_hq_med_wep",
       "twelfth_helm_base",
-      "twelfth_helm_std",
-      "twelfth_helm_std_med",
-      "twelfth_helm_std_1pl_ftl",
-      "twelfth_helm_std_1pl_sl",
-      "twelfth_helm_std_1pl_pl",
-      "twelfth_helm_std_1pl_med",
-      "twelfth_helm_std_2pl_ftl",
-      "twelfth_helm_std_2pl_sl",
-      "twelfth_helm_std_2pl_pl",
-      "twelfth_helm_std_2pl_med",
-      "twelfth_helm_std_hq_ftl",
-      "twelfth_helm_std_hq_sl",
-      "twelfth_helm_std_hq_pl",
-      "twelfth_helm_std_hq_med",
-      "twelfth_helm_std_lpl_ftl",
-      "twelfth_helm_std_lpl_sl",
-      "twelfth_helm_std_lpl_pl",
-      "twelfth_helm_std_lpl_med",
-      "twelfth_helm_std_nv",
-      "twelfth_helm_std_med_nv",
-      "twelfth_helm_std_1pl_ftl_nv",
-      "twelfth_helm_std_1pl_sl_nv",
-      "twelfth_helm_std_1pl_pl_nv",
-      "twelfth_helm_std_1pl_med_nv",
-      "twelfth_helm_std_2pl_ftl_nv",
-      "twelfth_helm_std_2pl_sl_nv",
-      "twelfth_helm_std_2pl_pl_nv",
-      "twelfth_helm_std_2pl_med_nv",
-      "twelfth_helm_std_hq_ftl_nv",
-      "twelfth_helm_std_hq_sl_nv",
-      "twelfth_helm_std_hq_pl_nv",
-      "twelfth_helm_std_hq_med_nv",
-      "twelfth_helm_std_lpl_ftl_nv",
-      "twelfth_helm_std_lpl_sl_nv",
-      "twelfth_helm_std_lpl_pl_nv",
-      "twelfth_helm_std_lpl_med_nv",
-      "twelfth_helm_win",
-      "twelfth_helm_win_med",
-      "twelfth_helm_win_1pl_ftl",
-      "twelfth_helm_win_1pl_sl",
-      "twelfth_helm_win_1pl_pl",
-      "twelfth_helm_win_1pl_med",
-      "twelfth_helm_win_2pl_ftl",
-      "twelfth_helm_win_2pl_sl",
-      "twelfth_helm_win_2pl_pl",
-      "twelfth_helm_win_2pl_med",
-      "twelfth_helm_win_hq_ftl",
-      "twelfth_helm_win_hq_sl",
-      "twelfth_helm_win_hq_pl",
-      "twelfth_helm_win_hq_med",
-      "twelfth_helm_win_lpl_ftl",
-      "twelfth_helm_win_lpl_sl",
-      "twelfth_helm_win_lpl_pl",
-      "twelfth_helm_win_lpl_med",
-      "twelfth_helm_win_nv",
-      "twelfth_helm_win_med_nv",
-      "twelfth_helm_win_1pl_ftl_nv",
-      "twelfth_helm_win_1pl_sl_nv",
-      "twelfth_helm_win_1pl_pl_nv",
-      "twelfth_helm_win_1pl_med_nv",
-      "twelfth_helm_win_2pl_ftl_nv",
-      "twelfth_helm_win_2pl_sl_nv",
-      "twelfth_helm_win_2pl_pl_nv",
-      "twelfth_helm_win_2pl_med_nv",
-      "twelfth_helm_win_hq_ftl_nv",
-      "twelfth_helm_win_hq_sl_nv",
-      "twelfth_helm_win_hq_pl_nv",
-      "twelfth_helm_win_hq_med_nv",
-      "twelfth_helm_win_lpl_ftl_nv",
-      "twelfth_helm_win_lpl_sl_nv",
-      "twelfth_helm_win_lpl_pl_nv",
-      "twelfth_helm_win_lpl_med_nv",
-      "twelfth_pilot_helm_Standard",
-      "twelfth_pilot_helm_Desert",
-      "twelfth_pilot_helm_Jungle",
-      "twelfth_pilot_helm_Winter",
       "twelfth_aa_helm",
-      "twelfth_cap_std",
-      "twelfth_cap_desert",
-      "twelfth_cap_twelfth_logo",
-      "twelfth_cap_news",
-      "twelfth_cap_news_2",
-      "twelfth_cap_pale_horse",
-      "twelfth_cap_pale_horse_2",
-      "twelfth_boonie_std",
-	    "twelfth_boonie_desert",
-      "twelfth_boonie_forest",
-      "twelfth_clothes_std_wep",
-      "twelfth_clothes_std_rolled_wep",
-      "twelfth_clothes_desert_wep",
-      "twelfth_clothes_desert_rolled_wep",
-      "twelfth_dress_navy_wep",
-      "twelfth_instructor_uniform_wep"
     };
     requiredAddons[]= {
       "A3_Armor_F_Beta",
@@ -246,7 +88,43 @@ class CfgVehicles {
   VEH_UNI_CLASS(winter)
   VEH_UNI_CLASS(opfor)
   VEH_UNI_CLASS(desert)
+  //INSTRUCTOR_VEH
 
+
+  class twelfth_B_TShirt_Untucked_instructor : TCP_B_CBUU_TShirt_Untucked_Base {
+      author="Sammy";
+      scope= 1;
+      scopeArsenal= 1;
+      scopeCurator = 1;
+      hiddenSelectionsTextures[] = {
+        QP(uniforms\uniform\instructor\CBUU_inst_CO.paa),
+        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
+        };
+      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(instructor,TShirt,Untucked));
+  };
+
+  class twelfth_B_TShirt_Untucked_AIC : TCP_B_CBUU_TShirt_Untucked_Base {
+      author="Sammy";
+      scope= 1;
+      scopeArsenal= 1;
+      scopeCurator = 1;
+      hiddenSelectionsTextures[] = {
+        QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa),
+        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
+        };
+      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(AIC,TShirt,Untucked));
+  };
+   class twelfth_B_TShirt_Untucked_UNSCMC : TCP_B_CBUU_TShirt_Untucked_Base {
+      author="Sammy";
+      scope= 1;
+      scopeArsenal= 1;
+      scopeCurator = 1;
+      hiddenSelectionsTextures[] = {
+        QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa),
+        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
+        };
+      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(UNSCMC,TShirt,Untucked));
+  };
   // ---------------------------------------------------------------------------
   //  twelfth_odst_uniform_veh
   // ---------------------------------------------------------------------------
@@ -325,13 +203,70 @@ class CfgWeapons {
   BOONIE(snow)
   BOONIE(opfor)
 
+  //INSTRUCTOR_WEP
+
+
+
+
+
+
+  class twelfth_U_B_TShirt_Untucked_instructor: TCP_U_B_CBUU_TShirt_Untucked_Base{
+    scope=2;
+    displayName="[12th] Instructor T-Shirt";
+    ACE_GForceCoef=0.4;
+    class ItemInfo : ItemInfo {
+      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(instructor,TShirt,Untucked));
+      containerClass="Supply100"; 
+      mass=1;
+      uniformType = "Neopren";
+      allowedSlots[]={"701","801","901"};
+      armor=20;
+    };
+    hiddenSelectionsTextures[] = {
+      QP(uniforms\uniform\instructor\CBUU_inst_CO.paa)
+    };
+  };
+  class twelfth_U_B_TShirt_Untucked_AIC: TCP_U_B_CBUU_TShirt_Untucked_Base{
+    scope=2;
+    displayName="[12th] AIC T-Shirt";
+    ACE_GForceCoef=0.4;
+    class ItemInfo : ItemInfo {
+      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(AIC,TShirt,Untucked));
+      containerClass="Supply100"; 
+      mass=1;
+      uniformType = "Neopren";
+      allowedSlots[]={"701","801","901"};
+      armor=20;
+    };
+    hiddenSelectionsTextures[] = {
+      QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa)
+    };
+  };
+    class twelfth_U_B_TShirt_Untucked_UNSCMC: TCP_U_B_CBUU_TShirt_Untucked_Base{
+    scope=2;
+    displayName="[12th] UNSCMC T-Shirt";
+    ACE_GForceCoef=0.4;
+    class ItemInfo : ItemInfo {
+      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(UNSCMC,TShirt,Untucked));
+      containerClass="Supply100"; 
+      mass=1;
+      uniformType = "Neopren";
+      allowedSlots[]={"701","801","901"};
+      armor=20;
+    };
+    hiddenSelectionsTextures[] = {
+      QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa)
+    };
+  };
+
+
 
   // Example ODST uniform item referencing twelfth_odst_uniform_veh
   class twelfth_odst_uniform_wep: Uniform_Base {
     scope=2;
     scopeArsenal=2;
     author="Waylen";
-    picture="\x\12thMEU\logo.paa";
+    picture="\x\12thMEU\main\logo.paa";
     model="\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
     displayName="[12th][ODST] Armor";
     ACE_GForceCoef = 0.4;
@@ -863,6 +798,8 @@ class XtdGearInfos {
     UTILITYCOVER_GI(snow)
     UTILITYCOVER_GI(opfor)
 
+    //-------------------------------------- instructor
+    //INSTRUCTOR_UNIFROM_GI
 
     
   };

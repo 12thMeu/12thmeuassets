@@ -70,6 +70,8 @@ class CfgVehicles
 
 		displayName = "Dingo Hull"; /// displayed in Editor
 
+		
+		#include "sound.hpp"
 		//Ace stuff
 		ace_repair_spareWheels = 1;
 		ace_cargo_space = 6;  // Cargo space your vehicle has
@@ -137,9 +139,9 @@ class CfgVehicles
 		class TransportMagazines {};
 		class TransportWeapons {};
 
-		//Handeling
+		//Handling
 		terrainCoef = 0;
-		turnCoef = 5;
+		turnCoef = 4;
 		precision = 10;
 		brakeDistance = 3.0;
 		acceleration = 15;
@@ -375,7 +377,7 @@ class CfgVehicles
 		forceInGarage=1;
 		scope	= 2; 			/// makes the car visible in editor
 		scopeCurator=2;			// scope 2 means it's available in Zeus mode (0 means hidden)
-		displayName="[SMT] Dingo Cargo";
+		displayName="M18C IMV Dingo";
 		crew 	= "C_man_1"; 	/// we need someone to fit into the car
 		textureList[]=
 		{
@@ -396,8 +398,9 @@ class CfgVehicles
 		forceInGarage=1;
 		scope	= 2; 			/// makes the car visible in editor
 		scopeCurator=2;	
-		displayName="[SMT] Dingo Troop";
+		displayName="M18T IMV Dingo";
 		model = "x\12thMEU\addons\Dingo\DingoTroop.p3d";
+		crew 	= "C_man_1"; 	/// we need someone to fit into the car
 		transportMaxBackpacks 	= 10; /// just some backpacks fit the trunk by default
 		transportSoldier 		= 10; /// number of cargo except driver
 				textureList[]=

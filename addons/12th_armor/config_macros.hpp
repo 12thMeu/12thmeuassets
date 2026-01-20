@@ -158,6 +158,42 @@ class twelfth_M43A_##TYPE##_##CAMO##_##PLATOON##_##ROLE## {     \
       QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
     };\
   };
+
+
+/*
+#define VEH_CLASS_INST(CAMO,SHIRT,SLEEVE)                          \
+  class twelfth_B_##SHIRT##_##SLEEVE##_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Base {\
+      author="Sammy";\
+      scope= 1;\
+      scopeArsenal= 1;\
+      scopeCurator = 1;\
+      hiddenSelectionsTextures[] = {\
+        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
+        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)\
+        };\
+      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(CAMO,SHIRT,SLEEVE));\
+  };
+
+#define WEP_CLASS_INST(CAMO,SHIRT,SLEEVE) \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Base{\
+    scope=2;\
+    displayName="[12th] Normal";\
+    ACE_GForceCoef=0.4;\
+    class ItemInfo : ItemInfo {\
+      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(CAMO,SHIRT,SLEEVE));\
+      containerClass="Supply100"; \
+      mass=1;\
+      uniformType = "Neopren";\
+      allowedSlots[]={"701","801","901"};\
+      armor=20;\
+    };\
+    hiddenSelectionsTextures[] = {\
+      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
+    };\
+  };
+
+
+*/
 //Bloused
 #define VEH_CLASS_BLOUSED(CAMO,SHIRT,SLEEVE)                          \
   class twelfth_B_##SHIRT##_##SLEEVE##_Bloused_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Base {\
@@ -942,7 +978,30 @@ class twelfth_M43A_##TYPE##_##CAMO##_##PLATOON##_##ROLE## {     \
   WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,SlimSleeve)                         \
 
 
+//Instructor specifics
+#define INSTRUCTOR_VEH \
+  VEH_CLASS_INST(instructor,TShirt,Untucked)                       \
+  VEH_CLASS_INST(instructor,TShirt,Tucked)                       \
 
+#define INSTRUCTOR_WEP \
+  WEP_CLASS_INST(instructor,TShirt,Tucked)                       \
+  WEP_CLASS_INST(instructor,TShirt,Untucked)                       \
+
+#define INSTRUCTOR_UNIFROM_GI                       \
+  NORMAL(instructor,TShirt,Tucked)                       \
+  NORMAL(instructor,TShirt,Untucked)                       \
+
+
+#define NORMAL(CAMO,SHIRT,SLEEVE)                          \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_##CAMO## {       \
+    model="twelfth_new_uniforms";                          \
+    camo=#CAMO;                                            \
+    sleeve=#SLEEVE;                                        \
+    glove="no";                                            \
+    shirt=#SHIRT;                                          \
+    blouse="noblouse";                                     \
+    zip="zipped";                                          \
+  };
 
 #define NEW_UNIFROM_GI(CAMO)                        \
   NORMAL(CAMO,TShirt,Tucked)                       \
@@ -1420,3 +1479,7 @@ BOONIE_FOLD(CAMO,Folded_Right)\
     model = "twelfth_utilcap"; \
     camo = #CAMO; \
   }; \
+
+
+
+ 

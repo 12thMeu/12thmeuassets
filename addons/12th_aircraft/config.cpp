@@ -341,8 +341,7 @@ class CfgVehicles {
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
-      "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa"
     };
     class TextureSources {
       class twelfth_wyvern_tex_default {
@@ -352,8 +351,7 @@ class CfgVehicles {
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa"
         };
       };
       class twelfth_wyvern_asg_default {
@@ -363,8 +361,7 @@ class CfgVehicles {
           "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_01_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_02_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_r_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_l_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_l_co.paa"
         };
       };
     };
@@ -393,7 +390,6 @@ class CfgVehicles {
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-      "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
     };
     class TextureSources {
       class twelfth_wyvern_tex_default {
@@ -404,18 +400,16 @@ class CfgVehicles {
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
         };
       };
       class twelfth_wyvern_tex_asg {
         displayName="Air Superiority Grey";
         author="Wolfe";
         textures[]= {
-          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_01_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_02_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_03_l_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\asg\default\ext_03_r_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_01_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_02_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_l_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_r_co.paa",
         };
       };
     };

@@ -215,7 +215,7 @@
 				// Values in range (0.25, 2) seem like sensible values. Experimentation is always a good idea, even outside this range.
 				// <Type>: float
 				// <Default>: 0.1
-				dampingRate = 0.4;
+				dampingRate = 0.2;
 				dampingRateDamaged = 1.0;
 				dampingRateDestroyed = 1000.0;
 				// <Description>: This is the value of the torque applied to the wheel when the brakes are maximally applied. Higher torques will lock the wheel
@@ -260,7 +260,7 @@
 				// <Type>: float
 				// <Default>: 0.15
 				maxCompression = 0.1;
-				maxDroop = 0.15;
+				maxDroop = 0.1;
 
 				// <Description>: This is the mass in kg that is supported by the suspension spring.
 				// <Type>: float
@@ -289,13 +289,13 @@
 				// load on the tire so be aware that increases in this value might have no effect or even come at the expense of reduced lateral force.
 				// <Type>: float
 				// <Default>: 10000
-				longitudinalStiffnessPerUnitGravity = 100000;
+				longitudinalStiffnessPerUnitGravity = 5000;
 
 				// <Description>: These values together describe the lateral stiffness per unit lateral slip (in radians) of the tire.
 				// <Type>: float, float
 				// <Default>: 25, 180
-				latStiffX = 25;
-				latStiffY = 180;
+				latStiffX = 2;
+				latStiffY = 25;
 
 				// <Description>: These six values describe a graph of friction as a function of longitudinal slip.
 				// A good starting point for this is a flat graph of friction vs slip with these values:
@@ -307,8 +307,24 @@
 				// frictionVsSlipGraph[2][1]=1.0
 				// <Type>: Array[3][2]
 				// <Default>: {{0, 1}, {0.5, 1}, {1,1}}
-				frictionVsSlipGraph[] = {{0, 1}, {0.5, 1}, {1,1}};
+				frictionVsSlipGraph[] =
+				{
+					{0.0, 1.0},
+					{0.075, 2.0},
+					{0.75, 1.0}
+				};
 			};
+			class LF: RF
+			{
+				boneName = "wheel_2_1_damper";
+				center   = "wheel_2_1_axis";
+				boundary = "wheel_2_1_bound";
+				suspForceAppPointOffset = "wheel_2_1_axis";
+				tireForceAppPointOffset = "wheel_2_1_axis";
+				steering = 1;
+				side = "left";
+			};
+			//Rear Right = Wheel_1_2
 			class RR: RF
 			{
 				boneName = "wheel_1_2_damper";
@@ -322,17 +338,7 @@
 				sprungMass = 3850.0;
 				springStrength = 99000;
 				springDamperRate = 20000;
-				maxDroop = 0.10;
-			};
-			class LF: RF
-			{
-				boneName = "wheel_2_1_damper";
-				center   = "wheel_2_1_axis";
-				boundary = "wheel_2_1_bound";
-				suspForceAppPointOffset = "wheel_2_1_axis";
-				tireForceAppPointOffset = "wheel_2_1_axis";
-				steering = 1;
-				side = "left";
+				maxDroop = 0.13;
 			};
 			class LR: RR
 			{
@@ -346,6 +352,5 @@
 				latStiffY = 180;
 				sprungMass = 3850.0;
 				springStrength = 99000;
-				springDamperRate = 2000;
 			};
 		};
