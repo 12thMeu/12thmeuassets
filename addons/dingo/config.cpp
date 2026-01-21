@@ -40,8 +40,8 @@ class CfgEditorCategories {
 };
 
 class CfgEditorSubcategories {
-    class EDS_SMT_faction_Vehicles {
-    displayName="Vehicles";  // Ground vehicles (cars, trucks).
+    class EDS_SMT_faction_Dingo {
+    displayName="Dingo";  // Ground vehicles (cars, trucks).
   };
 };
 class WeaponFireGun;

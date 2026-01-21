@@ -14,12 +14,8 @@ class CfgVehicles
 			class HitFuel;
 			class HitLFWheel;
 			class HitLBWheel;
-			class HitLMWheel;
-			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
-			class HitRMWheel;
-			class HitRF2Wheel;
 		};
 	};
 
@@ -71,7 +67,6 @@ class CfgVehicles
 		displayName = "Dingo Hull"; /// displayed in Editor
 
 		
-		#include "sound.hpp"
 		//Ace stuff
 		ace_repair_spareWheels = 1;
 		ace_cargo_space = 6;  // Cargo space your vehicle has
@@ -146,7 +141,7 @@ class CfgVehicles
 		brakeDistance = 3.0;
 		acceleration = 15;
 		fireResistance = 5;
-		armor = 200;
+		armor = 300;
 		cost = 50000; /// how likely is the enemy going to target this vehicle
 
 		transportMaxBackpacks 	= 4; /// just some backpacks fit the trunk by default
@@ -157,7 +152,7 @@ class CfgVehicles
 		wheelDestroyRadiusCoef = 0.6127954;			/// for tweaking of rims size to fit ground
 		maxFordingDepth 		= 0.5;			/// how high water would damage the engine of the car
 		waterResistance 		= 1;			/// if the depth of water is bigger than maxFordingDepth it starts to damage the engine after this time
-		crewCrashProtection		= 0.1;			/// multiplier of damage to crew of the vehicle => low number means better protection
+		crewCrashProtection		= 0.2;			/// multiplier of damage to crew of the vehicle => low number means better protection
 
 		class TransportItems /// some first aid kits in trunk according to safety regulations
 		{
@@ -167,11 +162,11 @@ class CfgVehicles
 		class Turrets{}; /// doesn't have any gunner nor commander
 		class HitPoints: HitPoints
 		{
-			class HitLFWheel: HitLFWheel	{armor=0.125; passThrough=0;}; /// it is easier to destroy wheels than hull of the vehicle
-			class HitLF2Wheel: HitLF2Wheel	{armor=0.125; passThrough=0;};
+			class HitLFWheel: HitLFWheel	{armor=0.2; passThrough=0;}; /// it is easier to destroy wheels than hull of the vehicle
+			class HitLBWheel: HitLBWheel	{armor=0.2; passThrough=0;};
 
-			class HitRFWheel: HitRFWheel	{armor=0.125; passThrough=0;};
-			class HitRF2Wheel: HitRF2Wheel 	{armor=0.125; passThrough=0;};
+			class HitRFWheel: HitRFWheel	{armor=0.2; passThrough=0;};
+			class HitRBWheel: HitRBWheel 	{armor=0.2; passThrough=0;};
 
 			class HitFuel 			{armor=0.50; material=-1; name="FuelTank"; visual=""; passThrough=0.2;}; /// correct points for fuel tank, some of the damage is aFRLied to the whole
 			class HitEngine 		{armor=0.50; material=-1; name="Engine"; visual=""; passThrough=0.2;};
@@ -186,7 +181,7 @@ class CfgVehicles
 		cargoGetInAction[] 	= {"GetInLow"}; 	/// and the same for the rest, if the array has fewer members than the count of crew, the last one is used for the rest
 		cargoGetOutAction[] = {"GetOutLow"}; 	/// that means all use the same in this case
 
-		#include "sounds.hpp"	/// sounds are in a separate file to make this one simple
+		#include "sound.hpp"	/// sounds are in a separate file to make this one simple
 		#include "physx.hpp"	/// PhysX settings are in a separate file to make this one simple
 
 		class PlayerSteeringCoefficients /// steering sensitivity configuration
@@ -371,13 +366,13 @@ class CfgVehicles
 	{
 
     	editorCategory="ED_SMT_Faction";
-    	editorSubcategory="EDS_SMT_faction_Vehicles";
+    	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side
 		faction	= "BLU_F";		/// and with civilian faction
 		forceInGarage=1;
 		scope	= 2; 			/// makes the car visible in editor
 		scopeCurator=2;			// scope 2 means it's available in Zeus mode (0 means hidden)
-		displayName="M18C IMV Dingo";
+		displayName="M18-C IMV Cargo";
 		crew 	= "C_man_1"; 	/// we need someone to fit into the car
 		textureList[]=
 		{
@@ -392,13 +387,13 @@ class CfgVehicles
 	class SMT_DingoTroop: SMT_DingoHull
 	{
     	editorCategory="ED_SMT_Faction";
-    	editorSubcategory="EDS_SMT_faction_Vehicles";
+    	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side
 		faction	= "BLU_F";		/// and with civilian faction
 		forceInGarage=1;
 		scope	= 2; 			/// makes the car visible in editor
 		scopeCurator=2;	
-		displayName="M18T IMV Dingo";
+		displayName="M18-T IMV Troop";
 		model = "x\12thMEU\addons\Dingo\DingoTroop.p3d";
 		crew 	= "C_man_1"; 	/// we need someone to fit into the car
 		transportMaxBackpacks 	= 10; /// just some backpacks fit the trunk by default
