@@ -7,7 +7,8 @@ class CfgPatches {
   class vehicle_Dingo {
     units[] = {
 	  "SMT_DingoCargo",
-    "SMT_DingoTroop"
+    "SMT_DingoTroop",
+    "SMT_DingoMed"
     };
     weapons[] = {};           // No specific weapons defined in this config
     ammo[] = {};              // No specific ammo defined in this config

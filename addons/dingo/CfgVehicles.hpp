@@ -296,8 +296,8 @@ class CfgVehicles
 
 		aggregateReflectors[] = {{"LightCarHeadL01", "LightCarHeadL02"}, {"LightCarHeadR01", "LightCarHeadR02"}}; 
 
-		hiddenSelections[] = {"Camo1","Camo7"}; ///we want to allow changing the color of this selection
-		hiddenSelectionsTextures[]={"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa","x\12thMEU\addons\dingo\data\textures\standard\Modules_co.paa"};	 /// we could use any texture to cover the car
+		hiddenSelections[] = {"camo1","camo7","camo8"}; ///we want to allow changing the color of this selection
+		hiddenSelectionsTextures[]={"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa","x\12thMEU\addons\dingo\data\textures\standard\Modules_co.paa","x\12thMEU\addons\dingo\data\textures\standard\decals_ca.paa"};	 /// we could use any texture to cover the car
 
 
 		class textureSources
@@ -306,7 +306,7 @@ class CfgVehicles
 			{
 				displayName="Default"; // name displayed, among other, from the garage
 				author="SamanthaNix"; // Author of the skin
-				hiddenSelections[] = {"Camo1","Camo7"};
+				hiddenSelections[] = {"camo1","camo7","camo8"};
 				textures[]=// List of textures, in the same order as the hiddenSelections definition
 				{
 					"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa",
@@ -314,7 +314,7 @@ class CfgVehicles
 				};
 
 			};
-			class Dingo_Camo_winter
+			class Dingo_Camo_winter:Dingo_Camo_standard
 			{
 				displayName="Winter";
 				author="SamanthaNix";
@@ -325,18 +325,18 @@ class CfgVehicles
 				};
 
 			};
-			class Dingo_Camo_forest
+			class Dingo_Camo_forest:Dingo_Camo_standard
 			{
 				displayName="Forest";
 				author="SamanthaNix";
 				textures[]=
 				{
 					"x\12thMEU\addons\dingo\data\textures\forest\Chassis_co.paa",
-					"x\12thMEU\addons\dingo\data\textures\winter\Modules_co.paa"
+					"x\12thMEU\addons\dingo\data\textures\forest\Modules_co.paa"
 				};
 
 			};
-			class Dingo_Camo_TCP
+			class Dingo_Camo_TCP:Dingo_Camo_standard
 			{
 				displayName="TCP";
 				author="SamanthaNix";
@@ -347,7 +347,7 @@ class CfgVehicles
 				};
 
 			};
-			class Dingo_Camo_OPTRE
+			class Dingo_Camo_OPTRE:Dingo_Camo_standard
 			{
 				displayName="OPTRE";
 				author="SamanthaNix";
@@ -396,8 +396,32 @@ class CfgVehicles
 		displayName="M18-T IMV Troop";
 		model = "x\12thMEU\addons\Dingo\DingoTroop.p3d";
 		crew 	= "C_man_1"; 	/// we need someone to fit into the car
-		transportMaxBackpacks 	= 10; /// just some backpacks fit the trunk by default
+		transportMaxBackpacks 	= 5; /// just some backpacks fit the trunk by default
 		transportSoldier 		= 10; /// number of cargo except driver
+				textureList[]=
+		{
+			"Dingo_Camo_standard", 0.2,
+			"Dingo_Camo_winter",0.2,
+			"Dingo_Camo_forest",0.2,
+			"Dingo_Camo_TCP",0.2,
+			"Dingo_Camo_OPTRE",0.2
+		};
+
+	};
+	class SMT_DingoMed: SMT_DingoHull
+	{
+    	editorCategory="ED_SMT_Faction";
+    	editorSubcategory="EDS_SMT_faction_Dingo";
+		side	= 1; 			/// civilian car should be on civilian side
+		faction	= "BLU_F";		/// and with civilian faction
+		forceInGarage=1;
+		scope	= 2; 			/// makes the car visible in editor
+		scopeCurator=2;	
+		displayName="M18-M IMV Medivac";
+		model = "x\12thMEU\addons\Dingo\DingoMed.p3d";
+		crew 	= "C_man_1"; 	/// we need someone to fit into the car
+		transportMaxBackpacks 	= 10; /// just some backpacks fit the trunk by default
+		transportSoldier 		= 4; /// number of cargo except driver
 				textureList[]=
 		{
 			"Dingo_Camo_standard", 0.2,
