@@ -71,6 +71,7 @@ class CfgWeapons
   class OPTRE_M247a1_Flashhider;
   class EventHandlers;
   class Dmns_M33_T;
+  class OPTRE_M250;
 
   //TCP Class definitions
   //Pistols
@@ -1582,6 +1583,35 @@ class CfgWeapons
         class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_MA5Suppressor", "OPTRE_M247a1_Flashhider"};
+        };
+        class CowsSlot : CowsSlot
+        {
+          compatibleItems[] = COMMON_SIGHTS;
+        };
+        class PointerSlot : PointerSlot
+        {
+          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+        };
+        class UnderBarrelSlot : UnderBarrelSlot
+        {
+          compatibleitems[] = COMMON_HEAVY_BIPOD;
+        };
+      };
+    };
+
+    class twelfth_M250 : OPTRE_M250 
+    {
+      author = "Rex";
+      scope = 2;
+      scopeArsenal = 2;
+      displayName = "[12th] M250";
+      baseWeapon = "twelfth_M250";
+     
+      class WeaponSlotsInfo : WeaponSlotsInfo
+      {
+        class MuzzleSlot : MuzzleSlot
+        {
+          compatibleitems[] = {};
         };
         class CowsSlot : CowsSlot
         {
