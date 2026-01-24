@@ -359,7 +359,17 @@ class CfgVehicles
 
 			};
 		};
-
+		class VehicleSpawnerInfo {        
+			class twelfth_ground_spawner {     
+				priority=1;                 
+				spawner = "12th Ground";     
+				scope = 1;                    
+				vehicle = "Dingo";          
+				icon="";                      
+				type="FAV";                   
+				cost=0;                       
+			};                              
+		};
 
 	};
 	class SMT_DingoCargo: SMT_DingoHull
@@ -406,7 +416,17 @@ class CfgVehicles
 			"Dingo_Camo_TCP",0.2,
 			"Dingo_Camo_OPTRE",0.2
 		};
-
+		class VehicleSpawnerInfo {        
+			class twelfth_ground_spawner {     
+				priority=2;                 
+				spawner = "12th Ground";     
+				scope = 1;                    
+				vehicle = "Dingo";          
+				icon="";                      
+				type="Troop Transport";                   
+				cost=0;                       
+			};                              
+		};
 	};
 	class SMT_DingoMed: SMT_DingoHull
 	{
@@ -430,6 +450,16 @@ class CfgVehicles
 			"Dingo_Camo_TCP",0.2,
 			"Dingo_Camo_OPTRE",0.2
 		};
-
+		class VehicleSpawnerInfo {        
+			class twelfth_ground_spawner {     
+				priority=3;                 
+				spawner = "12th Ground";     
+				scope = 1;                    
+				vehicle = "Dingo";          
+				icon="";                      
+				type="Medical APC";                   
+				cost=0;                       
+			};                              
+		};
 	};
 };
