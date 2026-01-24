@@ -141,7 +141,7 @@ class CfgVehicles
 		brakeDistance = 3.0;
 		acceleration = 15;
 		fireResistance = 5;
-		armor = 300;
+		armor = 250;
 		cost = 50000; /// how likely is the enemy going to target this vehicle
 
 		transportMaxBackpacks 	= 4; /// just some backpacks fit the trunk by default
@@ -359,18 +359,6 @@ class CfgVehicles
 
 			};
 		};
-		class VehicleSpawnerInfo {        
-			class twelfth_ground_spawner {     
-				priority=1;                 
-				spawner = "12th Ground";     
-				scope = 1;                    
-				vehicle = "Dingo";          
-				icon="";                      
-				type="FAV";                   
-				cost=0;                       
-			};                              
-		};
-
 	};
 	class SMT_DingoCargo: SMT_DingoHull
 	{

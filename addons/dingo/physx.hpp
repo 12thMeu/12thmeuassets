@@ -2,22 +2,22 @@
 		/// http://forums.bistudio.com/showthread.php?165390-Tutorial-Creating-Custom-Engine-Gearbox-and-Suspension-Vehicle-configuration
 
 		thrustDelay            	= 0.2; 		/// initial delay to cause lesser slip when on 1st gear - thrust goes from zero to full in this time
-		brakeIdleSpeed         	= 1.78; 	/// under what speed (in m/s) does the brake apply for a vehicle without thrust
+		brakeIdleSpeed         	= 2; 	/// under what speed (in m/s) does the brake apply for a vehicle without thrust
 		maxSpeed               	= 150; 		/// vehicle can go a bit over, but dramatically decreases thrust
 		fuelCapacity           	= 80;
 		wheelCircumference     	= 4.52; 	/// diameter of 1440
 
-		antiRollbarForceCoef = 24;
-		antiRollbarForceLimit = 30;
+		antiRollbarForceCoef = 30;
+		antiRollbarForceLimit = 50;
 		antiRollbarSpeedMin = 0;
-		antiRollbarSpeedMax = 112.5; 	/// this simulates losing grip at high speed turns
+		antiRollbarSpeedMax = 130; 	/// this simulates losing grip at high speed turns
 
 		/// Gearbox and transmission  via PhysX
 		idleRpm = 900; // RPM at which the engine idles.
 		redRpm = 10000; // RPM at which the engine redlines.
 		class complexGearbox
 		{
-			GearboxRatios[] = {"R1",-6,"N",0,"D1",6.1,"D2",3.1,"D3",1.45,"D4",1,"D5",0.7};
+			GearboxRatios[] = {"R1",-6,"N",0,"D1",6.1,"D2",4.1,"D3",2.45,"D4",1,"D5",0.7};
 			TransmissionRatios[] = {"High",4.111}; // Optional: defines transmission ratios (for example, High and Low range as commonly found in offroad vehicles)
 			gearBoxMode        = "auto"; //gearbox can be of type: full-auto (only requires 'W' or 'S'), auto (requires shift between drive and reverse), semi-auto, manual
 			moveOffGear        = 1; // defines what gear an automatic or semi-automatic gearbox will move off from stationary in. 1 by default.
@@ -224,7 +224,7 @@
 				// that these are often expressed by manufacturers as braking horsepower or in "pounds inches". The values required here are in "Newton metres".
 				// <Type>: float
 				// <Default>: 2500
-				maxBrakeTorque = 15000;
+				maxBrakeTorque = 20000;
 
 				// <Description>: This is the same as the max brake torque except for the handbrake rather than the brake. Typically, for a 4-wheeled car,
 				// the handbrake is stronger than the brake and is only applied to the rear wheels. A value of 4000 for the rear wheels is a good starting point,
@@ -336,7 +336,7 @@
 				maxHandBrakeTorque = 30000;
 				latStiffY = 180;
 				sprungMass = 3850.0;
-				springStrength = 99000;
+				springStrength = 100000;
 				springDamperRate = 20000;
 				maxDroop = 0.13;
 			};
@@ -351,6 +351,6 @@
 				maxHandBrakeTorque = 30000;
 				latStiffY = 180;
 				sprungMass = 3850.0;
-				springStrength = 99000;
+				springStrength = 100000;
 			};
 		};
