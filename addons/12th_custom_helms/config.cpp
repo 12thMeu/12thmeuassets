@@ -211,6 +211,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Shepard)
   CUSTOM_HELM_S_AV(Simmons)
+  CUSTOM_HELM_S_AV(Stacker)
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Origami)
   CUSTOM_HELM_S_AV(Sullivan)
@@ -319,6 +320,7 @@ class XtdGearModels {
           "Shepard",
           "Simmons",
           "Spector",
+          "Stacker",
           "Styx",
           "Sullivan",
           "Thomson",
@@ -387,6 +389,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Simmons)
     CH_HELM_S_GI(Sullivan)
     CH_HELM_S_GI(Spector)
+    CH_HELM_S_GI(Stacker)
     CH_HELM_S_GI(Styx)
     CH_HELM_S_GI(Thomson)
     CH_HELM_S_GI(Vickers)
