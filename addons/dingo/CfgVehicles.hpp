@@ -296,8 +296,8 @@ class CfgVehicles
 
 		aggregateReflectors[] = {{"LightCarHeadL01", "LightCarHeadL02"}, {"LightCarHeadR01", "LightCarHeadR02"}}; 
 
-		hiddenSelections[] = {"camo1","camo7","camo8"}; ///we want to allow changing the color of this selection
-		hiddenSelectionsTextures[]={"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa","x\12thMEU\addons\dingo\data\textures\standard\Modules_co.paa","x\12thMEU\addons\dingo\data\textures\standard\decals_ca.paa"};	 /// we could use any texture to cover the car
+		hiddenSelections[] = {"camo1","camo7","camo8","camo10"}; ///we want to allow changing the color of this selection
+		hiddenSelectionsTextures[]={"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa","x\12thMEU\addons\dingo\data\textures\standard\Modules_co.paa","x\12thMEU\addons\dingo\data\textures\standard\decals_ca.paa","#(rgb,8,8,3)color(0.18039216,0.18039216,0.18039216,1)"};	 /// we could use any texture to cover the car
 
 
 		class textureSources
@@ -358,6 +358,17 @@ class CfgVehicles
 				};
 
 			};
+			class Dingo_Camo_Black:Dingo_Camo_standard
+			{
+				displayName="Black";
+				author="SamanthaNix";
+				textures[]=
+				{
+					"x\12thMEU\addons\dingo\data\textures\black\Chassis_co.paa",
+					"x\12thMEU\addons\dingo\data\textures\black\Modules_co.paa"
+				};
+
+			};
 		};
 	};
 	class SMT_DingoCargo: SMT_DingoHull
@@ -378,7 +389,8 @@ class CfgVehicles
 			"Dingo_Camo_winter",0.2,
 			"Dingo_Camo_forest",0.2,
 			"Dingo_Camo_TCP",0.2,
-			"Dingo_Camo_OPTRE",0.2
+			"Dingo_Camo_OPTRE",0.2,
+			"Dingo_Camo_Black",0.2
 		};
 		
 	};
@@ -402,7 +414,8 @@ class CfgVehicles
 			"Dingo_Camo_winter",0.2,
 			"Dingo_Camo_forest",0.2,
 			"Dingo_Camo_TCP",0.2,
-			"Dingo_Camo_OPTRE",0.2
+			"Dingo_Camo_OPTRE",0.2,
+			"Dingo_Camo_Black",0.2
 		};
 		class VehicleSpawnerInfo {        
 			class twelfth_ground_spawner {     
@@ -436,7 +449,8 @@ class CfgVehicles
 			"Dingo_Camo_winter",0.2,
 			"Dingo_Camo_forest",0.2,
 			"Dingo_Camo_TCP",0.2,
-			"Dingo_Camo_OPTRE",0.2
+			"Dingo_Camo_OPTRE",0.2,
+			"Dingo_Camo_Black",0.2
 		};
 		class VehicleSpawnerInfo {        
 			class twelfth_ground_spawner {     
