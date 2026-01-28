@@ -72,8 +72,32 @@ class CfgVehicles
 		ace_cargo_space = 6;  // Cargo space your vehicle has
         ace_cargo_hasCargo = 1;
 
-		//ACRE stuff
+		//Component selection
+		class AnimationSources: AnimationSources
+		{
+			class hideUnitAffilSelect
+			{
+				author = "Sammy";
+				displayName = "Hide Unit Affiliation";
+				source = "User";
+				useSource = 1;
+				initPhase = 0;
+				animPeriod = 0.001;
+			};
+			class hideAllDecalSelect
+			{
+				author = "Sammy";
+				displayName = "Hide all Decals";
+				source = "User";
+				useSource = 1;
+				initPhase = 1;
+				animPeriod = 0.001;
+			};
+		};
+		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
 
+
+		//ACRE stuff
 		class AcreIntercoms
 		{
 			class Intercom_1 
@@ -408,7 +432,7 @@ class CfgVehicles
 		crew 	= "C_man_1"; 	/// we need someone to fit into the car
 		transportMaxBackpacks 	= 5; /// just some backpacks fit the trunk by default
 		transportSoldier 		= 10; /// number of cargo except driver
-				textureList[]=
+		textureList[]=
 		{
 			"Dingo_Camo_standard", 0.2,
 			"Dingo_Camo_winter",0.2,
@@ -416,17 +440,6 @@ class CfgVehicles
 			"Dingo_Camo_TCP",0.2,
 			"Dingo_Camo_OPTRE",0.2,
 			"Dingo_Camo_Black",0.2
-		};
-		class VehicleSpawnerInfo {        
-			class twelfth_ground_spawner {     
-				priority=2;                 
-				spawner = "12th Ground";     
-				scope = 1;                    
-				vehicle = "Dingo";          
-				icon="";                      
-				type="Troop Transport";                   
-				cost=0;                       
-			};                              
 		};
 	};
 	class SMT_DingoMed: SMT_DingoHull
@@ -443,7 +456,7 @@ class CfgVehicles
 		crew 	= "C_man_1"; 	/// we need someone to fit into the car
 		transportMaxBackpacks 	= 10; /// just some backpacks fit the trunk by default
 		transportSoldier 		= 4; /// number of cargo except driver
-				textureList[]=
+		textureList[]=
 		{
 			"Dingo_Camo_standard", 0.2,
 			"Dingo_Camo_winter",0.2,
@@ -451,17 +464,6 @@ class CfgVehicles
 			"Dingo_Camo_TCP",0.2,
 			"Dingo_Camo_OPTRE",0.2,
 			"Dingo_Camo_Black",0.2
-		};
-		class VehicleSpawnerInfo {        
-			class twelfth_ground_spawner {     
-				priority=3;                 
-				spawner = "12th Ground";     
-				scope = 1;                    
-				vehicle = "Dingo";          
-				icon="";                      
-				type="Medical APC";                   
-				cost=0;                       
-			};                              
 		};
 	};
 };
