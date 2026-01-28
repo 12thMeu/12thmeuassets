@@ -90,11 +90,11 @@ class CfgVehicles
 				displayName = "Hide all Decals";
 				source = "User";
 				useSource = 1;
-				initPhase = 1;
+				initPhase = 0;
 				animPeriod = 0.001;
 			};
 		};
-		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
+
 
 
 		//ACRE stuff
@@ -397,7 +397,7 @@ class CfgVehicles
 	};
 	class SMT_DingoCargo: SMT_DingoHull
 	{
-
+		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
     	editorCategory="ED_SMT_Faction";
     	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side
@@ -420,6 +420,7 @@ class CfgVehicles
 	};
 	class SMT_DingoTroop: SMT_DingoHull
 	{
+		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
     	editorCategory="ED_SMT_Faction";
     	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side
@@ -444,6 +445,7 @@ class CfgVehicles
 	};
 	class SMT_DingoMed: SMT_DingoHull
 	{
+		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
     	editorCategory="ED_SMT_Faction";
     	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side
