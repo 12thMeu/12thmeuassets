@@ -416,7 +416,50 @@ class CfgVehicles
 			"Dingo_Camo_OPTRE",0.2,
 			"Dingo_Camo_Black",0.2
 		};
-		
+		class VehicleTransport
+		{
+			class Carrier
+			{
+				cargoBayDimensions[]		= { "VTV_limit_1", "VTV_limit_2" };	// Memory points in model defining cargo space
+				// or
+				//cargoBayDimensions[]		= { {-1.3,2.1,0.27}, {1.41,4.1,3.9} };			// alternatively, positions in model space (since 2.08)
+
+				disableHeightLimit			= 1;								// If set to 1 disable height limit of transported vehicles
+				maxLoadMass					= 5000;							// Maximum cargo weight (in Kg) which the vehicle can transport
+				cargoAlignment[]			= { "front", "left" };				// Array of 2 elements defining alignment of vehicles in cargo space.
+																		// Possible values are left, right, center, front, back. Order is important.
+
+				cargoSpacing[]				= { 0, 0.15, 0 };					// Offset from X,Y,Z axes (in metres)
+
+				exits[]						= { "VTV_exit_1", "VTV_exit_2" };	// Memory points in model defining loading ramps, could have multiple
+				// or
+				// exits[]					= { {5,0,0}, {5,10,0} };			// alternatively, positions in model space (since 2.08)
+
+				unloadingInterval			= 2;								// Time between unloading vehicles (in seconds)
+				loadingDistance				= 10;								// Maximal distance for loading in exit point (in meters).
+				loadingAngle				= 60;								// Maximal sector where cargo vehicle must be to for loading (in degrees).
+				parachuteClassDefault		= "B_Parachute_02_F";				// Type of parachute used when dropped in air. Can be overridden by parachuteClass in Cargo.
+				parachuteHeightLimitDefault	= 50;								// Minimal height above terrain when parachute is used. Can be overridden by parachuteHeightLimit in Cargo.
+
+				class CargoTypeWhitelist										// Whitelist. If this isn't empty, only listed vehicles (isKindOf) can load into (since 2.10)
+				{
+ 			
+				};
+			};
+			class Cargo
+			{
+				parachuteClass			= "B_Parachute_02_F";	// Type of parachute used when dropped in air. When empty then parachute is not used.
+				parachuteHeightLimit	= 40;				// Minimal height above terrain when parachute is used.
+				canBeTransported		= 1;				// 0 (false) / 1 (true)
+
+				dimensions[]			= { "BBox_1_1_pos", "BBox_1_2_pos" };	// Memory-point-based override of automatic bounding box
+				// or
+				// dimensions[]			= { { 0,0,0 }, { 3,2,1.5 } };			// alternatively, positions in model space (since 2.08)
+
+				rotation = -90;								// (optional) Defines in which direction the vehicle gets rotated when its loaded into ViV cargo and will only fit when rotated
+													// Only -90 and 90 are supported. Since v2.08
+			};
+		};
 	};
 	class SMT_DingoTroop: SMT_DingoHull
 	{
@@ -442,6 +485,22 @@ class CfgVehicles
 			"Dingo_Camo_OPTRE",0.2,
 			"Dingo_Camo_Black",0.2
 		};
+		class VehicleTransport
+		{
+			class Cargo
+			{
+				parachuteClass			= "B_Parachute_02_F";	// Type of parachute used when dropped in air. When empty then parachute is not used.
+				parachuteHeightLimit	= 40;				// Minimal height above terrain when parachute is used.
+				canBeTransported		= 1;				// 0 (false) / 1 (true)
+
+				dimensions[]			= { "BBox_1_1_pos", "BBox_1_2_pos" };	// Memory-point-based override of automatic bounding box
+				// or
+				// dimensions[]			= { { 0,0,0 }, { 3,2,1.5 } };			// alternatively, positions in model space (since 2.08)
+
+				rotation = -90;								// (optional) Defines in which direction the vehicle gets rotated when its loaded into ViV cargo and will only fit when rotated
+													// Only -90 and 90 are supported. Since v2.08
+			};
+		};
 	};
 	class SMT_DingoMed: SMT_DingoHull
 	{
@@ -466,6 +525,22 @@ class CfgVehicles
 			"Dingo_Camo_TCP",0.2,
 			"Dingo_Camo_OPTRE",0.2,
 			"Dingo_Camo_Black",0.2
+		};
+		class VehicleTransport
+		{
+			class Cargo
+			{
+				parachuteClass			= "B_Parachute_02_F";	// Type of parachute used when dropped in air. When empty then parachute is not used.
+				parachuteHeightLimit	= 40;				// Minimal height above terrain when parachute is used.
+				canBeTransported		= 1;				// 0 (false) / 1 (true)
+
+				dimensions[]			= { "BBox_1_1_pos", "BBox_1_2_pos" };	// Memory-point-based override of automatic bounding box
+				// or
+				// dimensions[]			= { { 0,0,0 }, { 3,2,1.5 } };			// alternatively, positions in model space (since 2.08)
+
+				rotation = -90;								// (optional) Defines in which direction the vehicle gets rotated when its loaded into ViV cargo and will only fit when rotated
+													// Only -90 and 90 are supported. Since v2.08
+			};
 		};
 	};
 };
