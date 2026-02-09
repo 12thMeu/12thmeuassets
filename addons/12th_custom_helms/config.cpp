@@ -194,6 +194,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Bert)
   CUSTOM_HELM_S_AV(Bob)
   CUSTOM_HELM_S_AV(Coady)
+  CUSTOM_HELM_S_AV(Clarke)
   CUSTOM_HELM_S_AV(Don)
   CUSTOM_HELM_S_AV(Dixie)
   CUSTOM_HELM_S_AV(Duckworth)
@@ -211,6 +212,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Shepard)
   CUSTOM_HELM_S_AV(Simmons)
+  CUSTOM_HELM_S_AV(Smitty)
   CUSTOM_HELM_S_AV(Stacker)
   CUSTOM_HELM_S_AV(Styx)
   CUSTOM_HELM_S_AV(Origami)
@@ -284,6 +286,7 @@ class XtdGearModels {
           "Bunge",
           "Burns",
           "Coady",
+          "Clarke",
           "Deluge",
           "Dennis",
           "Dixie",
@@ -320,6 +323,7 @@ class XtdGearModels {
           "Shepard",
           "Simmons",
           "Spector",
+          "Smitty",
           "Stacker",
           "Styx",
           "Sullivan",
@@ -352,6 +356,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Burns)
     CH_HELM_S_GI(Bunge)
     CH_HELM_S_GI(Coady)
+    CH_HELM_S_GI(Clarke)
     CH_HELM_S_GI(Dennis)
     CH_HELM_S_GI(Deluge)
     CH_HELM_S_GI(Dom)
@@ -389,6 +394,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Simmons)
     CH_HELM_S_GI(Sullivan)
     CH_HELM_S_GI(Spector)
+    CH_HELM_S_GI(Smitty)
     CH_HELM_S_GI(Stacker)
     CH_HELM_S_GI(Styx)
     CH_HELM_S_GI(Thomson)
