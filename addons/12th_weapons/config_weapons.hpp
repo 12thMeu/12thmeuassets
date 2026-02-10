@@ -653,6 +653,7 @@ class CfgWeapons
       displayName = "[12th] BR45";
       baseWeapon = "twelfth_BR55";
       magazines[] = COMMON_BR_MAGAZINES;
+      ace_overheating_barrelMass = 10;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -688,6 +689,7 @@ class CfgWeapons
       };
       baseWeapon = "twelfth_BR55_gl";
       magazines[] = COMMON_BR_MAGAZINES;
+      ace_overheating_barrelMass = 10;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -715,6 +717,7 @@ class CfgWeapons
       displayName = "[12th] BR55HB";
       baseWeapon = "twelfth_BR55_HB";
       magazines[] = COMMON_BR_MAGAZINES;
+      ace_overheating_barrelMass = 10;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
