@@ -145,7 +145,9 @@ class CfgVehicles
            };
 		};
 
+		//TFAR
 
+		TFAR_hasIntercom = 1;
 
 
 		//hand anims
