@@ -72,6 +72,9 @@ class CfgWeapons
   class EventHandlers;
   class Dmns_M33_T;
   class OPTRE_M250;
+  class OPTRE_BR55HB;
+  class OPTRE_BR45_black;
+  class OPTRE_BR45GL_black;
 
   //TCP Class definitions
   //Pistols
@@ -641,15 +644,16 @@ class CfgWeapons
     =============================================================================
   */
 
-    class twelfth_br55 : 19_UNSC_br55
+    class twelfth_br55 : OPTRE_BR45_black
     {
       author = "Weber";
       scope = 2;
       scopeArsenal = 2;
       canShootInWater = 1;
-      displayName = "[12th] BR55";
+      displayName = "[12th] BR45";
       baseWeapon = "twelfth_BR55";
       magazines[] = COMMON_BR_MAGAZINES;
+      ace_overheating_barrelMass = 10;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -657,7 +661,6 @@ class CfgWeapons
         };
         class CowsSlot : CowsSlot
         {
-          compatibleitems[] = COMMON_BR_SIGHTS;
         };
         class PointerSlot : PointerSlot
         {
@@ -670,13 +673,13 @@ class CfgWeapons
 
     // Additional BR55 variants with grenade launchers
 
-    class twelfth_br55_gl : 19_UNSC_br55_gl
+    class twelfth_br55_gl : OPTRE_BR45GL_black
     {
       author = "Weber";
       scope = 2;
       scopeArsenal = 2;
       canShootInWater = 1;
-      displayName = "[12th] BR55 UGL";
+      displayName = "[12th] BR45 UGL";
       muzzles[] = {"this", "twelfth_M301UGL"}; // Attachments
       class twelfth_m301ugl : GL_3GL_F
       {
@@ -686,6 +689,7 @@ class CfgWeapons
       };
       baseWeapon = "twelfth_BR55_gl";
       magazines[] = COMMON_BR_MAGAZINES;
+      ace_overheating_barrelMass = 10;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -704,7 +708,7 @@ class CfgWeapons
       };
     };
 
-    class twelfth_BR55_HB : 19_UNSC_br55_HB
+    class twelfth_BR55_HB : OPTRE_BR55HB
     {
       author = "Weber";
       scope = 2;
@@ -713,6 +717,7 @@ class CfgWeapons
       displayName = "[12th] BR55HB";
       baseWeapon = "twelfth_BR55_HB";
       magazines[] = COMMON_BR_MAGAZINES;
+      ace_overheating_barrelMass = 10;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -720,13 +725,13 @@ class CfgWeapons
         };
         class CowsSlot : CowsSlot
         {
-          compatibleitems[] = COMMON_BR_SIGHTS;
         };
         class PointerSlot : PointerSlot
         {
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
+          compatibleitems[] = COMMON_MEDIUM_BIPOD;
         };
       };
       class Single: Mode_SemiAuto
@@ -1424,7 +1429,7 @@ class CfgWeapons
       baseWeapon = "twelfth_M73H";
       magazines[] = {
           "twelfth_100Rnd_95x40_Box", "twelfth_100Rnd_95x40_Box_T",
-          "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer"
+          "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer","twelfth_56Rnd_95x40_Mag","twelfth_56Rnd_95x40_Mag_T"
           };
 	    distanceZoomMin=100;
 	    distanceZoomMax=700;
@@ -1813,6 +1818,36 @@ class CfgWeapons
 		baseWeapon = "twelfth_MA6_B";
 		canShootInWater = 1;
 		magazines[] = {"OPTRE_60Rnd_762x51_Mag", "twelfth_60Rnd_762x51_Mag_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer" };
+		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
+		class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleitems[] = { "OPTRE_MA5Suppressor" };
+			};
+			class CowsSlot: CowsSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+				compatibleitems[] = COMMON_SIGHTS;
+			};
+			class PointerSlot: PointerSlot {
+				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
+				compatibleitems[] = COMMON_MEDIUM_BIPOD;
+			};
+		};
+	};
+
+  class twelfth_MA6_AL: twelfth_MA5B {
+		model="x\12thMEU\addons\12th_weapons\data\MA6_D\MA6_D.p3d";
+		author = "Rex";
+		scope = 2;
+		scopeArsenal = 2;
+		displayName = "[12th] MA6-AL";
+		baseWeapon = "twelfth_MA6_AL";
+		canShootInWater = 1;
+		magazines[] = {"twelfth_56Rnd_95x40_Mag", "twelfth_56Rnd_95x40_Mag_T", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer" };
 		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
 		class WeaponSlotsInfo: WeaponSlotsInfo {
 			class MuzzleSlot: MuzzleSlot {

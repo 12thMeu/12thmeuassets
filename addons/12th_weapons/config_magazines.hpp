@@ -240,4 +240,21 @@ class CfgMagazines
 	  count=200;
 	  displayName = "200Rnd 7.62x51mm Tracer Box";
   };
+
+  //56 round 9.5 magazine
+   class twelfth_56Rnd_95x40_Mag: OPTRE_36Rnd_95x40_Mag{
+    scope = 2;
+    author = "Rex";
+    displayName = "56rnd 9.5x40mm Box";
+    count = 56;
+    mass = 28;
+  };
+
+  class twelfth_56Rnd_95x40_Mag_T: OPTRE_36Rnd_95x40_Mag_Tracer{
+    scope = 2;
+    author = "Rex";
+    displayName = "56rnd 9.5x40mm Box (T)";
+    count = 56;
+    mass = 28; 
+  };
 };
