@@ -630,7 +630,7 @@ class CfgWeapons
     canShootInWater = 1;
     displayName = "[12th] MA5B";
     baseWeapon = "twelfth_MA5B";
-    magazines[] = {"OPTRE_60Rnd_762x51_Mag","twelfth_60Rnd_762x51_Mag_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer"};
+    magazines[] = {"OPTRE_60Rnd_762x51_Mag","twelfth_60Rnd_762x51_Mag_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer","OPTRE_32Rnd_762x51_Mag_UW"};
     modes[] = {"FullAuto", "Single"};
     class manual: Single {
       displayName = "Semi-Auto";
@@ -1285,7 +1285,7 @@ class CfgWeapons
       scopeArsenal = 2;
       displayName = "[12th] M739B SAW";
       baseWeapon = "twelfth_M739B";
-	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "twelfth_M739_SAW_200rnd_Drum"};
+	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "twelfth_M739_SAW_200rnd_Drum", "OPTRE_32Rnd_762x51_Mag_UW"};
 	  class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -1429,7 +1429,7 @@ class CfgWeapons
       baseWeapon = "twelfth_M73H";
       magazines[] = {
           "twelfth_100Rnd_95x40_Box", "twelfth_100Rnd_95x40_Box_T",
-          "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer","twelfth_56Rnd_95x40_Mag","twelfth_56Rnd_95x40_Mag_T"
+          "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer","twelfth_56Rnd_95x40_Mag","twelfth_56Rnd_95x40_Mag_T","twelfth_br_36Rnd_UW"
           };
 	    distanceZoomMin=100;
 	    distanceZoomMax=700;
@@ -1519,6 +1519,7 @@ class CfgWeapons
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
       modes[] = {"FullAuto", "FullAutoFast"};
+      magazines[] = {"OPTRE_32Rnd_762x51_Mag_UW"};
       class FullAuto : FullAuto
       {
         dispersion = 0.00116;
@@ -1561,11 +1562,12 @@ class CfgWeapons
       author = "Sammy";
       scope = 2;
       scopeArsenal = 2;
-      displayName = "[12th] M247A1 GPMG Stripped";
+      displayName = "[12th] M247A1-L GPMG";
       baseWeapon = "twelfth_M247A1_Stripped";
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
       modes[] = {"FullAuto", "FullAutoFast"};
+      magazines[] = {"OPTRE_32Rnd_762x51_Mag_UW"};
       class FullAuto : FullAuto
       {
         dispersion = 0.00116;
@@ -1817,7 +1819,7 @@ class CfgWeapons
 		displayName = "[12th] MA6-B IAR";
 		baseWeapon = "twelfth_MA6_B";
 		canShootInWater = 1;
-		magazines[] = {"OPTRE_60Rnd_762x51_Mag", "twelfth_60Rnd_762x51_Mag_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer" };
+		magazines[] = {"OPTRE_60Rnd_762x51_Mag", "twelfth_60Rnd_762x51_Mag_T", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW" };
 		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
 		class WeaponSlotsInfo: WeaponSlotsInfo {
 			class MuzzleSlot: MuzzleSlot {
@@ -1844,10 +1846,10 @@ class CfgWeapons
 		author = "Rex";
 		scope = 2;
 		scopeArsenal = 2;
-		displayName = "[12th] MA6-AL";
+		displayName = "[12th] MA6-B H-IAR";
 		baseWeapon = "twelfth_MA6_AL";
 		canShootInWater = 1;
-		magazines[] = {"twelfth_56Rnd_95x40_Mag", "twelfth_56Rnd_95x40_Mag_T", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer" };
+		magazines[] = {"twelfth_56Rnd_95x40_Mag", "twelfth_56Rnd_95x40_Mag_T", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer","twelfth_br_36Rnd_UW" };
 		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\12th_weapons\data\MA6\animations\MA6.rtm"};
 		class WeaponSlotsInfo: WeaponSlotsInfo {
 			class MuzzleSlot: MuzzleSlot {
