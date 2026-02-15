@@ -1285,7 +1285,7 @@ class CfgWeapons
       scopeArsenal = 2;
       displayName = "[12th] M739B SAW";
       baseWeapon = "twelfth_M739B";
-	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "twelfth_M739_SAW_200rnd_Drum", "OPTRE_32Rnd_762x51_Mag_UW"};
+	magazines[] = {"twelfth_M739_SAW_200rnd_Box", "twelfth_M739_SAW_200rnd_Drum", "OPTRE_32Rnd_762x51_Mag_UW", "OPTRE_60Rnd_762x51_Mag", "twelfth_60Rnd_762x51_Mag_T"};
 	  class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
@@ -1519,7 +1519,6 @@ class CfgWeapons
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
       modes[] = {"FullAuto", "FullAutoFast"};
-      magazines[] = {"OPTRE_32Rnd_762x51_Mag_UW"};
       class FullAuto : FullAuto
       {
         dispersion = 0.00116;
@@ -1567,7 +1566,6 @@ class CfgWeapons
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
       modes[] = {"FullAuto", "FullAutoFast"};
-      magazines[] = {"OPTRE_32Rnd_762x51_Mag_UW"};
       class FullAuto : FullAuto
       {
         dispersion = 0.00116;
