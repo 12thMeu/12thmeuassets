@@ -184,6 +184,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Bateman)
   CUSTOM_HELM_S_AV(Bert)
   CUSTOM_HELM_S_AV(Bob)
+  CUSTOM_HELM_S_AV(Bobby)
   CUSTOM_HELM_S_AV(Coady)
   CUSTOM_HELM_S_AV(Clarke)
   CUSTOM_HELM_S_AV(Don)
