@@ -210,6 +210,8 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Origami)
   CUSTOM_HELM_S_AV(Sullivan)
   CUSTOM_HELM_S_AV(Luke)
+  CUSTOM_HELM_S_AV(Taji)
+  CUSTOM_HELM_S_AV(Wilson)
 
 
   // -- Pilot Helmets --
@@ -319,6 +321,7 @@ class XtdGearModels {
           "Stacker",
           "Styx",
           "Sullivan",
+          "Taji",
           "Thomson",
           "Vickers",
           "Whirley",
@@ -389,6 +392,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Smitty)
     CH_HELM_S_GI(Stacker)
     CH_HELM_S_GI(Styx)
+    CH_HELM_S_GI(Taji)
     CH_HELM_S_GI(Thomson)
     CH_HELM_S_GI(Vickers)
     CH_HELM_S_GI(Wilson)
