@@ -14,7 +14,6 @@ logs/
 *.biprivatekey
 *.blend
 *.blend1
-*.rtm
 *.ogg
 *.wss
 *.bisign
