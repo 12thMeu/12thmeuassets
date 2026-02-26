@@ -238,6 +238,7 @@ class CfgMagazines
 	  scope = 2;
 	  author = "Sammy";
 	  count=200;
+    mass = 32;
 	  displayName = "200Rnd 7.62x51mm Tracer Box";
   };
 
