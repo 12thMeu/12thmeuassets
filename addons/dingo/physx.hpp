@@ -14,10 +14,10 @@
 
 		/// Gearbox and transmission  via PhysX
 		idleRpm = 900; // RPM at which the engine idles.
-		redRpm = 10000; // RPM at which the engine redlines.
+		redRpm = 5000; // RPM at which the engine redlines.
 		class complexGearbox
 		{
-			GearboxRatios[] = {"R1",-6,"N",0,"D1",6.1,"D2",4.1,"D3",2.45,"D4",1,"D5",0.7};
+			GearboxRatios[] = {"R1",-6,"N",0,"D1",5.1,"D2",3.1,"D3",1.45,"D4",1,"D5",0.7};
 			TransmissionRatios[] = {"High",4.111}; // Optional: defines transmission ratios (for example, High and Low range as commonly found in offroad vehicles)
 			gearBoxMode        = "auto"; //gearbox can be of type: full-auto (only requires 'W' or 'S'), auto (requires shift between drive and reverse), semi-auto, manual
 			moveOffGear        = 1; // defines what gear an automatic or semi-automatic gearbox will move off from stationary in. 1 by default.
