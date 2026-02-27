@@ -76,7 +76,7 @@ class CfgWeapons
 			{
 				displayName = "$STR_A3_CowsSlot0";
 				linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
-				compatibleItems[] = {"PrototypeOptics"};
+				compatibleItems[] = {"PrototypeOptics","PrototypeOpticsV2"};
 				iconPosition[] = {0.5,0.35};
 				iconScale = 0.2;
 			};

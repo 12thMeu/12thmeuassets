@@ -71,7 +71,8 @@ class CfgVehicles
 		ace_repair_spareWheels = 1;
 		ace_cargo_space = 6;  // Cargo space your vehicle has
         ace_cargo_hasCargo = 1;
-
+		ace_vehicle_damage_detonationDuringFireProb = 0;
+		ace_cookoff_canHaveFireJet = 0;
 		//Component selection
 		class AnimationSources: AnimationSources
 		{

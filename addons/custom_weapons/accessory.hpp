@@ -3,6 +3,7 @@ class ItemCore;
 class InventoryMuzzleItem_Base_F;
 class InventoryItem_Base_F;
 class InventoryOpticsItem_Base_F;
+class OPTRE_SRS99C_Scope;
 
 class PrototypeOptics: ACE_optic_LRPS_2D
 {
@@ -12,7 +13,7 @@ class PrototypeOptics: ACE_optic_LRPS_2D
 	descriptionShort = "Tri-sight developed in conjunction with the prototype Laser";
 	picture="x\12thMEU\addons\Custom_Weapons\data\SightPreview.paa";
 	model = "x\12thMEU\addons\Custom_Weapons\data\PrototypeScope.p3d";
-	class ItemInfo: InventoryOpticsItem_Base_F
+/* 	class ItemInfo: InventoryOpticsItem_Base_F
 	{
 		mass = 2;
 		opticType = 1;
@@ -44,5 +45,14 @@ class PrototypeOptics: ACE_optic_LRPS_2D
 			};
 		};
 	};
-	intertia = 0.1;
+	intertia = 0.1; */
+};
+class PrototypeOpticsV2: OPTRE_SRS99C_Scope
+{
+	scope = 2;
+	author = "SamanthaNix";
+	displayName = "Tri-Sight Prototype Optics V2";
+	descriptionShort = "Tri-sight developed in conjunction with the prototype Laser";
+	picture="x\12thMEU\addons\Custom_Weapons\data\SightPreview.paa";
+	model = "x\12thMEU\addons\Custom_Weapons\data\PrototypeScope.p3d";
 };
