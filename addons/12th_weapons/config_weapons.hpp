@@ -680,13 +680,6 @@ class CfgWeapons
       scopeArsenal = 2;
       canShootInWater = 1;
       displayName = "[12th] BR45 UGL";
-      muzzles[] = {"this", "twelfth_M301UGL"}; // Attachments
-      class twelfth_m301ugl : GL_3GL_F
-      {
-        displayName = "M301 Grenade Launcher";
-        descriptionShort = "M301 GL";
-        magazines[] = COMMON_GL_MAGS; // Grenade launcher mags
-      };
       baseWeapon = "twelfth_BR55_gl";
       magazines[] = COMMON_BR_MAGAZINES;
       ace_overheating_barrelMass = 10;
