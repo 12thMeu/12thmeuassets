@@ -166,7 +166,7 @@ class CfgVehicles
 		turnCoef = 4;
 		precision = 10;
 		brakeDistance = 3.0;
-		acceleration = 15;
+		acceleration = 20;
 		fireResistance = 5;
 		armor = 250;
 		cost = 50000; /// how likely is the enemy going to target this vehicle
@@ -294,7 +294,7 @@ class CfgVehicles
 					linear 			= 0;
 					quadratic 		= 0.25;
 					hardLimitStart 	= 30;		/// it is good to have some limit otherwise the light would shine to infinite distance
-					hardLimitEnd 	= 60;		/// this allows adding more lights into scene
+					hardLimitEnd 	= 70;		/// this allows adding more lights into scene
 				};
 			};
 

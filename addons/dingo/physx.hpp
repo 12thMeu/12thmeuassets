@@ -7,17 +7,17 @@
 		fuelCapacity           	= 80;
 		wheelCircumference     	= 4.52; 	/// diameter of 1440
 
-		antiRollbarForceCoef = 30;
-		antiRollbarForceLimit = 50;
+		antiRollbarForceCoef = 100;
+		antiRollbarForceLimit = 2;
 		antiRollbarSpeedMin = 0;
 		antiRollbarSpeedMax = 130; 	/// this simulates losing grip at high speed turns
 
 		/// Gearbox and transmission  via PhysX
 		idleRpm = 900; // RPM at which the engine idles.
-		redRpm = 5000; // RPM at which the engine redlines.
+		redRpm = 10000; // RPM at which the engine redlines.
 		class complexGearbox
 		{
-			GearboxRatios[] = {"R1",-6,"N",0,"D1",5.1,"D2",3.1,"D3",1.45,"D4",1,"D5",0.7};
+			GearboxRatios[] = {"R1",-6,"N",0,"D1",6.1,"D2",5.1,"D3",4.45,"D4",3.8,"D5",3.1,"D6",2.4,"D7",1.7,"D8",1,"D9",0.7};
 			TransmissionRatios[] = {"High",4.111}; // Optional: defines transmission ratios (for example, High and Low range as commonly found in offroad vehicles)
 			gearBoxMode        = "auto"; //gearbox can be of type: full-auto (only requires 'W' or 'S'), auto (requires shift between drive and reverse), semi-auto, manual
 			moveOffGear        = 1; // defines what gear an automatic or semi-automatic gearbox will move off from stationary in. 1 by default.
@@ -27,7 +27,6 @@
 
 
 		};
-
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		/// PhysX parameters
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -117,7 +116,7 @@
 		// <Type>: float, float, float
 		// <Default>: 0.08, 2.0, 0.35
 		dampingRateFullThrottle = 0.1;
-		dampingRateZeroThrottleClutchEngaged = 0.35;
+		dampingRateZeroThrottleClutchEngaged = 2;
 		dampingRateZeroThrottleClutchDisengaged = 0.35;
 
 		// <Description>: This is a graph of peak torque versus engine rotational speed.
@@ -150,7 +149,7 @@
 		// or it would cause issues while trying to run aggressively (mainly during evading the enemies).
 		// <Type>: float
 		// <Default>: 0.01
-		switchTime = 0.11;
+		switchTime = 0.5;
 
 		// <Description>: Set the latency time of the gearbox, specified in s.
 		// This is used to prevent instant shifting after changing gears - there is some power loss during gear change and it could seem that
@@ -215,7 +214,7 @@
 				// Values in range (0.25, 2) seem like sensible values. Experimentation is always a good idea, even outside this range.
 				// <Type>: float
 				// <Default>: 0.1
-				dampingRate = 0.2;
+				dampingRate = 0.25;
 				dampingRateDamaged = 1.0;
 				dampingRateDestroyed = 1000.0;
 				// <Description>: This is the value of the torque applied to the wheel when the brakes are maximally applied. Higher torques will lock the wheel
@@ -279,7 +278,7 @@
 				// where dampingRatio = 1 mean critical damping (critically damped pendulum should get back to start point in every swing)
 				// <Type>: float
 				// <Default>: 0,4*2*sqrt(springStrength*sprungMass)
-				springDamperRate = 19250;
+				springDamperRate = 30800;
 
 				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				// Tire parameters
@@ -289,7 +288,7 @@
 				// load on the tire so be aware that increases in this value might have no effect or even come at the expense of reduced lateral force.
 				// <Type>: float
 				// <Default>: 10000
-				longitudinalStiffnessPerUnitGravity = 5000;
+				longitudinalStiffnessPerUnitGravity = 10000;
 
 				// <Description>: These values together describe the lateral stiffness per unit lateral slip (in radians) of the tire.
 				// <Type>: float, float
