@@ -71,15 +71,17 @@ class CfgWeapons
 
   // Ponchos
 
-  class twelft_poncho_dry_vest:mgsr_poncho_dry_vest{
+  class twelft_poncho_dry_vest: mgsr_poncho_dry_vest{
     author = "Sammy";
 		scope = 2;
-		displayName = "[Twelfth] Poncho (Wet)";
+    model="\mgsr_poncho\mgsr_poncho.p3d";
+		displayName = "[12th] Poncho (Dry)";
 		class ItemInfo: VestItem
 		{
+      uniformModel = "\mgsr_poncho\mgsr_poncho.p3d";
       containerClass="twelfth_vest_supply";
       mass = 80;
-      class HitpointsProtectionInfo {
+       class HitpointsProtectionInfo {
         class Neck {
           hitpointName="HitNeck";
           armor=20; 
@@ -115,64 +117,65 @@ class CfgWeapons
           armor=10;
           passThrough=0.60000002;
         };
-      };
+      }; 
       setMaxLoad=200;
+      hiddenSelections[] = {"camo"};
+			hiddenSelectionsTextures[] = {"\mgsr_poncho\data\mgsr_poncho.paa"};
+			hiddenSelectionsMaterials[] = {"\mgsr_poncho\data\mgsr_poncho_dry.rvmat"};
 		};
   };
   
   class twelft_poncho_wet_vest: mgsr_poncho_wet_vest{
     author = "Sammy";
 		scope = 2;
-		displayName = "[Twelfth] Poncho (Wet)";
+		displayName = "[12th] Poncho (Wet)";
+    model="\mgsr_poncho\mgsr_poncho.p3d";
 		class ItemInfo: VestItem
 		{
+      uniformModel = "\mgsr_poncho\mgsr_poncho.p3d";
       containerClass="twelfth_vest_supply";
       mass = 80;
-      class HitpointsProtectionInfo {
+       class HitpointsProtectionInfo {
         class Neck {
           hitpointName="HitNeck";
           armor=20; 
           passThrough=0.30000001;
-          explosionShielding = 0.8;
         };
         class Arms {
           hitpointName="HitArms";
           armor=10; 
           passThrough=0.60000002;
-          explosionShielding = 0.8;
         };
         class Chest {
           hitpointName="HitChest";
           armor=20; 
           passThrough=0.30000001;
-          explosionShielding = 0.8;
         };
         class Diaphragm {        
           hitpointName="HitDiaphragm";
           armor=20; 
           passThrough=0.30000001;
-          explosionShielding = 0.8;
         };
         class Abdomen {
           hitpointName="HitAbdomen";
           armor=20; 
           passThrough=0.30000001;
-          explosionShielding = 0.8;
         };
         class Body {
           hitpointName="HitBody";
           passThrough=0.30000001;
-          armor=20;
-          explosionShielding = 0.8;
+          armor=20; 
         };
         class Legs {
           hitpointName="HitLegs";
           armor=10;
           passThrough=0.60000002;
-          explosionShielding = 0.8;
         };
-      };
+      }; 
       setMaxLoad=200;
+      hiddenSelections[] = {"camo"};
+			hiddenSelectionsTextures[] = {"\mgsr_poncho\data\mgsr_poncho.paa"};
+			hiddenSelectionsMaterials[] = {"\mgsr_poncho\data\mgsr_poncho.rvmat"};
 		};
   };
   // ---------------------------------------------------------------------------
