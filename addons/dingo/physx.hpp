@@ -10,7 +10,7 @@
 		antiRollbarForceCoef = 100;
 		antiRollbarForceLimit = 2;
 		antiRollbarSpeedMin = 0;
-		antiRollbarSpeedMax = 900; 	/// this simulates losing grip at high speed turns
+		antiRollbarSpeedMax = 70; 	/// this simulates losing grip at high speed turns
 
 		/// Gearbox and transmission  via PhysX
 		idleRpm = 900; // RPM at which the engine idles.

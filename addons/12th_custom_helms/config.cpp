@@ -105,7 +105,6 @@ class CfgPatches {
       "twelfth_ch_Don_nv",
       "twelfth_ch_Dras_nv",
       "twelfth_ch_Dixie_nv",
-	    "twelfth_ch_Dixie_nv",
       "twelfth_ch_Gallegos_nv",
       "twelfth_ch_Galvin_nv",
       "twelfth_ch_Geoff_nv",
