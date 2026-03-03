@@ -166,7 +166,7 @@ class CfgVehicles
 		turnCoef = 4;
 		precision = 10;
 		brakeDistance = 3.0;
-		acceleration = 20;
+		acceleration = 30;
 		fireResistance = 5;
 		armor = 250;
 		cost = 50000; /// how likely is the enemy going to target this vehicle
@@ -177,9 +177,9 @@ class CfgVehicles
 
 		wheelDamageRadiusCoef = 0.75;
 		wheelDestroyRadiusCoef = 0.6127954;			/// for tweaking of rims size to fit ground
-		maxFordingDepth 		= 0.5;			/// how high water would damage the engine of the car
+		maxFordingDepth 		= 1.5;			/// how high water would damage the engine of the car
 		waterResistance 		= 1;			/// if the depth of water is bigger than maxFordingDepth it starts to damage the engine after this time
-		crewCrashProtection		= 0.2;			/// multiplier of damage to crew of the vehicle => low number means better protection
+		crewCrashProtection		= 0.3;			/// multiplier of damage to crew of the vehicle => low number means better protection
 
 		class TransportItems /// some first aid kits in trunk according to safety regulations
 		{

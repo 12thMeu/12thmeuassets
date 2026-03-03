@@ -2,22 +2,22 @@
 		/// http://forums.bistudio.com/showthread.php?165390-Tutorial-Creating-Custom-Engine-Gearbox-and-Suspension-Vehicle-configuration
 
 		thrustDelay            	= 0.2; 		/// initial delay to cause lesser slip when on 1st gear - thrust goes from zero to full in this time
-		brakeIdleSpeed         	= 2; 	/// under what speed (in m/s) does the brake apply for a vehicle without thrust
-		maxSpeed               	= 150; 		/// vehicle can go a bit over, but dramatically decreases thrust
+		brakeIdleSpeed         	= 3; 	/// under what speed (in m/s) does the brake apply for a vehicle without thrust
+		maxSpeed               	= 180; 		/// vehicle can go a bit over, but dramatically decreases thrust
 		fuelCapacity           	= 80;
 		wheelCircumference     	= 4.52; 	/// diameter of 1440
 
 		antiRollbarForceCoef = 100;
 		antiRollbarForceLimit = 2;
 		antiRollbarSpeedMin = 0;
-		antiRollbarSpeedMax = 130; 	/// this simulates losing grip at high speed turns
+		antiRollbarSpeedMax = 900; 	/// this simulates losing grip at high speed turns
 
 		/// Gearbox and transmission  via PhysX
 		idleRpm = 900; // RPM at which the engine idles.
-		redRpm = 10000; // RPM at which the engine redlines.
+		redRpm = 5000; // RPM at which the engine redlines.
 		class complexGearbox
 		{
-			GearboxRatios[] = {"R1",-6,"N",0,"D1",6.1,"D2",5.1,"D3",4.45,"D4",3.8,"D5",3.1,"D6",2.4,"D7",1.7,"D8",1,"D9",0.7};
+			GearboxRatios[] = {"R1",-6,"N",0,"D1",8.1,"D2",3.51,"D3",1.90,"D4",1.44,"D5",1.00,"D6",0.74,"D7",0.64};
 			TransmissionRatios[] = {"High",4.111}; // Optional: defines transmission ratios (for example, High and Low range as commonly found in offroad vehicles)
 			gearBoxMode        = "auto"; //gearbox can be of type: full-auto (only requires 'W' or 'S'), auto (requires shift between drive and reverse), semi-auto, manual
 			moveOffGear        = 1; // defines what gear an automatic or semi-automatic gearbox will move off from stationary in. 1 by default.
@@ -93,18 +93,18 @@
 		// <Description>: Power of the engine in kW.
 		// <Type>: float
 		// <Default>: (required)
-		enginePower = 700;
+		enginePower = 770;
 		// <Description>: This is the maximum torque that is ever available from the engine. This is expressed in Newton metres.
 		// <Type>: float
 		// <Default>: value calculated from enginePower according to http://en.wikipedia.org/wiki/Horsepower#Relationship_with_torque
-		peakTorque = 1500;
+		peakTorque = 3800 ;
 
 		// <Description>: This is the maximum rotational speed of the engine expressed in radians per second. It could be calculated from maximum
 		// engine RPM like this:
 		// maxOmega = (maxRpm*2*Pi)/60.
 		// <Type>: float
 		// <Default>: 600 which is cca 6000 rounds per minute.
-		maxOmega = __EVAL((10000 * 2 * PI) / 60);
+		maxOmega = __EVAL((5000 * 2 * PI) / 60);
 		minOmega = __EVAL((900 * 2 * PI) / 60);
 		engineMOI = 1;
 
@@ -149,14 +149,14 @@
 		// or it would cause issues while trying to run aggressively (mainly during evading the enemies).
 		// <Type>: float
 		// <Default>: 0.01
-		switchTime = 0.5;
+		switchTime = 0.05;
 
 		// <Description>: Set the latency time of the gearbox, specified in s.
 		// This is used to prevent instant shifting after changing gears - there is some power loss during gear change and it could seem that
 		// previous gear is better for a brief time after shifting.
 		// <Type>: float
 		// <Default>: 2.0
-		latency = 0.5;
+		latency = 2;
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// Wheels parameters
@@ -223,7 +223,7 @@
 				// that these are often expressed by manufacturers as braking horsepower or in "pounds inches". The values required here are in "Newton metres".
 				// <Type>: float
 				// <Default>: 2500
-				maxBrakeTorque = 20000;
+				maxBrakeTorque = 25000;
 
 				// <Description>: This is the same as the max brake torque except for the handbrake rather than the brake. Typically, for a 4-wheeled car,
 				// the handbrake is stronger than the brake and is only applied to the rear wheels. A value of 4000 for the rear wheels is a good starting point,
@@ -294,7 +294,7 @@
 				// <Type>: float, float
 				// <Default>: 25, 180
 				latStiffX = 2;
-				latStiffY = 25;
+				latStiffY = 180;
 
 				// <Description>: These six values describe a graph of friction as a function of longitudinal slip.
 				// A good starting point for this is a flat graph of friction vs slip with these values:
