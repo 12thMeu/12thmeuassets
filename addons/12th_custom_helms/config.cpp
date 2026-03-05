@@ -198,6 +198,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Mercer)
   CUSTOM_HELM_S_AV(Moss)
   CUSTOM_HELM_S_AV(Perry)
+  CUSTOM_HELM_S_AV(Quinn)
   CUSTOM_HELM_S_AV(Rex)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Schultz)
@@ -308,6 +309,7 @@ class XtdGearModels {
           "Oliver",
           "Origami",
           "Perry",
+          "Quinn",
           "Quebec",
           "Quinn",
           "Rex",
