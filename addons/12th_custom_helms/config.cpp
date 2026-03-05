@@ -210,6 +210,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Sullivan)
   CUSTOM_HELM_S_AV(Luke)
   CUSTOM_HELM_S_AV(Taji)
+  CUSTOM_HELM_S_AV(Thomas)
   CUSTOM_HELM_S_AV(Wilson)
 
 
@@ -322,6 +323,7 @@ class XtdGearModels {
           "Sullivan",
           "Taji",
           "Thomson",
+          "Thomas",
           "Vickers",
           "Whirley",
           "Wilson",
@@ -393,6 +395,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Styx)
     CH_HELM_S_GI(Taji)
     CH_HELM_S_GI(Thomson)
+    CH_HELM_S_GI(Thomas)
     CH_HELM_S_GI(Vickers)
     CH_HELM_S_GI(Wilson)
     CH_HELM_S_GI(Wolffe)
