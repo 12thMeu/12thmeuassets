@@ -68,6 +68,7 @@ class CfgWeapons
   class OPTRE_UNSC_M52A_Armor2_MAR;
   class mgsr_poncho_wet_vest;
   class mgsr_poncho_dry_vest;
+  class TCP_V_M43D_ODST_4_Black;
 
   // Ponchos
 
@@ -178,6 +179,28 @@ class CfgWeapons
 			hiddenSelectionsMaterials[] = {"\mgsr_poncho\data\mgsr_poncho.rvmat"};
 		};
   };
+
+  // ODST
+  class twelft_odst : TCP_V_M43D_ODST_4_Black {
+    scope = 2;
+    scopeArsenal = 2;
+    author = "Rex";
+    displayName = "[12] ODST";
+    ACE_GForceCoef = 0.4;
+    model = "\TCP\Characters\BLUFOR\UNSC\Marines\Vests\M43D\M43D_ODST_4.p3d";
+    class ItemInfo: VestItem
+    {
+      containerClass="twelfth_vest_supply";                                
+      mass = 80;
+      uniformModel = "\TCP\Characters\BLUFOR\UNSC\Marines\Vests\M43D\M43D_ODST_4.p3d";
+      VEST_HITPOINT_INFO 
+      setMaxLoad=200;
+      hiddenSelectionsTextures[] = {"\TCP\characters\BLUFOR\UNSC\Army\Vests\M43A\data\camo\Black\vest_M43A_01_CO.paa","\TCP\Characters\BLUFOR\UNSC\Marines\Vests\M43D\data\camo\Black\vest_Shoulders_ODST_CO.paa",
+      "\TCP\Characters\BLUFOR\UNSC\Marines\Vests\M43D\data\camo\Black\vest_M43D_ODST_CO.paa","\TCP\characters\BLUFOR\UNSC\Army\Vests\M43A\data\camo\Black\vest_M43A_02_CO.paa",
+      "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\white\vest_M43_DecalSheet_CA.paa"};
+    };
+  };
+
   // ---------------------------------------------------------------------------
   //  Invisible Vest
   // ---------------------------------------------------------------------------

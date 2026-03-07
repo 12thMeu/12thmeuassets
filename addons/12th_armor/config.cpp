@@ -362,7 +362,7 @@ class CfgWeapons {
   UTILITYCOVER_WEP(opfor)
   //-HELMETS----------------------------------------------------------
 
-  class twelfth_odst_helm: H_HelmetB {
+  /*class twelfth_odst_helm: H_HelmetB {
     scope=2;
     scopeArsenal=2;
     author="Waylen";
@@ -392,7 +392,7 @@ class CfgWeapons {
         "\x\12thMEU\addons\12th_armor\helmets\odst\odst_helm.paa"
       };
     };
-  };
+  };*/
 
   class twelfth_helm_base: H_HelmetB {
     scope=0;
@@ -486,6 +486,30 @@ class CfgWeapons {
       uniformModel="A3\Characters_F\Common\headgear_helmet_heli";
       mass=30;
       modelSides[]={3,1};
+      passThrough=0.1;
+      class HitpointsProtectionInfo {
+        class Head {
+          hitpointName="HitHead";
+          armor=20;
+          passThrough=0.1;
+        };
+      };
+    };
+  };
+
+  // ODST
+   class twelfth_odst_helmet: TCP_H_Helmet_CH43A_Base {
+    scope=2;
+    author="Rex";
+    scopeArsenal=2;
+    displayName="[12th] ODST";
+    ace_hearing_protection=1;
+    ace_hearing_lowerVolume=0;
+	  model = "\TCP\Characters\BLUFOR\UNSC\Marines\Headgear\helmet_ECH55D\h_helmet_ECH55D_Blue.p3d";
+    class ItemInfo: HeadgearItem {
+	  uniformModel = "\TCP\Characters\BLUFOR\UNSC\Marines\Headgear\helmet_ECH55D\h_helmet_ECH55D_Blue.p3d";
+      mass=40;
+      modelSides[]={6};
       passThrough=0.1;
       class HitpointsProtectionInfo {
         class Head {
