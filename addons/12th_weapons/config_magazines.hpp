@@ -113,13 +113,9 @@ class CfgMagazines
     picture = "\DMNS\Weapons\Launchers\icons\gear_rpg32_rocket_ca.paa";
     model = "\a3\weapons_f\ammo\rocket_01_f.p3d";
     count = 1;
-    /*
-    hiddenSelections[] = { "camo" };
-    hiddenSelectionsTextures[] = { "" };
     mass = 45;
     initSpeed = 650;
-    allowedSlots[] = { 901, 701 };
-    */
+    
   };
   // MG Belts
   class twelfth_100Rnd_762x51_Box: OPTRE_100Rnd_762x51_Box 
