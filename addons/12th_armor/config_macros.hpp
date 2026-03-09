@@ -1325,7 +1325,7 @@ a local copy of the base textures from UNSCF around here.
   optreHUDStyle = "ODST_1";                                               \
   displayName=DISPLAY;                                                    \
   hiddenSelections[] = {"camo1", "camo2", "camo3", "camo4", "camo5"};     \
-  model="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01";          \
+  model="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01.p3d";          \
   hiddenSelectionsTextures[]={                                            \
       #PILOT_H_TEX(C1,Addons_co.paa),                                     \
       #PILOT_H_TEX(C2,EXT_co.paa),                                        \
@@ -1336,7 +1336,7 @@ a local copy of the base textures from UNSCF around here.
   class ItemInfo : HeadgearItem {                                         \
     mass = 25;                                                            \
     modelSides[]={6};                                                     \
-    uniformModel="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01"; \
+    uniformModel="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01.p3d"; \
     hiddenSelections[]={"camo1", "camo2", "camo3", "camo4", "camo5"};     \
     hiddenSelectionsTextures[]={                                          \
       #PILOT_H_TEX(C1,Addons_co.paa),                                     \

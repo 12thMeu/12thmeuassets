@@ -31,7 +31,6 @@ class CfgPatches {
       "twelfth_supply_pod_mortar",
       "twelfth_supply_pod_rifle",
       "twelfth_supply_pod_mg",
-      "twelfth_supply_pod_dmr",
       "twelfth_supply_pod_eq"
     };
     requiredVersion = 0.1;

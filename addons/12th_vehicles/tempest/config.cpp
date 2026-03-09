@@ -9,8 +9,7 @@ class CfgPatches {
       "twelfth_tempest_repair",
       "twelfth_tempest_ammo",
       "twelfth_tempest_fuel",
-      "twelfth_tempest_medical",
-      "twelfth_tempest_device"
+      "twelfth_tempest_medical"
     };
   };
 };
@@ -23,7 +22,6 @@ class CfgVehicles {
   class O_Truck_03_ammo_F;
   class O_Truck_03_fuel_F;
   class O_Truck_03_medical_F;
-  class O_Truck_03_device_F;
 
   TEMPEST_3(1,Transport,twelfth_tempest_transport,O_Truck_03_transport_F,"[12th] Tempest Transport",cargo_co.paa)
   TEMPEST_4(2,Covered,twelfth_tempest_transport_covered,O_Truck_03_covered_F,"[12th] Tempest Covered",cargo_co.paa,cover_co.paa)
