@@ -11,7 +11,7 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] = {"A3_Weapons_F"};
 		magazines[] = {"3Rnd_test_mag"};
-		ammo[] = {"B_Test_Caseless"};
+		ammo[] = {"StandardLiquidLaserAmmo"};
 	};
 };
 
@@ -32,6 +32,19 @@ class BaseSoundModeType;
 #include "cfgSoundShaders.hpp" // SoundShaders
 #include "cfgSoundSets.hpp" // SoundSets
 #include "model.cfg"
+
+
+class CfgMagazineWells
+{
+	class LiquidMag
+	{
+		SMT_Magazines[] =
+		{
+			"3Rnd_test_mag"
+		};
+	};
+};
+
 class CfgWeapons
 {
 	class Rifle;
@@ -52,6 +65,7 @@ class CfgWeapons
         ACE_twistDirection = 1;
 		/////////////////////ACE STUFF//////////////////////////////
 		magazines[] = {"3Rnd_test_mag"};
+		magazineWell[] = { "LiquidMag" };
 		reloadAction = "GestureReloadMX";
 		magazineReloadSwitchPhase = 0.4;
 		discreteDistanceInitIndex = 0;
