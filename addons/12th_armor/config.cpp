@@ -39,7 +39,6 @@ class CfgPatches {
     weapons[]= {
       "twelfth_odst_uniform_wep",
       "twelfth_uni_ng_base_wep",
-      "twelfth_helm_base",
       "twelfth_aa_helm",
     };
     requiredAddons[]= {
@@ -48,8 +47,7 @@ class CfgPatches {
       "OPTRE_UNSC_Units",
       "DMNS_Units",
       "cba_main",
-      "ace_main",
-      "19th_Fleet_Armor"
+      "ace_main"
     };
   };
 };
@@ -266,7 +264,6 @@ class CfgWeapons {
     scope=2;
     scopeArsenal=2;
     author="Waylen";
-    picture="\x\12thMEU\main\logo.paa";
     model="\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
     displayName="[12th][ODST] Armor";
     ACE_GForceCoef = 0.4;
@@ -366,7 +363,6 @@ class CfgWeapons {
     scope=2;
     scopeArsenal=2;
     author="Waylen";
-    picture="\x\12thMEU\logo.paa";
     displayName="[12th][ODST] Helmet";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0.30000001;
@@ -394,35 +390,12 @@ class CfgWeapons {
     };
   };*/
 
-  class twelfth_helm_base: H_HelmetB {
-    scope=0;
-    author="Waylen";
-    scopeArsenal=0;
-    displayName="[12th] Helmet Base (DON'T USE)";
-    ace_hearing_protection=1;
-    ace_hearing_lowerVolume=0;
-    model="Foundries\halo_marine\halo_helm_01";
-    picture="";
-    class ItemInfo: HeadgearItem {
-      uniformModel="Foundries\halo_marine\halo_helm_01";
-      mass=40;
-      modelSides[]={6};
-      passThrough=0.1;
-      class HitpointsProtectionInfo {
-        class Head {
-          hitpointName="HitHead";
-          armor=20;
-          passThrough=0.1;
-        };
-      };
-    };
-  };
   // Helmet_CH43A
   class twelfth_helmCH43A_base: TCP_H_Helmet_CH43A_Base {
     scope=0;
     author="Sammy";
     scopeArsenal=0;
-    picture="\x\12thMEU\logo.paa";
+    picture="x\12thMEU\addons\12th_ui\data\logo.paa";
     displayName="[12th] Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0;
@@ -453,7 +426,7 @@ class CfgWeapons {
     displayName="[12th] Helmet Closed Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0;
-    picture="\x\12thMEU\logo.paa";
+    picture="\x\12thMEU\addons\12th_ui\data\logo.paa";
     class TCP_uniformDecals
     {
       selectionName = "nameCH43A";
@@ -480,8 +453,8 @@ class CfgWeapons {
     displayName="[12th] Pilot Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0;
-    model="A3\Characters_F\Common\headgear_helmet_heli";
-    picture="\x\12thMEU\logo.paa";
+    model="A3\Characters_F\Common\headgear_helmet_heli.p3d";
+    picture="\x\12thMEU\addons\12th_ui\data\logo.paa";
     class ItemInfo: HeadgearItem {
       uniformModel="A3\Characters_F\Common\headgear_helmet_heli";
       mass=30;
@@ -607,11 +580,11 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label="MOS";
         values[]={"na","med","ftl","sl","pl","psg"};
-        class na  {label="None";     image=XTP(role);};
-        class pl  {label="PLT LDR";  image=XTP(role_pl);};
-        class psg {label="PLT SGT";  image=XTP(role_psg);};
-        class ftl {label="FTL";      image=XTP(role_ftl);};
-        class sl  {label="SQD LDR";  image=XTP(role_sl);};
+        class na  {label="None";     /* image=XTP(role); */};
+        class pl  {label="PLT LDR";  /* image=XTP(role_pl); */};
+        class psg {label="PLT SGT";  /* image=XTP(role_psg); */};
+        class ftl {label="FTL";      /* image=XTP(role_ftl); */};
+        class sl  {label="SQD LDR";  /* image=XTP(role_sl); */};
         class med {label="Corpsman"; image=XTP(med);};
       };
     };
@@ -639,11 +612,11 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label="MOS";
         values[]={"na","med","ftl","sl","pl","psg"};
-        class na  {label="None";     image=XTP(role);};
-        class pl  {label="PLT LDR";  image=XTP(role_pl);};
-        class psg {label="PLT SGT";  image=XTP(role_psg);};
-        class ftl {label="FTL";      image=XTP(role_ftl);};
-        class sl  {label="SQD LDR";  image=XTP(role_sl);};
+        class na  {label="None";     /* image=XTP(role); */};
+        class pl  {label="PLT LDR";  /* image=XTP(role_pl); */};
+        class psg {label="PLT SGT";  /* image=XTP(role_psg); */};
+        class ftl {label="FTL";      /* image=XTP(role_ftl); */};
+        class sl  {label="SQD LDR";  /* image=XTP(role_sl); */};
         class med {label="Corpsman"; image=XTP(med);};
       };
       class visor {
@@ -662,7 +635,7 @@ class XtdGearModels {
         label="Camouflage";
         values[]={"std","winter","opfor","desert"};
         class std {label="Standard";     image=XTP(forest);};
-        class winter {label="Winter"; image=XTP(winter);};
+        class winter {label="Winter"; /* image=XTP(winter); */};
         class desert {label="Desert"; image=XTP(desert);};
         class opfor {label="OPFOR";};
 

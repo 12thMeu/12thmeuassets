@@ -75,7 +75,6 @@ class CfgVehicles {
   class OPTRE_UNSC_falcon_S;
   class OPTRE_UNSC_falcon_armed_S;
 
-  class OPTRE_AV22_Sparrowhawk_Base;
   class OPTRE_AV22_Sparrowhawk;
   class OPTRE_AV22A_Sparrowhawk;
   class OPTRE_AV22B_Sparrowhawk;
@@ -85,16 +84,11 @@ class CfgVehicles {
   class O_T_VTOL_02_infantry_dynamicLoadout_F;
   class O_T_VTOL_02_vehicle_dynamicLoadout_F;
 
-  // AL-6
-  class B_UAV_06_F;
-
   // blackfish
   class B_T_VTOL_01_infantry_F;
   class B_T_VTOL_01_vehicle_F;
   class B_T_VTOL_01_armed_F;
 
-  // Nandao
-  class MEU_F29_Nandao_VTOL;
   // ---------------------------------------------------------------------------
   //  Pelican (D77-TC)
   // ---------------------------------------------------------------------------
@@ -415,40 +409,6 @@ class CfgVehicles {
     };
     AIR_SP_INFO(Wyvern,1,Vehicle)
   };
-
-  /*class twelfth_prime: B_UAV_06_F {
-    side=1;
-    scope=2;
-    scopeCurator=2;
-    author="Waylen";
-    displayName="[12th] AL-6 Prime";
-    faction="twelfth_MEU";
-    editorCategory="twelfth_MEU";
-    editorSubcategory="twelfth_MEU_Drones";
-    crew="B_UAV_AI_F";
-    typicalCargo[]={"B_UAV_AI_F"};
-    class TransportItems {};
-    class TransportMagazines {};
-    class TransportWeapons {};
-    hiddenSelections[]= {"Camo", "Medical"};
-    hiddenSelectionsTextures[] = {
-      QP(prime\medical\main_co.paa),
-      QP(prime\medical\main_co.paa)
-    };
-    class TextureSources {
-      class twelfth_prime_tex_default {
-        displayname="Default";
-        author="Waylen";
-        factions[] = {"twelfth_MEU"};
-        textures[]={
-          QP(prime\medical\main_co.paa),
-          QP(prime\medical\main_co.paa)
-        };
-      };
-    };
-    Camouflage=0;
-    AIR_SP_INFO(Prime UAV,0,Base)
-  };*/
 
 
   // ---------------------------------------------------------------------------

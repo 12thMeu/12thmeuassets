@@ -3,19 +3,19 @@
 class CfgSoundShaders
 {
 	//###################################### SHOTS ######################################
-//	class PrototypeLaser_01_Base_F_Closure_SoundShader
-//	{
-//		samples[] = {{ "x\12thMEU\addons\Custom_Weapons\data\LaserFireSingle.ogg", 1 }}; // you can use ogg/wss/ogg, ogg will have a small delay before playback (not too good for weapons/explosions)
-//		volume = 0.4466836;
-//		range = 5;
-//	};
+	class PrototypeLaser_01_Base_F_Closure_SoundShader
+	{
+		samples[] = {{ "x\12thMEU\addons\Custom_Weapons\data\LaserFireSingle.ogg", 1 }}; // you can use ogg/wss/ogg, ogg will have a small delay before playback (not too good for weapons/explosions)
+		volume = 0.4466836;
+		range = 5;
+	};
  	class PrototypeLaser_01_Base_F_closeShot_SoundShader
 	{
 		samples[] = { {"x\12thMEU\addons\Custom_Weapons\data\LaserFireSingle.ogg", 1} };
 		volume = 1.0;
 		range = 200;
 	};
-/*	class PrototypeLaser_01_Base_F_midShot_SoundShader
+	class PrototypeLaser_01_Base_F_midShot_SoundShader
 	{
 		samples[] = {{ "x\12thMEU\addons\Custom_Weapons\data\LaserFireSingle.ogg", 1 }};
 		volume = 0.7943282;
@@ -28,9 +28,9 @@ class CfgSoundShaders
 		volume = 1.0;
 		range = 1800;
 		rangeCurve[] = { {0,0}, {50,0}, {300,1}, {1800,1} };
-	}; */
-/* 	// ###################################### TAILS ######################################
-	class PrototypeLaser_01_Base_F_tailInterior_SoundShader
+	};
+ 	// ###################################### TAILS ######################################
+	/*class PrototypeLaser_01_Base_F_tailInterior_SoundShader
 	{
 		samples[] = {{ "x\12thMEU\addons\Custom_Weapons\data\LaserFireSingle.ogg", 1 }};
 		volume = "interior";
@@ -64,5 +64,5 @@ class CfgSoundShaders
 		volume = "(1-interior/1.4)*houses/3";
 		range = 1200;
 		limitation = 1;
-	}; */
+	};*/
 };

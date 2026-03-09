@@ -57,7 +57,7 @@ class CfgWeapons
 		discreteDistanceInitIndex = 0;
 		picture="x\12thMEU\addons\Custom_Weapons\data\PrototypeLaserPreview.paa";
 		maxRecoilSway = 0.0025;
-		swayDecaySpeed = 1.25;
+		swayDecaySpeed = 5;
 		inertia = 0.8;
 		initSpeed = -1;
 		class GunParticles: GunParticles

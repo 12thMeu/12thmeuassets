@@ -49,7 +49,6 @@ class CfgPatches {
       "twelfth_Static_Gauss",
       "twelfth_Static_ATGM",
       "twelfth_Static_AA",
-      "twelfth_Static_Base_Turret", // If you plan on referencing a custom base
       "twelfth_Static_M41_Ins",
       "twelfth_Static_AA_Ins",
       "twelfth_Static_ATGM_Ins",
@@ -84,7 +83,6 @@ class OPTRE_Static_M41;
 class OPTRE_Static_Gauss;
 class OPTRE_Static_ATGM;
 class OPTRE_Static_AA;
-class OPTRE_Static_Base_Turret;
 class OPTRE_Static_M41_Ins;
 class OPTRE_Static_AA_Ins;
 class OPTRE_Static_ATGM_Ins;

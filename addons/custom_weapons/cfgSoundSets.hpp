@@ -2,7 +2,7 @@ class CfgSoundSets
 {
 	class PrototypeLaser_01_Base_F_Shot_SoundSet
 	{
-		soundShaders[] = { "PrototypeLaser_01_Base_F_closeShot_SoundShader" };
+		soundShaders[] = {"PrototypeLaser_01_Base_F_Closure_SoundShader", "PrototypeLaser_01_Base_F_closeShot_SoundShader","PrototypeLaser_01_Base_F_midShot_SoundShader","PrototypeLaser_01_Base_F_distShot_SoundShader" };
 		volumeFactor = 1.6;
 		sound3DProcessingType = "Emitter";
 		distanceFilter = "none";

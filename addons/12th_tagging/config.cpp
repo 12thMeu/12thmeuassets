@@ -73,12 +73,9 @@ TAG(GLUE(CSFX, _noent), REQ_ITEM, "No Entry", TPATH(TYPE, no_ent.paa))      \
 
 class CfgPatches {
     class twelfth_tagging {
-        units[] = {""};
+        units[] = {};
         weapons[] = {
-            "twelfth_spray_hq",
-            "twelfth_spray_1stplt",
-            "twelfth_spray_2ndplt",
-            "twelfth_spray_misc"
+
         };
         requiredAddons[] = {
             "ace_interaction",
@@ -92,7 +89,7 @@ class CfgPatches {
 class CfgVehicles {};
 
 // Define custom spray can items for each platoon and miscellaneous sprays
-class CfgWeapons {
+/* class CfgWeapons {
     class ACE_SpraypaintBlack; // Base class for spray can items
     class CBA_MiscItem_ItemInfo; // Base class for item information
 
@@ -102,7 +99,12 @@ class CfgWeapons {
 //    SPRAY_ITEM(hq,HQ)
 //    SPRAY_ITEM(misc,Misc)
 
-};
+//         weapons patches
+            "twelfth_spray_hq",
+            "twelfth_spray_1stplt",
+            "twelfth_spray_2ndplt",
+            "twelfth_spray_misc" 
+}; */
 
 // Define the tags that can be applied using the spray cans
 class ACE_Tags {
