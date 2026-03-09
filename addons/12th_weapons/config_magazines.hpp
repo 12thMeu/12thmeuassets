@@ -41,6 +41,7 @@ class CfgMagazines
   class OPTRE_36Rnd_95x40_Mag;          // Base class for 9.5x40mm magazine
   class OPTRE_400Rnd_762x51_Box_Tracer; // Base class for 7.62x51mm tracer box
   class OPTRE_60Rnd_5x23mm_Mag;         // Base class for 5x23mm magazine
+  class OPTRE_60Rnd_5x23mm_Mag_Tracer;
   class M319_HEAT_Grenade_Shell;        // Base class for 40mm HEAT shell
   class CA_LauncherMagazine;
   class RPG32_HE_F;
@@ -48,6 +49,8 @@ class CfgMagazines
   class MRAWS_HEAT_F;
   class OPTRE_M739_SAW_128rnd_Drum;
   class OPTRE_M739_SAW_192rnd_Box;
+  class OPTRE_12Rnd_8Gauge_Slugs;
+  class OPTRE_12Rnd_8Gauge_Pellets;
 
   // Training Magazine for BB
   class twelfth_20g_mag : OPTRE_32Rnd_762x51_Mag
@@ -72,24 +75,76 @@ class CfgMagazines
   // Underwater M7 60-round mag
   class twelfth_m7_60rnd_UW : OPTRE_60Rnd_5x23mm_Mag
   {
+    picture = "\TCP\Weapons\Ammo\5x23\Ball\data\ui\icon_5x23mm_60rnd_CA.paa";
+		modelSpecial = "\TCP\Weapons\Ammo\5x23\Ball\mag_5x23mm_60rnd.p3d";
     author = "Weber";
     displayName = "60Rnd 5x23mm Magazine (Underwater)";
     count = 60;
     initspeed = 700;
     descriptionShort = "60 Round Magazine 5x23mm (Increased Muzzle Velocity)";
-    mass = 8;
+    mass = 6;
     ammo = "twelfth_5x23mm_UW"; // Underwater ammunition
   };
   // Underwater M7 48-round mag
   class twelfth_m7_48rnd_UW : OPTRE_60Rnd_5x23mm_Mag
   {
+    picture = "\TCP\Weapons\Ammo\5x23\Ball\data\ui\icon_5x23mm_48rnd_CA.paa";
+		modelSpecial = "\TCP\Weapons\Ammo\5x23\Ball\mag_5x23mm_48rnd.p3d";
     author = "Weber";
     displayName = "48Rnd 5x23mm Magazine (Underwater)";
     count = 48;
     initspeed = 700;
     descriptionShort = "48 Round Magazine 5x23mm (Increased Muzzle Velocity)";
-    mass = 8;
+    mass = 6;
     ammo = "twelfth_5x23mm_UW"; // Underwater ammunition
+  };
+  // M7 60-round mag
+  class twelfth_m7_60rnd : OPTRE_60Rnd_5x23mm_Mag
+  {
+    picture = "\TCP\Weapons\Ammo\5x23\Ball\data\ui\icon_5x23mm_60rnd_CA.paa";
+		modelSpecial = "\TCP\Weapons\Ammo\5x23\Ball\mag_5x23mm_60rnd.p3d";
+    author = "Weber";
+    displayName = "60Rnd 5x23mm Magazine";
+    count = 60;
+    initspeed = 700;
+    descriptionShort = "60 Round Magazine 5x23mm (Increased Muzzle Velocity)";
+    mass = 6;
+  };
+  // M7 48-round mag
+  class twelfth_m7_48rnd : OPTRE_60Rnd_5x23mm_Mag
+  {
+    picture = "\TCP\Weapons\Ammo\5x23\Ball\data\ui\icon_5x23mm_48rnd_CA.paa";
+		modelSpecial = "\TCP\Weapons\Ammo\5x23\Ball\mag_5x23mm_48rnd.p3d";
+    author = "Weber";
+    displayName = "48Rnd 5x23mm Magazine";
+    count = 48;
+    initspeed = 700;
+    descriptionShort = "48 Round Magazine 5x23mm (Increased Muzzle Velocity)";
+    mass = 6;
+  };
+    // M7 60-round mag Tracer
+  class twelfth_m7_60rnd_T : OPTRE_60Rnd_5x23mm_Mag_Tracer
+  {
+    picture = "\TCP\Weapons\Ammo\5x23\Ball\data\ui\icon_5x23mm_60rnd_CA.paa";
+		modelSpecial = "\TCP\Weapons\Ammo\5x23\Ball\mag_5x23mm_60rnd.p3d";
+    author = "Weber";
+    displayName = "60Rnd 5x23mm Magazine (Tracer)";
+    count = 60;
+    initspeed = 700;
+    descriptionShort = "60 Round Magazine 5x23mm (Increased Muzzle Velocity)";
+    mass = 6;
+  };
+  // M7 48-round mag Tracer
+  class twelfth_m7_48rnd_T : OPTRE_60Rnd_5x23mm_Mag_Tracer
+  {
+    picture = "\TCP\Weapons\Ammo\5x23\Ball\data\ui\icon_5x23mm_48rnd_CA.paa";
+		modelSpecial = "\TCP\Weapons\Ammo\5x23\Ball\mag_5x23mm_48rnd.p3d";
+    author = "Weber";
+    displayName = "48Rnd 5x23mm Magazine (Tracer)";
+    count = 48;
+    initspeed = 700;
+    descriptionShort = "48 Round Magazine 5x23mm (Increased Muzzle Velocity)";
+    mass = 6;
   };
   // Custom 40mm HEAT magazine
   class twelfth_40mm_heat : M319_HEAT_Grenade_Shell
@@ -134,6 +189,9 @@ class CfgMagazines
     scope = 2;
     author = "Waylen";
     displayName = "100rnd 7.62x51mm Box (T)";
+    picture = "\TCP\Weapons\Ammo\762x51\Ball\data\ui\icon_762x51mm_100rnd_CA.paa";
+		model = "\TCP\Weapons\Ammo\762x51\Ball\mag_762x51mm_100rnd.p3d";
+		modelSpecial = "\TCP\Weapons\Ammo\762x51\Ball\mag_762x51mm_100rnd.p3d";
     count = 100;
     mass = 40; // 4 lbs
     lastRoundsTracer = 100; 
@@ -156,6 +214,9 @@ class CfgMagazines
     scope = 2;
     author = "Waylen";
     displayName = "200rnd 7.62x51mm Box (T)";
+    picture = "\TCP\Weapons\Ammo\762x51\Ball\data\ui\icon_762x51mm_200rnd_CA.paa";
+		model = "\TCP\Weapons\Ammo\762x51\Ball\mag_762x51mm_200rnd.p3d";
+		modelSpecial = "\TCP\Weapons\Ammo\762x51\Ball\mag_762x51mm_200rnd.p3d";
     count = 200;
     mass = 60; // 6 lbs
     lastRoundsTracer = 200; 
@@ -254,4 +315,45 @@ class CfgMagazines
     count = 56;
     mass = 28; 
   };
+// shot shells
+  class twelfth_12rnd_8ga_b : OPTRE_12Rnd_8Gauge_Pellets{
+    scope = 2;
+    author = "Rex";
+    displayName = "12Rnd 8 Gauge Buckshot";
+    model = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+		modelSpecial = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+    count = 12;
+    mass = 16;
+  };
+
+  class twelfth_12rnd_8ga_s : OPTRE_12Rnd_8Gauge_Slugs{
+    scope = 2;
+    author = "Rex";
+    displayName = "12Rnd 8 Gauge Slugs";
+    model = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+		modelSpecial = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+    count = 12;
+    mass = 16;
+  };
+
+    class twelfth_6rnd_8ga_b : OPTRE_12Rnd_8Gauge_Pellets{
+    scope = 2;
+    author = "Rex";
+    displayName = "12Rnd 8 Gauge Buckshot";
+    model = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+		modelSpecial = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+    count = 6;
+    mass = 8;
+  };
+
+  class twelfth_6rnd_8ga_s : OPTRE_12Rnd_8Gauge_Slugs{
+    scope = 2;
+    author = "Rex";
+    displayName = "12Rnd 8 Gauge Slugs";
+    model = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+		modelSpecial = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
+    count = 6;
+    mass = 8;
+  };
+
 };

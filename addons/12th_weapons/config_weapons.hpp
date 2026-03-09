@@ -48,18 +48,11 @@ class CfgWeapons
   class GL_3GL_F;                   // Base class for grenade launchers
   class UGL_F;
   class InventoryOpticsItem_Base_F; // Base class for optics
-  class 19_UNSC_M6C;
-  class 19_UNSC_M7;
-  class 19_UNSC_M7_Side;
-  class 19_UNSC_M90;
-  class 19_UNSC_MA5A;
-  class 19_UNSC_MA5A_gl;
-  class 19_UNSC_MA5B;
-  class 19_UNSC_br55;
-  class 19_UNSC_br55_gl;
-  class 19_UNSC_br55_HB;
-  class 19_UNSC_br55_HB_gl;
-  class 19_UNSC_M392;
+  class OPTRE_M6C;
+  class OPTRE_M7;
+  class OPTRE_M7_Folded;
+  class OPTRE_M90A;
+  class OPTRE_MA5B;
   class launch_MRAWS_base_F;
   class InventoryUnderItem_Base_F;
   class dzn_MG_Tripod_Universal;
@@ -75,6 +68,7 @@ class CfgWeapons
   class OPTRE_BR55HB;
   class OPTRE_BR45_black;
   class OPTRE_BR45GL_black;
+  class OPTRE_M392_DMR;
 
   //TCP Class definitions
   //Pistols
@@ -395,7 +389,7 @@ class CfgWeapons
     baseWeapon = "twelfth_M6G2";
     //magazines[] = COMMON_M6_MAGAZINES;
   };
-  class twelfth_M6C : 19_UNSC_M6C
+  class twelfth_M6C : OPTRE_M6C
   {
     scope = 2;
     scopeArsenal = 2;
@@ -405,37 +399,44 @@ class CfgWeapons
     magazines[] = COMMON_M6_MAGAZINES;
   };
 
-  class twelfth_M7_Test : 19_UNSC_M7
+  class twelfth_M7_Test : OPTRE_M7
   {
+    model = "\TCP\Weapons\SMGs\M7\M7.p3d";
     author = "Weber";
     scope = 2;
     scopeArsenal = 2;
     displayName = "[12th] M7";
     baseWeapon = "twelfth_M7_Test";
+    picture = "\TCP\Weapons\SMGs\M7\data\ui\icon_SMG_M7_X_ca.paa";
+		pictureWire = "\TCP\Weapons\SMGs\M7\data\ui\icon_SMG_M7_W_ca.paa";
+		hiddenSelections[] = {"camo"};
+		hiddenSelectionsTextures[] = {"\TCP\Weapons\SMGs\M7\data\camo\default\M7_CO.paa"};
     magazines[] = COMMON_SMG_MAGAZINES;
   };
 
-  class twelfth_M7_Test_Folded : 19_UNSC_M7_Side
+  class twelfth_M7_Test_Folded : OPTRE_M7_Folded
   {
     author = "Weber";
     scope = 2;
     scopeArsenal = 2;
     displayName = "[12th] M7 Folded";
     baseWeapon = "twelfth_M7_Test_Folded";
-    magazines[] = COMMON_SMG_MAGAZINES;
+    magazines[] = {};
   };
 
-  class twelfth_M90 : 19_UNSC_M90
+  class twelfth_M90 : OPTRE_M90A
   {
+    model = "\TCP\Weapons\Shotguns\M45\M45.p3d";
     author = "Weber";
     scope = 2;
     scopeArsenal = 2;
-    displayName = "[12th] M90";
+    displayName = "[12th] M45";
     baseWeapon = "twelfth_M90";
-    magazines[] = {
-      "12Rnd_8Gauge", "12Rnd_8Gauge_slug",
-      "12Rnd_8Gauge_slug_tracer", "TCF_12Rnd_8Gauge_Beanbag"
-    };
+    picture = "\TCP\Weapons\Shotguns\M45\data\ui\icon_srifle_M45_X_ca.paa";
+		pictureWire = "\TCP\Weapons\Shotguns\M45\data\ui\icon_srifle_M45_W_ca.paa";
+		hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = {"\TCP\Weapons\Shotguns\M45\data\camo\default\M45_01_CO.paa","\TCP\Weapons\Shotguns\M45\data\camo\default\M45_02_CO.paa"};
+    magazines[] = {"twelfth_12rnd_8ga_b", "twelfth_12rnd_8ga_s", "twelfth_6rnd_8ga_b", "twelfth_6rnd_8ga_s"};
   };
   /*
     =============================================================================
@@ -545,17 +546,6 @@ class CfgWeapons
 
  // Training MA5A configuration
 
-  class twelfth_MA5A_BB : 19_UNSC_MA5A
-  {
-    author = "Weber";
-    scope = 2;
-    scopeArsenal = 2;
-    canShootInWater = 1;
-    displayName = "[12th] Training MA5A";
-    baseWeapon = "twelfth_MA5A_BB";
-    magazines[] = {"twelfth_20g_mag"}; // Training ammunition magazine
-  };
-
     class twelfth_MA5C_BB : OPTRE_MA5C
   {
     author = "Weber";
@@ -567,62 +557,7 @@ class CfgWeapons
     magazines[] = {"twelfth_20g_mag"}; // Training ammunition magazine
   };
 
-   class twelfth_MA5A : 19_UNSC_MA5A
-   {
-     author = "Weber";
-     scope = 2;
-     scopeArsenal = 2;
-     canShootInWater = 1;
-     displayName = "[12th] MA5A";
-     baseWeapon = "twelfth_MA5A";
-     magazines[] = COMMON_MA5C_MAGAZINES;
-   };
-
-   class twelfth_MA5A_gl : 19_UNSC_MA5A_gl
-   {
-     author = "Weber";
-     scope = 2;
-     scopeArsenal = 2;
-     canShootInWater = 1;
-     displayName = "[12th] MA5A W/ M301";
-     baseWeapon = "twelfth_MA5A_gl";
-     muzzles[] = {"this", "twelfth_M301UGL"}; // This is the portion of code that adds the UGL. Basically it has 2 muzzles to fire from
-     class twelfth_M301UGL: UGL_F
-     {
-       displayName = "M301 Grenade Launcher";
-       descriptionShort = "M301 GL";
-       useModelOptics=1;
-       useExternalOptic=0;
-       magazines[] = COMMON_GL_MAGS; // Grenade launcher magazines
-       magazineWell[]=
-       {
-           "UGL_40x36"
-       };
-       cameraDir="OP_look";
-       discreteDistance[]={100,150,200,250,300,350};
-       discreteDistanceCameraPoint[]=
-       {
-           "OP_eye2",
-           "OP_eye3",
-           "OP_eye4",
-           "OP_eye5",
-           "OP_eye6",
-           "OP_eye8"
-       };
-       discreteDistanceInitIndex=1;
-       reloadAction="GestureReloadMXUGL";
-       reloadMagazineSound[]=
-       {
-           "A3\Sounds_F\arsenal\weapons\Rifles\MX\Mx_UGL_reload",
-           1,
-           1,
-           10
-       };
-     };
-     magazines[] = COMMON_MA5C_MAGAZINES;
-   };
-
-  class twelfth_MA5B : 19_UNSC_MA5B
+  class twelfth_MA5B : OPTRE_MA5B
   {
     author = "Weber";
     scope = 2;
@@ -1238,23 +1173,27 @@ class CfgWeapons
     Machine Guns
     =============================================================================
   */
-    class twelfth_M392 : 19_UNSC_M392
+
+    class twelfth_M392 : OPTRE_M392_DMR
     {
-      author = "Weber";
+      model = "\TCP\Weapons\LongRangeRifles\M392\M392.p3d";
+      author = "Rex";
       scope = 2;
       scopeArsenal = 2;
       canShootInWater = 1;
       displayName = "[12th] M392 DMR";
       baseWeapon = "twelfth_M392";
+      picture = "\TCP\Weapons\LongRangeRifles\M392\data\ui\icon_srifle_M392_X_ca.paa";
+		  pictureWire = "\TCP\Weapons\LongRangeRifles\M392\data\ui\icon_srifle_M392_W_ca.paa";
+      hiddenSelections[] = {"camo","camo1"};
+		  hiddenSelectionsTextures[] = {"\TCP\Weapons\LongRangeRifles\M392\data\camo\default\M392_01_CO.paa","\TCP\Weapons\LongRangeRifles\M392\data\camo\default\M392_02_CO.paa"};
       HUD_TotalPosibleBullet = 32; // Total possible bullets displayed in HUD
       magazines[] = COMMON_MA5C_MAGAZINES;
       class WeaponSlotsInfo : WeaponSlotsInfo
       {
         class MuzzleSlot : MuzzleSlot
         {
-          compatibleitems[] = {
-              "optre_MA5Suppressor", "19_UNSC_BR55_Suppressor",
-              "19_UNSC_BR55L_Suppressor"};
+          
         };
         class CowsSlot : CowsSlot
         {
@@ -1436,6 +1375,47 @@ class CfgWeapons
         class MuzzleSlot : MuzzleSlot
         {
           compatibleitems[] = {"OPTRE_MA5Suppressor"};
+        };
+        class CowsSlot : CowsSlot
+        {
+          compatibleItems[] = COMMON_SIGHTS;
+        };
+        class PointerSlot : PointerSlot
+        {
+          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+        };
+        class UnderBarrelSlot : UnderBarrelSlot
+        {
+          compatibleitems[] = COMMON_HEAVY_BIPOD;
+        };
+      };
+    };
+
+    class twelfth_M731 : OPTRE_M73
+    {
+      model = "\TCP\Weapons\Machineguns\M731\M731.p3d";
+      author = "Rex"; 
+      scope = 2;
+      scopeArsenal = 2;
+      displayName = "[12th] M731";
+      baseWeapon = "twelfth_M731";
+      picture = "\TCP\Weapons\Machineguns\M731\data\ui\icon_lmg_M731_X_ca.paa";
+		  pictureWire = "\TCP\Weapons\Machineguns\M731\data\ui\icon_lmg_M731_W_ca.paa";
+      hiddenSelections[] = {"camo","camo1","camo2"};
+		  hiddenSelectionsTextures[] = {"\TCP\Weapons\Machineguns\M731\data\camo\black\M731_01_CO.paa","\TCP\Weapons\Machineguns\M731\data\camo\black\M731_02_CO.paa","\TCP\Weapons\Machineguns\M731\data\camo\black\M731_03_CO.paa"};
+      magazines[] = {"OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW", "twelfth_100Rnd_762x51_Box_T", "twelfth_200Rnd_762x51_Box_T", "twelfth_60Rnd_762x51_Mag_T", "OPTRE_60Rnd_762x51_Mag"};
+	    distanceZoomMin=100;
+	    distanceZoomMax=700;
+      maxZeroing=700;
+
+
+
+
+      class WeaponSlotsInfo : WeaponSlotsInfo
+      {
+        class MuzzleSlot : MuzzleSlot
+        {
+          
         };
         class CowsSlot : CowsSlot
         {
