@@ -160,17 +160,17 @@ class CfgWeapons
 
       magazines[] = { "CBA_FakeLauncherMagazine" }; // When stowed/backpacked, it does not carry a real rocket.
 
-      model = "Foundries\Weapons\Launchers\DMNS_M96_LAW_loaded.p3d";
-      picture = "Foundries\Weapons\Launchers\Data\Law_Icon.paa";
-      UiPicture = "Foundries\Weapons\Launchers\Data\Law_Icon.paa";
+      model = "\Foundries\Weapons\Launchers\DMNS_M96_LAW_loaded.p3d";
+      picture = "\Foundries\Weapons\Launchers\Data\Law_Icon.paa";
+      UiPicture = "\Foundries\Weapons\Launchers\Data\Law_Icon.paa";
       handAnim[] = {
           "OFP2_ManSkeleton",
           "\A3\Weapons_F_Exp\Launchers\RPG7\Data\Anim\RPG7V.rtm"
       };
       hiddenSelections[] = { "camo1", "camo2" };
       hiddenSelectionsTextures[] = {
-          "Foundries\Weapons\Launchers\Data\M96_Tube_co.paa",
-          "Foundries\Weapons\Launchers\Data\M96_body_co.paa"
+          "\Foundries\Weapons\Launchers\Data\M96_Tube_co.paa",
+          "\Foundries\Weapons\Launchers\Data\M96_body_co.paa"
       };
 
       reloadAction = "GestureReloadRPG7";
@@ -185,7 +185,7 @@ class CfgWeapons
 
         class BaseSoundModeType {};
         class StandardSound: BaseSoundModeType {
-            begin1[] = { "A3\Sounds_F\arsenal\weapons\Launchers\NLAW\nlaw", 1.99526, 1, 1800 };
+            begin1[] = { "\A3\Sounds_F\arsenal\weapons\Launchers\NLAW\nlaw", 1.99526, 1, 1800 };
             soundBegin[] = { "begin1", 1 };
         };
 
@@ -209,8 +209,8 @@ class CfgWeapons
           };
       };
 
-      drySound[] = { "A3\Sounds_F\arsenal\weapons\Launchers\NLAW\Dry_NLAW", 0.177828, 1, 15 };
-      changeFiremodeSound[] = { "A3\sounds_f\dummysound", 0.562341, 1, 20 };
+      drySound[] = { "\A3\Sounds_F\arsenal\weapons\Launchers\NLAW\Dry_NLAW", 0.177828, 1, 15 };
+      changeFiremodeSound[] = { "\A3\sounds_f\dummysound", 0.562341, 1, 20 };
       modelOptics = "-";
 
       class OpticsModes {
@@ -283,7 +283,7 @@ class CfgWeapons
         magazines[] = { "CBA_FakeLauncherMagazine" };
         weaponPoolAvailable = 0;
 
-        model = "Foundries\Weapons\Launchers\DMNS_M96_LAW_Used.p3d";
+        model = "\Foundries\Weapons\Launchers\DMNS_M96_LAW_Used.p3d";
 
         class WeaponSlotsInfo: WeaponSlotsInfo{
             mass = 80; // launcher mass (100)

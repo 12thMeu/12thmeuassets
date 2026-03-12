@@ -56,7 +56,7 @@ class CfgWeapons
 	class PrototypeLaser_01_Base_F: Rifle_Base_F
 	{
 		editorCategory ="12th_Assets";
-		handAnim[] = {"OFP2_ManSkeleton","x\12thMEU\addons\custom_weapons\data\animations\llr.rtm"};
+		handAnim[] = {"OFP2_ManSkeleton","\x\12thMEU\addons\custom_weapons\data\animations\llr.rtm"};
 		mass=90;
 		/////////////////////ACE STUFF//////////////////////////////
 		ace_overheating_barrelMass = 20;
@@ -69,7 +69,7 @@ class CfgWeapons
 		reloadAction = "GestureReloadMX";
 		magazineReloadSwitchPhase = 0.4;
 		discreteDistanceInitIndex = 0;
-		picture="x\12thMEU\addons\Custom_Weapons\data\PrototypeLaserPreview.paa";
+		picture="\x\12thMEU\addons\Custom_Weapons\data\PrototypeLaserPreview.paa";
 		maxRecoilSway = 0.0025;
 		swayDecaySpeed = 5;
 		inertia = 0.8;
@@ -183,7 +183,7 @@ class CfgWeapons
 		scope = 2;
 		displayName = "[12th] Prototype LLR";
 		descriptionShort = "A high powered, slow firerate weapon meant for cracking medium targets.";
-		model = "x\12thMEU\addons\Custom_Weapons\data\PrototypeLaser.p3d";
+		model = "\x\12thMEU\addons\Custom_Weapons\data\PrototypeLaser.p3d";
 		UiPicture = "\A3\Weapons_F\Data\UI\icon_gl_CA.paa";
 		weaponInfoType = "RscWeaponZeroing";
 		muzzles[] = {"this"};
@@ -206,7 +206,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
 	class StandBase;
 	class States {
 		class LLRGunHoldAnim: StandBase {
-			file="x\12thMEU\addons\custom_weapons\data\animations\llr.rtm";
+			file="\x\12thMEU\addons\custom_weapons\data\animations\llr.rtm";
 			looped=1;
 			speed=1;
 			mask = "bodyFullReal";

@@ -12,7 +12,7 @@ class CfgMagazines
 		scope = 2;
 		displayName = "Liquid Magazine";
 		displayNameShort = "LLR Magazine";
-		picture="x\12thMEU\addons\custom_weapons\data\MagazinePreview.paa";
+		picture="\x\12thMEU\addons\custom_weapons\data\MagazinePreview_ca.paa";
 		ammo = "StandardLiquidLaserAmmo";
 		count = 3; 
 		initSpeed = 2000; /// standard muzzle speed
