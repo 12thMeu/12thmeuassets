@@ -52,7 +52,7 @@
 class twelfth_helmCH43A_std_##SUFFIX##: twelfth_helmCH43A_base {  \
     scope=2;                                           \
     author="Sammy";                                     \
-    picture="x\12thMEU\addons\12th_ui\data\logo.paa";                                        \
+    picture="\x\12thMEU\addons\12th_ui\data\logo.paa";                                        \
     scopeArsenal=2;                                    \
     displayName=#GLUE3(S_PREFIX,[SV] ,SUFFIX);         \
   hiddenSelections[] = { "camo","decals" };              \
@@ -66,7 +66,7 @@ class twelfth_helmCH43A_std_##SUFFIX##: twelfth_helmCH43A_base {  \
 	};  											\
   class ItemInfo: HeadgearItem {                \
     uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\h_helmet_CH43A.p3d";   \
-    picture="x\12thMEU\addons\12th_ui\data\logo.paa";                                 \
+    picture="\x\12thMEU\addons\12th_ui\data\logo.paa";                                 \
     mass=40;                                    \
     modelSides[]={6};                           \
     passThrough=0.1;                            \
@@ -87,7 +87,7 @@ class twelfth_helmCH43A_std_##SUFFIX##: twelfth_helmCH43A_base {  \
 class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
   scope=2;                                           \
   author="Sammy";                                     \
-  picture="x\12thMEU\addons\12th_ui\data\logo.paa";                                        \
+  picture="\x\12thMEU\addons\12th_ui\data\logo.paa";                                        \
   scopeArsenal=2;                                    \
   displayName=#GLUE3(S_PREFIX,[CLSD] ,SUFFIX);         \
   hiddenSelections[]= {"camo","camo1","decals"};             \
@@ -102,7 +102,7 @@ class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
   };  											\
   class ItemInfo: HeadgearItem {                \
     uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_DP.p3d";   \
-    picture="x\12thMEU\addons\12th_ui\data\logo.paa";                                 \
+    picture="\x\12thMEU\addons\12th_ui\data\logo.paa";                                 \
     mass=40;                                    \
     modelSides[]={6};                           \
     passThrough=0.1;                            \
@@ -156,101 +156,6 @@ class twelfth_helmECH43A_##CAMO##_##SFX##_clsd {\
 };
 
 /*
-#define CUSTOM_HELM_CV(SUFFIX,DISPLAY,VISOR)      \
-class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
-    scope=2;                                      \
-    author="Waylen";                                \
-    picture="";                                   \
-    scopeArsenal=2;                               \
-    displayName=DISPLAY;                          \
-    hiddenSelections[] = { "camo", "camo2" };     \
-    hiddenSelectionsTextures[] = {                \
-      #HELMTEXPATH(SUFFIX),                       \
-      #HELMVISORPATH(VISOR)                       \
-    };                                            \
-    class ItemInfo: HeadgearItem {                \
-      uniformModel="\halo_marine\halo_helm_01";   \
-      mass=40;                                    \
-      modelSides[]={6};                           \
-      passThrough=0.1;                            \
-      class HitpointsProtectionInfo {             \
-        class Head {                              \
-          hitpointName="HitHead";                 \
-          armor=20;                               \
-          passThrough=0.1;                        \
-        };                                        \
-      };                                          \
-      hiddenSelections[]= { "camo", "camo2" };    \
-      hiddenSelectionsTextures[]= {               \
-        #HELMTEXPATH(SUFFIX),                     \
-        #HELMVISORPATH(VISOR)                     \
-      };                                          \
-    };                                            \
-};
-
-#define CUSTOM_HELM_NV(SUFFIX,DISPLAY)            \
-class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
-    scope=2;                                      \
-    author="Waylen";                                \
-    picture="";                                   \
-    scopeArsenal=2;                               \
-    displayName=DISPLAY;                          \
-    hiddenSelections[] = { "camo", "camo2" };     \
-    hiddenSelectionsTextures[] = {                \
-      #HELMTEXPATH(SUFFIX),                       \
-      ""                                          \
-    };                                            \
-    class ItemInfo: HeadgearItem {                \
-      uniformModel="\halo_marine\halo_helm_01";   \
-      mass=40;                                    \
-      modelSides[]={6};                           \
-      passThrough=0.1;                            \
-      class HitpointsProtectionInfo {             \
-        class Head {                              \
-          hitpointName="HitHead";                 \
-          armor=20;                               \
-          passThrough=0.1;                        \
-        };                                        \
-      };                                          \
-      hiddenSelections[]= { "camo", "camo2" };    \
-      hiddenSelectionsTextures[]= {               \
-        #HELMTEXPATH(SUFFIX),                     \
-        ""                                        \
-      };                                          \
-    };                                            \
-};
-
-#define CUSTOM_HELM_SV(SUFFIX,DISPLAY)            \
-class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
-    scope=2;                                      \
-    author="Waylen";                                \
-    picture="";                                   \
-    scopeArsenal=2;                               \
-    displayName=DISPLAY;                          \
-    hiddenSelections[] = { "camo" };              \
-    hiddenSelectionsTextures[] = {                \
-      #HELMTEXPATH(SUFFIX)                        \
-    };                                            \
-    class ItemInfo: HeadgearItem {                \
-      uniformModel="\halo_marine\halo_helm_01";   \
-      mass=40;                                    \
-      modelSides[]={6};                           \
-      passThrough=0.1;                            \
-      class HitpointsProtectionInfo {             \
-        class Head {                              \
-          hitpointName="HitHead";                 \
-          armor=20;                               \
-          passThrough=0.1;                        \
-        };                                        \
-      };                                          \
-      hiddenSelections[]= { "camo" };             \
-      hiddenSelectionsTextures[]= {               \
-        #HELMTEXPATH(SUFFIX)                      \
-      };                                          \
-    };                                            \
-};
-*/
-/*
   ==============================================================================
   CUSTOM_PILOT_HELM(SUFFIX,DISPLAY,C1,C2,C3,C4,C5)
   ==============================================================================
@@ -264,14 +169,14 @@ class 12th_pilot_ch_##SUFFIX : H_HelmetB {                                \
   author="Waylen";                                                          \
   scope=2;                                                                \
   scopeArsenal=2;                                                         \
-  picture="x\12thMEU\addons\12th_ui\data\logo.paa";                                                             \
+  picture="\x\12thMEU\addons\12th_ui\data\logo.paa";                                                             \
   ace_hearing_protection=1;                                               \
   ace_hearing_lowerVolume=0.30000001;                                     \
   optreVarietys[] = {"", "", "_broken"};                                  \
   optreHUDStyle = "ODST_1";                                               \
   displayName=DISPLAY;                                                    \
   hiddenSelections[] = {"camo1", "camo2", "camo3", "camo4", "camo5"};     \
-  model="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01.p3d";          \
+  model="\Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01.p3d";          \
   hiddenSelectionsTextures[]={                                            \
       #CH_PILOT_TEX(C1,Addons_co.paa),                                    \
       #CH_PILOT_TEX(C2,EXT_co.paa),                                       \
@@ -282,7 +187,7 @@ class 12th_pilot_ch_##SUFFIX : H_HelmetB {                                \
   class ItemInfo : HeadgearItem {                                         \
     mass = 25;                                                            \
     modelSides[]={6};                                                     \
-    uniformModel="Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01.p3d"; \
+    uniformModel="\Foundries\DMNS_Units\Armour\Pilot_Helm_01\Pilot_Helmet_01.p3d"; \
     hiddenSelections[]={"camo1", "camo2", "camo3", "camo4", "camo5"};     \
     hiddenSelectionsTextures[]={                                          \
       #CH_PILOT_TEX(C1,Addons_co.paa),                                    \
