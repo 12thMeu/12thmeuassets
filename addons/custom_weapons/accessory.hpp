@@ -11,8 +11,8 @@ class PrototypeOptics: ACE_optic_LRPS_2D
 	author = "SamanthaNix";
 	displayName = "Tri-Sight Prototype Optics";
 	descriptionShort = "Tri-sight developed in conjunction with the prototype Laser";
-	picture="x\12thMEU\addons\Custom_Weapons\data\SightPreview.paa";
-	model = "x\12thMEU\addons\Custom_Weapons\data\PrototypeScope.p3d";
+	picture="\x\12thMEU\addons\Custom_Weapons\data\SightPreview.paa";
+	model = "\x\12thMEU\addons\Custom_Weapons\data\PrototypeScope.p3d";
 /* 	class ItemInfo: InventoryOpticsItem_Base_F
 	{
 		mass = 2;
@@ -53,6 +53,6 @@ class PrototypeOpticsV2: OPTRE_SRS99C_Scope
 	author = "SamanthaNix";
 	displayName = "Tri-Sight Prototype Optics V2";
 	descriptionShort = "Tri-sight developed in conjunction with the prototype Laser";
-	picture="x\12thMEU\addons\Custom_Weapons\data\SightPreview.paa";
-	model = "x\12thMEU\addons\Custom_Weapons\data\PrototypeScope.p3d";
+	picture="\x\12thMEU\addons\Custom_Weapons\data\SightPreview.paa";
+	model = "\x\12thMEU\addons\Custom_Weapons\data\PrototypeScope.p3d";
 };

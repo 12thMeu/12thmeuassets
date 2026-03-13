@@ -40,7 +40,8 @@ class CfgMagazineWells
 	{
 		SMT_Magazines[] =
 		{
-			"3Rnd_test_mag"
+			"LLRLaserMag",
+			"CompressedLaserMag"
 		};
 	};
 };
@@ -189,7 +190,7 @@ class CfgWeapons
 		muzzles[] = {"this"};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			mass = 100;
+			mass = 80;
 		};
 	};
 

@@ -88,6 +88,8 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Felix)
   CUSTOM_HELM_S_AV(Geoff)
   CUSTOM_HELM_S_AV(Germain)
+  CUSTOM_HELM_S_AV(Hathaway)
+  CUSTOM_HELM_S_AV(Jekyll)
   CUSTOM_HELM_S_AV(Kiens)
   CUSTOM_HELM_S_AV(LeDoux)
   CUSTOM_HELM_S_AV(Mcintyre)
@@ -191,6 +193,7 @@ class XtdGearModels {
           "Geoff",
           "Germain",
           "Hathaway",
+          "Jekyll",
           "Kiens",
           "LeDoux",
           "Link",
@@ -264,6 +267,7 @@ class XtdGearInfos {
     CH_HELM_S_GI(Geoff)
     CH_HELM_S_GI(Germain)
     CH_HELM_S_GI(Hathaway)
+    CH_HELM_S_GI(Jekyll)
     CH_HELM_S_GI(Kiens)
     CH_HELM_S_GI(LeDoux)
     CH_HELM_S_GI(Link)
