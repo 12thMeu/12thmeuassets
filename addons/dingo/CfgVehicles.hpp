@@ -3,30 +3,39 @@
 
 class CfgVehicles
 { 
-	class Car;
-	class Car_f: Car
+	class Car
 	{
-		class Sounds;
+		class Components;
+		class NewTurret;
+	};
+
+	class Car_F: Car
+	{
+		class Turrets
+		{
+			class MainTurret: NewTurret
+			{
+				class ViewOptics;
+				class ViewGunner;
+			};
+		};
 		class HitPoints
 		{
-			class HitBody;
-			class HitEngine;
-			class HitFuel;
 			class HitLFWheel;
 			class HitLBWheel;
 			class HitRFWheel;
 			class HitRBWheel;
+			class HitBody;
+			class HitFuel;
+			class HitEngine;
+			class HitGlass1;
 		};
-	};
-
-
-
-	class Dingo_F: Car_f{
+		class EventHandlers;
 		class AnimationSources;
-		class Eventhandlers;
+		class Sounds;
 	};
 
-	class Dingo_Base_F: Dingo_F
+	class Dingo_Base_F: Car_F
 	{
 		class VehicleTransport;
 		class ViewPilot;
@@ -57,11 +66,11 @@ class CfgVehicles
 	class SMT_DingoHull: Dingo_Base_F
 	{
 		author="SamanthaNix";
-		model = "x\12thMEU\addons\Dingo\Dingo.p3d";
-		picture	= "x\12thMEU\addons\Dingo\Data\preview.paa"; /// just some icon in command bar
+		model = "\x\12thMEU\addons\Dingo\Dingo.p3d";
+		picture	= "\x\12thMEU\addons\Dingo\Data\preview.paa"; /// just some icon in command bar
 
 		//Editor stuff
-		editorPreview = "x\12thMEU\addons\Dingo\Data\preview.paa";
+		editorPreview = "\x\12thMEU\addons\Dingo\Data\preview.paa";
 		Icon	= "\A3\Weapons_F\Data\placeholder_co.paa"; /// icon in map
 
 		displayName = "Dingo Hull"; /// displayed in Editor
@@ -95,8 +104,20 @@ class CfgVehicles
 				animPeriod = 0.001;
 			};
 		};
-
-
+		animationList[] = {"hideUnitAffilSelect",0,"hideAllDecalSelect",0};	
+		class UserActions
+		{
+			class PressXToFlipTheThing
+			{
+				displayName = "Flip Vehicle";
+				displayNameDefault = "Flip Vehicle";
+				radius = 5;
+				position = "";
+				onlyForPlayer = 1;
+				condition = "(alive this) AND !(canMove this) AND (count crew this == 0 || isAutonomous this) AND (simulationEnabled this) AND ((locked this) < 2)";
+				statement = "[this] call bis_fnc_unflipVehicle";
+			};
+		};
 
 		//ACRE stuff
 		class AcreIntercoms
@@ -429,7 +450,7 @@ class CfgVehicles
 
 				disableHeightLimit			= 1;								// If set to 1 disable height limit of transported vehicles
 				maxLoadMass					= 5000;							// Maximum cargo weight (in Kg) which the vehicle can transport
-				cargoAlignment[]			= { "front", "left" };				// Array of 2 elements defining alignment of vehicles in cargo space.
+				cargoAlignment[]			= { "front", "center" };				// Array of 2 elements defining alignment of vehicles in cargo space.
 																		// Possible values are left, right, center, front, back. Order is important.
 
 				cargoSpacing[]				= { 0, 0.15, 0 };					// Offset from X,Y,Z axes (in metres)
