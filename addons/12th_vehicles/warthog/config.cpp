@@ -23,7 +23,7 @@ class CfgVehicles {
   class OPTRE_M12_FAV_APC;
   class OPTRE_M12_FAV_APC_MED;
   class TCP_B_UNSC_MC_M12A;
-  class OPTRE_M12_LRV;
+  class TCP_B_UNSC_MC_M12A_LAAG_M41;
   class OPTRE_M12A1_LRV;
   class TCP_B_UNSC_MC_M831A;
   class OPTRE_M12G1_LRV;
@@ -140,7 +140,7 @@ class CfgVehicles {
     STDINV
   };
 
-  class twelfth_warthog_mg: OPTRE_M12_LRV {
+  class twelfth_warthog_mg: TCP_B_UNSC_MC_M12A_LAAG_M41 {
     scope=2;
     scopeCurator=2;
     author="Waylen";
