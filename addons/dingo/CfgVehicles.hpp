@@ -85,7 +85,7 @@ class CfgVehicles
 		//Component selection
 		class AnimationSources: AnimationSources
 		{
-			class hideUnitAffilSelect
+			/*class hideUnitAffilSelect
 			{
 				author = "Sammy";
 				displayName = "Hide Unit Affiliation";
@@ -93,7 +93,7 @@ class CfgVehicles
 				useSource = 1;
 				initPhase = 0;
 				animPeriod = 0.001;
-			};
+			};*/
 			class hideAllDecalSelect
 			{
 				author = "Sammy";
@@ -104,7 +104,7 @@ class CfgVehicles
 				animPeriod = 0.001;
 			};
 		};
-		animationList[] = {"hideUnitAffilSelect",0,"hideAllDecalSelect",0};	
+		animationList[] = {"hideAllDecalSelect",0};	
 		class UserActions
 		{
 			class PressXToFlipTheThing
@@ -341,12 +341,15 @@ class CfgVehicles
 				FlareSize 	= 0.5;
 			};
 		};
-
+		class EventHandlers: EventHandlers
+		{
+			init = "if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
+		};
 		aggregateReflectors[] = {{"LightCarHeadL01", "LightCarHeadL02"}, {"LightCarHeadR01", "LightCarHeadR02"}}; 
 
 		hiddenSelections[] = {"camo1","camo7","camo8","camo10"}; ///we want to allow changing the color of this selection
 		hiddenSelectionsTextures[]={"x\12thMEU\addons\dingo\data\textures\standard\Chassis_co.paa","x\12thMEU\addons\dingo\data\textures\standard\Modules_co.paa","x\12thMEU\addons\dingo\data\textures\standard\decals_ca.paa","#(rgb,8,8,3)color(0.18039216,0.18039216,0.18039216,1)"};	 /// we could use any texture to cover the car
-
+		slingLoadCargoMemoryPoints[] = {"SlingLoadCargo1","SlingLoadCargo2","SlingLoadCargo3","SlingLoadCargo4"};
 
 		class textureSources
 		{
@@ -421,7 +424,6 @@ class CfgVehicles
 	};
 	class SMT_DingoCargo: SMT_DingoHull
 	{
-		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
     	editorCategory="ED_SMT_Faction";
     	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side
@@ -487,7 +489,6 @@ class CfgVehicles
 	};
 	class SMT_DingoTroop: SMT_DingoHull
 	{
-		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
     	editorCategory="ED_SMT_Faction";
     	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side
@@ -528,7 +529,6 @@ class CfgVehicles
 	};
 	class SMT_DingoMed: SMT_DingoHull
 	{
-		animationList[] = {"hideUnitAffil",0.75,"hideAllDecal",0.5};
     	editorCategory="ED_SMT_Faction";
     	editorSubcategory="EDS_SMT_faction_Dingo";
 		side	= 1; 			/// civilian car should be on civilian side

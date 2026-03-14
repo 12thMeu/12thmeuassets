@@ -22,16 +22,16 @@ class CfgVehicles {
   // warthog base classes
   class OPTRE_M12_FAV_APC;
   class OPTRE_M12_FAV_APC_MED;
-  class OPTRE_M12_FAV;
+  class TCP_B_UNSC_MC_M12A;
   class OPTRE_M12_LRV;
   class OPTRE_M12A1_LRV;
-  class OPTRE_M813_TT;
+  class TCP_B_UNSC_MC_M831A;
   class OPTRE_M12G1_LRV;
   class OPTRE_M12R_AA;
   class SAG6_M12_MLMS;
 
 
-  class twelfth_warthog_fav: OPTRE_M12_FAV {
+  class twelfth_warthog_fav: TCP_B_UNSC_MC_M12A {
     scope=2;
     scopeCurator=2;
     author="Waylen";
@@ -40,7 +40,7 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
-    hiddenSelections[]= {"camo1", "camo2", "camo_doors"};
+ /*    hiddenSelections[]= {"camo1", "camo2", "camo_doors"};
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa", 
       "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa", 
@@ -48,7 +48,7 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1
-    };
+    }; */
     WARTHOG_SP_INFO(0,FAV)
     STDINV
   };
@@ -116,7 +116,7 @@ class CfgVehicles {
     };
   };
 
-  class twelfth_warthog_tt: OPTRE_M813_TT {
+  class twelfth_warthog_tt: TCP_B_UNSC_MC_M831A {
     scope=2;
     scopeCurator=2;
     author="Waylen";

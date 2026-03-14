@@ -25,7 +25,7 @@ class CfgPatches {
 class CfgFactionClasses {
   class SMT_Faction {
     displayName = "Sanguine Materials Technologies";
-    icon="";  // TODO: Add faction icon.
+    icon="\x\12thMEU\addons\Dingo\Data\logo.paa";  // TODO: Add faction icon.
     priority=98;  // High priority to ensure it appears at the top of the list.
     side=1;  // Blufor (friendly) side.
   };
