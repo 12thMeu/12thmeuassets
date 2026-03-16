@@ -339,7 +339,7 @@ class CfgMagazines
     class twelfth_6rnd_8ga_b : OPTRE_12Rnd_8Gauge_Pellets{
     scope = 2;
     author = "Rex";
-    displayName = "12Rnd 8 Gauge Buckshot";
+    displayName = "6Rnd 8 Gauge Buckshot";
     model = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
 		modelSpecial = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
     count = 6;
@@ -349,7 +349,7 @@ class CfgMagazines
   class twelfth_6rnd_8ga_s : OPTRE_12Rnd_8Gauge_Slugs{
     scope = 2;
     author = "Rex";
-    displayName = "12Rnd 8 Gauge Slugs";
+    displayName = "6Rnd 8 Gauge Slugs";
     model = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
 		modelSpecial = "\TCP\Weapons\Ammo\8Gauge\Pellets\mag_8Gauge_1Rnd_Pellets.p3d";
     count = 6;
