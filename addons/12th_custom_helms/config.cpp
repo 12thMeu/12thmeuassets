@@ -58,6 +58,7 @@ class CfgPatches {
       "twelfth_helmCH43A_std_Perry",
       "twelfth_helmCH43A_std_Quinn",
       "twelfth_helmCH43A_std_Rex",
+      "twelfth_helmCH43A_std_Sand",
       "twelfth_helmCH43A_std_Sammy",
       "twelfth_helmCH43A_std_Schultz",
       "twelfth_helmCH43A_std_Shepard",
@@ -169,6 +170,7 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Perry)
   CUSTOM_HELM_S_AV(Quinn)
   CUSTOM_HELM_S_AV(Rex)
+  CUSTOM_HELM_S_AV(Sand)
   CUSTOM_HELM_S_AV(Sammy)
   CUSTOM_HELM_S_AV(Schultz)
   CUSTOM_HELM_S_AV(Shepard)
@@ -282,6 +284,7 @@ class XtdGearModels {
           "Quebec",
           "Quinn",
           "Rex",
+          "Sand",
           "Sammy",
           "Sand",
           "Schultz",
