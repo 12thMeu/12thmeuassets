@@ -36,7 +36,6 @@ class CfgVehicles {
     scopeCurator=2;
     author="Waylen";
     displayName="[12th] Warthog FAV";
-    vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
@@ -121,10 +120,10 @@ class CfgVehicles {
     scopeCurator=2;
     author="Waylen";
     displayName="[12th] Warthog TT";
-    vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
+    /*
     hiddenSelections[]= {"camo1", "camo2", "camo3", "camo4"};
     hiddenSelectionsTextures[] = {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
@@ -135,7 +134,7 @@ class CfgVehicles {
     // NOTE: the police texture here would look too weird
     class TextureSources {
       WARTHOG_TEX_STD_V1_APC
-    };
+    };*/
     WARTHOG_SP_INFO(3,Troop Transport)
     STDINV
   };
@@ -145,10 +144,10 @@ class CfgVehicles {
     scopeCurator=2;
     author="Waylen";
     displayName="[12th] Warthog MG";
-    vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
+    /*
     hiddenSelections[]= {"camo1", "camo2", "camo3", "camo_doors"};
     hiddenSelectionsTextures[] = {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
@@ -158,7 +157,7 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M12
-    };
+    };*/
     WARTHOG_SP_INFO(4,MG)
     STDINV
   };
