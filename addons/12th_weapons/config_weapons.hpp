@@ -528,6 +528,11 @@ class CfgWeapons
     mass = 30;
     displayName = "[12th] MA5K Carbine";
     baseWeapon = "twelfth_MA5K";
+    model = "\TCP\Weapons\Rifles\MA5K\MA5K.p3d";
+		picture = "\TCP\Weapons\Rifles\MA5K\data\ui\icon_arifle_MA5K_X_ca.paa";
+		pictureWire = "\TCP\Weapons\Rifles\MA5K\data\ui\icon_arifle_MA5K_W_ca.paa";
+    hiddenSelections[] = {"camo","camo1"};
+		hiddenSelectionsTextures[] = {"TCP\Weapons\Rifles\MA5B\data\camo\default\MA5_CO.paa","\TCP\Weapons\Rifles\MA5K\data\camo\default\MA5K_CO.paa"};
     magazines[] = COMMON_MA5C_MAGAZINES;
     class WeaponSlotsInfo: WeaponSlotsInfo {
       mass = 30;
