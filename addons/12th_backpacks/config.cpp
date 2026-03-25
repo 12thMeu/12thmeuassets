@@ -267,7 +267,7 @@ class XtdGearModels {
       class backpack {
         alwaysSelectable = 1;
         label = "Backpack Type";
-        values [] = {"NO", "ANPRC1712", "EM39", "M43"};
+        values [] = {"NO", "ANPRC171", "EM39_MLBE_Hardcase", "M43_Medium_Rucksack"};
         class NO {label = "None";};
         class ANPRC171 {label = "ANPRC171";};
         class EM39_MLBE_Hardcase {label = "EM39";};
@@ -276,7 +276,7 @@ class XtdGearModels {
       class Pack {
         alwaysSelectable = 1;
         label = "Pack Type";
-        values [] = {"NO", "ANPRC1712", "EM39", "M43"};
+        values [] = {"NO", "EM39_Buttpack", "M2_Buttpack", "M35_Buttpack","Roll"};
         class NO {label = "None";};
         class EM39_Buttpack {label = "EM39 Pack";};
         class M2_Buttpack {label = "M2 Pack";};
@@ -285,7 +285,7 @@ class XtdGearModels {
       };
       class Addon {
         alwaysSelectable = 1;
-        label = "Pack Type";
+        label = "Addons";
         values [] = {"NO", "Assault", "Engineer", "Field","Medical","Patrol"};
         class NO {label = "None";};
         class Assault {label = "Assault";};
