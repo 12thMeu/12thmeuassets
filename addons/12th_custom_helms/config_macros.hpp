@@ -90,10 +90,11 @@ class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
   picture="\x\12thMEU\addons\12th_ui\data\logo.paa";                                        \
   scopeArsenal=2;                                    \
   displayName=#GLUE3(S_PREFIX,[CLSD] ,SUFFIX);         \
+  model = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_Black.p3d"; \
   hiddenSelections[]= {"camo","camo1","decals"};             \
   hiddenSelectionsTextures[] = {                \
     #HELMTEXPATH(SUFFIX),				\
-    "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\default\helmet_ECH43A_Visor_CO.paa",\
+    "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\black\helmet_ECH43A_Visor_CO.paa",\
     #HELM_DEC_PATH								\
   }; 											\
   class TCP_uniformDecals: TCP_uniformDecals		\
@@ -101,7 +102,7 @@ class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
     decalColor = "white";						\
   };  											\
   class ItemInfo: HeadgearItem {                \
-    uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_DP.p3d";   \
+    uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_Black.p3d";   \
     picture="\x\12thMEU\addons\12th_ui\data\logo.paa";                                 \
     mass=40;                                    \
     modelSides[]={6};                           \
@@ -116,7 +117,7 @@ class twelfth_helmECH43A_std_##SUFFIX##_clsd: twelfth_helmECH43A_base { \
     hiddenSelections[]= {"camo","camo1","decals"};      \
     hiddenSelectionsTextures[]= {               \
       #HELMTEXPATH(SUFFIX),				\
-      "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\default\helmet_ECH43A_Visor_CO.paa",\
+      "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\black\helmet_ECH43A_Visor_CO.paa",\
       #HELM_DEC_PATH	  						\
     };                                          \
   };                                            \

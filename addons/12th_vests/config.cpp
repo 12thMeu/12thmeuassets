@@ -29,10 +29,7 @@ class CfgPatches {
   class twelfth_vests {
     units[]= {}; // We’re not defining placeable units in this PBO.
     weapons[]= { 
-      "twelfth_invis_vest",
-      "twelfth_M43A_Light_base",
-      "twelft_poncho_dry_vest",
-      "twelft_poncho_wet_vest",
+      "twelfth_invis_vest","twelfth_M43A_Light_base"
         /*
           If you create more vests that are stand-alone (not just variants),
           add them here so the engine recognizes them as part of this mod.
@@ -184,7 +181,7 @@ class CfgWeapons
   };
 
   // ODST
-  class twelft_odst : TCP_V_M43D_ODST_4_Black {
+  class twelft_odst_vest : TCP_V_M43D_ODST_4_Black {
     scope = 2;
     scopeArsenal = 2;
     author = "Rex";
