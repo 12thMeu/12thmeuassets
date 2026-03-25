@@ -638,8 +638,6 @@ class XtdGearModels {
         class winter {label="Winter"; /* image=XTP(winter); */};
         class desert {label="Desert"; image=XTP(desert);};
         class opfor {label="OPFOR";};
-
-
       };
       class sleeve {
         alwaysSelectable = 1;
@@ -684,7 +682,7 @@ class XtdGearModels {
 
 
     };
-
+    // Vests
     class twelfth_base_vests {
       label="12th Infantry Vests";
       options[] = {"type","camo", "element","role"};

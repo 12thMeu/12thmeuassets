@@ -182,6 +182,15 @@ class CfgVehicles {
   BACKPACK_ALLTYPES(standard,Standard)
   BACKPACK_ALLTYPES(forest,Forest)
   BACKPACK_ALLTYPES(desert,Desert)
+
+
+
+
+
+
+  //Pouches
+
+  TCP_CLASS_DEF
 };
 
 // -----------------------------------------------------------------------------
@@ -209,7 +218,7 @@ class XtdGearModels {
         values[] = {"standard", "forest", "desert"};
         class forest {label = "Standard"; image = XTP(forest);};
         class standard {label = "MARPAT"; image = XTP(std);};
-		class desert {label = "Desert"; image = XTP(desert);};
+		    class desert {label = "Desert"; image = XTP(desert);};
       };
       class type {
         alwaysSelectable = 1;
@@ -222,6 +231,79 @@ class XtdGearModels {
         class rto {label = "RTO";};
       };
     };
+
+    class twelfth_Pouches {
+      label = "12th Pouches";
+      options[] = {"role", "variant","backpack","pack","addon","knife"};
+      class role {
+        alwaysSelectable = 1;
+        label = "Role";
+        values[] = {"Ammo_Bearer", "Assaulter", "Breacher","Engineer","Grenadier","Marksman","Medic","NCO","Rifleman","RTO","Sapper","Sniper"};
+        class Ammo_Bearer {label = "Ammo_Bearer";};
+        class Assaulter {label = "Assaulter";};
+		    class Breacher {label = "Breacher";};
+        class Engineer{label = "Engineer";};
+        class Grenadier{label = "Grenadier";};
+        class Marksman{label = "Marksman";};
+        class Medic{label = "Medic";};
+        class NCO{label = "NCO";};
+        class Rifleman{label = "Rifleman";};
+        class RTO{label = "RTO";};
+        class Sapper{label = "Sapper";};
+        class Sniper{label = "Sniper";};
+      };
+      class Variant {
+        alwaysSelectable = 1;
+        label = "Variant";
+        values [] = {"1", "2", "3", "4", "5","6","7"};
+        class 1 {label = "1";};
+        class 2 {label = "2";};
+        class 3 {label = "3";};
+        class 4 {label = "4";};
+        class 5 {label = "5";};
+        class 6 {label = "6";};
+        class 7 {label = "7";};
+      };
+      class backpack {
+        alwaysSelectable = 1;
+        label = "Backpack Type";
+        values [] = {"NO", "ANPRC1712", "EM39", "M43"};
+        class NO {label = "None";};
+        class ANPRC171 {label = "ANPRC171";};
+        class EM39_MLBE_Hardcase {label = "EM39";};
+        class M43_Medium_Rucksack {label = "M43";};
+      };
+      class Pack {
+        alwaysSelectable = 1;
+        label = "Pack Type";
+        values [] = {"NO", "ANPRC1712", "EM39", "M43"};
+        class NO {label = "None";};
+        class EM39_Buttpack {label = "EM39 Pack";};
+        class M2_Buttpack {label = "M2 Pack";};
+        class M35_Buttpack {label = "M35 Pack";};
+        class Roll {label = "Roll";};
+      };
+      class Addon {
+        alwaysSelectable = 1;
+        label = "Pack Type";
+        values [] = {"NO", "Assault", "Engineer", "Field","Medical","Patrol"};
+        class NO {label = "None";};
+        class Assault {label = "Assault";};
+        class Engineer {label = "Engineer";};
+        class Field {label = "Field";};
+        class Medical {label = "Medical";};
+        class Patrol {label = "Patrol";};
+      };
+      class knife {
+        alwaysSelectable = 1;
+        label = "Knife";
+        values [] = {"NO", "YES"};
+        class NO {label = "No Knife";};
+        class Knife {label = "Knife";};
+      };
+    };
+
+
   };
 };
 
@@ -230,5 +312,6 @@ class XtdGearInfos {
     ALL_GI(standard)
     ALL_GI(forest)
 	  ALL_GI(desert)
+    POUCH_GI
   };
 };

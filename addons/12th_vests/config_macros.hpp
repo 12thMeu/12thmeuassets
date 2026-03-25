@@ -202,9 +202,7 @@
 
 
 #define NEW_VEST(ARMOUR) 						                                                  \
-  class TCP_V_M43A_##ARMOUR##_Base: ItemCore {                                       \
-    class ItemInfo;								                                                    \
-  };
+  class TCP_V_M43A_##ARMOUR##_Base;
 
 #define MEU_VEST_LIGHT(CAMO,PLATOON,ROLE,DISPLAYNAME)                                       \
   class twelfth_M43A_Light_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_Light_Base      \
