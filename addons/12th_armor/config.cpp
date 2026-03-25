@@ -685,7 +685,7 @@ class XtdGearModels {
     // Vests
     class twelfth_base_vests {
       label="12th Infantry Vests";
-      options[] = {"type","camo", "element","role"};
+      options[] = {"type","necktype","camo", "element","role"};
       class type{
         alwaysSelectable = 1;
         label="Armour Type";
@@ -700,6 +700,14 @@ class XtdGearModels {
         class GungnirL_1  {label="G. L";};
         class GungnirL_2 {label="G. L Thighs";};
         class GungnirL_3 {label="G. L Full";};
+      };
+      class necktype {
+        alwaysSelectable = 1;
+        label="Neck Armour";
+        values[]={"no", "flack", "armoured"};
+        class no {label="No";};
+        class flak {label="Flak";};
+        class armoured {label="Armoured";};
       };
       class camo {
         alwaysSelectable = 1;

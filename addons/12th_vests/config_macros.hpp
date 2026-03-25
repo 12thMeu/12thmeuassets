@@ -37,6 +37,9 @@
 #define VEST_PATH_02(CAMO)\
   QP(data\vests\##CAMO\vest_02_co.paa) 
 
+#define VEST_PATH_03(CAMO)\
+  QP(data\vests\##CAMO\vest_03_co.paa)  
+
 /*
 #define GUNGNIR_PATH(CAMO,FILE) #P(data\vest\##CAMO##\##FILE##.paa) 
 
@@ -107,14 +110,32 @@
 
 #define NEW_VEST_SETUP              \
 	NEW_VEST(BaseSec_1)               \
+  NEW_VEST(BaseSec_1_1)               \
+  NEW_VEST(BaseSec_1_2)               \
 	NEW_VEST(BaseSec_2)               \
+  NEW_VEST(BaseSec_2_1)               \
+  NEW_VEST(BaseSec_2_2)               \
 	NEW_VEST(BaseSec_3)               \
+  NEW_VEST(BaseSec_3_1)               \
+  NEW_VEST(BaseSec_3_2)               \
 	NEW_VEST(GungnirS_1)              \
+  NEW_VEST(GungnirS_1_1)              \
+  NEW_VEST(GungnirS_1_2)              \
 	NEW_VEST(GungnirS_2)              \
+  NEW_VEST(GungnirS_2_1)              \
+  NEW_VEST(GungnirS_2_2)              \
 	NEW_VEST(GungnirS_3)              \
+  NEW_VEST(GungnirS_3_1)              \
+  NEW_VEST(GungnirS_3_2)              \
 	NEW_VEST(GungnirL_1)              \
+  NEW_VEST(GungnirL_1_1)              \
+  NEW_VEST(GungnirL_1_2)              \
 	NEW_VEST(GungnirL_2)              \
+  NEW_VEST(GungnirL_2_1)              \
+  NEW_VEST(GungnirL_2_2)              \
 	NEW_VEST(GungnirL_3)              \
+  NEW_VEST(GungnirL_3_1)              \
+  NEW_VEST(GungnirL_3_2)              \
 	NEW_VEST(Light)
 
 #define ALL_VESTS(CAMO)                                     \
@@ -217,6 +238,7 @@
     hiddenSelectionsTextures[] =                                                    \
     {                                                                               \
       VEST_PATH_01(CAMO),                               \
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH                                                                 \
     };  \
     class ItemInfo: VestItem                                                          \
@@ -244,11 +266,12 @@
     displayName = DISPLAYNAME;                                                              \
     ACE_GForceCoef = 0.4;                                                                   \
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_1.p3d";               \
-		hiddenSelections[] = {"camo","camo1","decals"};                                         \
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored","collarflak"};                                         \
     hiddenSelectionsTextures[] =                                                            \
     {                                                                                       \
       VEST_PATH_01(CAMO),                            \
-      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),                      \
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),    \
+      VEST_PATH_03(CAMO),                  \
       HELM_DEC_PATH                                                                         \
     };                                                                                      \
     class ItemInfo: VestItem                                                                \
@@ -258,15 +281,77 @@
       setMaxLoad=200;\
       VEST_HITPOINT_INFO                                                                    \
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_1.p3d";      \
-      hiddenSelections[] = {"camo","camo1","decals"};                                       \
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored","collarflak"};                                       \
 		  hiddenSelectionsTextures[] = {                                                        \
         VEST_PATH_01(CAMO),                          \
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),                    \
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH                                                                       \
+      };                                                                                    \
+    };                                                                                      \
+  };\
+  class twelfth_M43A_BaseSec1_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_BaseSec_1_1_Base {     \
+      scope = 2;                                                                              \
+      scopeArsenal = 2;                                                                       \
+      author = "Sammy";                                                                       \
+      displayName = DISPLAYNAME;                                                              \
+      ACE_GForceCoef = 0.4;                                                                   \
+      model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_1.p3d";               \
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored"};                                         \
+      hiddenSelectionsTextures[] =                                                            \
+      {                                                                                       \
+        VEST_PATH_01(CAMO),                            \
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),    \
+        VEST_PATH_03(CAMO),                  \
+        HELM_DEC_PATH                                                                         \
+      };                                                                                      \
+      class ItemInfo: VestItem                                                                \
+      {                                                                                       \
+        mass = 80;                                                                            \
+        containerClass="twelfth_vest_supply";                                \
+        setMaxLoad=200;\
+        VEST_HITPOINT_INFO                                                                    \
+        uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_1.p3d";      \
+        hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored"};                                       \
+        hiddenSelectionsTextures[] = {                                                        \
+          VEST_PATH_01(CAMO),                          \
+          QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),                    \
+          VEST_PATH_03(CAMO),\
+          HELM_DEC_PATH                                                                       \
+        };                                                                                    \
+      };                                                                                      \
+    };\
+    class twelfth_M43A_BaseSec1_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_BaseSec_1_2_Base {     \
+    scope = 2;                                                                              \
+    scopeArsenal = 2;                                                                       \
+    author = "Sammy";                                                                       \
+    displayName = DISPLAYNAME;                                                              \
+    ACE_GForceCoef = 0.4;                                                                   \
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_1.p3d";               \
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collarflak"};                                         \
+    hiddenSelectionsTextures[] =                                                            \
+    {                                                                                       \
+      VEST_PATH_01(CAMO),                            \
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),    \
+      VEST_PATH_03(CAMO),                  \
+      HELM_DEC_PATH                                                                         \
+    };                                                                                      \
+    class ItemInfo: VestItem                                                                \
+    {                                                                                       \
+      mass = 80;                                                                            \
+      containerClass="twelfth_vest_supply";                                \
+      setMaxLoad=200;\
+      VEST_HITPOINT_INFO                                                                    \
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_1.p3d";      \
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collarflak"};                                       \
+		  hiddenSelectionsTextures[] = {                                                        \
+        VEST_PATH_01(CAMO),                          \
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),                    \
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH                                                                       \
       };                                                                                    \
     };                                                                                      \
   };
-
 
 #define MEU_VEST_BS2(CAMO,PLATOON,ROLE,DISPLAYNAME)                                       \
   class twelfth_M43A_BaseSec2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_BaseSec_2_Base {\
@@ -276,11 +361,12 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_2.p3d";\
-		hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = {\
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
       VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -290,11 +376,74 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_2.p3d";\
-      hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
       hiddenSelectionsTextures[] = {\
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
         VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH};\
+      };\
+  };\
+  class twelfth_M43A_BaseSec2_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_BaseSec_2_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_2.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_2.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH};\
+      };\
+  };\
+  class twelfth_M43A_BaseSec2_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_BaseSec_2_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_2.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_2.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH};\
       };\
   };
@@ -308,11 +457,12 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_3.p3d";\
-    hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = {\
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
       VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -322,11 +472,76 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_3.p3d";\
-      hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
       hiddenSelectionsTextures[] = {\
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
         VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_BaseSec3_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_BaseSec_3_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_3.p3d";\
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_3.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_BaseSec3_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_BaseSec_3_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_3.p3d";\
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BaseSec_3.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_BaseSecurity_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH\
       };\
     };\
@@ -341,10 +556,11 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_1.p3d";\
-		hiddenSelections[] = {"camo","camo1","decals"};\
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = {\
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -354,14 +570,75 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_1.p3d";\
-      hiddenSelections[] = {"camo","camo1","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored","collarflak"};\
       hiddenSelectionsTextures[] = {\
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH\
       };\
     };\
-  };
+  };\
+  class twelfth_M43A_GungnirS_1_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirS_1_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_1.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_1.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirS_1_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirS_1_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_1.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collarflak"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_1.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collarflak"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
 
 
 #define MEU_VEST_GUNGNIR2(CAMO,PLATOON,ROLE,DISPLAYNAME) \
@@ -372,11 +649,12 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BGungnirS_2.p3d";\
-		hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = {\
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
       VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -386,11 +664,76 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_2.p3d";\
-      hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
 		  hiddenSelectionsTextures[] = {\
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
         VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirS_2_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirS_2_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BGungnirS_2.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_2.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+		  hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirS_2_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirS_2_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_BGungnirS_2.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_2.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+		  hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH\
       };\
     };\
@@ -405,11 +748,12 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_3.p3d";\
-		hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = { \
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
       VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -419,11 +763,76 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_3.p3d";\
-      hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
       hiddenSelectionsTextures[] = { \
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
         VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirS_3_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirS_3_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_3.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+    hiddenSelectionsTextures[] = { \
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_3.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+      hiddenSelectionsTextures[] = { \
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirS_3_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirS_3_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_3.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+    hiddenSelectionsTextures[] = { \
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirS_3.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+      hiddenSelectionsTextures[] = { \
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH\
       };\
     };\
@@ -438,10 +847,11 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_1.p3d";\
-		hiddenSelections[] = {"camo","camo1","decals"};\
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = {\
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -451,10 +861,71 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_1.p3d";\
-      hiddenSelections[] = {"camo","camo1","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored","collarflak"};\
       hiddenSelectionsTextures[] = {\
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirL_1_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirL_1_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_1.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_1.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collararmored"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirL_1_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirL_1_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_1.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","decals","collarflak"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_1.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","decals","collarflak"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH\
       };\
     };\
@@ -469,11 +940,12 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_2.p3d";\
-    hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = {\
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
       VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -483,11 +955,76 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_2.p3d";\
-      hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
       hiddenSelectionsTextures[] = {\
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
         VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+   class twelfth_M43A_GungnirL_2_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirL_2_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_2.p3d";\
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_2.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+   class twelfth_M43A_GungnirL_2_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirL_2_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_2.p3d";\
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_2.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH\
       };\
     };\
@@ -502,11 +1039,12 @@
     displayName = DISPLAYNAME;\
     ACE_GForceCoef = 0.4;\
     model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_3.p3d";\
-		hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
     hiddenSelectionsTextures[] = {\
       VEST_PATH_01(CAMO),\
       QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
       VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
       HELM_DEC_PATH\
     };\
     class ItemInfo: VestItem\
@@ -516,11 +1054,76 @@
       VEST_HITPOINT_INFO \
       setMaxLoad=200;\
 			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_3.p3d";\
-      hiddenSelections[] = {"camo","camo1","camo2","decals"};\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored","collarflak"};\
       hiddenSelectionsTextures[] = {\
         VEST_PATH_01(CAMO),\
         QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
         VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirL_3_1_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirL_3_1_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_3.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_3.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collararmored"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
+        HELM_DEC_PATH\
+      };\
+    };\
+  };\
+  class twelfth_M43A_GungnirL_3_2_##CAMO##_##PLATOON##_##ROLE##: TCP_V_M43A_GungnirL_3_2_Base {\
+    scope = 2;\
+    scopeArsenal = 2;\
+    author = "Sammy";\
+    displayName = DISPLAYNAME;\
+    ACE_GForceCoef = 0.4;\
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_3.p3d";\
+		hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+    hiddenSelectionsTextures[] = {\
+      VEST_PATH_01(CAMO),\
+      QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+      VEST_PATH_02(CAMO),\
+      VEST_PATH_03(CAMO),\
+      HELM_DEC_PATH\
+    };\
+    class ItemInfo: VestItem\
+    {\
+      containerClass="twelfth_vest_supply";                                \
+      mass = 80;\
+      VEST_HITPOINT_INFO \
+      setMaxLoad=200;\
+			uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\M43A_GungnirL_3.p3d";\
+      hiddenSelections[] = {"camo","camo1","camo2","camo3","decals","collarflak"};\
+      hiddenSelectionsTextures[] = {\
+        VEST_PATH_01(CAMO),\
+        QP(data\vests\##CAMO##\##PLATOON##_##ROLE##_Gungnir_co.paa),\
+        VEST_PATH_02(CAMO),\
+        VEST_PATH_03(CAMO),\
         HELM_DEC_PATH\
       };\
     };\

@@ -71,10 +71,27 @@
 class twelfth_M43A_##TYPE##_##CAMO##_##PLATOON##_##ROLE## {     \
   model="twelfth_base_vests";                          \
   type=#TYPE;                                            \
+  necktype="no";\
   camo=#CAMO;                                             \
   element=#PLATOON;                                       \
   role=#ROLE;                                             \
-};          
+};\
+class twelfth_M43A_##TYPE##_1_##CAMO##_##PLATOON##_##ROLE## {     \
+  model="twelfth_base_vests";                          \
+  type=#TYPE;                                            \
+  necktype="armoured";\
+  camo=#CAMO;                                             \
+  element=#PLATOON;                                       \
+  role=#ROLE;                                             \
+};  \
+class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
+  model="twelfth_base_vests";                          \
+  type=#TYPE;                                            \
+  necktype="flack";\
+  camo=#CAMO;                                             \
+  element=#PLATOON;                                       \
+  role=#ROLE;                                             \
+};                            
 
 
 //TCP CLASS DEFINITONS WEP
@@ -627,7 +644,6 @@ class twelfth_M43A_##TYPE##_##CAMO##_##PLATOON##_##ROLE## {     \
   VEST_GI(GungnirL_3,CAMO,hq,med)       \
   VEST_GI(GungnirL_3,CAMO,lpl,na)       \
   VEST_GI(GungnirL_3,CAMO,lpl,med)      \
-
 
 
 
