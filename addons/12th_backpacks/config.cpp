@@ -71,6 +71,7 @@ class CfgVehicles {
   class mgsr_poncho_wet;
   class mgsr_poncho_dry;
   class DMNS_RUCKSACK_UNSC_ANPRC_521_F;
+  class TCP_equipmentTypes;
   // ---------------------------------------------------------------------------
   //  twelfth_backpack_base
   // ---------------------------------------------------------------------------

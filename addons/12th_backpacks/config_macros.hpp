@@ -22,7 +22,7 @@
 // Simple path building macros
 #define P(PATH) \x\12thMEU\addons\12th_backpacks\##PATH
 #define QP(PATH) #P(PATH)
-
+#define QOUTE(s) #s
 // For extended gear images referencing "xtd_icons\<SFX>.paa"
 #define XTP(SFX) QP(xtd_icons\##SFX.paa)
 
@@ -156,6 +156,11 @@ class Twelfth_##ROLE##_##NUMBER##_Brown : TCP_B_##ROLE##_##NUMBER##_Brown{\
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_Knife_Brown{\
     scopeArsenal=2;\
@@ -163,6 +168,11 @@ class Twelfth_##ROLE##_##NUMBER##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_Knife_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_Brown_M43A{\
     scopeArsenal=1;\
@@ -170,6 +180,11 @@ class Twelfth_##ROLE##_##NUMBER##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_Brown_M
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_Knife_Brown_M43A{\
     scopeArsenal=1;\
@@ -177,6 +192,11 @@ class Twelfth_##ROLE##_##NUMBER##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_K
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_Brown_M43A1{\
     scopeArsenal=1;\
@@ -184,6 +204,11 @@ class Twelfth_##ROLE##_##NUMBER##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_Brown_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_Knife_Brown_M43A1{\
     scopeArsenal=1;\
@@ -191,6 +216,11 @@ class Twelfth_##ROLE##_##NUMBER##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
+		};\
 };
 
 #define TCP_CLASS_DEF_NORM_PACK(ROLE,NUMBER,PACK)\
@@ -206,6 +236,11 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown : TCP_B_##ROLE##_##NUMBER##_##P
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown{\
     scopeArsenal=2;\
@@ -213,6 +248,11 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown : TCP_B_##ROLE##_##NUMBER
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown_M43A{\
     scopeArsenal=1;\
@@ -220,6 +260,11 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A : TCP_B_##ROLE##_##NUMBER#
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A{\
     scopeArsenal=1;\
@@ -227,6 +272,11 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A : TCP_B_##ROLE##_##N
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1{\
     scopeArsenal=1;\
@@ -234,6 +284,11 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A1{\
     scopeArsenal=1;\
@@ -241,6 +296,11 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
+		};\
 };
 
 #define TCP_CLASS_DEF_NORM_BACKPACK(ROLE,NUMBER,BACKPACKTYPE)\
@@ -256,6 +316,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown : TCP_B_##ROLE##_##NUMB
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown{\
     scopeArsenal=2;\
@@ -263,13 +328,23 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown : TCP_B_##ROLE##_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
-};\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
+		};\
+  };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A{\
     scopeArsenal=1;\
     scope=1;\
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A{\
     scopeArsenal=1;\
@@ -277,6 +352,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A : TCP_B_##RO
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A1{\
     scopeArsenal=1;\
@@ -284,6 +364,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A1 : TCP_B_##ROLE##_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A1{\
     scopeArsenal=1;\
@@ -291,6 +376,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A1 : TCP_B_##R
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
+		};\
 };
 
 
@@ -308,6 +398,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown : TCP_B_##ROL
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown{\
     scopeArsenal=2;\
@@ -315,6 +410,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown : TCP_B
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A{\
     scopeArsenal=1;\
@@ -322,6 +422,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A : TCP_B_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A{\
     scopeArsenal=1;\
@@ -329,6 +434,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A : 
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A1{\
     scopeArsenal=1;\
@@ -336,6 +446,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A1 : TCP_B
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A1{\
     scopeArsenal=1;\
@@ -343,6 +458,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A1 :
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
+		};\
 };
 
 
@@ -359,6 +479,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown : TCP_B_##ROLE
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown{\
     scopeArsenal=2;\
@@ -366,6 +491,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown : TCP_B_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A{\
     scopeArsenal=1;\
@@ -373,6 +503,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A : TCP_B_#
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A{\
     scopeArsenal=1;\
@@ -380,6 +515,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A : T
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A1{\
     scopeArsenal=1;\
@@ -387,6 +527,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A1 : TCP_B_
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A1{\
     scopeArsenal=1;\
@@ -394,6 +539,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A1 : 
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
+		};\
 };
 
 #define TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(ROLE,NUMBER,BACKPACKTYPE,PACK,ADDON)\
@@ -408,6 +558,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown : TC
     scope=2;\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown{\
     scopeArsenal=2;\
@@ -415,6 +570,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brow
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A{\
     scopeArsenal=1;\
@@ -422,6 +582,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A{\
     scopeArsenal=1;\
@@ -429,6 +594,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brow
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A1 :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A1{\
     scopeArsenal=1;\
@@ -436,6 +606,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
+		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A1 :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A1{\
     scopeArsenal=1;\
@@ -443,6 +618,11 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brow
     author="Sammy";\
     maximumLoad = BP_MAXLOAD;\
     mass = BP_MASS;\
+    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
+    class TCP_equipmentTypes: TCP_equipmentTypes \
+		{ \
+			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
+		};\
 }; 
 
 
@@ -532,34 +712,6 @@ TCP_CLASS_DEF_NORM_PACK(RTO,1,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_PACK(Sapper,1,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_PACK(Sniper,1,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_PACK(Sniper,2,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Ammo_Bearer,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Assaulter,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Assaulter,2,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Autorifleman,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Autorifleman,2,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Breacher,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Engineer,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Grenadier,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Grenadier,2,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Marksman,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Marksman,2,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Marksman,3,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Medic,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Medic,2,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(NCO,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(NCO,2,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(NCO,3,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Rifleman,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Rifleman,2,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Rifleman,3,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Rifleman,4,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Rifleman,5,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Rifleman,6,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Rifleman,7,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(RTO,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Sapper,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Sniper,1,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_PACK(Sniper,2,EM39_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK(Ammo_Bearer,1,ANPRC171)\
 TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,1,ANPRC171)\
 TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,2,ANPRC171)\
@@ -588,34 +740,6 @@ TCP_CLASS_DEF_NORM_BACKPACK(RTO,1,ANPRC171)\
 TCP_CLASS_DEF_NORM_BACKPACK(Sapper,1,ANPRC171)\
 TCP_CLASS_DEF_NORM_BACKPACK(Sniper,1,ANPRC171)\
 TCP_CLASS_DEF_NORM_BACKPACK(Sniper,2,ANPRC171)\
-TCP_CLASS_DEF_NORM_BACKPACK(Ammo_Bearer,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,2,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Autorifleman,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Autorifleman,2,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Breacher,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Engineer,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Grenadier,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Grenadier,2,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Marksman,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Marksman,2,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Marksman,3,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Medic,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Medic,2,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(NCO,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(NCO,2,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(NCO,3,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,2,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,3,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,4,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,5,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,6,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,7,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(RTO,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Sapper,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Sniper,1,EM39_MLBE_Hardcase)\
-TCP_CLASS_DEF_NORM_BACKPACK(Sniper,2,EM39_MLBE_Hardcase)\
 TCP_CLASS_DEF_NORM_BACKPACK(Ammo_Bearer,1,M43_Medium_Rucksack)\
 TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,1,M43_Medium_Rucksack)\
 TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,2,M43_Medium_Rucksack)\
@@ -672,34 +796,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,ANPRC171,Roll)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,ANPRC171,Roll)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,ANPRC171,Roll)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,ANPRC171,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,Roll)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,Roll)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,Roll)\
@@ -756,34 +852,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,ANPRC171,M2_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,ANPRC171,M2_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,ANPRC171,M2_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,ANPRC171,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M2_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,M2_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,M2_Buttpack)\
@@ -840,34 +908,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,ANPRC171,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,ANPRC171,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,ANPRC171,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,ANPRC171,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,M35_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,M35_Buttpack)\
@@ -924,34 +964,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,ANPRC171,EM39_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,ANPRC171,EM39_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,ANPRC171,EM39_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,ANPRC171,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,EM39_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,EM39_Buttpack)\
 TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,EM39_Buttpack)\
@@ -1008,34 +1020,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_ADDON(RTO,1,ANPRC171,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sapper,1,ANPRC171,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sniper,1,ANPRC171,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sniper,2,ANPRC171,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Ammo_Bearer,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Assaulter,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Assaulter,2,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Autorifleman,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Autorifleman,2,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Breacher,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Engineer,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Grenadier,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Grenadier,2,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Marksman,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Marksman,2,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Marksman,3,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Medic,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Medic,2,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(NCO,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(NCO,2,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(NCO,3,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,2,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,3,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,4,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,5,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,6,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,7,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(RTO,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sapper,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sniper,1,EM39_MLBE_Hardcase,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sniper,2,EM39_MLBE_Hardcase,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Ammo_Bearer,1,M43_Medium_Rucksack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Assaulter,1,M43_Medium_Rucksack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Assaulter,2,M43_Medium_Rucksack,Patrol)\
@@ -1204,34 +1188,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,Roll,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,Roll,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,Roll,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,Roll,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,Roll,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,Roll,Patrol)\
@@ -1288,34 +1244,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,M2_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,M2_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,M2_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M2_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,M2_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,M2_Buttpack,Patrol)\
@@ -1372,34 +1300,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,M35_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,M35_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,M35_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M35_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,M35_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,M35_Buttpack,Patrol)\
@@ -1456,34 +1356,6 @@ TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,EM39_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,EM39_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,EM39_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,EM39_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,EM39_Buttpack,Patrol)\
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,EM39_Buttpack,Patrol)\
@@ -1962,6 +1834,290 @@ TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,M43_Medium_Rucksack,EM39_Buttpac
 TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,M43_Medium_Rucksack,EM39_Buttpack,Field)
 
 
+
+/*
+TCP_CLASS_DEF_NORM_BACKPACK(Ammo_Bearer,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Assaulter,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Autorifleman,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Autorifleman,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Breacher,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Engineer,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Grenadier,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Grenadier,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Marksman,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Marksman,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Marksman,3,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Medic,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Medic,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(NCO,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(NCO,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(NCO,3,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,3,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,4,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,5,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,6,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Rifleman,7,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(RTO,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Sapper,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Sniper,1,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK(Sniper,2,EM39_MLBE_Hardcase)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Ammo_Bearer,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Assaulter,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Assaulter,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Autorifleman,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Autorifleman,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Breacher,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Engineer,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Grenadier,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Grenadier,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Marksman,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Marksman,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Marksman,3,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Medic,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Medic,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(NCO,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(NCO,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(NCO,3,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,3,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,4,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,5,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,6,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Rifleman,7,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(RTO,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sapper,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sniper,1,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON(Sniper,2,EM39_MLBE_Hardcase,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+*/
+
 /*
 
 Pouch Extended Arsenal
@@ -2087,7 +2243,288 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brow
   knife = "YES";\
 };
 
-
+/*
+POUCH_DEF_GI_BACKPACK(Ammo_Bearer,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Assaulter,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Assaulter,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Autorifleman,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Autorifleman,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Breacher,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Engineer,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Grenadier,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Grenadier,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Marksman,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Marksman,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Marksman,3,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Medic,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Medic,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(NCO,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(NCO,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(NCO,3,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Rifleman,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Rifleman,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Rifleman,3,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Rifleman,4,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Rifleman,5,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Rifleman,6,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Rifleman,7,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(RTO,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Sapper,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Sniper,1,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK(Sniper,2,EM39_MLBE_Hardcase)\
+POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll)\
+POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
+POUCH_DEF_GI_BACKPACK_ADDON(Ammo_Bearer,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Assaulter,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Assaulter,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Autorifleman,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Autorifleman,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Breacher,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Engineer,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Grenadier,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Grenadier,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Marksman,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Marksman,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Marksman,3,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Medic,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Medic,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(NCO,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(NCO,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(NCO,3,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,3,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,4,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,5,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,6,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,7,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(RTO,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Sapper,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Sniper,1,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON(Sniper,2,EM39_MLBE_Hardcase,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
+*/
 
 
 
@@ -2232,34 +2669,6 @@ POUCH_DEF_GI_BACKPACK(RTO,1,ANPRC171)\
 POUCH_DEF_GI_BACKPACK(Sapper,1,ANPRC171)\
 POUCH_DEF_GI_BACKPACK(Sniper,1,ANPRC171)\
 POUCH_DEF_GI_BACKPACK(Sniper,2,ANPRC171)\
-POUCH_DEF_GI_BACKPACK(Ammo_Bearer,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Assaulter,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Assaulter,2,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Autorifleman,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Autorifleman,2,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Breacher,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Engineer,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Grenadier,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Grenadier,2,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Marksman,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Marksman,2,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Marksman,3,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Medic,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Medic,2,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(NCO,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(NCO,2,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(NCO,3,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Rifleman,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Rifleman,2,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Rifleman,3,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Rifleman,4,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Rifleman,5,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Rifleman,6,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Rifleman,7,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(RTO,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Sapper,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Sniper,1,EM39_MLBE_Hardcase)\
-POUCH_DEF_GI_BACKPACK(Sniper,2,EM39_MLBE_Hardcase)\
 POUCH_DEF_GI_BACKPACK(Ammo_Bearer,1,M43_Medium_Rucksack)\
 POUCH_DEF_GI_BACKPACK(Assaulter,1,M43_Medium_Rucksack)\
 POUCH_DEF_GI_BACKPACK(Assaulter,2,M43_Medium_Rucksack)\
@@ -2316,34 +2725,6 @@ POUCH_DEF_GI_BACKPACK_PACK(RTO,1,ANPRC171,Roll)\
 POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,ANPRC171,Roll)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,ANPRC171,Roll)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,ANPRC171,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll)\
 POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,Roll)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,Roll)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,Roll)\
@@ -2400,34 +2781,6 @@ POUCH_DEF_GI_BACKPACK_PACK(RTO,1,ANPRC171,M2_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,ANPRC171,M2_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,ANPRC171,M2_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,ANPRC171,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M2_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,M2_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,M2_Buttpack)\
@@ -2484,34 +2837,6 @@ POUCH_DEF_GI_BACKPACK_PACK(RTO,1,ANPRC171,M35_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,ANPRC171,M35_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,ANPRC171,M35_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,ANPRC171,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M35_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,M35_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,M35_Buttpack)\
@@ -2568,34 +2893,6 @@ POUCH_DEF_GI_BACKPACK_PACK(RTO,1,ANPRC171,EM39_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,ANPRC171,EM39_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,ANPRC171,EM39_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,ANPRC171,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack)\
-POUCH_DEF_GI_BACKPACK_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,EM39_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,1,M43_Medium_Rucksack,EM39_Buttpack)\
 POUCH_DEF_GI_BACKPACK_PACK(Assaulter,2,M43_Medium_Rucksack,EM39_Buttpack)\
@@ -2652,34 +2949,6 @@ POUCH_DEF_GI_BACKPACK_ADDON(RTO,1,ANPRC171,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON(Sapper,1,ANPRC171,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON(Sniper,1,ANPRC171,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON(Sniper,2,ANPRC171,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Ammo_Bearer,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Assaulter,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Assaulter,2,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Autorifleman,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Autorifleman,2,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Breacher,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Engineer,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Grenadier,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Grenadier,2,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Marksman,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Marksman,2,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Marksman,3,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Medic,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Medic,2,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(NCO,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(NCO,2,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(NCO,3,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,2,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,3,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,4,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,5,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,6,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Rifleman,7,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(RTO,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Sapper,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Sniper,1,EM39_MLBE_Hardcase,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON(Sniper,2,EM39_MLBE_Hardcase,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON(Ammo_Bearer,1,M43_Medium_Rucksack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON(Assaulter,1,M43_Medium_Rucksack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON(Assaulter,2,M43_Medium_Rucksack,Patrol)\
@@ -2848,34 +3117,6 @@ POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,Roll,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,Roll,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,Roll,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,Roll,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,Roll,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,Roll,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,Roll,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,Roll,Patrol)\
@@ -2932,34 +3173,6 @@ POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,M2_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,M2_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,M2_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M2_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M2_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,M2_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,M2_Buttpack,Patrol)\
@@ -3016,34 +3229,6 @@ POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,M35_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,M35_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,M35_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,M35_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,M35_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,M35_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,M35_Buttpack,Patrol)\
@@ -3100,34 +3285,6 @@ POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,ANPRC171,EM39_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,ANPRC171,EM39_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,ANPRC171,EM39_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,ANPRC171,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Autorifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Breacher,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Engineer,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Grenadier,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Marksman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Medic,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(NCO,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,3,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,4,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,5,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,6,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Rifleman,7,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(RTO,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sapper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,1,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
-POUCH_DEF_GI_BACKPACK_ADDON_PACK(Sniper,2,EM39_MLBE_Hardcase,EM39_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Ammo_Bearer,1,M43_Medium_Rucksack,EM39_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,1,M43_Medium_Rucksack,EM39_Buttpack,Patrol)\
 POUCH_DEF_GI_BACKPACK_ADDON_PACK(Assaulter,2,M43_Medium_Rucksack,EM39_Buttpack,Patrol)\
