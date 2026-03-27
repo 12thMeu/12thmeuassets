@@ -14,6 +14,9 @@ class CfgPatches {
       "twelfth_warthog_gauss",
       "twelfth_warthog_mlms",
     };
+    requiredAddons[]= {
+      "TCP_soft"
+    };
     requiredVersion = 0.1;
   };
 };

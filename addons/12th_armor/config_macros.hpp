@@ -11,7 +11,7 @@
     - ALL_HELM / ALL_HELM_GI to produce multiple variations of a single helmet 
       in standard or NV variants.
     - BOONIE_WEP / PATROLCAP_WEP for boonie/patrol caps.
-    - PILO<T_HELM for custom pilot helmet references.
+    - PILOT_HELM for custom pilot helmet references.
 
   Remember to look at the expansions near the bottom of config.cpp for usage:
     ALL_UNI_WEP(std), ALL_UNI_WEP(forest), etc.
@@ -22,13 +22,13 @@
 #define GLUE(A,B) A##B
 #define QOUTE(s) #s
 #define PILOT_H_TEX(CAMOTYPE,FILENAME) P(helmets\pilot\##CAMOTYPE\##FILENAME)
+#define nill 
+#define EMPTY()  
 
 #define UNIFORM_WEP_CLASSNAME(CAMO,PLATOON,ROLE) twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_veh
 #define HELM_DEC_PATH tcp\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\White\vest_M43_DecalSheet_CA.paa
 #define UNIFORM_OLD_VEH_TEXPATH(SUFFIX) P(uniforms\armor_old\Uniform_co_##SUFFIX.paa)
 #define UNIFORM_OLD_WEP_CLASSPATH(SUFFIX) twelfth_uni_##SUFFIX##_veh
-
-
 
 #define TWELFTH_WEP_NORMAL(CAMO,SHIRT,SLEEVE) twelfth_U_B_##SHIRT##_##SLEEVE##_##CAMO##
 #define TWELFTH_VEH_NORMAL(CAMO,SHIRT,SLEEVE) twelfth_B_##SHIRT##_##SLEEVE##_##CAMO##
@@ -54,6 +54,33 @@
 #define TWELFTH_WEP_GLOVES_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE) twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_##CAMO##
 #define TWELFTH_VEH_GLOVES_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE) twelfth_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_##CAMO##
 
+#define TWELFTH_REF_GENERIC_3(VARIANT,CAMO,arg1,arg2) twelfth_##VARIANT##_##arg1##_##arg2##_##CAMO##
+#define TWELFTH_REF_GENERIC_4(VARIANT,CAMO,arg1,arg2,arg3) twelfth_##VARIANT##_##arg1##_##arg2##_##arg3##_##CAMO##
+#define TWELFTH_REF_GENERIC_5(VARIANT,CAMO,arg1,arg2,arg3,arg4) twelfth_##VARIANT##_##arg1##_##arg2##_##arg3##_##arg4##_##CAMO##
+#define TWELFTH_REF_GENERIC_6(VARIANT,CAMO,arg1,arg2,arg3,arg4,arg5) twelfth_##VARIANT##_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_##CAMO##
+#define TWELFTH_REF_GENERIC_7(VARIANT,CAMO,arg1,arg2,arg3,arg4,arg5,arg6) twelfth_##VARIANT##_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_##arg6##_##CAMO
+
+//                   ,~.
+//                ,-'__ `-,
+//               {,-'  `. }              ,')
+//              ,( a )   `-.__         ,',')~,
+//             <=.) (         `-.__,==' ' ' '}             
+//               (   )                      /             
+//                `-'\   ,                  )             
+//                    |  \        `~.      /          
+//   .                \   `._        \    /      
+//       0 o           \     `._____,'   /             
+//    O   .             `-.            ,'                
+//      o                  `-.      ,-'               
+//                            `~~~~'                
+//  a hen offers you          //_||
+//  some beans for the     __//--'/`          
+//  journey ahead        ,--'/`  '
+//                          '
+//  they are not of the highest quality, 
+//  but you are a dauntless, errant knight
+
+
 #define HELM_TEX_PATH(SUFFIX) P(helmets\infantry\Helm_co_##SUFFIX.paa)
 #define HELM_TEX_PATH_CH43A(SUFFIX) P(helmets\infantry\CH43A\Helm_co_##SUFFIX.paa)
 #define CAP_TEX_PATH(SUFFIX) P(helmets\cap_b\cap_co_##SUFFIX.paa)
@@ -65,6 +92,7 @@
 #define XTP(SFX) QP(xtd_icons\##SFX.paa)
 
 /* Stands for uniform gear info. */                                                 
+
 
 
 #define VEST_GI(TYPE,CAMO,PLATOON,ROLE)                     \
@@ -87,334 +115,355 @@ class twelfth_M43A_##TYPE##_1_##CAMO##_##PLATOON##_##ROLE## {     \
 class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
   model="twelfth_base_vests";                          \
   type=#TYPE;                                            \
-  necktype="flack";\
+  necktype="flak";\
   camo=#CAMO;                                             \
   element=#PLATOON;                                       \
   role=#ROLE;                                             \
 };                            
 
+#define TSHIRT_NORMAL_GI(CAMO,TUCK) \
+  class twelfth_U_B_TShirt_##TUCK##_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="no"; \
+    tuck=#TUCK; \
+    blouse="noblouse"; \
+    kneepad="nokneepads"; \
+  };\
+  class twelfth_U_B_TShirt_##TUCK##_Kneepads_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="no"; \
+    tuck=#TUCK; \
+    blouse="noblouse"; \
+    kneepad="kneepads"; \
+  };
+
+#define TSHIRT_BLOUSED_GI(CAMO,TUCK) \
+  class twelfth_U_B_TShirt_##TUCK##_Bloused_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="no"; \
+    tuck=#TUCK; \
+    blouse="blouse"; \
+    kneepad="nokneepads"; \
+  };     \
+  class twelfth_U_B_TShirt_##TUCK##_Bloused_Kneepads_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="no"; \
+    tuck=#TUCK; \
+    blouse="blouse"; \
+    kneepad="kneepads"; \
+  };                    
+
+#define TSHIRT_GLOVES_GI(CAMO,TUCK) \
+  class twelfth_U_B_TShirt_##TUCK##_Gloves_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="yes"; \
+    tuck=#TUCK; \
+    blouse="noblouse"; \
+    kneepad="nokneepads"; \
+  };     \
+  class twelfth_U_B_TShirt_##TUCK##_Gloves_Kneepads_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="yes"; \
+    tuck=#TUCK; \
+    blouse="noblouse"; \
+    kneepad="kneepads"; \
+  };                                  
+
+#define TSHIRT_BLOUSED_GLOVES_GI(CAMO,TUCK) \
+  class twelfth_U_B_TShirt_##TUCK##_Gloves_Bloused_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="yes"; \
+    tuck=#TUCK; \
+    blouse="blouse"; \
+    kneepad="nokneepads"; \
+  };     \
+  class twelfth_U_B_TShirt_##TUCK##_Gloves_Bloused_Kneepads_##CAMO## { \
+    model="twelfth_tshirt"; \
+    camo=#CAMO; \
+    glove="yes"; \
+    tuck=#TUCK; \
+    blouse="blouse"; \
+    kneepad="kneepads"; \
+  };
 
 //TCP CLASS DEFINITONS WEP
-#define TCP_WEP_CLASS_NORMAL(SHIRT,SLEEVE)                          \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Base;
+#define TCP_WEP_CLASS_GENERIC_2(arg1,arg2) \
+  class TCP_U_B_CBUU_##arg1##_##arg2##_Base;
 
-#define TCP_WEP_CLASS_BLOUSED(SHIRT,SLEEVE)           \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Base;                      
+#define TCP_WEP_CLASS_GENERIC_3(arg1,arg2,arg3) \
+  class TCP_U_B_CBUU_##arg1##_##arg2##_##arg3##_Base;
 
-#define TCP_WEP_CLASS_GLOVES(SHIRT,SLEEVE)           \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Base;                                 
+#define TCP_WEP_CLASS_GENERIC_4(arg1,arg2,arg3,arg4) \
+  class TCP_U_B_CBUU_##arg1##_##arg2##_##arg3##_##arg4##_Base;
 
-#define TCP_WEP_CLASS_BLOUSED_GLOVES(SHIRT,SLEEVE)           \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Base;                 
+#define TCP_WEP_CLASS_GENERIC_5(arg1,arg2,arg3,arg4,arg5) \
+  class TCP_U_B_CBUU_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_Base;
 
-#define TCP_WEP_CLASS_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Unzipped_Base;                             
-
-#define TCP_WEP_CLASS_BLOUSED_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Unzipped_Base;
-
-#define TCP_WEP_CLASS_GLOVES_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Unzipped_Base;                                    
-
-#define TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_Base;
+#define TCP_WEP_CLASS_GENERIC_6(arg1,arg2,arg3,arg4,arg5,arg6) \
+  class TCP_U_B_CBUU_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_##arg6##_Base;
 
 //TCP CLASS DEFINITONS VEH
-#define TCP_VEH_CLASS_NORMAL(SHIRT,SLEEVE)                          \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Base;
+#define TCP_VEH_CLASS_GENERIC_2(arg1,arg2) \
+  class TCP_B_CBUU_##arg1##_##arg2##_Base;
 
-#define TCP_VEH_CLASS_BLOUSED(SHIRT,SLEEVE)           \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Base;                      
+#define TCP_VEH_CLASS_GENERIC_3(arg1,arg2,arg3) \
+  class TCP_B_CBUU_##arg1##_##arg2##_##arg3##_Base;
 
-#define TCP_VEH_CLASS_GLOVES(SHIRT,SLEEVE)           \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Base;                                 
+#define TCP_VEH_CLASS_GENERIC_4(arg1,arg2,arg3,arg4) \
+  class TCP_B_CBUU_##arg1##_##arg2##_##arg3##_##arg4##_Base;
 
-#define TCP_VEH_CLASS_BLOUSED_GLOVES(SHIRT,SLEEVE)           \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Base;                 
+#define TCP_VEH_CLASS_GENERIC_5(arg1,arg2,arg3,arg4,arg5) \
+  class TCP_B_CBUU_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_Base;
 
-#define TCP_VEH_CLASS_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Unzipped_Base;                             
+  #define TCP_VEH_CLASS_GENERIC_6(arg1,arg2,arg3,arg4,arg5,arg6) \
+  class TCP_B_CBUU_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_##arg6##_Base;
 
-#define TCP_VEH_CLASS_BLOUSED_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Unzipped_Base;
-
-#define TCP_VEH_CLASS_GLOVES_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Unzipped_Base;                                    
-
-#define TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(SHIRT,SLEEVE)           \
-  class TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_Base;   
-
-//Twelfth VEH class setup
-#define VEH_CLASS_NORMAL(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Base {\
+// Generic functions for handling VEH and WEP classes
+// They differ by two digits at the end
+// first is the amount of arguments (yes, it changed, i didnt update. Get mad, call the police)
+// second is the variant, for 3, 2 and 1, defines how many hiddenSelectionTextures are used inside
+// order of args: gloves, bloused, zip, kneepad
+  #define CLASS_GENERIC_3_2(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_Base {\
       author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
       scopeCurator = 1;\
       hiddenSelectionsTextures[] = {\
         QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa)\
         };\
-      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(CAMO,SHIRT,SLEEVE));\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_3(VARIANT2,CAMO,SHIRT,arg1));\
   };
-
-#define WEP_CLASS_NORMAL(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Base{\
-    scope=2;\
-    displayName="[12th] Normal";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
-  };
-//Bloused
-#define VEH_CLASS_BLOUSED(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_Bloused_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Base {\
-      author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
-      scopeCurator = 1;\
+  
+  #define CLASS_GENERIC_3_1(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_Base {\
+      scope=#SCOPEVAL;\
+      displayName="[12th] Uniform";\
+      ACE_GForceCoef=0.4;\
+      class TCP_equipmentTypes: TCP_equipmentTypes {\
+        baseEquipment = QOUTE(twelfth_##VARIANT##_##SHIRT##_##arg1##_##CAMO##); \
+      }; \
+      class ItemInfo : ItemInfo {\
+        uniformClass = QOUTE(TWELFTH_REF_GENERIC_3(VARIANT2,CAMO,SHIRT,arg1));\
+        containerClass="Supply100"; \
+        mass=1;\
+        uniformType = "Neopren";\
+        allowedSlots[]={"701","801","901"};\
+        armor=20;\
+      };\
       hiddenSelectionsTextures[] = {\
         QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
-        QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa)\
-        };\
-      uniformClass = QOUTE(TWELFTH_WEP_BLOUSED(CAMO,SHIRT,SLEEVE));\
+      };\
   };
 
-#define WEP_CLASS_BLOUSED(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_Bloused_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Base{\
-    scope=2;\
-    displayName="[12th] Bloused";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_BLOUSED(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
-  };
-//Gloves
-#define VEH_CLASS_GLOVES(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_Gloves_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Base {\
+  #define CLASS_GENERIC_4_3(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_Base {\
       author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
       scopeCurator = 1;\
       hiddenSelectionsTextures[] = {\
         QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Gloves_CO.paa)\
         };\
-      uniformClass = QOUTE(TWELFTH_WEP_GLOVES(CAMO,SHIRT,SLEEVE));\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_4(VARIANT2,CAMO,SHIRT,arg1,arg2));\
   };
 
-#define WEP_CLASS_GLOVES(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Base{\
-    scope=2;\
-    displayName="[12th] Gloves";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_GLOVES(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
-  };
-
-//Bloused Gloves
-#define VEH_CLASS_BLOUSED_GLOVES(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Base {\
+  #define CLASS_GENERIC_4_2(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_Base {\
       author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
-      scopeCurator = 1;\
-      hiddenSelectionsTextures[] = {\
-        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
-        QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa),\
-        QP(uniforms\uniform\##CAMO##\CBUU_Gloves_CO.paa)\
-        };\
-      uniformClass = QOUTE(TWELFTH_WEP_BLOUSED_GLOVES(CAMO,SHIRT,SLEEVE));\
-  };
-
-#define WEP_CLASS_BLOUSED_GLOVES(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Base{\
-    scope=2;\
-    displayName="[12th] Bloused Gloves";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_BLOUSED_GLOVES(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
-  };
-
-//Unzipped
-#define VEH_CLASS_UNZIPPED(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_Unzipped_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Unzipped_Base {\
-      author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
       scopeCurator = 1;\
       hiddenSelectionsTextures[] = {\
         QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa)\
         };\
-      uniformClass = QOUTE(TWELFTH_WEP_UNZIPPED(CAMO,SHIRT,SLEEVE));\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_4(VARIANT2, CAMO,SHIRT,arg1,arg2));\
   };
 
-#define WEP_CLASS_UNZIPPED(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_Unzipped_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Unzipped_Base{\
-    scope=2;\
-    displayName="[12th] Unzipped";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_UNZIPPED(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
+  #define CLASS_GENERIC_4_1(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_Base {\
+      scope=#SCOPEVAL;\
+      displayName="[12th] Uniform";\
+      ACE_GForceCoef=0.4;\
+      class TCP_equipmentTypes: TCP_equipmentTypes {\
+        baseEquipment = QOUTE(twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##CAMO##); \
+      }; \
+      class ItemInfo : ItemInfo {\
+        uniformClass = QOUTE(TWELFTH_REF_GENERIC_4(VARIANT2,CAMO,SHIRT,arg1,arg2));\
+        containerClass="Supply100"; \
+        mass=1;\
+        uniformType = "Neopren";\
+        allowedSlots[]={"701","801","901"};\
+        armor=20;\
+      };\
+      hiddenSelectionsTextures[] = {\
+        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
+      };\
   };
-//BLOUSED UNZIPPED
-#define VEH_CLASS_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_Bloused_Unzipped_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Unzipped_Base {\
+
+  #define CLASS_GENERIC_5_3(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_Base {\
       author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
+      scopeCurator = 1;\
+      hiddenSelectionsTextures[] = {\
+        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
+        QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa),\
+        QP(uniforms\uniform\##CAMO##\CBUU_Gloves_CO.paa)\
+        };\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_5(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3));\
+  };
+
+  #define CLASS_GENERIC_5_2(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_Base {\
+      author="Sammy";\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
       scopeCurator = 1;\
       hiddenSelectionsTextures[] = {\
         QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa)\
         };\
-      uniformClass = QOUTE(TWELFTH_WEP_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE));\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_5(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3));\
   };
 
-#define WEP_CLASS_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_Bloused_Unzipped_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Bloused_Unzipped_Base{\
-    scope=2;\
-    displayName="[12th] Bloused Unzipped";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
+  #define CLASS_GENERIC_5_1(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_Base {\
+      scope=#SCOPEVAL;\
+      displayName="[12th] Uniform";\
+      ACE_GForceCoef=0.4;\
+      class TCP_equipmentTypes: TCP_equipmentTypes {\
+        baseEquipment = QOUTE(twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##CAMO##); \
+      }; \
+      class ItemInfo : ItemInfo {\
+        uniformClass = QOUTE(TWELFTH_REF_GENERIC_5(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3));\
+        containerClass="Supply100"; \
+        mass=1;\
+        uniformType = "Neopren";\
+        allowedSlots[]={"701","801","901"};\
+        armor=20;\
+      };\
+      hiddenSelectionsTextures[] = {\
+        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
+      };\
   };
 
-//GLOVES_UNZIPPED
-#define VEH_CLASS_GLOVES_UNZIPPED(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_Gloves_Unzipped_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Unzipped_Base {\
+  #define CLASS_GENERIC_6_3(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3,arg4) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_Base {\
       author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
       scopeCurator = 1;\
       hiddenSelectionsTextures[] = {\
         QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Gloves_CO.paa)\
         };\
-      uniformClass = QOUTE(TWELFTH_WEP_GLOVES_UNZIPPED(CAMO,SHIRT,SLEEVE));\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_6(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3,arg4));\
   };
 
-#define WEP_CLASS_GLOVES_UNZIPPED(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Unzipped_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Unzipped_Base{\
-    scope=2;\
-    displayName="[12th] Gloves Unzipped";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_GLOVES_UNZIPPED(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
-  };
-
-//GLOVES_BLOUSED_UNZIPPED
-#define VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_##CAMO## : TCP_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_Base {\
+  #define CLASS_GENERIC_6_2(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3,arg4) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_Base {\
       author="Sammy";\
-      scope= 1;\
-      scopeArsenal= 1;\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
+      scopeCurator = 1;\
+      hiddenSelectionsTextures[] = {\
+        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
+        QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa)\
+        };\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_6(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3,arg4));\
+  };
+
+  #define CLASS_GENERIC_6_1(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3,arg4) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_Base {\
+      scope=#SCOPEVAL;\
+      displayName="[12th] Uniform";\
+      ACE_GForceCoef=0.4;\
+      class TCP_equipmentTypes: TCP_equipmentTypes {\
+        baseEquipment = QOUTE(twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##CAMO##); \
+      }; \
+      class ItemInfo : ItemInfo {\
+        uniformClass = QOUTE(TWELFTH_REF_GENERIC_6(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3,arg4));\
+        containerClass="Supply100"; \
+        mass=1;\
+        uniformType = "Neopren";\
+        allowedSlots[]={"701","801","901"};\
+        armor=20;\
+      };\
+      hiddenSelectionsTextures[] = {\
+        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
+      };\
+  };
+
+  #define CLASS_GENERIC_7_3(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3,arg4,arg5) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_Base {\
+      author="Sammy";\
+      scope=#SCOPEVAL;\
+      scopeArsenal=#SCOPEVAL;\
       scopeCurator = 1;\
       hiddenSelectionsTextures[] = {\
         QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Pants_CO.paa),\
         QP(uniforms\uniform\##CAMO##\CBUU_Gloves_CO.paa)\
         };\
-      uniformClass = QOUTE(TWELFTH_WEP_GLOVES_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE));\
+      uniformClass = QOUTE(TWELFTH_REF_GENERIC_7(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3,arg4,arg5));\
   };
-
-#define WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE) \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_##CAMO## : TCP_U_B_CBUU_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_Base{\
-    scope=2;\
-    displayName="[12th] Gloves Bloused Unzipped";\
-    ACE_GForceCoef=0.4;\
-    class ItemInfo : ItemInfo {\
-      uniformClass = QOUTE(TWELFTH_VEH_GLOVES_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE));\
-      containerClass="Supply100"; \
-      mass=1;\
-      uniformType = "Neopren";\
-      allowedSlots[]={"701","801","901"};\
-      armor=20;\
-    };\
-    hiddenSelectionsTextures[] = {\
-      QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa)\
-    };\
+  #define CLASS_GENERIC_7_1(VARIANT,VARIANT2,SCOPEVAL,CAMO,SHIRT,arg1,arg2,arg3,arg4,arg5) \
+  class twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_##CAMO## : TCP_##VARIANT##_CBUU_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_Base {\
+      scope=#SCOPEVAL;\
+      displayName="[12th] Uniform";\
+      ACE_GForceCoef=0.4;\
+      class TCP_equipmentTypes: TCP_equipmentTypes {\
+        baseEquipment = QOUTE(twelfth_##VARIANT##_##SHIRT##_##arg1##_##arg2##_##arg3##_##arg4##_##arg5##_##CAMO##); \
+      }; \
+      class ItemInfo : ItemInfo {\
+        uniformClass = QOUTE(TWELFTH_REF_GENERIC_7(VARIANT2,CAMO,SHIRT,arg1,arg2,arg3,arg4,arg5));\
+        containerClass="Supply100"; \
+        mass=1;\
+        uniformType = "Neopren";\
+        allowedSlots[]={"701","801","901"};\
+        armor=20;\
+      };\
+      hiddenSelectionsTextures[] = {\
+        QP(uniforms\uniform\##CAMO##\CBUU_##SHIRT##_CO.paa),\
+      };\
   };
-
-
-
 
 
 /* New uniform gear info */
-#define NORMAL(CAMO,SHIRT,SLEEVE)                          \
-  class twelfth_U_B_##SHIRT##_##SLEEVE##_##CAMO## {       \
-    model="twelfth_new_uniforms";                          \
-    camo=#CAMO;                                            \
-    sleeve=#SLEEVE;                                        \
-    glove="no";                                            \
-    shirt=#SHIRT;                                          \
-    blouse="noblouse";                                     \
-    zip="zipped";                                          \
+#define NORMAL(CAMO,SHIRT,SLEEVE) \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_##CAMO## { \
+    model="twelfth_new_uniforms"; \
+    camo=#CAMO; \
+    sleeve=#SLEEVE; \
+    glove="no"; \
+    shirt=#SHIRT; \
+    blouse="noblouse"; \
+    zip="zipped"; \
+    kneepad="nokneepads"; \
+  };\
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Kneepads_##CAMO## { \
+    model="twelfth_new_uniforms"; \
+    camo=#CAMO; \
+    sleeve=#SLEEVE; \
+    glove="no"; \
+    shirt=#SHIRT; \
+    blouse="noblouse"; \
+    zip="zipped"; \
+    kneepad="kneepads"; \
   };
 
 #define BLOUSED(CAMO,SHIRT,SLEEVE)           \
@@ -425,8 +474,19 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
     glove="no";                     \
     shirt=#SHIRT;                    \
     blouse="blouse";                \
-    zip="zipped";                                         \
-  };                      
+    zip="zipped"; \
+    kneepad="nokneepads"; \
+  };     \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Bloused_Kneepads_##CAMO## {   \
+    model="twelfth_new_uniforms";                           \
+    camo=#CAMO;                             \
+    sleeve=#SLEEVE;                     \
+    glove="no";                     \
+    shirt=#SHIRT;                    \
+    blouse="blouse";                \
+    zip="zipped"; \
+    kneepad="kneepads"; \
+  };                    
 
 #define GLOVES(CAMO,SHIRT,SLEEVE)           \
   class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_##CAMO## {   \
@@ -437,6 +497,17 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
     shirt=#SHIRT;                    \
     blouse="noblouse";                \
     zip="zipped";                                         \
+    kneepad="nokneepads"; \
+  };                                 \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Kneepads_##CAMO## {   \
+    model="twelfth_new_uniforms";                           \
+    camo=#CAMO;                             \
+    sleeve=#SLEEVE;                     \
+    glove="yes";                     \
+    shirt=#SHIRT;                    \
+    blouse="noblouse";                \
+    zip="zipped";                                         \
+    kneepad="kneepads"; \
   };                                 
 
 #define BLOUSED_GLOVES(CAMO,SHIRT,SLEEVE)           \
@@ -448,7 +519,18 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
     shirt=#SHIRT;                    \
     blouse="blouse";                \
     zip="zipped";                                         \
-  };                 
+    kneepad="nokneepads"; \
+  };      \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_Kneepads_##CAMO## {   \
+    model="twelfth_new_uniforms";                           \
+    camo=#CAMO;                             \
+    sleeve=#SLEEVE;                     \
+    glove="yes";                     \
+    shirt=#SHIRT;                    \
+    blouse="blouse";                \
+    zip="zipped";                                         \
+    kneepad="kneepads"; \
+  };             
 
 #define UNZIPPED(CAMO,SHIRT,SLEEVE)           \
   class twelfth_U_B_##SHIRT##_##SLEEVE##_Unzipped_##CAMO## {   \
@@ -457,9 +539,20 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
     sleeve=#SLEEVE;                     \
     glove="no";                     \
     shirt=#SHIRT;                    \
-    blouse="blouse";                \
+    blouse="noblouse";                \
     zip="unzipped";                                         \
-  };                             
+    kneepad="nokneepads"; \
+  };           \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Unzipped_Kneepads_##CAMO## {   \
+    model="twelfth_new_uniforms";                           \
+    camo=#CAMO;                             \
+    sleeve=#SLEEVE;                     \
+    glove="no";                     \
+    shirt=#SHIRT;                    \
+    blouse="noblouse";                \
+    zip="unzipped";                                         \
+    kneepad="kneepads"; \
+  };                          
 
 #define BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE)           \
   class twelfth_U_B_##SHIRT##_##SLEEVE##_Bloused_Unzipped_##CAMO## {   \
@@ -470,7 +563,18 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
     shirt=#SHIRT;                    \
     blouse="blouse";                \
     zip="unzipped";                                         \
-  };                           
+    kneepad="nokneepads"; \
+  };      \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Bloused_Unzipped_Kneepads_##CAMO## {   \
+    model="twelfth_new_uniforms";                           \
+    camo=#CAMO;                             \
+    sleeve=#SLEEVE;                     \
+    glove="no";                     \
+    shirt=#SHIRT;                    \
+    blouse="blouse";                \
+    zip="unzipped";                                         \
+    kneepad="kneepads"; \
+  };                         
 
 #define GLOVES_UNZIPPED(CAMO,SHIRT,SLEEVE)           \
   class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Unzipped_##CAMO## {   \
@@ -481,7 +585,19 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
     shirt=#SHIRT;                    \
     blouse="noblouse";                \
     zip="unzipped";                                         \
-  };                                    
+    kneepad="nokneepads"; \
+  };    \
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Unzipped_Kneepads_##CAMO## {   \
+    model="twelfth_new_uniforms";                           \
+    camo=#CAMO;                             \
+    sleeve=#SLEEVE;                     \
+    glove="yes";                     \
+    shirt=#SHIRT;                    \
+    blouse="noblouse";                \
+    zip="unzipped";                                         \
+    kneepad="kneepads"; \
+  }; 
+                             
 
 
 #define GLOVES_BLOUSED_UNZIPPED(CAMO,SHIRT,SLEEVE)           \
@@ -493,7 +609,18 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
     shirt=#SHIRT;                                            \
     blouse="blouse";                                        \
     zip="unzipped";                                         \
-  };                                    
+    kneepad="nokneepads"; \
+  };\
+  class twelfth_U_B_##SHIRT##_##SLEEVE##_Gloves_Bloused_Unzipped_Kneepads_##CAMO## {   \
+    model="twelfth_new_uniforms";                           \
+    camo=#CAMO;                                              \
+    sleeve=#SLEEVE;                                         \
+    glove="yes";                                             \
+    shirt=#SHIRT;                                            \
+    blouse="blouse";                                        \
+    zip="unzipped";                                         \
+    kneepad="kneepads"; \
+  };        
 
 
 
@@ -523,7 +650,7 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
 
 
 
-#define UNIFORM_WEP(CAMO,PLATOON,ROLE,DISPLAYNAME)                              \
+#define UNIFORM_WEP(CAMO,PLATOON,ROLE,DISPLAYNAME)                                \
   class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_wep : twelfth_uni_ng_base_wep { \
     author="Waylen";                                                              \
     picture="";                                                                   \
@@ -645,320 +772,599 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
   VEST_GI(GungnirL_3,CAMO,lpl,na)       \
   VEST_GI(GungnirL_3,CAMO,lpl,med)      \
 
-
-
-
-
-
-
-
-
-
-
 //New Uniform class definitions
 //cfgVehicle
-#define TCP_VEH_CLASS_DEF                                     \
-  TCP_VEH_CLASS_NORMAL(TShirt,Untucked)                       \
-  TCP_VEH_CLASS_NORMAL(TShirt,Tucked)                       \
-  TCP_VEH_CLASS_NORMAL(FieldTop,Full)                       \
-  TCP_VEH_CLASS_NORMAL(FieldTop,HalfRoll)                       \
-  TCP_VEH_CLASS_NORMAL(FieldTop,QuarterRoll)                       \
-  TCP_VEH_CLASS_NORMAL(FieldTop,SlimSleeve)                       \
-  TCP_VEH_CLASS_NORMAL(TacShirt,Full)                       \
-  TCP_VEH_CLASS_NORMAL(TacShirt,HalfRoll)                       \
-  TCP_VEH_CLASS_NORMAL(TacShirt,QuarterRoll)                       \
-  TCP_VEH_CLASS_NORMAL(TacShirt,SlimSleeve)                       \
-  TCP_VEH_CLASS_BLOUSED(TShirt,Tucked)                       \
-  TCP_VEH_CLASS_BLOUSED(TShirt,Untucked)                       \
-  TCP_VEH_CLASS_BLOUSED(FieldTop,Full)                       \
-  TCP_VEH_CLASS_BLOUSED(FieldTop,HalfRoll)                       \
-  TCP_VEH_CLASS_BLOUSED(FieldTop,QuarterRoll)                       \
-  TCP_VEH_CLASS_BLOUSED(FieldTop,SlimSleeve)                       \
-  TCP_VEH_CLASS_BLOUSED(TacShirt,Full)                       \
-  TCP_VEH_CLASS_BLOUSED(TacShirt,HalfRoll)                       \
-  TCP_VEH_CLASS_BLOUSED(TacShirt,QuarterRoll)                       \
-  TCP_VEH_CLASS_BLOUSED(TacShirt,SlimSleeve)                       \
-  TCP_VEH_CLASS_GLOVES(TShirt,Tucked)                       \
-  TCP_VEH_CLASS_GLOVES(TShirt,Untucked)                       \
-  TCP_VEH_CLASS_GLOVES(FieldTop,Full)                       \
-  TCP_VEH_CLASS_GLOVES(FieldTop,HalfRoll)                       \
-  TCP_VEH_CLASS_GLOVES(FieldTop,QuarterRoll)                       \
-  TCP_VEH_CLASS_GLOVES(FieldTop,SlimSleeve)                       \
-  TCP_VEH_CLASS_GLOVES(TacShirt,Full)                       \
-  TCP_VEH_CLASS_GLOVES(TacShirt,HalfRoll)                       \
-  TCP_VEH_CLASS_GLOVES(TacShirt,QuarterRoll)                       \
-  TCP_VEH_CLASS_GLOVES(TacShirt,SlimSleeve)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(TShirt,Tucked)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(TShirt,Untucked)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(FieldTop,Full)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(FieldTop,HalfRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(FieldTop,QuarterRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(FieldTop,SlimSleeve)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(TacShirt,Full)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(TacShirt,HalfRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(TacShirt,QuarterRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_GLOVES(TacShirt,SlimSleeve)                       \
-  TCP_VEH_CLASS_UNZIPPED(FieldTop,Full)                       \
-  TCP_VEH_CLASS_UNZIPPED(FieldTop,HalfRoll)                       \
-  TCP_VEH_CLASS_UNZIPPED(FieldTop,QuarterRoll)                       \
-  TCP_VEH_CLASS_UNZIPPED(FieldTop,SlimSleeve)                       \
-  TCP_VEH_CLASS_UNZIPPED(TacShirt,Full)                       \
-  TCP_VEH_CLASS_UNZIPPED(TacShirt,HalfRoll)                       \
-  TCP_VEH_CLASS_UNZIPPED(TacShirt,QuarterRoll)                       \
-  TCP_VEH_CLASS_UNZIPPED(TacShirt,SlimSleeve)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(FieldTop,Full)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(FieldTop,HalfRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(FieldTop,QuarterRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(FieldTop,SlimSleeve)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(TacShirt,Full)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(TacShirt,HalfRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(TacShirt,QuarterRoll)                       \
-  TCP_VEH_CLASS_BLOUSED_UNZIPPED(TacShirt,SlimSleeve)                       \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(FieldTop,Full)                                       \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(FieldTop,HalfRoll)                                   \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(FieldTop,QuarterRoll)                                \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(FieldTop,SlimSleeve)                                 \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(TacShirt,Full)                                       \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(TacShirt,HalfRoll)                                   \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(TacShirt,QuarterRoll)                                \
-  TCP_VEH_CLASS_GLOVES_UNZIPPED(TacShirt,SlimSleeve)                                 \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,Full)                               \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,HalfRoll)                           \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,QuarterRoll)                        \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,SlimSleeve)                         \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,Full)                               \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,HalfRoll)                           \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,QuarterRoll)                        \
-  TCP_VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,SlimSleeve)                         \
+#define TCP_VEH_CLASS_DEF \
+  TCP_VEH_CLASS_GENERIC_2(TShirt,Untucked) \
+  TCP_VEH_CLASS_GENERIC_3(TShirt,Untucked,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TShirt,Untucked,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(TShirt,Untucked,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TShirt,Untucked,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(TShirt,Untucked,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TShirt,Untucked,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(TShirt,Untucked,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(TShirt,Tucked) \
+  TCP_VEH_CLASS_GENERIC_3(TShirt,Tucked,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TShirt,Tucked,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(TShirt,Tucked,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TShirt,Tucked,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(TShirt,Tucked,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TShirt,Tucked,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(TShirt,Tucked,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(FieldTop,Full) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,Full,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,Full,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,Full,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,Full,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,Full,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,Full,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,Full,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,Full,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,Full,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,Full,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,Full,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,Full,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,Full,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,Full,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(FieldTop,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(FieldTop,HalfRoll) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,HalfRoll,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,HalfRoll,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,HalfRoll,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,HalfRoll,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,HalfRoll,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,HalfRoll,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,HalfRoll,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,HalfRoll,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,HalfRoll,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,HalfRoll,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,HalfRoll,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,HalfRoll,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,HalfRoll,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,HalfRoll,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(FieldTop,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(FieldTop,QuarterRoll) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,QuarterRoll,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,QuarterRoll,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,QuarterRoll,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,QuarterRoll,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,QuarterRoll,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,QuarterRoll,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,QuarterRoll,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,QuarterRoll,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,QuarterRoll,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,QuarterRoll,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,QuarterRoll,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,QuarterRoll,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(FieldTop,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(FieldTop,SlimSleeve) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,SlimSleeve,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,SlimSleeve,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,SlimSleeve,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,SlimSleeve,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,SlimSleeve,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,SlimSleeve,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(FieldTop,SlimSleeve,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,SlimSleeve,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,SlimSleeve,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(FieldTop,SlimSleeve,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,SlimSleeve,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(FieldTop,SlimSleeve,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(FieldTop,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(TacShirt,Full) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,Full,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,Full,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,Full,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,Full,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,Full,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,Full,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,Full,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,Full,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,Full,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,Full,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,Full,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,Full,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,Full,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,Full,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(TacShirt,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(TacShirt,HalfRoll) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,HalfRoll,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,HalfRoll,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,HalfRoll,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,HalfRoll,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,HalfRoll,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,HalfRoll,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,HalfRoll,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,HalfRoll,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,HalfRoll,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,HalfRoll,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,HalfRoll,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,HalfRoll,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,HalfRoll,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,HalfRoll,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(TacShirt,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(TacShirt,QuarterRoll) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,QuarterRoll,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,QuarterRoll,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,QuarterRoll,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,QuarterRoll,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,QuarterRoll,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,QuarterRoll,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,QuarterRoll,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,QuarterRoll,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,QuarterRoll,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,QuarterRoll,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,QuarterRoll,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,QuarterRoll,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(TacShirt,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_2(TacShirt,SlimSleeve) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,SlimSleeve,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,SlimSleeve,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,SlimSleeve,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,SlimSleeve,Bloused) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,SlimSleeve,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,SlimSleeve,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_3(TacShirt,SlimSleeve,Gloves) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,SlimSleeve,Gloves,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,SlimSleeve,Gloves,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_4(TacShirt,SlimSleeve,Gloves,Bloused) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,SlimSleeve,Gloves,Bloused,Kneepads) \
+  TCP_VEH_CLASS_GENERIC_5(TacShirt,SlimSleeve,Gloves,Bloused,Unzipped) \
+  TCP_VEH_CLASS_GENERIC_6(TacShirt,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
 
 //cfgWeapon
 #define TCP_WEP_CLASS_DEF \
-  TCP_WEP_CLASS_NORMAL(TShirt,Tucked)                       \
-  TCP_WEP_CLASS_NORMAL(TShirt,Untucked)                       \
-  TCP_WEP_CLASS_NORMAL(FieldTop,Full)                       \
-  TCP_WEP_CLASS_NORMAL(FieldTop,HalfRoll)                       \
-  TCP_WEP_CLASS_NORMAL(FieldTop,QuarterRoll)                       \
-  TCP_WEP_CLASS_NORMAL(FieldTop,SlimSleeve)                       \
-  TCP_WEP_CLASS_NORMAL(TacShirt,Full)                       \
-  TCP_WEP_CLASS_NORMAL(TacShirt,HalfRoll)                       \
-  TCP_WEP_CLASS_NORMAL(TacShirt,QuarterRoll)                       \
-  TCP_WEP_CLASS_NORMAL(TacShirt,SlimSleeve)                       \
-  TCP_WEP_CLASS_BLOUSED(TShirt,Tucked)                       \
-  TCP_WEP_CLASS_BLOUSED(TShirt,Untucked)                       \
-  TCP_WEP_CLASS_BLOUSED(FieldTop,Full)                       \
-  TCP_WEP_CLASS_BLOUSED(FieldTop,HalfRoll)                       \
-  TCP_WEP_CLASS_BLOUSED(FieldTop,QuarterRoll)                       \
-  TCP_WEP_CLASS_BLOUSED(FieldTop,SlimSleeve)                       \
-  TCP_WEP_CLASS_BLOUSED(TacShirt,Full)                       \
-  TCP_WEP_CLASS_BLOUSED(TacShirt,HalfRoll)                       \
-  TCP_WEP_CLASS_BLOUSED(TacShirt,QuarterRoll)                       \
-  TCP_WEP_CLASS_BLOUSED(TacShirt,SlimSleeve)                       \
-  TCP_WEP_CLASS_GLOVES(TShirt,Tucked)                       \
-  TCP_WEP_CLASS_GLOVES(TShirt,Untucked)                       \
-  TCP_WEP_CLASS_GLOVES(FieldTop,Full)                       \
-  TCP_WEP_CLASS_GLOVES(FieldTop,HalfRoll)                       \
-  TCP_WEP_CLASS_GLOVES(FieldTop,QuarterRoll)                       \
-  TCP_WEP_CLASS_GLOVES(FieldTop,SlimSleeve)                       \
-  TCP_WEP_CLASS_GLOVES(TacShirt,Full)                       \
-  TCP_WEP_CLASS_GLOVES(TacShirt,HalfRoll)                       \
-  TCP_WEP_CLASS_GLOVES(TacShirt,QuarterRoll)                       \
-  TCP_WEP_CLASS_GLOVES(TacShirt,SlimSleeve)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(TShirt,Tucked)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(TShirt,Untucked)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(FieldTop,Full)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(FieldTop,HalfRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(FieldTop,QuarterRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(FieldTop,SlimSleeve)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(TacShirt,Full)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(TacShirt,HalfRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(TacShirt,QuarterRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_GLOVES(TacShirt,SlimSleeve)                       \
-  TCP_WEP_CLASS_UNZIPPED(FieldTop,Full)                       \
-  TCP_WEP_CLASS_UNZIPPED(FieldTop,HalfRoll)                       \
-  TCP_WEP_CLASS_UNZIPPED(FieldTop,QuarterRoll)                       \
-  TCP_WEP_CLASS_UNZIPPED(FieldTop,SlimSleeve)                       \
-  TCP_WEP_CLASS_UNZIPPED(TacShirt,Full)                       \
-  TCP_WEP_CLASS_UNZIPPED(TacShirt,HalfRoll)                       \
-  TCP_WEP_CLASS_UNZIPPED(TacShirt,QuarterRoll)                       \
-  TCP_WEP_CLASS_UNZIPPED(TacShirt,SlimSleeve)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(FieldTop,Full)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(FieldTop,HalfRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(FieldTop,QuarterRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(FieldTop,SlimSleeve)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(TacShirt,Full)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(TacShirt,HalfRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(TacShirt,QuarterRoll)                       \
-  TCP_WEP_CLASS_BLOUSED_UNZIPPED(TacShirt,SlimSleeve)                       \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(FieldTop,Full)                                       \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(FieldTop,HalfRoll)                                   \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(FieldTop,QuarterRoll)                                \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(FieldTop,SlimSleeve)                                 \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(TacShirt,Full)                                       \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(TacShirt,HalfRoll)                                   \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(TacShirt,QuarterRoll)                                \
-  TCP_WEP_CLASS_GLOVES_UNZIPPED(TacShirt,SlimSleeve)                                 \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,Full)                               \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,HalfRoll)                           \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,QuarterRoll)                        \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(FieldTop,SlimSleeve)                         \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,Full)                               \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,HalfRoll)                           \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,QuarterRoll)                        \
-  TCP_WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(TacShirt,SlimSleeve)                         \
+  TCP_WEP_CLASS_GENERIC_2(TShirt,Untucked) \
+  TCP_WEP_CLASS_GENERIC_3(TShirt,Untucked,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TShirt,Untucked,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(TShirt,Untucked,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TShirt,Untucked,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(TShirt,Untucked,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TShirt,Untucked,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(TShirt,Untucked,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(TShirt,Tucked) \
+  TCP_WEP_CLASS_GENERIC_3(TShirt,Tucked,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TShirt,Tucked,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(TShirt,Tucked,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TShirt,Tucked,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(TShirt,Tucked,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TShirt,Tucked,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(TShirt,Tucked,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(FieldTop,Full) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,Full,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,Full,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,Full,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,Full,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,Full,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,Full,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,Full,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,Full,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,Full,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,Full,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,Full,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,Full,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,Full,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,Full,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(FieldTop,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(FieldTop,HalfRoll) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,HalfRoll,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,HalfRoll,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,HalfRoll,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,HalfRoll,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,HalfRoll,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,HalfRoll,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,HalfRoll,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,HalfRoll,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,HalfRoll,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,HalfRoll,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,HalfRoll,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,HalfRoll,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,HalfRoll,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,HalfRoll,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(FieldTop,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(FieldTop,QuarterRoll) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,QuarterRoll,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,QuarterRoll,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,QuarterRoll,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,QuarterRoll,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,QuarterRoll,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,QuarterRoll,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,QuarterRoll,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,QuarterRoll,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,QuarterRoll,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,QuarterRoll,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,QuarterRoll,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,QuarterRoll,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(FieldTop,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(FieldTop,SlimSleeve) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,SlimSleeve,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,SlimSleeve,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,SlimSleeve,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,SlimSleeve,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,SlimSleeve,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,SlimSleeve,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(FieldTop,SlimSleeve,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,SlimSleeve,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,SlimSleeve,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(FieldTop,SlimSleeve,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,SlimSleeve,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(FieldTop,SlimSleeve,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(FieldTop,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(TacShirt,Full) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,Full,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,Full,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,Full,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,Full,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,Full,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,Full,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,Full,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,Full,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,Full,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,Full,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,Full,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,Full,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,Full,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,Full,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(TacShirt,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(TacShirt,HalfRoll) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,HalfRoll,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,HalfRoll,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,HalfRoll,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,HalfRoll,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,HalfRoll,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,HalfRoll,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,HalfRoll,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,HalfRoll,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,HalfRoll,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,HalfRoll,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,HalfRoll,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,HalfRoll,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,HalfRoll,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,HalfRoll,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(TacShirt,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(TacShirt,QuarterRoll) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,QuarterRoll,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,QuarterRoll,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,QuarterRoll,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,QuarterRoll,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,QuarterRoll,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,QuarterRoll,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,QuarterRoll,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,QuarterRoll,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,QuarterRoll,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,QuarterRoll,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,QuarterRoll,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,QuarterRoll,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(TacShirt,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_2(TacShirt,SlimSleeve) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,SlimSleeve,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,SlimSleeve,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,SlimSleeve,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,SlimSleeve,Bloused) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,SlimSleeve,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,SlimSleeve,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_3(TacShirt,SlimSleeve,Gloves) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,SlimSleeve,Gloves,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,SlimSleeve,Gloves,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_4(TacShirt,SlimSleeve,Gloves,Bloused) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,SlimSleeve,Gloves,Bloused,Kneepads) \
+  TCP_WEP_CLASS_GENERIC_5(TacShirt,SlimSleeve,Gloves,Bloused,Unzipped) \
+  TCP_WEP_CLASS_GENERIC_6(TacShirt,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
 
 
 // New uniform class setup
-#define VEH_UNI_CLASS(CAMO)                                     \
-  VEH_CLASS_NORMAL(CAMO,TShirt,Untucked)                       \
-  VEH_CLASS_NORMAL(CAMO,TShirt,Tucked)                       \
-  VEH_CLASS_NORMAL(CAMO,FieldTop,Full)                       \
-  VEH_CLASS_NORMAL(CAMO,FieldTop,HalfRoll)                       \
-  VEH_CLASS_NORMAL(CAMO,FieldTop,QuarterRoll)                       \
-  VEH_CLASS_NORMAL(CAMO,FieldTop,SlimSleeve)                       \
-  VEH_CLASS_NORMAL(CAMO,TacShirt,Full)                       \
-  VEH_CLASS_NORMAL(CAMO,TacShirt,HalfRoll)                       \
-  VEH_CLASS_NORMAL(CAMO,TacShirt,QuarterRoll)                       \
-  VEH_CLASS_NORMAL(CAMO,TacShirt,SlimSleeve)                       \
-  VEH_CLASS_BLOUSED(CAMO,TShirt,Tucked)                       \
-  VEH_CLASS_BLOUSED(CAMO,TShirt,Untucked)                       \
-  VEH_CLASS_BLOUSED(CAMO,FieldTop,Full)                       \
-  VEH_CLASS_BLOUSED(CAMO,FieldTop,HalfRoll)                       \
-  VEH_CLASS_BLOUSED(CAMO,FieldTop,QuarterRoll)                       \
-  VEH_CLASS_BLOUSED(CAMO,FieldTop,SlimSleeve)                       \
-  VEH_CLASS_BLOUSED(CAMO,TacShirt,Full)                       \
-  VEH_CLASS_BLOUSED(CAMO,TacShirt,HalfRoll)                       \
-  VEH_CLASS_BLOUSED(CAMO,TacShirt,QuarterRoll)                       \
-  VEH_CLASS_BLOUSED(CAMO,TacShirt,SlimSleeve)                       \
-  VEH_CLASS_GLOVES(CAMO,TShirt,Tucked)                       \
-  VEH_CLASS_GLOVES(CAMO,TShirt,Untucked)                       \
-  VEH_CLASS_GLOVES(CAMO,FieldTop,Full)                       \
-  VEH_CLASS_GLOVES(CAMO,FieldTop,HalfRoll)                       \
-  VEH_CLASS_GLOVES(CAMO,FieldTop,QuarterRoll)                       \
-  VEH_CLASS_GLOVES(CAMO,FieldTop,SlimSleeve)                       \
-  VEH_CLASS_GLOVES(CAMO,TacShirt,Full)                       \
-  VEH_CLASS_GLOVES(CAMO,TacShirt,HalfRoll)                       \
-  VEH_CLASS_GLOVES(CAMO,TacShirt,QuarterRoll)                       \
-  VEH_CLASS_GLOVES(CAMO,TacShirt,SlimSleeve)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,TShirt,Tucked)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,TShirt,Untucked)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,Full)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,HalfRoll)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,QuarterRoll)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,SlimSleeve)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,Full)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,HalfRoll)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,QuarterRoll)                       \
-  VEH_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,SlimSleeve)                       \
-  VEH_CLASS_UNZIPPED(CAMO,FieldTop,Full)                       \
-  VEH_CLASS_UNZIPPED(CAMO,FieldTop,HalfRoll)                       \
-  VEH_CLASS_UNZIPPED(CAMO,FieldTop,QuarterRoll)                       \
-  VEH_CLASS_UNZIPPED(CAMO,FieldTop,SlimSleeve)\
-  VEH_CLASS_UNZIPPED(CAMO,TacShirt,Full)\
-  VEH_CLASS_UNZIPPED(CAMO,TacShirt,HalfRoll)\
-  VEH_CLASS_UNZIPPED(CAMO,TacShirt,QuarterRoll)\
-  VEH_CLASS_UNZIPPED(CAMO,TacShirt,SlimSleeve)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,Full)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,HalfRoll)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,QuarterRoll)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,SlimSleeve)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,Full)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,HalfRoll)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,QuarterRoll)\
-  VEH_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,SlimSleeve)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,Full)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,HalfRoll)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,QuarterRoll)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,SlimSleeve)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,Full)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,HalfRoll)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,QuarterRoll)\
-  VEH_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,SlimSleeve)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,Full)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,HalfRoll)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,QuarterRoll)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,SlimSleeve)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,Full)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,HalfRoll)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,QuarterRoll)\
-  VEH_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,SlimSleeve)\
+#define VEH_UNI_CLASS(CAMO) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TShirt,Untucked) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Untucked,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Untucked,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TShirt,Untucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TShirt,Tucked) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Tucked,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Tucked,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TShirt,Tucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,FieldTop,Full) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,Full,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,Full,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,Full,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,Full,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,Full,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,Full,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,FieldTop,Full,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,FieldTop,Full,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,Full,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,Full,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,Full,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,Full,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,Full,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,Full,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,FieldTop,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,FieldTop,HalfRoll) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,HalfRoll,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,HalfRoll,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,HalfRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,HalfRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,HalfRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,FieldTop,HalfRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,FieldTop,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,FieldTop,QuarterRoll) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,QuarterRoll,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,QuarterRoll,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,QuarterRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,QuarterRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,QuarterRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,FieldTop,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,FieldTop,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,FieldTop,SlimSleeve) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,SlimSleeve,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,FieldTop,SlimSleeve,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,SlimSleeve,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,SlimSleeve,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,FieldTop,SlimSleeve,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,FieldTop,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,FieldTop,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TacShirt,Full) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,Full,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,Full,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,Full,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,Full,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,Full,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,Full,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,TacShirt,Full,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,Full,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,Full,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,Full,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,Full,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,Full,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,Full,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,Full,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,TacShirt,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TacShirt,HalfRoll) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,HalfRoll,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,HalfRoll,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,HalfRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,HalfRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,HalfRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,TacShirt,HalfRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,TacShirt,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TacShirt,QuarterRoll) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,QuarterRoll,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,QuarterRoll,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,QuarterRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,QuarterRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,QuarterRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,TacShirt,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,TacShirt,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TacShirt,SlimSleeve) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,SlimSleeve,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TacShirt,SlimSleeve,Unzipped) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,SlimSleeve,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,SlimSleeve,Bloused,Kneepads) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TacShirt,SlimSleeve,Bloused,Unzipped) \
+  CLASS_GENERIC_6_2(B,U_B,1,CAMO,TacShirt,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Unzipped) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
+  
 
 //cfgWeapon
+// Expect only CLASS_GENERIC_..._1 here, since we need only 1 hiddenSelectionTexture for cfgWeapons
 #define WEP_UNI_CLASS(CAMO) \
-  WEP_CLASS_NORMAL(CAMO,TShirt,Tucked)                       \
-  WEP_CLASS_NORMAL(CAMO,TShirt,Untucked)                       \
-  WEP_CLASS_NORMAL(CAMO,FieldTop,Full)                       \
-  WEP_CLASS_NORMAL(CAMO,FieldTop,HalfRoll)                       \
-  WEP_CLASS_NORMAL(CAMO,FieldTop,QuarterRoll)                       \
-  WEP_CLASS_NORMAL(CAMO,FieldTop,SlimSleeve)                       \
-  WEP_CLASS_NORMAL(CAMO,TacShirt,Full)                       \
-  WEP_CLASS_NORMAL(CAMO,TacShirt,HalfRoll)                       \
-  WEP_CLASS_NORMAL(CAMO,TacShirt,QuarterRoll)                       \
-  WEP_CLASS_NORMAL(CAMO,TacShirt,SlimSleeve)                       \
-  WEP_CLASS_BLOUSED(CAMO,TShirt,Tucked)                       \
-  WEP_CLASS_BLOUSED(CAMO,TShirt,Untucked)                       \
-  WEP_CLASS_BLOUSED(CAMO,FieldTop,Full)                       \
-  WEP_CLASS_BLOUSED(CAMO,FieldTop,HalfRoll)                       \
-  WEP_CLASS_BLOUSED(CAMO,FieldTop,QuarterRoll)                       \
-  WEP_CLASS_BLOUSED(CAMO,FieldTop,SlimSleeve)                       \
-  WEP_CLASS_BLOUSED(CAMO,TacShirt,Full)                       \
-  WEP_CLASS_BLOUSED(CAMO,TacShirt,HalfRoll)                       \
-  WEP_CLASS_BLOUSED(CAMO,TacShirt,QuarterRoll)                       \
-  WEP_CLASS_BLOUSED(CAMO,TacShirt,SlimSleeve)                       \
-  WEP_CLASS_GLOVES(CAMO,TShirt,Tucked)                       \
-  WEP_CLASS_GLOVES(CAMO,TShirt,Untucked)                       \
-  WEP_CLASS_GLOVES(CAMO,FieldTop,Full)                       \
-  WEP_CLASS_GLOVES(CAMO,FieldTop,HalfRoll)                       \
-  WEP_CLASS_GLOVES(CAMO,FieldTop,QuarterRoll)                       \
-  WEP_CLASS_GLOVES(CAMO,FieldTop,SlimSleeve)                       \
-  WEP_CLASS_GLOVES(CAMO,TacShirt,Full)                       \
-  WEP_CLASS_GLOVES(CAMO,TacShirt,HalfRoll)                       \
-  WEP_CLASS_GLOVES(CAMO,TacShirt,QuarterRoll)                       \
-  WEP_CLASS_GLOVES(CAMO,TacShirt,SlimSleeve)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,TShirt,Tucked)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,TShirt,Untucked)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,Full)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,HalfRoll)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,QuarterRoll)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,FieldTop,SlimSleeve)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,Full)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,HalfRoll)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,QuarterRoll)                       \
-  WEP_CLASS_BLOUSED_GLOVES(CAMO,TacShirt,SlimSleeve)                       \
-  WEP_CLASS_UNZIPPED(CAMO,FieldTop,Full)                       \
-  WEP_CLASS_UNZIPPED(CAMO,FieldTop,HalfRoll)                       \
-  WEP_CLASS_UNZIPPED(CAMO,FieldTop,QuarterRoll)                       \
-  WEP_CLASS_UNZIPPED(CAMO,FieldTop,SlimSleeve)                       \
-  WEP_CLASS_UNZIPPED(CAMO,TacShirt,Full)                       \
-  WEP_CLASS_UNZIPPED(CAMO,TacShirt,HalfRoll)                       \
-  WEP_CLASS_UNZIPPED(CAMO,TacShirt,QuarterRoll)                       \
-  WEP_CLASS_UNZIPPED(CAMO,TacShirt,SlimSleeve)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,Full)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,HalfRoll)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,QuarterRoll)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,FieldTop,SlimSleeve)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,Full)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,HalfRoll)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,QuarterRoll)                       \
-  WEP_CLASS_BLOUSED_UNZIPPED(CAMO,TacShirt,SlimSleeve)                       \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,Full)                                       \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,HalfRoll)                                   \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,QuarterRoll)                                \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,FieldTop,SlimSleeve)                                 \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,Full)                                       \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,HalfRoll)                                   \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,QuarterRoll)                                \
-  WEP_CLASS_GLOVES_UNZIPPED(CAMO,TacShirt,SlimSleeve)                                 \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,Full)                               \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,HalfRoll)                           \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,QuarterRoll)                        \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,FieldTop,SlimSleeve)                         \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,Full)                               \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,HalfRoll)                           \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,QuarterRoll)                        \
-  WEP_CLASS_GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,SlimSleeve)                         \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TShirt,Untucked) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Untucked,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Untucked,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Untucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TShirt,Tucked) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Tucked,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Tucked,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Tucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,FieldTop,Full) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,Full,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,Full,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,Full,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,Full,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,Full,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,Full,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,Full,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,Full,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,Full,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,Full,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,Full,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,Full,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,Full,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,Full,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,FieldTop,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,FieldTop,HalfRoll) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,FieldTop,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,FieldTop,QuarterRoll) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,FieldTop,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,FieldTop,SlimSleeve) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,FieldTop,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TacShirt,Full) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,Full,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,Full,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,Full,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,Full,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,Full,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,Full,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,Full,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,Full,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,Full,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,Full,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,Full,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,Full,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,Full,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,Full,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,TacShirt,Full,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TacShirt,HalfRoll) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,TacShirt,HalfRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TacShirt,QuarterRoll) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,TacShirt,QuarterRoll,Gloves,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TacShirt,SlimSleeve) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Unzipped) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Bloused,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Bloused,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Bloused,Unzipped,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Unzipped) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Unzipped,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped) \
+  CLASS_GENERIC_7_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
 
-
-
+  
 
 #define NEW_UNIFROM_GI(CAMO)                        \
   NORMAL(CAMO,TShirt,Tucked)                       \
@@ -1033,7 +1439,6 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
   GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,HalfRoll)                           \
   GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,QuarterRoll)                        \
   GLOVES_BLOUSED_UNZIPPED(CAMO,TacShirt,SlimSleeve)                         \
-
 
 //This is where the TCP helmets are made
 #define HELM_CH43A(SUFFIX,DISPLAY)                 \

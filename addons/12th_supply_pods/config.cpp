@@ -67,7 +67,7 @@ class CfgVehicles {
     // The maximum items/magazines/weapons this supply pod can hold
     transportMaxWeapons = 50;
     transportMaxMagazines = 200;
-	maximumLoad = 7500;
+	  maximumLoad = 7500;
 
     // HiddenSelections for retexturing
     hiddenSelections[] = {"camo"};

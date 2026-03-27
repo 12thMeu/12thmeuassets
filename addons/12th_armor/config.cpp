@@ -47,7 +47,8 @@ class CfgPatches {
       "OPTRE_UNSC_Units",
       "DMNS_Units",
       "cba_main",
-      "ace_main"
+      "ace_main",
+      "TCP_characters"
     };
   };
 };
@@ -112,7 +113,8 @@ class CfgVehicles {
         };
       uniformClass = QOUTE(TWELFTH_WEP_NORMAL(AIC,TShirt,Untucked));
   };
-   class twelfth_B_TShirt_Untucked_UNSCMC : TCP_B_CBUU_TShirt_Untucked_Base {
+
+  class twelfth_B_TShirt_Untucked_UNSCMC : TCP_B_CBUU_TShirt_Untucked_Base {
       author="Sammy";
       scope= 1;
       scopeArsenal= 1;
@@ -122,6 +124,42 @@ class CfgVehicles {
         QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
         };
       uniformClass = QOUTE(TWELFTH_WEP_NORMAL(UNSCMC,TShirt,Untucked));
+  };
+
+  class twelfth_B_TShirt_Tucked_instructor : TCP_B_CBUU_TShirt_Tucked_Base {
+      author="Sammy";
+      scope= 1;
+      scopeArsenal= 1;
+      scopeCurator = 1;
+      hiddenSelectionsTextures[] = {
+        QP(uniforms\uniform\instructor\CBUU_inst_CO.paa),
+        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
+        };
+      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(instructor,TShirt,Tucked));
+  };
+
+  class twelfth_B_TShirt_Tucked_AIC : TCP_B_CBUU_TShirt_Tucked_Base {
+      author="Sammy";
+      scope= 1;
+      scopeArsenal= 1;
+      scopeCurator = 1;
+      hiddenSelectionsTextures[] = {
+        QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa),
+        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
+        };
+      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(AIC,TShirt,Tucked));
+  };
+
+  class twelfth_B_TShirt_Tucked_UNSCMC : TCP_B_CBUU_TShirt_Tucked_Base {
+      author="Sammy";
+      scope= 1;
+      scopeArsenal= 1;
+      scopeCurator = 1;
+      hiddenSelectionsTextures[] = {
+        QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa),
+        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
+        };
+      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(UNSCMC,TShirt,Tucked));
   };
   // ---------------------------------------------------------------------------
   //  twelfth_odst_uniform_veh
@@ -150,6 +188,7 @@ class CfgVehicles {
 //  CfgWeapons
 // -----------------------------------------------------------------------------
 class CfgWeapons {
+  class TCP_equipmentTypes;
   class H_Cap_oli;
   class UniformItem;
   class ItemInfo;
@@ -246,6 +285,54 @@ class CfgWeapons {
     ACE_GForceCoef=0.4;
     class ItemInfo : ItemInfo {
       uniformClass = QOUTE(TWELFTH_VEH_NORMAL(UNSCMC,TShirt,Untucked));
+      containerClass="Supply100"; 
+      mass=1;
+      uniformType = "Neopren";
+      allowedSlots[]={"701","801","901"};
+      armor=20;
+    };
+    hiddenSelectionsTextures[] = {
+      QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa)
+    };
+  };
+  class twelfth_U_B_TShirt_Tucked_instructor: TCP_U_B_CBUU_TShirt_Tucked_Base{
+    scope=2;
+    displayName="[12th] Instructor T-Shirt Tucked";
+    ACE_GForceCoef=0.4;
+    class ItemInfo : ItemInfo {
+      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(instructor,TShirt,Tucked));
+      containerClass="Supply100"; 
+      mass=1;
+      uniformType = "Neopren";
+      allowedSlots[]={"701","801","901"};
+      armor=20;
+    };
+    hiddenSelectionsTextures[] = {
+      QP(uniforms\uniform\instructor\CBUU_inst_CO.paa)
+    };
+  };
+  class twelfth_U_B_TShirt_Tucked_AIC: TCP_U_B_CBUU_TShirt_Tucked_Base{
+    scope=2;
+    displayName="[12th] AIC T-Shirt Tucked";
+    ACE_GForceCoef=0.4;
+    class ItemInfo : ItemInfo {
+      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(AIC,TShirt,Tucked));
+      containerClass="Supply100"; 
+      mass=1;
+      uniformType = "Neopren";
+      allowedSlots[]={"701","801","901"};
+      armor=20;
+    };
+    hiddenSelectionsTextures[] = {
+      QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa)
+    };
+  };
+    class twelfth_U_B_TShirt_Tucked_UNSCMC: TCP_U_B_CBUU_TShirt_Tucked_Base{
+    scope=2;
+    displayName="[12th] UNSCMC T-Shirt Tucked";
+    ACE_GForceCoef=0.4;
+    class ItemInfo : ItemInfo {
+      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(UNSCMC,TShirt,Tucked));
       containerClass="Supply100"; 
       mass=1;
       uniformType = "Neopren";
@@ -629,7 +716,7 @@ class XtdGearModels {
     // Uniforms
     class twelfth_new_uniforms {
       label="12th New Infantry Uniforms";
-      options[] = {"camo", "sleeve","glove","shirt","blouse","zip"};
+      options[] = {"camo", "sleeve","glove","shirt","blouse","zip","kneepad"};
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
@@ -679,8 +766,13 @@ class XtdGearModels {
         class zipped {label="Zipped Up";};
         class unzipped {label="Unzipped";};
       };
-
-
+      class kneepad {
+        alwaysSelectable=1;
+        label="Kneepad Type";
+        values[]={"nokneepads","kneepads"};
+        class nokneepads {label="No kneepads";};
+        class kneepads {label="Kneepads";};
+      };
     };
     // Vests
     class twelfth_base_vests {
@@ -704,7 +796,7 @@ class XtdGearModels {
       class necktype {
         alwaysSelectable = 1;
         label="Neck Armour";
-        values[]={"no", "flack", "armoured"};
+        values[]={"no", "flak", "armoured"};
         class no {label="No";};
         class flak {label="Flak";};
         class armoured {label="Armoured";};
@@ -736,6 +828,47 @@ class XtdGearModels {
         values[]={"na","med"};
         class na  {label="None";};
         class med {label="Corpsman"; image=XTP(med);};
+      };
+    };
+
+    class twelfth_tshirt {
+      label="12th TShirts";
+      options[] = {"camo","tuck","glove","kneepad","blouse"};
+      class camo {
+        alwaysSelectable = 1;
+        label="Print";
+        values[]={"instructor", "aic", "unscmc"};
+        class instructor {label="Instructor";}; 
+        class aic {label="AiC";};
+        class unscmc {label="UNSCMC";};
+      };
+      class tuck {
+        alwaysSelectable = 1;
+        label="Tucking";
+        values[]={"tucked", "untucked"};
+        class Tucked {label="Tucked";};
+        class Untucked {label="Untucked";};
+      };
+      class glove {
+        alwaysSelectable = 1;
+        label="Gloves";
+        values[]={"yes","no"};
+        class yes  {label="With Gloves";};
+        class no {label="No Gloves";};
+      };
+      class kneepad {
+        alwaysSelectable=1;
+        label="Kneepad Type";
+        values[]={"nokneepads","kneepads"};
+        class nokneepads {label="No kneepads";};
+        class kneepads {label="Kneepads";};
+      };
+      class blouse {
+        alwaysSelectable=1;
+        label="Blouse Type";
+        values[]={"blouse","noblouse"};
+        class blouse {label="Blouse";};
+        class noblouse {label="No blouse";};
       };
     };
 
@@ -803,7 +936,29 @@ class XtdGearInfos {
 
     //-------------------------------------- instructor
     //INSTRUCTOR_UNIFROM_GI
-
-    
+    TSHIRT_NORMAL_GI(instructor,Tucked)
+    TSHIRT_NORMAL_GI(instructor,Untucked)
+    TSHIRT_GLOVES_GI(instructor,Tucked)
+    TSHIRT_GLOVES_GI(instructor,Untucked)
+    TSHIRT_BLOUSED_GI(instructor,Tucked)
+    TSHIRT_BLOUSED_GI(instructor,Untucked)
+    TSHIRT_BLOUSED_GLOVES_GI(instructor,Tucked)
+    TSHIRT_BLOUSED_GLOVES_GI(instructor,Untucked)
+    TSHIRT_NORMAL_GI(aic,Tucked)
+    TSHIRT_NORMAL_GI(aic,Untucked)
+    TSHIRT_GLOVES_GI(aic,Tucked)
+    TSHIRT_GLOVES_GI(aic,Untucked)
+    TSHIRT_BLOUSED_GI(aic,Tucked)
+    TSHIRT_BLOUSED_GI(aic,Untucked)
+    TSHIRT_BLOUSED_GLOVES_GI(aic,Tucked)
+    TSHIRT_BLOUSED_GLOVES_GI(aic,Untucked)
+    TSHIRT_NORMAL_GI(unscmc,Tucked)
+    TSHIRT_NORMAL_GI(unscmc,Untucked)
+    TSHIRT_GLOVES_GI(unscmc,Tucked)
+    TSHIRT_GLOVES_GI(unscmc,Untucked)
+    TSHIRT_BLOUSED_GI(unscmc,Tucked)
+    TSHIRT_BLOUSED_GI(unscmc,Untucked)
+    TSHIRT_BLOUSED_GLOVES_GI(unscmc,Tucked)
+    TSHIRT_BLOUSED_GLOVES_GI(unscmc,Untucked)
   };
 };
