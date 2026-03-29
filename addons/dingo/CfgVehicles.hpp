@@ -133,15 +133,6 @@ class CfgVehicles
                 masterPositions[] = {"commander"};
                 connectedByDefault = 1;
 			};
-			class Intercom_2: Intercom_1 
-			{
-                displayName = "Pax intercom";
-                shortName = "Pax";
-                allowedPositions[] = {"crew", {"cargo", "all"}};
-                limitedPositions[] = {};
-                numLimitedPositions = 0;
-                connectedByDefault = 0;
-			};
 		};
 		acre_hasInfantryPhone = 1; // 1 - enabled, 0 - disabled (default: 0)
         acre_infantryPhoneDisableRinging = 0;   // If set to 1, the ringing funtionality will not be available (default: 0)
@@ -168,9 +159,8 @@ class CfgVehicles
 		};
 
 		//TFAR
-
-		TFAR_hasIntercom = 1;
-
+		tf_hasLRradio = 1;
+		tf_isolatedAmount = 0.3;
 
 		//hand anims
 		driverLeftHandAnimName 	= "drivewheel"; /// according to what bone in model of car does hand move
