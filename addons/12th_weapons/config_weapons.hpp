@@ -411,6 +411,7 @@ class CfgWeapons
 		pictureWire = "\TCP\Weapons\SMGs\M7\data\ui\icon_SMG_M7_W_ca.paa";
 		hiddenSelections[] = {"camo"};
 		hiddenSelectionsTextures[] = {"\TCP\Weapons\SMGs\M7\data\camo\default\M7_CO.paa"};
+    handAnim[] = {"OFP2_ManSkeleton","\TCP\Weapons\SMGs\M7\data\anim\M7_handAnim.rtm"};
     magazines[] = COMMON_SMG_MAGAZINES;
   };
 
@@ -526,6 +527,7 @@ class CfgWeapons
     scopeArsenal = 2;
     canShootInWater = 1;
     mass = 30;
+    handAnim[] = {"OFP2_ManSkeleton","\TCP\Weapons\Rifles\MA5K\data\anim\MA5K_handAnim.rtm"};
     displayName = "[12th] MA5K Carbine";
     baseWeapon = "twelfth_MA5K";
     model = "\TCP\Weapons\Rifles\MA5K\MA5K.p3d";
@@ -1192,6 +1194,7 @@ class CfgWeapons
 		  pictureWire = "\TCP\Weapons\LongRangeRifles\M392\data\ui\icon_srifle_M392_W_ca.paa";
       hiddenSelections[] = {"camo","camo1"};
 		  hiddenSelectionsTextures[] = {"\TCP\Weapons\LongRangeRifles\M392\data\camo\default\M392_01_CO.paa","\TCP\Weapons\LongRangeRifles\M392\data\camo\default\M392_02_CO.paa"};
+      handAnim[] = {"OFP2_ManSkeleton","\TCP\Weapons\LongRangeRifles\M392\data\anim\M392_handAnim.rtm"};
       HUD_TotalPosibleBullet = 32; // Total possible bullets displayed in HUD
       magazines[] = COMMON_MA5C_MAGAZINES;
       class WeaponSlotsInfo : WeaponSlotsInfo
@@ -1404,6 +1407,7 @@ class CfgWeapons
       scopeArsenal = 2;
       displayName = "[12th] M731";
       baseWeapon = "twelfth_M731";
+      handAnim[] = {"OFP2_ManSkeleton","\TCP\Weapons\Machineguns\M731\data\anim\M731_handAnim.rtm"};
       picture = "\TCP\Weapons\Machineguns\M731\data\ui\icon_lmg_M731_X_ca.paa";
 		  pictureWire = "\TCP\Weapons\Machineguns\M731\data\ui\icon_lmg_M731_W_ca.paa";
       hiddenSelections[] = {"camo","camo1","camo2"};

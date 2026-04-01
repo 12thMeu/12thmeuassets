@@ -145,11 +145,8 @@ Pouch definitons
 */
 #define TCP_CLASS_DEF_NORM(ROLE,NUMBER)\
 class TCP_B_##ROLE##_##NUMBER##_Brown;\
-class TCP_B_##ROLE##_##NUMBER##_Knife_Brown;\
 class TCP_B_##ROLE##_##NUMBER##_Brown_M43A;\
-class TCP_B_##ROLE##_##NUMBER##_Knife_Brown_M43A;\
 class TCP_B_##ROLE##_##NUMBER##_Brown_M43A1;\
-class TCP_B_##ROLE##_##NUMBER##_Knife_Brown_M43A1;\
 class Twelfth_##ROLE##_##NUMBER##_Brown : TCP_B_##ROLE##_##NUMBER##_Brown{\
     scopeArsenal=2;\
     scope=2;\
@@ -160,18 +157,6 @@ class Twelfth_##ROLE##_##NUMBER##_Brown : TCP_B_##ROLE##_##NUMBER##_Brown{\
     class TCP_equipmentTypes: TCP_equipmentTypes \
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
-		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_Knife_Brown{\
-    scopeArsenal=2;\
-    scope=2;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
 		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_Brown_M43A{\
@@ -186,18 +171,6 @@ class Twelfth_##ROLE##_##NUMBER##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_Brown_M
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
 		};\
 };\
-class Twelfth_##ROLE##_##NUMBER##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_Knife_Brown_M43A{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
-		};\
-};\
 class Twelfth_##ROLE##_##NUMBER##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_Brown_M43A1{\
     scopeArsenal=1;\
     scope=1;\
@@ -210,26 +183,11 @@ class Twelfth_##ROLE##_##NUMBER##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_Brown_
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Brown); \
 		};\
 };\
-class Twelfth_##ROLE##_##NUMBER##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_Knife_Brown_M43A1{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_Knife_Brown); \
-		};\
-};
 
 #define TCP_CLASS_DEF_NORM_PACK(ROLE,NUMBER,PACK)\
 class TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown;\
-class TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown;\
 class TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown_M43A;\
-class TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A;\
 class TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1;\
-class TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A1;\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown : TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown{\
     scopeArsenal=2;\
     scope=2;\
@@ -240,18 +198,6 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown : TCP_B_##ROLE##_##NUMBER##_##P
     class TCP_equipmentTypes: TCP_equipmentTypes \
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
-		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown{\
-    scopeArsenal=2;\
-    scope=2;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
 		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown_M43A{\
@@ -266,18 +212,6 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A : TCP_B_##ROLE##_##NUMBER#
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
 		};\
 };\
-class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
-		};\
-};\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1{\
     scopeArsenal=1;\
     scope=1;\
@@ -288,18 +222,6 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER
     class TCP_equipmentTypes: TCP_equipmentTypes \
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown); \
-		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##PACK##_Knife_Brown_M43A1{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown); \
 		};\
 };
 
@@ -322,18 +244,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown : TCP_B_##ROLE##_##NUMB
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
 		};\
 };\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown{\
-    scopeArsenal=2;\
-    scope=2;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
-		};\
-  };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A{\
     scopeArsenal=1;\
     scope=1;\
@@ -344,18 +254,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A : TCP_B_##ROLE##_#
     class TCP_equipmentTypes: TCP_equipmentTypes \
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
-		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
 		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A1{\
@@ -369,29 +267,14 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A1 : TCP_B_##ROLE##_
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown); \
 		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A1{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown); \
-		};\
 };
 
 
 
 #define TCP_CLASS_DEF_NORM_BACKPACK_ADDON(ROLE,NUMBER,BACKPACKTYPE,ADDON)\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A1;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A1;\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown{\
     scopeArsenal=2;\
     scope=2;\
@@ -402,18 +285,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown : TCP_B_##ROL
     class TCP_equipmentTypes: TCP_equipmentTypes \
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
-		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown{\
-    scopeArsenal=2;\
-    scope=2;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
 		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A{\
@@ -428,18 +299,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A : TCP_B_
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
 		};\
 };\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
-		};\
-};\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A1{\
     scopeArsenal=1;\
     scope=1;\
@@ -451,28 +310,14 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown_M43A1 : TCP_B
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown); \
 		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown_M43A1{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown); \
-		};\
 };
+
 
 
 #define TCP_CLASS_DEF_NORM_BACKPACK_PACK(ROLE,NUMBER,BACKPACKTYPE,PACK)\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A1;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A1;\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown{\
     scopeArsenal=2;\
     scope=2;\
@@ -483,18 +328,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown : TCP_B_##ROLE
     class TCP_equipmentTypes: TCP_equipmentTypes \
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
-		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown{\
-    scopeArsenal=2;\
-    scope=2;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
 		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A{\
@@ -509,18 +342,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A : TCP_B_#
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
 		};\
 };\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
-		};\
-};\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A1{\
     scopeArsenal=1;\
     scope=1;\
@@ -532,27 +353,12 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown_M43A1 : TCP_B_
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown); \
 		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown_M43A1{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown); \
-		};\
 };
 
 #define TCP_CLASS_DEF_NORM_BACKPACK_ADDON_PACK(ROLE,NUMBER,BACKPACKTYPE,PACK,ADDON)\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A1;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A1;\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown{\
     scopeArsenal=2;\
     scope=2;\
@@ -562,18 +368,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown : TC
     class TCP_equipmentTypes: TCP_equipmentTypes \
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
-		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown{\
-    scopeArsenal=2;\
-    scope=2;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
 		};\
 };\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A{\
@@ -588,18 +382,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
 		};\
 };\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
-		};\
-};\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A1 :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A1{\
     scopeArsenal=1;\
     scope=1;\
@@ -611,19 +393,7 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown_M43A
 		{ \
 			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown); \
 		};\
-};\
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A1 :TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown_M43A1{\
-    scopeArsenal=1;\
-    scope=1;\
-    author="Sammy";\
-    maximumLoad = BP_MAXLOAD;\
-    mass = BP_MASS;\
-    ace_arsenal_uniqueBase = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
-    class TCP_equipmentTypes: TCP_equipmentTypes \
-		{ \
-			baseEquipment = QOUTE(Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown); \
-		};\
-}; 
+};
 
 
 
@@ -2131,17 +1901,8 @@ class Twelfth_##ROLE##_##NUMBER##_Brown {  \
   backpack = "NO";\
   pack = "NO";\
   addon = "NO";\
-  knife = "NO";\
-};  \
-class Twelfth_##ROLE##_##NUMBER##_Knife_Brown {  \
-  model = "twelfth_Pouches";  \
-  role = #ROLE; \
-  variant = #NUMBER; \
-  backpack = "NO";\
-  pack = "NO";\
-  addon = "NO";\
-  knife = "YES";\
 };
+
 
 #define POUCH_DEF_GI_PACK(ROLE,NUMBER,PACK)\
 class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown {  \
@@ -2151,16 +1912,6 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown {  \
   backpack = "NO";\
   pack = #PACK;\
   addon = "NO";\
-  knife = "NO";\
-};  \
-class Twelfth_##ROLE##_##NUMBER##_##PACK##_Knife_Brown {  \
-  model = "twelfth_Pouches";  \
-  role = #ROLE; \
-  variant = #NUMBER; \
-  backpack = "NO";\
-  pack = #PACK;\
-  addon = "NO";\
-  knife = "YES";\
 };
 
 #define POUCH_DEF_GI_BACKPACK(ROLE,NUMBER,BACKPACKTYPE)\
@@ -2171,16 +1922,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown {  \
   backpack = #BACKPACKTYPE;\
   pack = "NO";\
   addon = "NO";\
-  knife = "NO";\
-};  \
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown {  \
-  model = "twelfth_Pouches";  \
-  role = #ROLE; \
-  variant = #NUMBER; \
-  backpack = #BACKPACKTYPE;\
-  pack = "NO";\
-  addon = "NO";\
-  knife = "YES";\
 };
 
 #define POUCH_DEF_GI_BACKPACK_ADDON(ROLE,NUMBER,BACKPACKTYPE,ADDON)\
@@ -2191,16 +1932,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Brown {  \
   backpack = #BACKPACKTYPE;\
   pack = "NO";\
   addon = #ADDON;\
-  knife = "NO";\
-};  \
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_Knife_Brown {  \
-  model = "twelfth_Pouches";  \
-  role = #ROLE; \
-  variant = #NUMBER; \
-  backpack = #BACKPACKTYPE;\
-  pack = "NO";\
-  addon = #ADDON;\
-  knife = "YES";\
 };
 
 #define POUCH_DEF_GI_BACKPACK_PACK(ROLE,NUMBER,BACKPACKTYPE,PACK)\
@@ -2211,16 +1942,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Brown {  \
   backpack = #BACKPACKTYPE;\
   pack = #PACK;\
   addon = "NO";\
-  knife = "NO";\
-};  \
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##PACK##_Knife_Brown {  \
-  model = "twelfth_Pouches";  \
-  role = #ROLE; \
-  variant = #NUMBER; \
-  backpack = #BACKPACKTYPE;\
-  pack = #PACK;\
-  addon = "NO";\
-  knife = "YES";\
 };
 
 #define POUCH_DEF_GI_BACKPACK_ADDON_PACK(ROLE,NUMBER,BACKPACKTYPE,PACK,ADDON)\
@@ -2231,16 +1952,6 @@ class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Brown {  \
   backpack = #BACKPACKTYPE;\
   pack = #PACK;\
   addon = #ADDON;\
-  knife = "NO";\
-};  \
-class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_##ADDON##_##PACK##_Knife_Brown {  \
-  model = "twelfth_Pouches";  \
-  role = #ROLE; \
-  variant = #NUMBER; \
-  backpack = #BACKPACKTYPE;\
-  pack = #PACK;\
-  addon = #ADDON;\
-  knife = "YES";\
 };
 
 /*

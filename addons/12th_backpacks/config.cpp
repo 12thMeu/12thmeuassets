@@ -235,13 +235,14 @@ class XtdGearModels {
 
     class twelfth_Pouches {
       label = "12th Pouches";
-      options[] = {"role", "variant","backpack","pack","addon","knife"};
+      options[] = {"role", "variant","backpack","pack","addon"};
       class role {
         alwaysSelectable = 1;
         label = "Role";
-        values[] = {"Ammo_Bearer", "Assaulter", "Breacher","Engineer","Grenadier","Marksman","Medic","NCO","Rifleman","RTO","Sapper","Sniper"};
-        class Ammo_Bearer {label = "Ammo_Bearer";};
+        values[] = {"Ammo_Bearer","Autorifleman", "Assaulter", "Breacher","Engineer","Grenadier","Marksman","Medic","NCO","Rifleman","RTO","Sapper","Sniper"};
+        class Ammo_Bearer {label = "Ammo Bearer";};
         class Assaulter {label = "Assaulter";};
+        class Autorifleman {label = "Autorifleman";};
 		    class Breacher {label = "Breacher";};
         class Engineer{label = "Engineer";};
         class Grenadier{label = "Grenadier";};
@@ -295,16 +296,7 @@ class XtdGearModels {
         class Medical {label = "Medical";};
         class Patrol {label = "Patrol";};
       };
-      class knife {
-        alwaysSelectable = 1;
-        label = "Knife";
-        values [] = {"NO", "YES"};
-        class NO {label = "No Knife";};
-        class Knife {label = "Knife";};
-      };
     };
-
-
   };
 };
 
