@@ -227,11 +227,8 @@ class Twelfth_##ROLE##_##NUMBER##_##PACK##_Brown_M43A1 : TCP_B_##ROLE##_##NUMBER
 
 #define TCP_CLASS_DEF_NORM_BACKPACK(ROLE,NUMBER,BACKPACKTYPE)\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A;\
 class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown_M43A1;\
-class TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Knife_Brown_M43A1;\
 class Twelfth_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown : TCP_B_##ROLE##_##NUMBER##_##BACKPACKTYPE##_Brown{\
     scopeArsenal=2;\
     scope=2;\

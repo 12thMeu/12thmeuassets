@@ -413,6 +413,19 @@ class CfgWeapons
 		hiddenSelectionsTextures[] = {"\TCP\Weapons\SMGs\M7\data\camo\default\M7_CO.paa"};
     handAnim[] = {"OFP2_ManSkeleton","\TCP\Weapons\SMGs\M7\data\anim\M7_handAnim.rtm"};
     magazines[] = COMMON_SMG_MAGAZINES;
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+			class MuzzleSlot: MuzzleSlot {
+			};
+			class CowsSlot: CowsSlot {
+
+      };
+			class PointerSlot: PointerSlot {
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS,"TCP_acc_pointer_lam_M7"};
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				compatibleitems[] = {};
+			};
+		};
   };
 
   class twelfth_M7_Test_Folded : OPTRE_M7_Folded
@@ -438,6 +451,17 @@ class CfgWeapons
 		hiddenSelections[] = {"camo","camo1"};
 		hiddenSelectionsTextures[] = {"\TCP\Weapons\Shotguns\M45\data\camo\default\M45_01_CO.paa","\TCP\Weapons\Shotguns\M45\data\camo\default\M45_02_CO.paa"};
     magazines[] = {"twelfth_12rnd_8ga_b", "twelfth_12rnd_8ga_s", "twelfth_6rnd_8ga_b", "twelfth_6rnd_8ga_s"};
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class PointerSlot: PointerSlot {
+				compatibleitems[] = {"TCP_acc_flashlight_M45"};
+			};
+			class UnderBarrelSlot: UnderBarrelSlot {
+				compatibleitems[] = {"TCP_bipod_sideSaddle_M45_Mixed","TCP_bipod_sideSaddle_M45_Pellets","TCP_bipod_sideSaddle_M45_Slugs"};
+			};
+      class MuzzleSlot: MuzzleSlot {
+        compatibleitems[] = {};
+			};
+		};
   };
   /*
     =============================================================================
@@ -458,9 +482,11 @@ class CfgWeapons
 			class MuzzleSlot: MuzzleSlot {
 				compatibleitems[] = { "OPTRE_MA5Suppressor" };
 			};
-			class CowsSlot: CowsSlot {};
+			class CowsSlot: CowsSlot {
+        compatibleitems[] = COMMON_SIGHTS;
+      };
 			class PointerSlot: PointerSlot {
-				compatibleitems[] = COMMON_SIGHTS;
+        compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				compatibleitems[] = {};
@@ -487,9 +513,11 @@ class CfgWeapons
 			class MuzzleSlot: MuzzleSlot {
 			compatibleitems[] = { "OPTRE_MA5Suppressor" };
 			};
-			class CowsSlot: CowsSlot {};
+			class CowsSlot: CowsSlot {
+      compatibleitems[] = COMMON_SIGHTS;
+      };
 			class PointerSlot: PointerSlot {
-			compatibleitems[] = COMMON_SIGHTS;
+			compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 			compatibleitems[] = {};
@@ -511,9 +539,11 @@ class CfgWeapons
       class MuzzleSlot: MuzzleSlot {
           compatibleitems[] = { "OPTRE_MA37KSuppressor" };
       };
-      class CowsSlot: CowsSlot {};
+      class CowsSlot: CowsSlot {
+        compatibleitems[] = COMMON_SIGHTS;
+      };
       class PointerSlot: PointerSlot {
-          compatibleitems[] = COMMON_SIGHTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
       };
       class UnderBarrelSlot: UnderBarrelSlot {
           compatibleitems[] = {};
@@ -541,9 +571,11 @@ class CfgWeapons
       class MuzzleSlot: MuzzleSlot {
           compatibleitems[] = { "OPTRE_MA5Suppressor" };
       };
-      class CowsSlot: CowsSlot {};
+      class CowsSlot: CowsSlot {
+        compatibleitems[] = COMMON_SIGHTS;
+        };
       class PointerSlot: PointerSlot {
-          compatibleitems[] = COMMON_SIGHTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
       };
       class UnderBarrelSlot: UnderBarrelSlot {
           compatibleitems[] = {};
@@ -603,9 +635,11 @@ class CfgWeapons
         };
         class CowsSlot : CowsSlot
         {
+          compatibleitems[] = COMMON_SIGHTS;
         };
         class PointerSlot : PointerSlot
         {
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -636,6 +670,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -660,13 +695,15 @@ class CfgWeapons
         };
         class CowsSlot : CowsSlot
         {
+          compatibleitems[] = COMMON_SIGHTS;
         };
         class PointerSlot : PointerSlot
         {
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
-          compatibleitems[] = COMMON_MEDIUM_BIPOD;
+          compatibleitems[] = {};
         };
       };
       class Single: Mode_SemiAuto
@@ -1209,7 +1246,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1238,7 +1275,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1272,7 +1309,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1351,7 +1388,7 @@ class CfgWeapons
           };
           class PointerSlot : PointerSlot
           {
-            compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+            compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
           };
           class UnderBarrelSlot : UnderBarrelSlot
           {
@@ -1390,7 +1427,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1432,7 +1469,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS,"TCP_acc_carryHandle_M731"};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1483,7 +1520,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1530,7 +1567,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1577,7 +1614,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1606,7 +1643,7 @@ class CfgWeapons
         };
         class PointerSlot : PointerSlot
         {
-          compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
         };
         class UnderBarrelSlot : UnderBarrelSlot
         {
@@ -1667,7 +1704,7 @@ class CfgWeapons
 			};
 			class PointerSlot: PointerSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
@@ -1698,7 +1735,7 @@ class CfgWeapons
 			};
 			class PointerSlot: PointerSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
@@ -1729,7 +1766,7 @@ class CfgWeapons
 			};
 			class PointerSlot: PointerSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
@@ -1756,7 +1793,7 @@ class CfgWeapons
 			};
 			class PointerSlot: PointerSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
@@ -1781,7 +1818,7 @@ class CfgWeapons
 			};
 			class PointerSlot: PointerSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
@@ -1812,7 +1849,7 @@ class CfgWeapons
 			};
 			class PointerSlot: PointerSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
@@ -1842,7 +1879,7 @@ class CfgWeapons
 			};
 			class PointerSlot: PointerSlot {
 				linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-				compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+				compatibleitems[] = {COMMON_RAIL_ATTACHMENTS};
 			};
 			class UnderBarrelSlot: UnderBarrelSlot {
 				linkProxy = "\A3\Data_f_Mark\proxies\weapon_slots\UNDERBARREL";
@@ -1874,4 +1911,4 @@ class CfgWeapons
 			allowedSlots[]={};
 		};
 	}; */
-	};
+};
