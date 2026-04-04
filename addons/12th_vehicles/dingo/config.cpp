@@ -20,7 +20,7 @@ class CfgVehicles {
   class SMT_DingoCargo;
 
 
-  class Twelfth_DingoCargo: SMT_DingoCargo {
+  class Twelfth_Dingo_Cargo: SMT_DingoCargo {
     scope=2;
     scopeCurator=2;
     author="Sammy";
@@ -39,7 +39,7 @@ class CfgVehicles {
     STDINV
   };
 
-  class twelfth_Dingo_troop: SMT_DingoTroop {
+  class Twelfth_Dingo_Troop: SMT_DingoTroop {
     scope=2;
     scopeCurator=2;
     author="Waylen";
@@ -59,7 +59,7 @@ class CfgVehicles {
     STDINV
   };
 
-  class twelfth_dingo_fav_medical: SMT_DingoMed {
+  class Twelfth_Dingo_Fav_Medical: SMT_DingoMed {
     scope=2;
     scopeCurator=2;
     author="Waylen";
