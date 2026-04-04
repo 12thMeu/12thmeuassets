@@ -1214,7 +1214,25 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
   CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Kneepads) \
   CLASS_GENERIC_6_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped) \
   CLASS_GENERIC_7_3(B,U_B,1,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
-  
+
+// Tshirt cfgVehicles class setup
+#define VEH_UNI_TSHIRT_CLASS(CAMO) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TShirt,Untucked) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Untucked,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Untucked,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TShirt,Untucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TShirt,Untucked,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_3_2(B,U_B,1,CAMO,TShirt,Tucked) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Tucked,Kneepads) \
+  CLASS_GENERIC_4_2(B,U_B,1,CAMO,TShirt,Tucked,Bloused) \
+  CLASS_GENERIC_5_2(B,U_B,1,CAMO,TShirt,Tucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_3(B,U_B,1,CAMO,TShirt,Tucked,Gloves,Bloused,Kneepads) \
 
 //cfgWeapon
 // Expect only CLASS_GENERIC_..._1 here, since we need only 1 hiddenSelectionTexture for cfgWeapons
@@ -1364,7 +1382,25 @@ class twelfth_M43A_##TYPE##_2_##CAMO##_##PLATOON##_##ROLE## {     \
   CLASS_GENERIC_6_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped) \
   CLASS_GENERIC_7_1(U_B,B,2,CAMO,TacShirt,SlimSleeve,Gloves,Bloused,Unzipped,Kneepads) \
 
-  
+// Tshirt cfgWeapons class setup
+#define WEP_UNI_TSHIRT_CLASS(CAMO) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TShirt,Untucked) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Untucked,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Untucked,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Untucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TShirt,Untucked,Gloves,Bloused,Kneepads) \
+  CLASS_GENERIC_3_1(U_B,B,2,CAMO,TShirt,Tucked) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Tucked,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Tucked,Bloused) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Tucked,Bloused,Kneepads) \
+  CLASS_GENERIC_4_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves,Kneepads) \
+  CLASS_GENERIC_5_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves,Bloused) \
+  CLASS_GENERIC_6_1(U_B,B,2,CAMO,TShirt,Tucked,Gloves,Bloused,Kneepads) \
+
 
 #define NEW_UNIFROM_GI(CAMO)                        \
   NORMAL(CAMO,TShirt,Tucked)                       \

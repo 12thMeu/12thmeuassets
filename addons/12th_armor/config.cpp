@@ -87,80 +87,10 @@ class CfgVehicles {
   VEH_UNI_CLASS(winter)
   VEH_UNI_CLASS(opfor)
   VEH_UNI_CLASS(desert)
-  //INSTRUCTOR_VEH
+  VEH_UNI_TSHIRT_CLASS(instructor)
+  VEH_UNI_TSHIRT_CLASS(aic)
+  VEH_UNI_TSHIRT_CLASS(unscmc)
 
-
-  class twelfth_B_TShirt_Untucked_instructor : TCP_B_CBUU_TShirt_Untucked_Base {
-      author="Sammy";
-      scope= 1;
-      scopeArsenal= 1;
-      scopeCurator = 1;
-      hiddenSelectionsTextures[] = {
-        QP(uniforms\uniform\instructor\CBUU_inst_CO.paa),
-        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
-        };
-      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(instructor,TShirt,Untucked));
-  };
-
-  class twelfth_B_TShirt_Untucked_AIC : TCP_B_CBUU_TShirt_Untucked_Base {
-      author="Sammy";
-      scope= 1;
-      scopeArsenal= 1;
-      scopeCurator = 1;
-      hiddenSelectionsTextures[] = {
-        QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa),
-        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
-        };
-      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(AIC,TShirt,Untucked));
-  };
-
-  class twelfth_B_TShirt_Untucked_UNSCMC : TCP_B_CBUU_TShirt_Untucked_Base {
-      author="Sammy";
-      scope= 1;
-      scopeArsenal= 1;
-      scopeCurator = 1;
-      hiddenSelectionsTextures[] = {
-        QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa),
-        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
-        };
-      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(UNSCMC,TShirt,Untucked));
-  };
-
-  class twelfth_B_TShirt_Tucked_instructor : TCP_B_CBUU_TShirt_Tucked_Base {
-      author="Sammy";
-      scope= 1;
-      scopeArsenal= 1;
-      scopeCurator = 1;
-      hiddenSelectionsTextures[] = {
-        QP(uniforms\uniform\instructor\CBUU_inst_CO.paa),
-        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
-        };
-      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(instructor,TShirt,Tucked));
-  };
-
-  class twelfth_B_TShirt_Tucked_AIC : TCP_B_CBUU_TShirt_Tucked_Base {
-      author="Sammy";
-      scope= 1;
-      scopeArsenal= 1;
-      scopeCurator = 1;
-      hiddenSelectionsTextures[] = {
-        QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa),
-        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
-        };
-      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(AIC,TShirt,Tucked));
-  };
-
-  class twelfth_B_TShirt_Tucked_UNSCMC : TCP_B_CBUU_TShirt_Tucked_Base {
-      author="Sammy";
-      scope= 1;
-      scopeArsenal= 1;
-      scopeCurator = 1;
-      hiddenSelectionsTextures[] = {
-        QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa),
-        QP(uniforms\uniform\std\CBUU_Pants_CO.paa)
-        };
-      uniformClass = QOUTE(TWELFTH_WEP_NORMAL(UNSCMC,TShirt,Tucked));
-  };
   // ---------------------------------------------------------------------------
   //  twelfth_odst_uniform_veh
   // ---------------------------------------------------------------------------
@@ -235,116 +165,13 @@ class CfgWeapons {
   WEP_UNI_CLASS(winter)
   WEP_UNI_CLASS(desert)
   WEP_UNI_CLASS(opfor)
+  WEP_UNI_TSHIRT_CLASS(instructor)
+  WEP_UNI_TSHIRT_CLASS(aic)
+  WEP_UNI_TSHIRT_CLASS(unscmc)
   BOONIE(std)
   BOONIE(desert)
   BOONIE(snow)
   BOONIE(opfor)
-
-  //INSTRUCTOR_WEP
-
-
-
-
-
-
-  class twelfth_U_B_TShirt_Untucked_instructor: TCP_U_B_CBUU_TShirt_Untucked_Base{
-    scope=2;
-    displayName="[12th] Instructor T-Shirt";
-    ACE_GForceCoef=0.4;
-    class ItemInfo : ItemInfo {
-      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(instructor,TShirt,Untucked));
-      containerClass="Supply100"; 
-      mass=1;
-      uniformType = "Neopren";
-      allowedSlots[]={"701","801","901"};
-      armor=20;
-    };
-    hiddenSelectionsTextures[] = {
-      QP(uniforms\uniform\instructor\CBUU_inst_CO.paa)
-    };
-  };
-  class twelfth_U_B_TShirt_Untucked_AIC: TCP_U_B_CBUU_TShirt_Untucked_Base{
-    scope=2;
-    displayName="[12th] AIC T-Shirt";
-    ACE_GForceCoef=0.4;
-    class ItemInfo : ItemInfo {
-      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(AIC,TShirt,Untucked));
-      containerClass="Supply100"; 
-      mass=1;
-      uniformType = "Neopren";
-      allowedSlots[]={"701","801","901"};
-      armor=20;
-    };
-    hiddenSelectionsTextures[] = {
-      QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa)
-    };
-  };
-    class twelfth_U_B_TShirt_Untucked_UNSCMC: TCP_U_B_CBUU_TShirt_Untucked_Base{
-    scope=2;
-    displayName="[12th] UNSCMC T-Shirt";
-    ACE_GForceCoef=0.4;
-    class ItemInfo : ItemInfo {
-      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(UNSCMC,TShirt,Untucked));
-      containerClass="Supply100"; 
-      mass=1;
-      uniformType = "Neopren";
-      allowedSlots[]={"701","801","901"};
-      armor=20;
-    };
-    hiddenSelectionsTextures[] = {
-      QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa)
-    };
-  };
-  class twelfth_U_B_TShirt_Tucked_instructor: TCP_U_B_CBUU_TShirt_Tucked_Base{
-    scope=2;
-    displayName="[12th] Instructor T-Shirt Tucked";
-    ACE_GForceCoef=0.4;
-    class ItemInfo : ItemInfo {
-      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(instructor,TShirt,Tucked));
-      containerClass="Supply100"; 
-      mass=1;
-      uniformType = "Neopren";
-      allowedSlots[]={"701","801","901"};
-      armor=20;
-    };
-    hiddenSelectionsTextures[] = {
-      QP(uniforms\uniform\instructor\CBUU_inst_CO.paa)
-    };
-  };
-  class twelfth_U_B_TShirt_Tucked_AIC: TCP_U_B_CBUU_TShirt_Tucked_Base{
-    scope=2;
-    displayName="[12th] AIC T-Shirt Tucked";
-    ACE_GForceCoef=0.4;
-    class ItemInfo : ItemInfo {
-      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(AIC,TShirt,Tucked));
-      containerClass="Supply100"; 
-      mass=1;
-      uniformType = "Neopren";
-      allowedSlots[]={"701","801","901"};
-      armor=20;
-    };
-    hiddenSelectionsTextures[] = {
-      QP(uniforms\uniform\instructor\CBUU_AIC_CO.paa)
-    };
-  };
-    class twelfth_U_B_TShirt_Tucked_UNSCMC: TCP_U_B_CBUU_TShirt_Tucked_Base{
-    scope=2;
-    displayName="[12th] UNSCMC T-Shirt Tucked";
-    ACE_GForceCoef=0.4;
-    class ItemInfo : ItemInfo {
-      uniformClass = QOUTE(TWELFTH_VEH_NORMAL(UNSCMC,TShirt,Tucked));
-      containerClass="Supply100"; 
-      mass=1;
-      uniformType = "Neopren";
-      allowedSlots[]={"701","801","901"};
-      armor=20;
-    };
-    hiddenSelectionsTextures[] = {
-      QP(uniforms\uniform\instructor\CBUU_UNSCMC_CO.paa)
-    };
-  };
-
-
 
   // Example ODST uniform item referencing twelfth_odst_uniform_veh
   class twelfth_odst_uniform_wep: Uniform_Base {
